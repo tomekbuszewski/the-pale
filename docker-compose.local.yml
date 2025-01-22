@@ -1,0 +1,29 @@
+services:
+  traefik:
+    image: traefik:v3.3
+    container_name: depeche-traefik
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.local.yml:/etc/traefik/traefik.yml
+    networks:
+      - traefik-public
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.pnpm
+    container_name: depeche
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - traefik-public
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.depeche.rule=Host(`${BRANCH_DOMAIN:-localhost}`)
+      - traefik.http.services.depeche.loadbalancer.server.port=3000
+
+networks:
+  traefik-public:

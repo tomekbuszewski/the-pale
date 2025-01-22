@@ -1,14 +1,7 @@
-import { reactRouter } from "@react-router/dev/vite";
-import autoprefixer from "autoprefixer";
-import tailwindcss from "tailwindcss";
-import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig, mergeConfig } from "vite";
 
-export default defineConfig({
-  css: {
-    postcss: {
-      plugins: [tailwindcss, autoprefixer],
-    },
-  },
-  plugins: [reactRouter(), tsconfigPaths()],
-});
+import { baseConfig, routerConfig } from "./config/vite";
+
+export default defineConfig((env) =>
+  mergeConfig(baseConfig, routerConfig(env)),
+);

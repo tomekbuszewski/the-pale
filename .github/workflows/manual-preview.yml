@@ -1,0 +1,32 @@
+name: Cleanup Preview
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate preview tag
+        id: preview-tag
+        run: |
+          PR_NAME=$(echo "${{ github.event.pull_request.title }}" | sed -e 's/[^A-Za-z0-9]/-/g' | tr '[:upper:]' '[:lower:]')
+          echo "tag=${PR_NAME}" >> $GITHUB_OUTPUT
+
+      - name: Remove preview environment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            # Stop and remove containers
+            PREVIEW_PATH="/home/${{ secrets.VPS_USERNAME }}/apps/depeche/previews/${{ steps.preview-tag.outputs.tag }}"
+            cd $PREVIEW_PATH && docker-compose down || true
+            
+            # Remove preview directory
+            rm -rf $PREVIEW_PATH
+            
+            # Remove Docker image
+            docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/depeche:${{ steps.preview-tag.outputs.tag }} || true

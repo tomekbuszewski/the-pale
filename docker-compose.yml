@@ -1,0 +1,52 @@
+services:
+  traefik:
+    command:
+      - "--serversTransport.maxIdleConnsPerHost=256"
+      - "--ping.timeout=5s"
+    mem_limit: 256m
+    mem_reservation: 128m
+    image: traefik:v3.3
+    container_name: depeche-traefik
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.yml:/etc/traefik/traefik.yml
+      - /home/ubuntu/ssl/acme.json:/acme.json
+    networks:
+      - traefik-public
+
+  app:
+    container_name: depeche
+    image: ${DOCKERHUB_USERNAME}/depeche:latest
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    deploy:
+      resources:
+        limits:
+          cpus: '0.7'  # Match observed usage
+    mem_limit: 512m
+    mem_reservation: 256m
+    restart: "no"  # Prevents auto-restart to see actual failure
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    networks:
+      - traefik-public
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.depeche.rule=Host(`beta.buszewski.studio`)
+      - traefik.http.routers.depeche.entrypoints=websecure
+      - traefik.http.routers.depeche.tls=true
+      - traefik.http.routers.depeche.tls.certresolver=letsencrypt
+      - traefik.http.services.depeche.loadbalancer.server.port=3000
+
+networks:
+  traefik-public:
+    name: traefik-public

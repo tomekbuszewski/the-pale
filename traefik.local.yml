@@ -1,0 +1,15 @@
+api:
+  insecure: true
+  dashboard: true
+
+providers:
+  docker:
+    exposedByDefault: false
+    network: traefik-public
+
+entryPoints:
+  web:
+    address: ":80"
+
+log:
+  level: DEBUG
