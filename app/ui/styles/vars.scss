@@ -19,13 +19,15 @@
   --leading-regular: 1.5;
   --leading-tight: 1;
 
-  --color-background: #FFFDFA;
-  --color-lead: #473335;
-  --color-accent: #EA516A;
-  --color-text: #847374;
-  --color-text-light: #C6BCBC;
-  --color-lead-light: #E1D8D1;
-  --color-minor: #E1D8D1;
+  --color-background: rgb(255, 253, 250);
+  --color-lead: rgb(71, 51, 53);
+  --color-accent: rgb(234, 81, 106);
+  --color-accent-hover: rgba(234, 81, 106, .5);
+  --color-text: rgb(132, 115, 116);
+  --color-text-hover: rgba(132, 115, 116, .5);
+  --color-text-light: rgb(198, 188, 188);
+  --color-lead-light: rgb(225, 216, 209);
+  --color-minor: rgb(225, 216, 209);
 
   --gutter: #{rem(24)};
   --container: auto;
@@ -35,11 +37,14 @@
   --spacing-mid: #{rem(16)};
   --spacing-lg: #{rem(24)};
   --spacing-xl: #{rem(32)};
+  --spacing-2xl: #{rem(48)};
+  --spacing-3xl: #{rem(64)};
+  --spacing-huge: #{rem(112)};
 
-  --animation-duration-short: 0.2s;
+  --animation-duration-short: 0.3s;
   --animation-duration-medium: 0.45s;
   --animation-duration-long: 0.7s;
-  --animation-style: ease-in-out;
+  --animation-style: cubic-bezier(.17,.67,.83,.67);
 
   --z-menu: 20;
 

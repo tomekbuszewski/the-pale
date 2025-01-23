@@ -1,0 +1,15 @@
+.wrapper {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+}
+
+.item {
+  display: inline-block;
+}

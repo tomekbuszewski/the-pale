@@ -1,0 +1,76 @@
+@use "../../styles/_fns.scss" as *;
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scaleY(.75);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateX(-50%) scaleX(1.25) scaleY(1);
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translateX(-50%) scaleY(.75);
+    opacity: 0.5;
+  }
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper:after {
+  content: "";
+  position: absolute;
+  bottom: -#{rem(4)};
+  height: #{rem(8)};
+  left: 50%;
+  border-radius: 100%;
+  width: #{rem(32)};
+  background: rgba(0, 0, 0, 1);
+  filter: blur(#{rem(8)});
+  transform: translateX(-50%) scaleY(.75);
+  animation: pulse 2s infinite forwards var(--animation-style);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: #{rem(24)};
+  width: #{rem(32)};
+  animation: bounce 2s infinite forwards var(--animation-style);
+}
+
+.line {
+  display: block;
+  width: #{rem(4)};
+  height: #{rem(24)};
+  background: var(--color-text-light);
+  border-radius: #{rem(4)};
+}
+
+.line:nth-of-type(1) {
+  transform: translateX(-125%) rotate(-45deg);
+}
+
+.line:nth-of-type(2) {
+  transform: translateX(125%) rotate(45deg);
+}
