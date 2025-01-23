@@ -17,3 +17,7 @@ $breakpoints: (
     @content;
   }
 }
+
+@function transition($property, $duration: var(--animation-duration-short), $style: var(--animation-style)) {
+  @return $property $duration $style;
+}
