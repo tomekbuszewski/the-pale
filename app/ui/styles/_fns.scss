@@ -9,7 +9,7 @@ $baseline: 16;
 
 $breakpoints: (
   "md": "screen and (min-width: 48rem)", // 768px
-  "lg": "screen and (min-width: 75rem)", // 1200px
+  "lg": "screen and (min-width: 64rem)", // 1200px
 );
 
 @mixin media($breakpoint) {

@@ -1,0 +1,63 @@
+@use "../../styles/_fns.scss" as *;
+
+.navigation {
+  width: calc(100dvw - #{rem(40)});
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: var(--z-menu);
+  transition: #{transition(transform)}, #{transition(opacity)}, #{transition(box-shadow)};
+  background: var(--color-lead);
+  padding: var(--spacing-xl);
+  box-shadow: 0 0 48px 0 rgba(0, 0, 0, 0.2);
+
+  @include media("lg") {
+    width: auto;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+.hidden {
+  transform: translateX(100%);
+  opacity: 0;
+  box-shadow: none;
+
+  @include media("lg") {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.linkWrapper {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  @include media("lg") {
+    flex-direction: row;
+    gap: var(--spacing-mid);
+  }
+}
+
+.link {
+  display: block;
+  color: var(--color-text-light);
+  font-weight: bold;
+  font-size: var(--font-size-regular);
+  padding: var(--spacing-small) 0;
+  text-decoration: none;
+
+  @include media("lg") {
+    color: var(--color-text);
+    font-weight: normal;
+  }
+}
+
+.contact {
+  margin-top: auto;
+}
