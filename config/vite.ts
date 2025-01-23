@@ -1,7 +1,6 @@
 import mdx from "@mdx-js/rollup";
 import { reactRouter } from "@react-router/dev/vite";
 import autoprefixer from "autoprefixer";
-import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
 import { imagetools } from "vite-imagetools";
 import svgr from "vite-plugin-svgr";
@@ -10,8 +9,13 @@ import { configDefaults } from "vitest/config";
 
 export const baseConfig = defineConfig({
   css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+      },
+    },
     postcss: {
-      plugins: [tailwindcss, autoprefixer],
+      plugins: [autoprefixer],
     },
   },
   plugins: [

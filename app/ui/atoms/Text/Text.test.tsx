@@ -104,7 +104,7 @@ describe("UI / Atoms / Text", () => {
 
     colors.forEach((color) => {
       const { container } = render(
-        <Text color={color as any}>Colored Text</Text>,
+        <Text color={color as unknown as undefined}>Colored Text</Text>,
       );
       expect(container.firstChild).toHaveClass(`text-${color}`);
     });

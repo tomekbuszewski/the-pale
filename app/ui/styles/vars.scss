@@ -1,6 +1,9 @@
 @use "./_fns.scss" as *;
 
 :root {
+  --font-face-sans: "Bricolage Grotesque", sans-serif;
+  --font-face-mono: "Geist Mono", monospace;
+
   --font-size-base: #{$baseline}px;
 
   --font-size-hero: #{rem(40)};
@@ -24,13 +27,18 @@
   --color-lead-light: #E1D8D1;
   --color-minor: #E1D8D1;
 
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: #{rem(1200)};
+  --gutter: #{rem(24)};
+  --container: auto;
+  --columns: 6;
 
   @include media("md") {
     --font-size-hero: #{rem(72)};
     --font-size-title: #{rem(32)};
     --font-size-about: #{rem(64)};
+
+    --gutter: #{rem(16)};
+    --container: #{rem(720)};
+    --columns: 12;
   }
 
   @include media("lg") {
@@ -38,5 +46,8 @@
     --font-size-title: #{rem(48)};
     --font-size-about: #{rem(64)};
     --font-size-work: #{rem(64)};
+
+    --gutter: #{rem(32)};
+    --container: #{rem(960)};
   }
 }

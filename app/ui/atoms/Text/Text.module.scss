@@ -25,8 +25,13 @@
   font-size: var(--font-size-highlight);
 }
 
-.sectionHeading {
-  font-size: var(--font-size-heading);
+.section-heading {
+  font-weight: normal;
+  font-size: var(--font-size-secion-heading);
+  line-height: var(--leading-tight);
+  font-family: var(--font-face-mono);
+  text-transform: uppercase;
+  color: var(--color-text);
 }
 
 .title {

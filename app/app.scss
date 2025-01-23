@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: var(--font-face-sans);
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "wdth" 100;
