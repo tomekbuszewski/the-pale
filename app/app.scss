@@ -1,0 +1,14 @@
+@use "ui/styles/reset.scss";
+@use "ui/styles/vars.scss";
+@use "ui/styles/utils.scss";
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}

@@ -1,0 +1,42 @@
+@use "./_fns.scss" as *;
+
+:root {
+  --font-size-base: #{$baseline}px;
+
+  --font-size-hero: #{rem(40)};
+  --font-size-regular: #{rem(14)};
+  --font-size-small: #{rem(12)};
+  --font-size-highlight: #{rem(12)};
+  --font-size-secion-heading: #{rem(12)};
+  --font-size-title: #{rem(40)};
+  --font-size-button: #{rem(12)};
+  --font-size-about: #{rem(36)};
+  --font-size-work: #{rem(40)};
+
+  --leading-regular: 1.5;
+  --leading-tight: 1;
+
+  --color-background: #FFFDFA;
+  --color-lead: #473335;
+  --color-accent: #EA516A;
+  --color-text: #847374;
+  --color-text-light: #C6BCBC;
+  --color-lead-light: #E1D8D1;
+  --color-minor: #E1D8D1;
+
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: #{rem(1200)};
+
+  @include media("md") {
+    --font-size-hero: #{rem(72)};
+    --font-size-title: #{rem(32)};
+    --font-size-about: #{rem(64)};
+  }
+
+  @include media("lg") {
+    --font-size-hero: #{rem(96)};
+    --font-size-title: #{rem(48)};
+    --font-size-about: #{rem(64)};
+    --font-size-work: #{rem(64)};
+  }
+}

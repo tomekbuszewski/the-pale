@@ -1,0 +1,19 @@
+@use "sass:math";
+@use "sass:map";
+
+$baseline: 16;
+
+@function rem($size) {
+  @return math.div($size, $baseline) * 1rem;
+}
+
+$breakpoints: (
+  "md": "screen and (min-width: 48rem)", // 768px
+  "lg": "screen and (min-width: 75rem)", // 1200px
+);
+
+@mixin media($breakpoint) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

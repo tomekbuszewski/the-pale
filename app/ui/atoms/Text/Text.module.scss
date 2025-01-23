@@ -1,0 +1,58 @@
+.hero {
+  font-size: var(--font-size-hero);
+  line-height: var(--leading-tight);
+
+  @media (min-width: var(--breakpoint-md)) {
+    line-height: var(--leading-regular);
+  }
+
+  @media (min-width: var(--breakpoint-lg)) {
+    line-height: var(--leading-tight);
+  }
+}
+
+.regular,
+.list {
+  font-size: var(--font-size-regular);
+  line-height: var(--leading-regular);
+}
+
+.small {
+  font-size: var(--font-size-small);
+}
+
+.highlight {
+  font-size: var(--font-size-highlight);
+}
+
+.sectionHeading {
+  font-size: var(--font-size-heading);
+}
+
+.title {
+  font-size: var(--font-size-title);
+  line-height: var(--leading-tight);
+}
+
+.button {
+  font-size: var(--font-size-button);
+  line-height: var(--leading-tight);
+}
+
+.about {
+  font-size: var(--font-size-about);
+}
+
+.work {
+  font-size: var(--font-size-work);
+}
+
+.mono {
+  font-family: "Geist Mono", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.bold {
+  font-weight: 800;
+}
