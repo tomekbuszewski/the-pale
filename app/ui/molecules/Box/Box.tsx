@@ -1,32 +1,13 @@
 import { Text } from "@ui/atoms";
 import clsx from "clsx";
 
-import type { HTMLProps, ReactNode } from "react";
+import type { BlogPost } from "@common-types/Blogpost";
+import type { Service } from "@common-types/Service";
+import type { HTMLProps } from "react";
 
 import { Footer, Meta, Tags } from "./Box.helpers";
 
 import styles from "./Box.module.scss";
-
-interface BlogPost {
-  title: string;
-  date: Date;
-  tags: string[];
-  youtube: string;
-  link: string;
-  icon?: never;
-  onClick?: never;
-}
-
-interface Service {
-  icon: ReactNode;
-  title: string;
-  onClick: () => void;
-  hidden?: boolean;
-  date?: never;
-  tags?: never;
-  youtube?: never;
-  link?: never;
-}
 
 type Props = HTMLProps<HTMLDivElement> & (BlogPost | Service);
 

@@ -6,13 +6,28 @@ import type { LinkProps } from "react-router";
 import styles from "./Button.module.scss";
 
 interface Props extends LinkProps {
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary" | "disabled";
+  small?: boolean;
 }
 
-function Button({ variant, className, ...rest }: Props) {
+function Button({ variant, className, small, ...rest }: Props) {
   const classNames = [className, styles.base, styles[variant ?? "primary"]];
 
-  return <Link className={clsx(classNames)} {...rest} />;
+  if (variant === "disabled") {
+    rest.onClick = (e) => {
+      e.preventDefault();
+      return false;
+    };
+  }
+
+  return (
+    <Link
+      className={clsx(classNames, {
+        [styles.small]: small,
+      })}
+      {...rest}
+    />
+  );
 }
 
 export default Button;

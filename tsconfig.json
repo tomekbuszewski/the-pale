@@ -18,7 +18,8 @@
       "~/*": ["./app/*"],
       "@*": ["./app/*"],
       "@ui/*": ["./app/ui/*"],
-      "@config/*": ["./config/*"]
+      "@config/*": ["./config/*"],
+      "@common-types/*": ["./app/common-types/*"]
     },
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,

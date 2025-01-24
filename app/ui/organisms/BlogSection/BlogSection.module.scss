@@ -1,0 +1,25 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  grid-template-columns: 1fr;
+  gap: var(--spacing-mid);
+
+  @include media("md") {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+.pagination {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationContainer {
+  padding: #{rem(4)};
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-small);
+  flex-flow: row wrap;
+}

@@ -1,17 +1,16 @@
 @use "../../styles/_fns.scss" as *;
 
-$spacing: var(--spacing-lg);
-
 .wrapper {
-  margin: calc($spacing * -1);
-  padding: $spacing;
+  margin: calc(var(--spacing-small) * -1);
+  padding: var(--spacing-small);
   border-radius: #{rem(8)};
-  transition: #{transition(background)};
+  transition: #{transition(background)}, #{transition(transform)};
   transition-delay: var(--animation-duration-medium);
-}
 
-.wrapper + .wrapper {
-  margin-top: $spacing;
+  @include media("md") {
+    margin: calc(var(--spacing-lg) * -1);
+    padding: var(--spacing-lg);
+  }
 }
 
 .hidden {
@@ -61,7 +60,6 @@ $spacing: var(--spacing-lg);
   flex-direction: row;
   gap: var(--spacing-mid);
   margin-top: var(--spacing-mid);
-  height: 0;
   transition: #{transition(height)};
   transition-delay: var(--animation-duration-medium);
 }
@@ -88,7 +86,9 @@ $spacing: var(--spacing-lg);
 
 .wrapper:hover {
   background-color: var(--color-lead);
+  transform: translateY(-#{rem(12)});
   transition-delay: 0s;
+  z-index: var(--z-box);
 
   .title, .body {
     color: var(--color-background);
@@ -96,7 +96,6 @@ $spacing: var(--spacing-lg);
   }
 
   .footer {
-    height: #{rem(40)};
     transition-delay: 0s;
   }
 

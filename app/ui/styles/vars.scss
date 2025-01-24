@@ -48,6 +48,7 @@
   --animation-style: cubic-bezier(.17,.67,.83,.67);
 
   --z-menu: 20;
+  --z-box: 10;
 
   @include media("md") {
     --font-size-hero: #{rem(72)};
