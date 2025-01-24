@@ -1,0 +1,116 @@
+@use "../../styles/_fns.scss" as *;
+
+$spacing: var(--spacing-lg);
+
+.wrapper {
+  margin: calc($spacing * -1);
+  padding: $spacing;
+  border-radius: #{rem(8)};
+  transition: #{transition(background)};
+  transition-delay: var(--animation-duration-medium);
+}
+
+.wrapper + .wrapper {
+  margin-top: $spacing;
+}
+
+.hidden {
+}
+
+.title {
+  margin: var(--spacing-mid) 0;
+  color: var(--color-lead);
+  transition: #{transition(color)};
+  transition-delay: var(--animation-duration-medium);
+}
+
+.body {
+  color: var(--color-text);
+  transition: #{transition(color)};
+  transition-delay: var(--animation-duration-medium);
+}
+
+.body p + p {
+  margin-top: #{rem(8)};
+}
+
+.date {
+  color: var(--color-text);
+  display: flex;
+  gap: #{rem(8)};
+  align-items: center;
+}
+
+.wrapper svg {
+  stroke: var(--color-text);
+  width: #{rem(16)};
+}
+
+.tags {
+  color: var(--color-text);
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: var(--spacing-small);
+  margin-top: var(--spacing-mid);
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-mid);
+  margin-top: var(--spacing-mid);
+  height: 0;
+  transition: #{transition(height)};
+  transition-delay: var(--animation-duration-medium);
+}
+
+.footer a {
+  opacity: 0;
+  filter: blur(#{rem(4)});
+  transform: translateY(var(--spacing-small));
+  transition: #{transition(opacity)},
+  #{transition(filter)},
+  #{transition(transform)};
+}
+
+.tag:after {
+  content: "·";
+  margin-left: var(--spacing-small);
+  opacity: .5
+}
+
+.tag:last-child:after {
+  content: "";
+}
+
+
+.wrapper:hover {
+  background-color: var(--color-lead);
+  transition-delay: 0s;
+
+  .title, .body {
+    color: var(--color-background);
+    transition-delay: 0s;
+  }
+
+  .footer {
+    height: #{rem(40)};
+    transition-delay: 0s;
+  }
+
+  .footer a {
+    opacity: 1;
+    transform: translateY(0);
+    filter: none;
+  }
+
+  .footer a:nth-of-type(1) {
+    transition-delay: var(--animation-duration-short);
+  }
+
+  .footer a:nth-of-type(2) {
+    transition-delay: var(--animation-duration-medium);
+  }
+}

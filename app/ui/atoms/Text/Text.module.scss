@@ -4,6 +4,7 @@
 
   @media (min-width: var(--breakpoint-md)) {
     line-height: var(--leading-regular);
+    letter-spacing: -0.025em;
   }
 
   @media (min-width: var(--breakpoint-lg)) {
@@ -23,6 +24,7 @@
 
 .highlight {
   font-size: var(--font-size-highlight);
+  font-family: var(--font-face-mono);
 }
 
 .section-heading {
@@ -37,6 +39,8 @@
 .title {
   font-size: var(--font-size-title);
   line-height: var(--leading-tight);
+  font-weight: 800;
+  letter-spacing: -0.025em;
 }
 
 .button {
