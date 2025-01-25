@@ -9,5 +9,6 @@ export interface Service {
   tags?: never;
   youtube?: never;
   link?: never;
+  active?: boolean;
   children: ReactNode;
 }

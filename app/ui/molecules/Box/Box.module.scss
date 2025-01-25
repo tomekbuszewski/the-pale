@@ -4,8 +4,10 @@
   margin: calc(var(--spacing-small) * -1);
   padding: var(--spacing-small);
   border-radius: #{rem(8)};
-  transition: #{transition(background)}, #{transition(transform)};
+  transition: #{transition(all)};
   transition-delay: var(--animation-duration-medium);
+  display: flex;
+  flex-flow: column;
 
   @include media("md") {
     margin: calc(var(--spacing-lg) * -1);
@@ -27,6 +29,7 @@
   color: var(--color-text);
   transition: #{transition(color)};
   transition-delay: var(--animation-duration-medium);
+  margin-bottom: auto;
 }
 
 .body p + p {
@@ -53,6 +56,7 @@
   flex-direction: row;
   gap: var(--spacing-small);
   margin-top: var(--spacing-mid);
+  margin-bottom: auto;
 }
 
 .footer {
@@ -69,8 +73,7 @@
   filter: blur(#{rem(4)});
   transform: translateY(var(--spacing-small));
   transition: #{transition(opacity)},
-  #{transition(filter)},
-  #{transition(transform)};
+  #{transition(all)};
 }
 
 .tag:after {
@@ -83,18 +86,15 @@
   content: "";
 }
 
-
-.wrapper:hover {
-  background-color: var(--color-lead);
+.wrapper:not(.active):hover {
+  background-color: var(--color-background);
   transform: translateY(-#{rem(12)});
   transition-delay: 0s;
   z-index: var(--z-box);
 
   .title, .body {
-    color: var(--color-background);
     transition-delay: 0s;
   }
-
   .footer {
     transition-delay: 0s;
   }
@@ -111,5 +111,13 @@
 
   .footer a:nth-of-type(2) {
     transition-delay: var(--animation-duration-medium);
+  }
+}
+
+.wrapper.active {
+  .footer a {
+    opacity: 1;
+    transform: translateY(0);
+    filter: none;
   }
 }

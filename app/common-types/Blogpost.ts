@@ -9,4 +9,5 @@ export interface BlogPost {
   icon?: never;
   onClick?: never;
   children: ReactNode;
+  active?: never;
 }

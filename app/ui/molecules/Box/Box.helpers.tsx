@@ -29,9 +29,10 @@ interface FooterProps {
   onClick?: () => void;
   youtube?: string;
   link?: string;
+  active?: boolean;
 }
 
-export function Footer({ onClick, youtube, link }: FooterProps) {
+export function Footer({ onClick, youtube, link, active }: FooterProps) {
   return (
     <footer className={styles.footer}>
       {link && youtube ? (
@@ -46,8 +47,15 @@ export function Footer({ onClick, youtube, link }: FooterProps) {
       ) : null}
 
       {onClick ? (
-        <Button onClick={onClick} variant="secondary" to="#services">
-          Expand
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            onClick();
+          }}
+          variant="secondary"
+          to="#services"
+        >
+          {active ? "Collapse" : "Expand"}
         </Button>
       ) : null}
     </footer>

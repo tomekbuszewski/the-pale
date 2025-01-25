@@ -22,6 +22,7 @@ function Box({
   hidden,
   className,
   children,
+  active,
   ...rest
 }: Props) {
   const classNames = [className, styles.wrapper];
@@ -29,8 +30,10 @@ function Box({
   return (
     <article
       {...rest}
+      data-active={active}
       className={clsx(classNames, {
         [styles.hidden]: hidden,
+        [styles.active]: active,
       })}
     >
       <Meta date={date} icon={icon} />
@@ -45,7 +48,7 @@ function Box({
 
       <Tags tags={tags} />
 
-      <Footer link={link} youtube={youtube} onClick={onClick} />
+      <Footer link={link} youtube={youtube} onClick={onClick} active={active} />
     </article>
   );
 }
