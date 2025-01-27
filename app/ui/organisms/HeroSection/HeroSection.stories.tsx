@@ -12,4 +12,5 @@ export const Primary: StoryObj<typeof HeroSection> = {
 export default {
   title: "Organisms/HeroSection",
   component: HeroSection,
+  decorators: [(Story) => <div style={{ height: "300dvh" }}>{Story()}</div>],
 } satisfies Meta<typeof HeroSection>;

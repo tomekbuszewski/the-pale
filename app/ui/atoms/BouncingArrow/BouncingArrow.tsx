@@ -1,19 +1,18 @@
 import clsx from "clsx";
-
-import type { HTMLProps } from "react";
+import { type HTMLMotionProps, motion } from "motion/react";
 
 import styles from "./BouncingArrow.module.scss";
 
-function BouncingArrow({ className }: HTMLProps<HTMLDivElement>) {
+function BouncingArrow({ className, ...rest }: HTMLMotionProps<"div">) {
   const classNames = [styles.wrapper, className];
 
   return (
-    <div className={clsx(classNames)}>
+    <motion.div className={clsx(classNames)} {...rest}>
       <div className={styles.container}>
         <span className={styles.line} />
         <span className={styles.line} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
