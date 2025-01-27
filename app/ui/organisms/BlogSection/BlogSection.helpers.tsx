@@ -51,7 +51,7 @@ export function Pagination({
         {displayPages.map((page, index) => {
           const current = page === currentPage;
           return page === -1 ? (
-            <Button variant="disabled" key={`ellipsis-${index}`} to="#">
+            <Button variant="primary" disabled key={`ellipsis-${index}`} to="#">
               ...
             </Button>
           ) : (

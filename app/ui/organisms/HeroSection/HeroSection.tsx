@@ -5,7 +5,7 @@ import {
   Text,
   TextRotate,
 } from "@ui/atoms";
-import { LayoutGroup, motion, useScroll, useTransform } from "motion/react";
+import { LayoutGroup, useScroll, useTransform } from "motion/react";
 
 import type { HTMLProps } from "react";
 
