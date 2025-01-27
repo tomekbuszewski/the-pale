@@ -18,6 +18,33 @@
 .list {
   font-size: var(--font-size-regular);
   line-height: var(--leading-regular);
+
+  a {
+    position: relative;
+    transition: #{transition(background)}, #{transition(color)};
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -5%;
+      left: -2.5%;
+      width: 105%;
+      height: #{rem(1)};
+      background: var(--color-accent);
+      opacity: 0.25;
+      transition: #{transition(opacity)}, #{transition(height)};
+      z-index: -1;
+    }
+  }
+
+  a:hover {
+    color: var(--color-background);
+
+    &:after {
+      height: 110%;
+      opacity: 1;
+    }
+  }
 }
 
 .small {

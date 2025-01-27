@@ -1,4 +1,4 @@
-import { Text } from "@ui/atoms";
+import { SectionHeader } from "@ui/molecules";
 import clsx from "clsx";
 
 import type { ElementType, HTMLProps } from "react";
@@ -31,12 +31,7 @@ function SectionWrapper<T extends ElementType = "section">({
   return (
     <Tag {...rest} className={clsx(classNames)}>
       <div className={clsx(contentClassNames)}>
-        {title && (
-          <header className={styles.title}>
-            <Text variant="section-heading">{title}</Text>
-            <hr className={styles.separator} />
-          </header>
-        )}
+        {title && <SectionHeader title={title} />}
         {children}
       </div>
     </Tag>

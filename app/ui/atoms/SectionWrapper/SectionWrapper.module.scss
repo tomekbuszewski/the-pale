@@ -38,20 +38,3 @@
   grid-column: 2 / 4;
 }
 
-.title {
-  grid-column: 1 / -1;
-}
-
-.separator {
-  width: #{rem(24)};
-  height: #{rem(2)};
-  background-color: var(--color-minor);
-  border: 0;
-  border-radius: #{rem(2)};
-  margin-top: #{rem(8)};
-  margin-bottom: #{rem(24)};
-
-  @include media("lg") {
-    margin-bottom: #{rem(32)};
-  }
-}
