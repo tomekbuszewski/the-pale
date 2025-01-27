@@ -5,7 +5,7 @@ import type { ElementType, HTMLProps } from "react";
 
 import styles from "./SectionWrapper.module.scss";
 
-interface Props<T extends ElementType> extends HTMLProps<T> {
+interface Props<T extends ElementType = "section"> extends HTMLProps<T> {
   title?: string;
   tag?: ElementType;
   breakout?: "left" | "right";

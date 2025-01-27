@@ -1,0 +1,33 @@
+@use "../../styles/_fns.scss" as *;
+
+.container {
+  align-content: baseline;
+  height: 150lvh;
+
+  @include media("md") {
+    height: auto;
+  }
+
+  @include media("lg") {
+    height: 150lvh;
+  }
+}
+
+.wrapper {
+  grid-column: 1/-1;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.blur {
+  filter: blur(#{rem(4)});
+}
+
+.text {
+  color: var(--color-lead);
+}
+

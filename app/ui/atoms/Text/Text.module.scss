@@ -1,13 +1,15 @@
+@use "../../styles/_fns.scss" as *;
+
 .hero {
   font-size: var(--font-size-hero);
   line-height: var(--leading-tight);
 
-  @media (min-width: var(--breakpoint-md)) {
+  @include media("md") {
     line-height: var(--leading-regular);
     letter-spacing: -0.025em;
   }
 
-  @media (min-width: var(--breakpoint-lg)) {
+  @include media("lg") {
     line-height: var(--leading-tight);
   }
 }
@@ -50,6 +52,11 @@
 
 .about {
   font-size: var(--font-size-about);
+  line-height: var(--leading-tight);
+
+  @include media("md") {
+    letter-spacing: -0.025em;
+  }
 }
 
 .work {

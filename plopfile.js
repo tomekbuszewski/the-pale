@@ -11,7 +11,7 @@ function getCurrentDate() {
 
 export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
   plop.setHelper("slugify", (text) =>
-    slugify(`${getCurrentDate()}-${text}`, { lower: true })
+    slugify(`${getCurrentDate()}-${text}`, { lower: true }),
   );
 
   plop.setHelper("currentDate", getCurrentDate);
@@ -53,6 +53,11 @@ export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
         path: "./app/ui/{{type}}s/index.ts",
         template:
           'export { default as {{pascalCase name}} } from "./{{pascalCase name}}/{{pascalCase name}}";',
+      },
+      {
+        type: "add",
+        path: "./app/ui/{{type}}s/{{pascalCase name}}/{{pascalCase name}}.module.scss",
+        template: '@use "../../styles/_fns.scss" as *;',
       },
     ],
   });
