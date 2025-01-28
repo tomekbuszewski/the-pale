@@ -1,5 +1,9 @@
 @use "../../styles/_fns.scss" as *;
 
+.header {
+  grid-column: 2 !important;
+}
+
 .wrapper {
   width: 100%;
   padding: var(--spacing-2xl) calc(var(--gutter) / 2);

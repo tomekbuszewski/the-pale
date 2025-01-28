@@ -2,9 +2,8 @@ import clsx from "clsx";
 import { motion } from "motion/react";
 import slugify from "slugify";
 
+import type { Client } from "@common-types/Client";
 import type { CSSProperties } from "react";
-
-import type { Client } from "../ClientsSection.types";
 
 import { itemVariants } from "./random";
 import { useMouseBackground } from "./useMouseBackground";

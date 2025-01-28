@@ -16,7 +16,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
   copy: string;
 }
 
-function HeroSection({ keywords }: Props) {
+function HeroSection({ keywords, copy }: Props) {
   const { scrollY } = useScroll();
   const halfWindowHeight =
     typeof window !== "undefined" ? window.innerHeight / 2 : 1;
@@ -35,7 +35,7 @@ function HeroSection({ keywords }: Props) {
   });
 
   return (
-    <SectionWrapper title="Hello">
+    <SectionWrapper title="Hello" animate={false}>
       <LayoutGroup>
         <Text variant="hero" className={styles.heading}>
           Need&nbsp;a&nbsp;
@@ -50,10 +50,7 @@ function HeroSection({ keywords }: Props) {
         </Text>
       </LayoutGroup>
 
-      <Text className={styles.copy}>
-        Say goodbye to website headaches. Enjoy seamless, worry-free solutions
-        so you can focus on growing your product and business.
-      </Text>
+      <Text className={styles.copy}>{copy}</Text>
 
       <div className={styles.buttonWrapper}>
         <Button to="#contact" variant="primary">

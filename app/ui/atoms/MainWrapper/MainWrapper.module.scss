@@ -1,0 +1,7 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  background: var(--color-background);
+  position: relative;
+  z-index: 1;
+}

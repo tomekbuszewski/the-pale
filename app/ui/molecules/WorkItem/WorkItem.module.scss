@@ -1,14 +1,15 @@
 @use "../../styles/_fns.scss" as *;
 
 .parent {
-  background: black;
+  background-color: black;
+  background-size: cover;
   overflow: hidden;
 }
 
 .work {
   @include media("md") {
     display: grid !important;
-    grid-template-columns: #{rem(312)} 1fr;
+    grid-template-columns: #{rem(312)} 1fr !important;
     grid-template-rows: auto auto 1fr;
     gap: var(--gutter);
     padding: var(--spacing-3xl) 0;

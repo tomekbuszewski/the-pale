@@ -1,8 +1,10 @@
 import { useIsMobile } from "@hooks";
 import { Button, SectionWrapper, Text } from "@ui/atoms";
+import { createMotionConfig } from "@utils/fadeIn";
 import clsx from "clsx";
 import { motion } from "motion/react";
 
+import type { Work } from "@common-types/Work";
 import type { HTMLProps } from "react";
 
 import CodeIcon from "./assets/code.svg?react";
@@ -29,27 +31,6 @@ function resolveIcon(tag: string) {
   }
 }
 
-function createMotionConfig(index: number) {
-  return {
-    initial: {
-      opacity: 0,
-      y: -20,
-    },
-    whileInView: {
-      opacity: 1,
-      y: 0,
-    },
-    viewport: {
-      once: true,
-    },
-    transition: {
-      delay: index * 0.125,
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  };
-}
-
 function Tags(props: TagsProps) {
   return (
     <motion.ul className={styles.tags} {...createMotionConfig(3)}>
@@ -63,17 +44,7 @@ function Tags(props: TagsProps) {
   );
 }
 
-interface Props extends HTMLProps<HTMLDivElement> {
-  title: string;
-  description: string[];
-  mobileImage: string;
-  desktopImage: string;
-  link?: string;
-  study?: string;
-  tags: string[];
-  date: Date;
-  align?: "left" | "right";
-}
+interface Props extends HTMLProps<HTMLDivElement>, Omit<Work, "title"> {}
 
 function WorkItem({
   className,
@@ -84,13 +55,16 @@ function WorkItem({
   desktopImage,
   study,
   link,
+  background,
   align = "right",
 }: Props) {
-  const classNames = [className, styles.parent];
   const isMobile = useIsMobile();
+  const classNames = [className, styles.parent];
+  const style = background ? { backgroundImage: `url(${background})` } : {};
 
   return (
     <SectionWrapper
+      animate={false}
       tag="article"
       className={clsx(classNames)}
       title="Works"
@@ -98,6 +72,7 @@ function WorkItem({
       contentClassName={clsx(styles.work, {
         [styles.left]: align === "left",
       })}
+      style={style}
     >
       <section className={styles.details}>
         <motion.div {...createMotionConfig(0)}>

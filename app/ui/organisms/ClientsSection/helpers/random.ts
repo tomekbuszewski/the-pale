@@ -1,4 +1,4 @@
-import type { Client } from "../ClientsSection.types";
+import type { Client } from "@common-types/Client";
 
 export const itemVariants = {
   initial: { opacity: 0, blur: 100 },

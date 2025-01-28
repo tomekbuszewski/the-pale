@@ -5,3 +5,4 @@ export { default as Logo } from "./Logo/Logo";
 export { default as Button } from "./Button/Button";
 export { default as TextRotate } from "./TextRotate/TextRotate";
 export { default as BouncingArrow } from "./BouncingArrow/BouncingArrow";
+export { default as MainWrapper } from "./MainWrapper/MainWrapper";
