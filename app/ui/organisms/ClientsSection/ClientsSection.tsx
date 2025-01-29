@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { SectionWrapper } from "@ui/atoms";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -17,21 +17,38 @@ function ClientsSection({ items }: Props) {
   const [visibleItems, setVisibleItems] = useState<Client[]>(
     pickRandomItems(items, 7),
   );
+  const intervalId = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
+  function triggerIntervalRaw() {
+    intervalId.current = setInterval(() => {
       setVisibleItems([]);
       setTimeout(() => {
         setVisibleItems(pickRandomItems(items, 7));
       }, 800);
     }, 4000);
+  }
 
-    return () => clearInterval(intervalId);
-  }, []);
+  const triggerInterval = useCallback(triggerIntervalRaw, [items]);
+
+  function handleMouseEnter() {
+    clearInterval(intervalId.current!);
+  }
+
+  function handleMouseLeave() {
+    triggerInterval();
+  }
+
+  useEffect(() => {
+    triggerInterval();
+
+    return () => clearInterval(intervalId.current!);
+  }, [triggerInterval]);
 
   return (
     <SectionWrapper title="Clients">
       <motion.div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         className={styles.wrapper}
         initial="initial"
         animate="animate"
