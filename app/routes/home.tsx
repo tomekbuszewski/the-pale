@@ -18,7 +18,11 @@ export function meta() {
 
 export async function loader() {
   return {
-    blog: await BlogSection.loader({ withContent: false, limit: 6, page: 1 }),
+    blog: await BlogSection.loader({
+      withContent: false,
+      limit: 6,
+      page: 1,
+    }),
   };
 }
 

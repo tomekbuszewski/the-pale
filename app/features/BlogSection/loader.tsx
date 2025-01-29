@@ -1,12 +1,14 @@
 import * as runtime from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import { evaluate } from "@mdx-js/mdx";
+import { Text } from "@ui/atoms";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
 import type { BlogPost } from "@common-types/Blogpost";
+import type { MDXComponents, MDXProps } from "mdx/types";
 import type { ReactNode } from "react";
 
 import { cache } from "./cache";
@@ -15,7 +17,7 @@ interface LoaderConfig {
   withContent?: boolean;
   limit?: number;
   page?: number;
-  slug?: string;
+  components?: MDXProps["components"];
 }
 
 function createPagination(
@@ -67,7 +69,10 @@ export default async function loader({
           }
 
           if (cache.has(data.slug)) {
-            posts.push(cache.get(data.slug)!);
+            const cachedPost = cache.get(data.slug);
+            if (cachedPost) {
+              posts.push(cachedPost);
+            }
             break;
           }
 
@@ -76,21 +81,21 @@ export default async function loader({
             baseUrl: import.meta.url,
           });
 
-          const newPost = {
+          const newPost: BlogPost = {
             link: "/writings/" + data.slug,
             title: data.title as string,
             date: data.pubdate as Date,
             children: data.summary as string,
             tags: (data.tags as string).split(", "),
             youtube: data.youtube as string,
-          } as BlogPost;
+          };
 
           if (withContent) {
             newPost.cnt = renderToString(
               Content({
                 components: {
-                  h3: "h1",
-                  h2: "h1",
+                  p: (props) => <Text {...props} />,
+                  h2: (props) => <Text {...props} variant="title" />,
                 },
               }) as ReactNode,
             );
@@ -116,7 +121,10 @@ export default async function loader({
       pagination: createPagination(posts.length, limit, page),
     };
   } catch (error) {
-    console.error("Error loading blog posts:", error);
+    console.error(
+      "Error loading blog posts:",
+      error instanceof Error ? error.message : String(error),
+    );
     return {};
   }
 }

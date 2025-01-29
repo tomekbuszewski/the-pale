@@ -14,12 +14,16 @@ interface Props {
 }
 
 function ClientsSection({ items }: Props) {
-  const [visibleItems, setVisibleItems] = useState<Client[]>(
-    pickRandomItems(items, 7),
-  );
+  const [visibleItems, setVisibleItems] = useState<Client[]>([]);
   const intervalId = useRef<NodeJS.Timeout | null>(null);
+  const isFirstRender = useRef(true);
 
   function triggerIntervalRaw() {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      setVisibleItems(pickRandomItems(items, 7));
+    }
+
     intervalId.current = setInterval(() => {
       setVisibleItems([]);
       setTimeout(() => {

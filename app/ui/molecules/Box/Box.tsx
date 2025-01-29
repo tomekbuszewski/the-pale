@@ -44,9 +44,7 @@ function Box({
         className={styles.title}
       />
 
-      <section className={styles.body}>
-        <Text color="text">{children}</Text>
-      </section>
+      <section className={styles.body}>{children}</section>
 
       <Tags tags={tags} />
 

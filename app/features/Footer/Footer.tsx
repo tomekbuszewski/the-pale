@@ -11,19 +11,19 @@ const data = {
   copy: "Buszewski.studio is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
   quickLinks: [
     {
-      href: "#",
+      href: "#about",
       text: "About",
     },
     {
-      href: "#",
+      href: "#services",
       text: "Services",
     },
     {
-      href: "#",
-      text: "Blog",
+      href: "#videos",
+      text: "Videos & Writings",
     },
     {
-      href: "#",
+      href: "#contact",
       text: "Contact",
     },
   ],

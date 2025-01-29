@@ -5,8 +5,8 @@ export default function Header() {
     <Main
       links={[
         { title: "Home", href: "/" },
-        { title: "About", href: "/about" },
-        { title: "Contact", href: "/contact" },
+        { title: "About", href: "/#about" },
+        { title: "Contact", href: "#contact" },
       ]}
     />
   );

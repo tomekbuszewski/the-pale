@@ -1,4 +1,4 @@
-import { SectionWrapper } from "@ui/atoms";
+import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
@@ -22,7 +22,9 @@ function BlogSection({ className, items, pagination }: Props) {
       className={className}
     >
       {items.map((item) => (
-        <Box {...item} key={item.title} />
+        <Box {...item} key={item.title}>
+          <Text>{item.children}</Text>
+        </Box>
       ))}
 
       <Pagination {...pagination} />

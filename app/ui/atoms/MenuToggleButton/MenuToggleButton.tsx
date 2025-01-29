@@ -31,13 +31,6 @@ function MenuToggleButton({
     }
   }
 
-  if (
-    typeof window !== "undefined" &&
-    window.matchMedia("(min-width: 1200px)").matches
-  ) {
-    return null;
-  }
-
   return (
     <button
       {...rest}
