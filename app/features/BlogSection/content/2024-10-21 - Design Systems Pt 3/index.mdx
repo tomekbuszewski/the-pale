@@ -1,0 +1,719 @@
+---
+slug: 2024-10-21-design-sytems-in-react-feature-based-development-with-atomic-design
+title: Design Sytems in React – Feature-based Development with Atomic Design
+summary:
+  Last time we’ve used atomic design methodology to move the whole UI to a
+  separate layer. Today we will take business problems and put it in yet another
+  place.
+pubdate: 2024-10-21
+tags: react, atomic-design, feature-development
+youtube: https://youtu.be/lLH8LAD4KTE
+---
+
+Last time we’ve used atomic design methodology to move the whole UI to a
+separate layer. Today we will take business problems and put it in yet another
+place.
+
+Managing business logic in a multi-page application can be solved in many ways.
+These ways, more or less, assume separation of layers, such as UI, models,
+communication etc. Feature-driven goes a step further: it utilizes all the
+layers underneath, but also creates one by itself, and keeps the
+business-related stuff in there.
+
+## Definition of a feature
+
+Before we start hacking away, let’s stop for a minute and discuss what is a
+feature? One person will say “a newsletter pane allowing users to subscribe”,
+the other – “a whole registration flow.” Funny enough, both will be right.
+**Feature is a set of actions that user can perform in order to achieve their
+goal**. If my goal is to subscribe to a newsletter, a complete feature will have
+an input allowing me to enter my email and a button to submit it, followed by
+status report (signed successfully or otherwise). If my goal is to create an
+account on a website, the feature I want is a form that will collect my data and
+inform me of the process.
+
+## Feature architecture
+
+Description I gave just seconds before is very abstract. What is a “set of
+actions”? Well, that depends on what we want to do. Not all features are equal,
+some will require just a simple UI and not even a backend connection (this
+light/dark theme toggle), some will have its own routing and a separate domain
+in the API.
+
+The gist is, a feature is complete if it has all it needs to properly function
+in one place. Of course this doesn’t mean that we can’t use other layers, like
+UI or hooks, but we must remember not to modify these. A feature shouldn’t
+modify other layers, only read and utilize them. So, if my feature calls for a
+different input that is in the UI, I have two options:
+
+- create a new variant of the base component;
+- create a new component only bound to the said feature.
+
+Even if the first option might seem like the obvious choice, it’s not always
+that simple. But this is, frankly, more of a design problem. The design system
+should be well-defined by the designers, and introduction of new components
+should happen in a structured way, not on the back of a feature. But I digress.
+
+## What are we building?
+
+I’ve mentioned two features earlier – smaller, the newsletter box, and larger,
+the sign-up page. Today we will build both, as they will require different
+approaches and will pose different challenges.
+
+We won’t be building backend for neither of the features. All communications
+will be mocked using promises, so it will look and work properly on the client
+side.
+
+### Newsletter box
+
+Newsletter is the small feature, it looks like this:
+
+<figure></figure>
+
+It has two states: idle and success. It can also have an error state, but for
+the sake of time I omit that one.
+
+### Sign up
+
+Signing up is more complex. We have a form that will redirect us to another page
+upon success. It looks like this:
+
+<figure></figure>
+
+It has two screens, one with the form and one with the status feedback. As with
+the newsletter, we’ll only do success page to save time.
+
+## Preparations
+
+As always in this series, I am taking our Design System repo and create a new
+branch. Now, let’s discuss how the file structure should look.
+
+Our main field of action will be `src/features` directory. In there we will
+house all the features we will work on. Their structure will slightly differ,
+depending on what each one needs, but in general, there will be
+
+- a main file;
+- tests (if applicable);
+- hooks (if applicable);
+- types (if applicable);
+- css module (if applicable);
+- story (if applicable).
+
+What will bind these with the main app is a common export. It’s important to
+treat all features equal, so that usage won’t be on per-case basis. It will
+expose
+
+- routing (if applicable), or
+- the main component (if applicable)
+
+That’s about it. There’s no need to export anything else, as our application
+won’t rely on it. But, if we would use something like Remix, which doesn’t have
+support for server components, we would also have to expose loader to integrate
+it with the main route.
+
+### Adding React Router
+
+I will throw in React Router
+
+```bash
+npm i react-router-dom
+```
+
+And configure the main routes:
+
+```tsx
+// ./src/main.tsx
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import App from "./App.tsx";
+import "./style.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/sign-up",
+    element: <div>Sign up</div>,
+  },
+]);
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>
+);
+```
+
+As you can see, there’s nothing fancy just yet. But, to start with the right
+foot, let’s export the router to a separate file, alongside the routing
+configuration.
+
+```tsx
+// ./src/routing.tsx
+
+import { createBrowserRouter } from "react-router-dom";
+import App from "./App.tsx";
+
+export const ROUTES = {
+  HOME: "/",
+  SIGN_UP: "/sign-up",
+};
+
+export const router = createBrowserRouter([
+  { path: ROUTES.HOME, element: <App /> },
+  {
+    path: ROUTES.SIGN_UP,
+    element: <div>Sign up</div>,
+  },
+]);
+```
+
+This way we will have a _centralized_ way to control the entire routing, and on
+top of that, we will have `ROUTES` config to always have proper navigation.
+
+### The fake backend
+
+As mentioned earlier, we won’t communicate with any backend for this. But this
+doesn’t mean, we can have a client that will pretend to be a server, right?
+
+I will create a simple `sleep` function that will simulate the waiting period,
+and a function that, after “sleeping”, will return a JSON payload:
+
+```ts
+// ./src/api/index.ts
+
+async function sleep(ms = 100) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+export async function postNewsletterEmail({ email }: { email: string }) {
+  await sleep();
+  return { success: true, email };
+}
+```
+
+That’s basically it. Clients generated from the OpenAPI schema are very similar.
+
+### Adding the UI
+
+As you saw, there’s a few new components we need to add. Luckily, I was lazy
+doing these, so they are easy to implement. First, we have the title and then,
+the notification. We can use Plop to make it faster
+
+```bash
+npm run plop;
+```
+
+Pick “molecule” and name it “box header”.
+
+```tsx
+// ./src/ui/molecules/BoxHeader/BoxHeader.tsx
+
+interface Props {
+  className?: string;
+  children: string;
+}
+
+import { Text } from "../../atoms";
+
+export default function BoxHeader({ className, ...props }: Props) {
+  const classNames = [
+    "text-lg",
+    "text-blue-dark",
+    "border-b",
+    "font-bold",
+    "pb-1",
+    className,
+  ];
+
+  return <Text {...props} as="h3" className={classNames.join(" ")} />;
+}
+```
+
+and do the same with “notification”:
+
+```tsx
+// ./src/molecules/Notification/Notification.tsx
+
+import type { HTMLAttributes } from "react";
+
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  variant?: "success" | "error";
+}
+
+export default function Notification({ variant, className, ...props }: Props) {
+  const classNames = [className, "rounded", "p-2"];
+
+  switch (variant) {
+    case "error":
+      classNames.push("bg-grey-light", "text-grey-dark");
+      break;
+    default:
+    case "success":
+      classNames.push("bg-green-light", "text-green-dark");
+      break;
+  }
+
+  return <div {...props} className={classNames.join(" ")} />;
+}
+```
+
+## The Newsletter feature
+
+Alright, I think we got everything. So, the first thing is to create
+`./features/Newsletter/Newsletter.tsx` file. Inside, we’ll just define our
+component like it’s nothing fancy:
+
+```tsx
+// ./src/features/Newsletter/Newsletter.tsx
+
+import { BoxWrapper, Button, Text } from "../../ui/atoms";
+import { InputWithLabel, BoxHeader, Notification } from "../../ui/molecules";
+
+import { postNewsletterEmail } from "../../api";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
+
+const useNewsletter = () => {
+  const email = useRef<string>();
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    email.current = event.target.value;
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (!email.current) {
+      return;
+    }
+
+    setStatus("loading");
+
+    postNewsletterEmail({ email: email.current }).then(() => {
+      setStatus("success");
+    });
+  }
+
+  return { handleChange, handleSubmit, status };
+};
+
+const Newsletter = () => {
+  const { handleChange, handleSubmit, status } = useNewsletter();
+
+  return (
+    <BoxWrapper>
+      {status === "success" ? (
+        <Notification>You successfully signed up! Thanks!</Notification>
+      ) : (
+        <form
+          onSubmit={handleSubmit}
+          className={
+            status === "loading" ? "opacity-50 pointer-events-none" : ""
+          }
+        >
+          <BoxHeader className="mb-1">Newsletter</BoxHeader>
+          <Text color="grey-minor" className="mb-1">
+            Sign in to our newsletter to receive updates on our products!
+          </Text>
+
+          <InputWithLabel
+            id="email"
+            name="email"
+            label="Your email"
+            placeholder="johndoe@company.com"
+            required
+            type="email"
+            onChange={handleChange}
+            className="mb-1"
+          />
+
+          <div className="flex justify-end">
+            <Button variant="regular" type="submit">
+              Sign me up!
+            </Button>
+          </div>
+        </form>
+      )}
+    </BoxWrapper>
+  );
+};
+
+export default Newsletter;
+```
+
+As you see, I’ve put the logic in the hook. We could move it to
+`Newsletter.hooks.ts`, but for one hook, there’s no need.
+
+## Feature export definition
+
+So now, the most interesting thing. As mentioned, we need to define our export
+for all the features.
+
+Let’s start by defining the feature that only has a component:
+
+```ts
+// ./src/features/index.ts
+import { ComponentType } from "react";
+
+interface FeatureWithComponent<Type = unknown> {
+  component: ComponentType<Type>;
+}
+```
+
+And now we can assign this to our feature:
+
+```ts
+// ./src/features/index.ts
+
+export const Newsletter: FeatureWithComponent = {
+  component: NewsletterFeature,
+};
+```
+
+…and that’s it. Let’s use it.
+
+```tsx
+// ./src/App.tsx
+
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+
+import { Newsletter } from "./features";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+
+      <main className="grid md:grid-cols-[2fr_1fr] gap-4 md:gap-2 items-start">
+        <div>
+          <h1>Vite + React</h1>
+          <div className="card">
+            <button onClick={() => setCount((count) => count + 1)}>
+              count is {count}
+            </button>
+            <p>
+              Edit <code>src/App.tsx</code> and save to test HMR
+            </p>
+          </div>
+          <p className="read-the-docs mb-5">
+            Click on the Vite and React logos to learn more
+          </p>
+        </div>
+        <Newsletter.component />
+      </main>
+    </>
+  );
+}
+
+export default App;
+```
+
+I know it’s not pretty, but that’s not the point. The point is, our feature is
+done!
+
+## The Signup feature
+
+Okay, so now the big guns. The signup feature will require, albeit simple,
+routing. This means, the main export won’t be a component, but an array or
+routes. Apart from this, development will be rather simple. But, let’s start
+from the top.
+
+First, I am creating a new function to be our api.
+
+```ts
+export async function postUserSignup({
+  username,
+  password,
+  email,
+}: {
+  username: string;
+  password: string;
+  email: string;
+}) {
+  await sleep();
+  return { success: Boolean(password), username, email };
+}
+```
+
+Now, let’s create our first _screen_. Thanks to atomic design, this is really
+just LEGO. Yes, I do realize I am just an atomic design stan at this point.
+
+```tsx
+// ./src/features/SignUp/screens/SignUp.tsx
+
+import { Button, Text, BoxWrapper } from "../../../ui/atoms";
+import { BoxHeader, InputWithLabel } from "../../../ui/molecules";
+import { FormEvent, useRef } from "react";
+
+import { postUserSignup } from "../../../api";
+import { useNavigate } from "react-router-dom";
+import { SIGN_UP_ROUTES } from "../routing.ts";
+
+const useSignUp = () => {
+  const navigate = useNavigate();
+  const formData = useRef<{
+    email?: string;
+    password?: string;
+    username?: string;
+  }>({});
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (
+      formData.current.email &&
+      formData.current.password &&
+      formData.current.username
+    ) {
+      postUserSignup({
+        email: formData.current.email,
+        password: formData.current.password,
+        username: formData.current.username,
+      }).then(() => {
+        navigate(SIGN_UP_ROUTES.SUCCESS);
+      });
+    }
+  };
+
+  const handleChange = (event: FormEvent<HTMLInputElement>) => {
+    formData.current = {
+      ...formData.current,
+      [event.currentTarget.name]: event.currentTarget.value,
+    };
+  };
+
+  return { handleChange, handleSubmit };
+};
+
+export default function SignUp() {
+  const { handleChange, handleSubmit } = useSignUp();
+
+  return (
+    <BoxWrapper>
+      <form onSubmit={handleSubmit}>
+        <BoxHeader className="mb-1">Sign Up</BoxHeader>
+
+        <InputWithLabel
+          id="username"
+          name="username"
+          label="Username"
+          placeholder="johndoe"
+          required
+          onChange={handleChange}
+        />
+        <InputWithLabel
+          id="email"
+          name="email"
+          label="Email"
+          type="email"
+          placeholder="johndoe@company.com"
+          required
+          onChange={handleChange}
+        />
+        <InputWithLabel
+          id="password"
+          name="password"
+          label="Password"
+          type="password"
+          placeholder="••••••••"
+          required
+          onChange={handleChange}
+        />
+
+        <Text color="grey-minor" className="my-1">
+          Create an account to access our products!
+        </Text>
+
+        <div className="flex justify-end">
+          <Button variant="regular" type="submit">
+            Sign up
+          </Button>
+        </div>
+      </form>
+    </BoxWrapper>
+  );
+}
+```
+
+and let’s slap the Success page:
+
+```tsx
+// ./src/features/SignUp/screens/Success.tsx
+
+import { BoxWrapper, Button } from "../../../ui/atoms";
+import { Notification } from "../../../ui/molecules";
+import { useNavigate } from "react-router-dom";
+
+export default function Success() {
+  const navigate = useNavigate();
+
+  return (
+    <BoxWrapper>
+      <Notification>
+        Congratulations! Your registration is complete. You can now log in.
+      </Notification>
+      <Button onClick={() => navigate("/")}>Go to login</Button>
+    </BoxWrapper>
+  );
+}
+```
+
+As you see, in both screens we have the same wrapper. We can mitigate this by
+creating a wrapper! So let’s remove the `BoxWrapper` from both screens and
+proceed to `SignUp/SignUp.tsx`. In here, we will create not only the routing,
+but also the wrapper.
+
+```tsx
+// ./src/features/SignUp/SignUp.tsx
+
+import { Outlet, RouteObject } from "react-router-dom";
+import { SIGN_UP_ROUTES } from "./routing.ts";
+import { BoxWrapper } from "../../ui/atoms";
+
+import SignUpScreen from "./screens/SignUp.tsx";
+import Success from "./screens/Success.tsx";
+
+export const Wrapper = () => (
+  <BoxWrapper className="m-auto max-w-[300px] mt-5">
+    <Outlet />
+  </BoxWrapper>
+);
+
+export default [
+  {
+    path: SIGN_UP_ROUTES.SIGN_UP,
+    element: <SignUpScreen />,
+  },
+  {
+    path: SIGN_UP_ROUTES.SUCCESS,
+    element: <Success />,
+  },
+] as RouteObject[];
+```
+
+And with this, let’s go to `./features/index.ts` to add the exports:
+
+```tsx
+// ./src/features/index.ts
+
+import { ComponentType } from "react";
+
+import NewsletterFeature from "./Newsletter/Newsletter";
+import SignUpFeature, { Wrapper as SignUpWrapper } from "./SignUp/SignUp";
+import { RouteObject } from "react-router-dom";
+
+interface FeatureWithComponent<Type = unknown> {
+  component: ComponentType<Type>;
+}
+
+interface FeatureWithRouting {
+  routing: RouteObject[];
+}
+
+type FeatureWithRoutingAndWrapper<T = unknown> = FeatureWithRouting &
+  FeatureWithComponent<T>;
+
+export const Newsletter: FeatureWithComponent = {
+  component: NewsletterFeature,
+};
+
+export const SignUp: FeatureWithRoutingAndWrapper = {
+  routing: SignUpFeature,
+  component: SignUpWrapper,
+};
+```
+
+As you can see, we’ve added a new interface – `FeatureWithRouting` and a new
+type – `FeatureWithRoutingAndWrapper`. This way we can export everything like
+before:
+
+```tsx
+// ./src/routing.tsx
+
+import { createBrowserRouter } from "react-router-dom";
+import App from "./App.tsx";
+
+import { SignUp } from "./features";
+
+export const ROUTES = {
+  HOME: "/",
+  SIGN_UP: "/sign-up",
+};
+
+export const router = createBrowserRouter([
+  { path: ROUTES.HOME, element: <App /> },
+  {
+    path: ROUTES.SIGN_UP,
+    element: <SignUp.component />,
+    children: SignUp.routing,
+  },
+]);
+```
+
+And now, the only thing left is to modify the main page to link everything
+together:
+
+```tsx
+// ./src/App.tsx
+
+import { LoginBox } from "./ui/organisms";
+
+import { Newsletter } from "./features";
+import { useNavigate } from "react-router-dom";
+import { Button, Text } from "./ui/atoms";
+import { ROUTES } from "./routing.tsx";
+
+function App() {
+  const navigate = useNavigate();
+
+  return (
+    <main className="grid md:grid-cols-[1fr_1fr] gap-4 md:gap-2 items-start m-3 md:m-10">
+      <div>
+        <LoginBox onForgotPasswordClick={() => navigate("/404")} />
+        <Text color="muted" className="text-center my-5">
+          - or -
+        </Text>
+        <div className="flex justify-center">
+          <Button onClick={() => navigate(ROUTES.SIGN_UP)}>
+            Create an account
+          </Button>
+        </div>
+      </div>
+      <Newsletter.component />
+    </main>
+  );
+}
+
+export default App;
+```
+
+Nothing fancy here, logging in doesn’t even work, but hey, we got our features!
+
+—
+
+Feature-based development is a very handy technique to encapsulate everything
+that is business-related and to keep it in one spot. Definitely beats scattering
+it across ten different directories, doesn’t it?
+
+Thank you for reading and happy coding your features!

@@ -1,0 +1,610 @@
+---
+slug: 2024-10-07-is-zustand-the-best-state-manager-for-react
+title: Is Zustand the best state manager for React?
+pubdate: 2024-10-07
+tags: react, redux, zustand, state management
+summary:
+  Zustand is a lean, modern and easy to use state manager. Let's see how to use
+  it with React!
+youtube: https://youtu.be/pdxlzihgZ1I
+---
+
+Managing state is something I’ve been very interested in ever since I’ve heard
+about Redux back in 2015. I’ve tested a lot of options, including aforementioned
+Redux, its Toolkit, MobX, Jotai and, finally, Zustand.
+
+## What is a state?
+
+Before we jump into development, let’s stop for a minute and discuss what is
+application state in general. In the simplest terms, it’s a data container
+allowing to read and write values needed across the application. A good analogy
+is a bulletin board where everyone can post something. So the building
+administration is placing a notice that there will be rent increase from the
+next month, and every tenant sees it. It is available to everyone interested for
+_reading_. But, you as a tenant also have access to the board, so you _write_ an
+ad saying that you want to sell your sofa. Both informations are potentially
+beneficial to other people in the building. But you won’t leave a note for your
+spouse there, right? (If you do, don’t do this.) Because this is _internal_
+message, only important to you two.
+
+### What is a state manager?
+
+All right, so we know what state is and what uses it has. So, where does the
+manager comes in? Well, everywhere, basically. It should provide an interface to
+communicate with state, so to _read_ and _write_ messages to it. You, as a user,
+should only send a message, and its the manager’s responsibility to put it in a
+correct place and make sure it’s available. If we go back to the bulletin board
+analogy, building administration is responsible for placing the table in a
+visible spot and keeping it clean.
+
+### God object
+
+Often I saw state managers abused to the point where they were basically a _god
+objects_. A god object is a data container which houses _too much data_, like
+user data, but also user posts, internal configuration, routing and basically
+everything you can think of. This is a huge anti-pattern leading to problems,
+most notable of which is over-reliance on a single part of your code, but also
+it’s hard to maintain and splitting it will be hard due to, most likely, a lot
+of internal relations.
+
+## What we’re building today
+
+To demonstrate the usage of a state manager, let’s try to do a login mechanism.
+User logs in, the information is stored and available across the application.
+
+As always, I am using an empty React TS template from Vite, with Tailwind:
+
+```bash
+~ npm create vite@latest -- --template react-ts;
+~ npm install -D tailwindcss postcss autoprefixer;
+~ npx tailwindcss init;
+```
+
+And, today, React Router:
+
+```bash
+~ npm i react-router-dom;
+```
+
+Let’s start by defining routes:
+
+```tsx
+// ./src/routes.tsx
+
+import { createBrowserRouter } from "react-router-dom";
+
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+
+export const ROUTES = {
+  HOME: "/",
+  DASHBOARD: "/dashboard",
+};
+
+const router = createBrowserRouter([
+  { path: ROUTES.HOME, element: <Login /> },
+  {
+    path: ROUTES.DASHBOARD,
+    element: <Dashboard />,
+  },
+]);
+
+export default router;
+```
+
+Now, let’s define the components
+
+```tsx
+// ./src/components/Login.tsx
+
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { handleLogin } from "../api/login.ts";
+import { ROUTES } from "../routes.tsx";
+
+export type LoginState = "success" | "error" | "loading" | "stale";
+
+export default function App() {
+  const [loginState, setLoginState] = useState<LoginState>("stale");
+  const navigate = useNavigate();
+
+  const credentials = useRef<{
+    username?: string;
+    password?: string;
+    remember?: boolean;
+  }>();
+
+  function handleChange(e: FormEvent<HTMLInputElement>) {
+    const { name, value, type, checked } = e.currentTarget;
+
+    credentials.current = {
+      ...credentials.current,
+      [name]: type === "checkbox" ? checked : value,
+    };
+  }
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (credentials.current?.username && credentials.current?.password) {
+      setLoginState("loading");
+
+      handleLogin(
+        credentials.current.username,
+        credentials.current.password
+      ).then((result) => {
+        if (result) {
+          setLoginState("success");
+        } else {
+          setLoginState("error");
+        }
+      });
+    }
+  }
+
+  useEffect(() => {
+    if (loginState === "success") {
+      setTimeout(() => {
+        navigate(ROUTES.DASHBOARD);
+      }, 1000);
+    }
+  }, [loginState, navigate]);
+
+  return (
+    <fieldset className="bg-gray-100 flex justify-center items-center h-screen">
+      <div className="w-full max-w-[360px] border border-gray-200 bg-white shadow border-1 p-10 rounded-lg">
+        <legend className="text-2xl font-semibold mb-4">
+          Hawkins Real Estate
+          <br />
+          <small className="text-gray-400">Employee Portal</small>
+        </legend>
+        <form action="#" method="POST" onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="username" className="block text-gray-600">
+              Username
+            </label>
+            <input
+              onChange={handleChange}
+              type="text"
+              id="username"
+              name="username"
+              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              autoComplete="off"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="password" className="block text-gray-800">
+              Password
+            </label>
+            <input
+              onChange={handleChange}
+              type="password"
+              id="password"
+              name="password"
+              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              autoComplete="off"
+            />
+          </div>
+          <div className="mb-4 flex items-center">
+            <input
+              onChange={handleChange}
+              type="checkbox"
+              id="remember"
+              name="remember"
+              className="text-red-500"
+            />
+            <label htmlFor="remember" className="text-green-900 ml-2">
+              Remember Me
+            </label>
+          </div>
+          <button
+            type="submit"
+            disabled={loginState === "loading" || loginState === "success"}
+            className="h-10 bg-blue-400 transition-all duration-300 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
+          >
+            {loginState === "loading" ? (
+              <div role="status">
+                <svg
+                  aria-hidden="true"
+                  className="w-6 h-6 text-gray-200 animate-spin dark:text-blue-200 fill-white m-auto"
+                  viewBox="0 0 100 101"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="currentFill"
+                  />
+                </svg>
+                <span className="sr-only">Loading...</span>
+              </div>
+            ) : (
+              <span>Login</span>
+            )}
+          </button>
+          {loginState === "error" && (
+            <div className="px-4 py-2 mt-4 rounded-lg bg-red-100 text-red-500 border-red-200 border-1 border">
+              Please try again!
+            </div>
+          )}
+
+          {loginState === "success" && (
+            <div className="px-4 py-2 mt-4 rounded-lg bg-green-100 text-green-500 border-green-200 border-1 border">
+              Redirecting...
+            </div>
+          )}
+        </form>
+      </div>
+    </fieldset>
+  );
+}
+```
+
+> (sorry for the length, it’s mostly due to Tailwind classes)
+
+And for now, let’s just keep our Dashboard at minimum:
+
+```tsx
+// ./components/Dashboard.tsx
+
+export default function Dashboard() {
+  return <div>Dashboard</div>;
+}
+```
+
+And the main file:
+
+```tsx
+// ./main.tsx
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import "./index.css";
+
+import router from "./routes.tsx";
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    {" "}
+    <RouterProvider router={router} />
+  </StrictMode>
+);
+```
+
+## What do we need?
+
+We have the app, it renders properly, great. So now, we need to bound our login
+mechanism with a global state.
+
+Our flow should be as follow:
+
+<figure></figure>
+
+## Using Zustand
+
+Okay, so let’s start by installing Zustand:
+
+```bash
+~ npm i zustand;
+```
+
+Unlike other managers, Zustand does not come with a provider, so we can start
+right of the bat:
+
+```ts
+// ./src/state/user.ts
+
+import { create } from "zustand";
+
+interface UserStoreGetters {
+  isLoggedIn: boolean;
+  username: string | null;
+}
+
+interface UserStoreSetters {
+  setLoginState: (isLoggedIn: boolean) => void;
+  setUsername: (username: string) => void;
+}
+
+type UserStore = UserStoreGetters & UserStoreSetters;
+
+export const useUserStore = create<UserStore>()((set) => ({
+  isLoggedIn: false,
+  username: null,
+
+  setLoginState: (isLoggedIn: boolean) => set({ isLoggedIn }),
+  setUsername: (username: string) => set({ username }),
+}));
+```
+
+Going from the top, we’re importing the `create` function from Zustand, which
+will, well, create the store for us. Then, I like to define getters and setters
+separately. This is by no means a requirement, but it keeps the interface tidy.
+Lastly, we define the store as a hook to use in our React components.
+
+As you can see, it has pretty straightforward elements, the bottom line is, it’s
+just an object we can access. Let’s try to put it into the `Login` file.
+
+```tsx
+// ./components/Login.tsx
+
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { handleLogin } from "../api/login.ts";
+import { ROUTES } from "../routes.tsx";
+
+import { useUserStore } from "../state/user.ts";
+
+export type LoginState = "error" | "loading" | "stale";
+
+export default function App() {
+  const {
+    isLoggedIn,
+    setLoginState: setIsLoggedIn,
+    setUserState,
+    setUsername,
+  } = useUserStore();
+
+  const [loginState, setLoginState] = useState<LoginState>("stale");
+  const navigate = useNavigate();
+
+  const credentials = useRef<{
+    username?: string;
+    password?: string;
+    remember?: boolean;
+  }>();
+
+  function handleChange(e: FormEvent<HTMLInputElement>) {
+    const { name, value, type, checked } = e.currentTarget;
+
+    credentials.current = {
+      ...credentials.current,
+      [name]: type === "checkbox" ? checked : value,
+    };
+  }
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (credentials.current?.username && credentials.current?.password) {
+      setLoginState("loading");
+
+      handleLogin(
+        credentials.current.username,
+        credentials.current.password
+      ).then((result) => {
+        if (result) {
+          setIsLoggedIn(true);
+          setUserState(result.data.employee_status);
+          setUsername(result.data.username);
+        } else {
+          setIsLoggedIn(false);
+          setLoginState("error");
+        }
+      });
+    }
+  }
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setTimeout(() => {
+        navigate(ROUTES.DASHBOARD);
+      }, 1000);
+    }
+  }, [navigate, isLoggedIn]);
+
+  return (
+    <fieldset className="bg-gray-100 flex justify-center items-center h-screen">
+      <div className="w-full max-w-[360px] border border-gray-200 bg-white shadow border-1 p-10 rounded-lg">
+        <legend className="text-2xl font-semibold mb-4">
+          Hawkins Real Estate
+          <br />
+          <small className="text-gray-400">Employee Portal</small>
+        </legend>
+        <form action="#" method="POST" onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="username" className="block text-gray-600">
+              Username
+            </label>
+            <input
+              onChange={handleChange}
+              type="text"
+              id="username"
+              name="username"
+              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              autoComplete="off"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="password" className="block text-gray-800">
+              Password
+            </label>
+            <input
+              onChange={handleChange}
+              type="password"
+              id="password"
+              name="password"
+              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              autoComplete="off"
+            />
+          </div>
+          <div className="mb-4 flex items-center">
+            <input
+              onChange={handleChange}
+              type="checkbox"
+              id="remember"
+              name="remember"
+              className="text-red-500"
+            />
+            <label htmlFor="remember" className="text-green-900 ml-2">
+              Remember Me
+            </label>
+          </div>
+          <button
+            type="submit"
+            disabled={loginState === "loading"}
+            className="h-10 bg-blue-400 transition-all duration-300 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
+          >
+            {loginState === "loading" ? (
+              <div role="status">
+                <svg
+                  aria-hidden="true"
+                  className="w-6 h-6 text-gray-200 animate-spin dark:text-blue-200 fill-white m-auto"
+                  viewBox="0 0 100 101"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="currentFill"
+                  />
+                </svg>
+                <span className="sr-only">Loading...</span>
+              </div>
+            ) : (
+              <span>Login</span>
+            )}
+          </button>
+          {loginState === "error" && (
+            <div className="px-4 py-2 mt-4 rounded-lg bg-red-100 text-red-500 border-red-200 border-1 border">
+              Please try again!
+            </div>
+          )}
+
+          {isLoggedIn && (
+            <div className="px-4 py-2 mt-4 rounded-lg bg-green-100 text-green-500 border-green-200 border-1 border">
+              Redirecting...
+            </div>
+          )}
+        </form>
+      </div>
+    </fieldset>
+  );
+}
+```
+
+As you can see, we moved some things to the global state, namely the successful
+login state. If user fails to login, there’s no need to notify the global state,
+because it’s an internal problem. But, if user manages to log in properly, this
+should be passed globally.
+
+## Adding persistence
+
+Cool, we can log in now, but after we refresh the page, it’s gone. That’s
+because, by default, state is kept in memory, which is cleared every refresh.
+But, fear not, Zustand comes with a handy tool to save this data wherever we
+want.
+
+```ts
+// ./state/user.ts
+
+import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
+
+interface UserStoreGetters {
+  isLoggedIn: boolean;
+  username: string | null;
+  employee_state: string | null;
+}
+
+interface UserStoreSetters {
+  setLoginState: (isLoggedIn: boolean) => void;
+  setUsername: (username: string) => void;
+  setUserState: (username: string) => void;
+}
+
+type UserStore = UserStoreGetters & UserStoreSetters;
+
+export const useUserStore = create<UserStore>()(
+  persist(
+    (set) => ({
+      isLoggedIn: false,
+      username: null,
+      employee_state: null,
+
+      setLoginState: (isLoggedIn: boolean) => set({ isLoggedIn }),
+      setUsername: (username: string) => set({ username }),
+      setUserState: (employee_state: string) => set({ employee_state }),
+    }),
+    {
+      name: "user-storage",
+      storage: createJSONStorage(() => localStorage),
+      partialize: (state) => ({
+        isLoggedIn: state.isLoggedIn,
+        username: state.username,
+      }),
+    }
+  )
+);
+```
+
+Note the `partialize` function. It’s only allowing these particular elements to
+be persisted, so we can both save space, and reduce the data we store and which
+can go stale.
+
+> It’s extremely important to note that this is _not_ a production-ready
+> solution. Keeping such an important flag in browser is a very large security
+> risk. Normally, you would perform a call to the API to verify either token or
+> session. Again, this is for demonstration purposes, _not for production
+> usage_.
+
+## Preventing access with Router’s loader
+
+Checking for credentials or login state in the component responsible for
+something else isn’t the best solution. What we can do, is we can create a
+loader for React Router that will do this check before we render anything.
+
+This is also where one of Zustand’s best features comes in. It can be used
+outside the React components! By using `getState()` function on the store, we
+get access to its members. Let’s rewrite our router:
+
+```tsx
+// ./src/routes.tsx
+
+const router = createBrowserRouter([
+  {
+    path: ROUTES.HOME,
+    element: <Login />,
+    loader: () => {
+      const isLoaded = useUserStore.getState().isLoggedIn;
+      if (isLoaded) {
+        return redirect(ROUTES.DASHBOARD);
+      }
+
+      return null;
+    },
+  },
+  {
+    path: ROUTES.DASHBOARD,
+    element: <Dashboard />,
+    loader: () => {
+      const isLoaded = useUserStore.getState().isLoggedIn;
+      if (!isLoaded) {
+        return redirect(ROUTES.HOME);
+      }
+
+      return null;
+    },
+  },
+]);
+```
+
+As you see, the loaders are quite simple, yet powerful. Without diving into this
+(as this is not the place), it can perform any action, synchronous or not,
+before even rendering the component the route points to.
+
+—
+
+Zustand is very powerful and modern state management. It doesn’t have the
+overhead of Redux, and brings everything we might need to the table.

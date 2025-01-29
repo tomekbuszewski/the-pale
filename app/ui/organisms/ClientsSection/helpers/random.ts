@@ -1,9 +1,9 @@
 import type { Client } from "@common-types/Client";
 
 export const itemVariants = {
-  initial: { opacity: 0, blur: 100 },
-  animate: { opacity: 1, blur: 0 },
-  exit: { opacity: 0, blur: 100 },
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
 };
 
 export function pickRandomItems(arr: Client[], count: number) {

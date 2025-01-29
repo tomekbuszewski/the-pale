@@ -1,0 +1,602 @@
+---
+slug: 2024-09-23-design-systems-in-react-atomic-design-(part-1)
+title: Design Systems in React – Atomic Design (Part 1)
+pubdate: 2024-09-23
+tags: react, design-systems, atomic-design
+summary:
+  Last time we’ve successfully scaffolded the project. Now let’s get it up by
+  creating a component library using the Atomic Design methodology.
+youtube: https://youtu.be/ibIKjzYeQrI
+---
+
+Last time we’ve successfully scaffolded the project. Now let’s get it up by
+creating a component library using the Atomic Design methodology.
+
+Let’s start with a bit of theory. Atomic Design is a methodology that
+prioritizes creating small components that can be, later on, used to build
+larger pieces, which then can be used to build ever larger ones. It has three
+most important elements: atoms, molecules and organisms.
+
+- **atoms** are the smallest elements. Think single elements like an icon, input
+  field or a text.
+- **molecules** are larger, and consists of atoms. A good example is a component
+  that has input field with label bound.
+- **organisms** represent the largest blocks that you would build using
+  molecules and atoms. Think an article excerpt or login form.
+
+There are also **views**, which represent, well, the entire view for a screen,
+but for now, let’s not dive there.
+
+## Prerequisites
+
+I will be continuing from the
+[Part 0](https://buszewski.com/writings/2024-08-13-design-systems-in-react-scaffolding-and-setup-part-0/),
+so please clone the `main` branch. For cleanliness’ sake, I’ll create a new
+branch.
+
+I will use a lot of things that were mentioned in the previous article,
+including components generators and Storybook, so please familiarize yourself
+with it before going forward.
+
+## What we’re building today?
+
+I made a simple login form that needs coding. Kinda like a homework you’d get
+during a job interview. It looks like this:
+
+<figure></figure>
+
+There is also an
+[online version in Sketch](https://www.sketch.com/s/8aa2b94a-e1dc-4116-a063-f3786e71b4a4),
+where you can inspect it if needed.
+
+If you look at it, seems simple, right? Because it is. Let’s try to analyze it:
+
+- the main thing that you see are the input fields, that’s one component;
+- there are buttons, looks different, so one component with variants;
+- there’s text for label, so another component;
+- there is a background that drops shadow, so another component for wrapper.
+
+This gives us four components, but to utilize Atomic Design, we will make four
+_atoms_.
+
+The creation itself will be a bit of a throwback to my piece about
+[TDD in React](https://buszewski.com/writings/2024-08-28-test-driven-development-in-react/),
+as in there I also did a login form. I like login forms, what can I say. The
+difference is, I won’t be writing tests to save time, but I will write CSS and
+use Storybook!
+
+## Expanding the generator
+
+Last time our generator made everything into one large directory named `ui`.
+What we want is more granularity. Luckily, in my React Starter I have this
+preconfigured already, so I’ll just yoink it in here.
+
+`plop-templates/Component.tsx.hbs`:
+
+```hbs
+import type { HTMLAttributes } from "react";
+
+interface Props extends HTMLAttributes<HTMLDivElement> {}
+
+export default function {{pascalCase name}}(props: Props) {
+  return (
+  <div {...props} />
+  );
+}
+```
+
+`plop-templates/Story.tsx.hbs`:
+
+```hbs
+import type { Meta, StoryObj } from "@storybook/react";
+
+import {{pascalCase name}} from "./{{pascalCase name}}";
+
+export const Primary: StoryObj<typeof {{pascalCase name}}> = {
+  args: {
+  children: "Hello from Storybook",
+  },
+  };
+
+export default {
+  title: "UI/{{pascalCase type}}s/{{pascalCase name}}",
+  component: {{pascalCase name}},
+} as Meta<typeof {{pascalCase name}}>
+```
+
+And `plopfile.mjs`:
+
+```js
+export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
+  plop.setGenerator("ui", {
+    description: "Create a new UI component",
+    prompts: [
+      {
+        type: "list",
+        name: "type",
+        message: "Component type",
+        choices: ["atom", "molecule", "organism", "view"],
+      },
+      {
+        type: "input",
+        name: "name",
+        message: "Component name",
+      },
+    ],
+
+    actions: [
+      {
+        type: "add",
+        path: "./src/ui/{{type}}s/{{pascalCase name}}/{{pascalCase name}}.tsx",
+        templateFile: "./plop-templates/Component.tsx.hbs",
+      },
+      {
+        type: "add",
+        path: "./src/ui/{{type}}s/{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
+        templateFile: "./plop-templates/Story.tsx.hbs",
+      },
+      {
+        type: "append",
+        path: "./src/ui/{{type}}s/index.ts",
+        template:
+          'export { default as {{pascalCase name}} } from "./{{pascalCase name}}/{{pascalCase name}}";',
+      },
+    ],
+  });
+}
+```
+
+I am not diving into Plop, as I’ve done this before.
+
+Alright, so now we can start making components!
+
+## First, the tokens
+
+Before going for components, we need to get our tokens ready. Tokens are like
+variables, you define them and use it instead of hardcoding values. For example,
+you define colors and spacing and then write `color: --var(dark);` rather than
+`color: #333;`.
+
+Since we’re using Tailwind, let’s extend the config.
+
+Tokens for this particular example can be taken from the Sketch file I’ve linked
+before.
+
+`tailwind.config.mjs`:
+
+```js
+theme: {
+  extend: {
+    fontSize: {
+      base: "12px",
+    },
+    spacing: {
+      small: "4px",
+      medium: "8px",
+      large: "16px",
+    },
+    colors: {
+      grey: {
+        dark: "#454545",
+        minor: "#8B9CA0",
+        light: "#ccc",
+      },
+      blue: {
+        light: "#A7DBD8",
+        dark: "#062E4C",
+      },
+      bg: "#fff",
+    },
+    boxShadow: {
+      card: "0 8px 32px rgba(0, 0, 0, 0.2)",
+    },
+  },
+},
+```
+
+## Starting with the atoms
+
+Let’s start with the simplest one, so label. It should be a variant of a larger
+atom, text. Simple enough.
+
+To start the generator, we must go into the console and type
+
+```bash
+~ npm run plop
+```
+
+It will ask some questions: type – “atom” and name should be “text”.
+
+I did this atom before in another video, but for the sake of clarity, let’s go
+through it one more time.
+
+```tsx
+import type {
+  ComponentPropsWithoutRef,
+  ElementType,
+  HTMLAttributes,
+  JSX,
+} from "react";
+
+interface Props<T extends ElementType>
+  extends HTMLAttributes<JSX.IntrinsicElements> {
+  as?: T;
+  bold?: boolean;
+  italic?: boolean;
+  color?: string;
+}
+
+type ReturnProps<P extends ElementType> = Props<P> &
+  Omit<ComponentPropsWithoutRef<P>, keyof Props<P>>;
+
+export default function Text<T extends ElementType = "p">({
+  bold,
+  italic,
+  className,
+  as,
+  ...rest
+}: ReturnProps<T>) {
+  const classNames = [className, "text-base"];
+  let Tag: ElementType = "p";
+
+  if (as) {
+    Tag = as;
+  }
+
+  if (bold) {
+    classNames.push("font-bold");
+  }
+
+  if (italic) {
+    classNames.push("italic");
+  }
+
+  if (rest.color) {
+    classNames.push(`text-${rest.color}`);
+  }
+
+  return <Tag className={classNames.join(" ")} {...rest} />;
+}
+```
+
+The most complex part here are the types. What we're doing here is taking a
+generic (L8) and making sure it’s a HTML element, like `p` or `div`. That way,
+we’ll get proper typings, so for example, if we’ll use `label`, we will get
+`htmlFor` prop properly typed. Rest is rather simple, with class names being
+injected if bolding or italics are required.
+
+Let’s go to the story now. There’s, frankly, not much to do there, since we’ve
+generated the basic one. You could expand this to showcase various colors and
+stuff, but it has controls, so there’s not really a point. And since it’s a
+basic text, we won’t even style it for now.
+
+Okay, it wasn’t as simple as I hoped, but still nothing mind-breaking. Let’s do
+input now. First, the generator:
+
+```bash
+npm run plop;
+```
+
+Then we select “atom” and name it “input”. Our generated code is for the div, so
+let’s adjust it slightly:
+
+```tsx
+// ./src/ui/atoms/Input/Input.tsx
+
+import type { HTMLProps } from "react";
+
+type Props = HTMLProps<HTMLInputElement>;
+
+export default function Input(props: Props) {
+  return <input {...props} />;
+}
+```
+
+I’ve changed the `HTMLAttributes` to `HTMLProps`, since it’s wider and offers
+more. Not always a necessity, but for inputs it’s required.
+
+For story, let’s change `children` to `placeholder`:
+
+```tsx
+// ./src/ui/atoms/Input/Input.stories.tsx
+
+import type { Meta, StoryObj } from "@storybook/react";
+
+import Input from "./Input";
+
+export const Primary: StoryObj<typeof Input> = {
+  args: {
+    placeholder: "Hello there",
+  },
+};
+
+export default {
+  title: "UI/Atoms/Input",
+  component: Input,
+} as Meta<typeof Input>;
+```
+
+Seems simple enough. Alright, let’s fire the Storybook and do the styling.
+Since, again, we’re using Tailwind, this is just a collection of class names:
+
+```tsx
+import type { HTMLProps } from "react";
+
+type Props = HTMLProps<HTMLInputElement>;
+
+export default function Input({ className, ...props }: Props) {
+  const classNames = [
+    className,
+    "text-base",
+    "text-grey-dark",
+    "border",
+    "border-1",
+    "border-grey-light",
+    "rounded",
+    "lh-form-element",
+    "h-form-element",
+    "px-large",
+  ];
+
+  return <input className={classNames.join(" ")} {...props} />;
+}
+```
+
+One thing to add to the config is the height, which will be used for both input
+and buttons:
+
+```js
+// ./tailwind.config.js
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      height: {
+        "form-element": "38px",
+      },
+      ...
+```
+
+And we have the input. That was pretty fast, actually!
+
+So since we’re so warmed up, button shouldn’t be a problem as well. Again, run
+the generator and pick “atom” and name it “button”.
+
+Apart from using a `variant` switch and changing the type, this is all smooth
+sailing:
+
+```tsx
+// ./src/ui/atoms/Button/Button.tsx
+
+import type { ButtonHTMLAttributes } from "react";
+
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "regular" | "error" | "secondary";
+}
+
+export default function Button({
+  className,
+  variant = "regular",
+  ...props
+}: Props) {
+  const classNames = [
+    className,
+    "rounded",
+    "h-form-element",
+    "lh-form-element",
+    "px-large",
+    "text-base",
+  ];
+
+  switch (variant) {
+    case "error":
+      classNames.push("text-red-dark", "bg-red-light", "font-bold");
+      break;
+
+    case "empty":
+      classNames.push("text-grey-minor", "bg-transparent", "p-0");
+      break;
+
+    default:
+    case "regular":
+      classNames.push("text-blue-dark", "bg-blue-light", "font-bold");
+      break;
+  }
+
+  return <button className={classNames.join(" ")} {...props} />;
+}
+```
+
+The story can basically remain unchanged, there’s nothing to add there.
+
+Last, but not least, we want the container with shadow. Run the generator, pick
+“atom” and call it “box wrapper”. It comes as a `div` and, while we could
+enhance it to accept other types, like `Text`, I don’t feel we need this now.
+You can always expand on this later on!
+
+```tsx
+// ./src/ui/atoms/BoxWrapper/BoxWrapper.tsx
+
+import type { HTMLAttributes } from "react";
+
+type Props = HTMLAttributes<HTMLDivElement>;
+
+export default function BoxWrapper({ className, ...props }: Props) {
+  const classNames = [className, "rounded", "bg-bg", "p-large", "shadow-card"];
+
+  return <div className={classNames.join(" ")} {...props} />;
+}
+```
+
+I am not adding any font styles or anything like this, because this is just a
+container. Its children will control it.
+
+Seems like we’re done with atoms. Let’s use them to create a molecule!
+
+## Making a molecule
+
+It is a smaller project, so we will only have one molecule: input with label.
+Let’s get to it! In the `plop` generator, this time select “molecule” and call
+it “input with label”.
+
+In here, we will use the famous “composition”, so we will import stuff from
+atoms and create the molecule.
+
+```tsx
+// ./src/ui/molecules/InputWithLabel/InputWithLabel.tsx
+
+import type { HTMLProps } from "react";
+
+import { Input, Text } from "../../atoms";
+
+interface Props extends HTMLProps<HTMLInputElement> {
+  label: string;
+}
+
+export default function InputWithLabel({ label, ...props }: Props) {
+  return (
+    <div>
+      <Text as="label" htmlFor={props.id}>
+        {label}
+      </Text>
+      <Input {...props} />
+    </div>
+  );
+}
+```
+
+I am putting all the props in `input`, since this is the “meat” of the molecule,
+label’s just there as an addon. For story, we just need to replace `children`:
+
+```tsx
+// ./src/ui/molecules/InputWithLabel/InputWithLabel.stories.tsx
+
+import type { Meta, StoryObj } from "@storybook/react";
+
+import InputWithLabel from "./InputWithLabel";
+
+export const Primary: StoryObj<typeof InputWithLabel> = {
+  args: {
+    label: "Hello from Storybook",
+    id: "hello",
+    placeholder: "Hello there",
+  },
+};
+
+export default {
+  title: "UI/Molecules/InputWithLabel",
+  component: InputWithLabel,
+} as Meta<typeof InputWithLabel>;
+```
+
+And now we have to add some styling, since this doesn’t look right. This will
+only take styling the main `div`, as the rest is already taken care of.
+
+```tsx
+// ./src/ui/molecules/InputWithLabel/InputWithLabel.tsx
+
+export default function InputWithLabel({ label, ...props }: Props) {
+  return (
+    <div className="grid gap-small mb-medium">
+    ...
+```
+
+Alright, we have the molecule, let’s build the final organism!
+
+## The “form” organism
+
+This won’t differ much from making a molecule, it’s still mostly composition.
+The difference is, as mentioned, organism should be rather self-contained and
+able to live on its own.
+
+In the generator, pick “organism” and call it “login box”. And, as mentioned,
+this is mostly composition, so:
+
+```tsx
+// ./src/ui/organisms/LoginBox/LoginBox.tsx
+
+import type { HTMLAttributes } from "react";
+import { BoxWrapper, Button } from "../../atoms";
+import { InputWithLabel } from "../../molecules";
+
+interface Props extends HTMLAttributes<HTMLFormElement> {
+  onForgotPasswordClick?: () => void;
+}
+
+export default function LoginBox({ onForgotPasswordClick, ...props }: Props) {
+  return (
+    <form {...props}>
+      <BoxWrapper>
+        <InputWithLabel
+          label="Your email"
+          id="email"
+          placeholder="myname@email.com"
+        />
+        <InputWithLabel
+          label="Your password"
+          id="password"
+          placeholder="••••••••"
+          type="password"
+        />
+        <div className="flex justify-between">
+          <Button variant="empty" type="button" onClick={onForgotPasswordClick}>
+            Forgot password?
+          </Button>
+          <Button variant="regular" type="submit">
+            Sign in
+          </Button>
+        </div>
+      </BoxWrapper>
+    </form>
+  );
+}
+```
+
+We will have more fun with the story! I mean, maybe not _that much_, but still!
+Since this is an interactive component that emits an event on submitting, we
+should be able to click around, right? So let’s add a handler:
+
+```tsx
+// ./src/ui/organisms/LoginBox/LoginBox.stories.tsx
+
+import type { Meta, StoryObj } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+
+import LoginBox from "./LoginBox";
+import { FormEvent } from "react";
+
+export const Primary: StoryObj<typeof LoginBox> = {
+  args: {
+    onSubmit: (e: FormEvent) => {
+      e.preventDefault();
+      action("onSubmit")(e);
+    },
+  },
+};
+
+export default {
+  title: "UI/Organisms/LoginBox",
+  component: LoginBox,
+  parameters: { actions: { argTypesRegex: "^on.*" } },
+} as Meta<typeof LoginBox>;
+```
+
+In L10, we’re adding argument `onSubmit`, that’ll capture the event, preventing
+it from doing what a form does (so, redirecting), and then we will log our
+action using the `action` handler from Storybook’s addon. Lastly, we are placing
+a catch-all in the L21, that will take all the non-caught events starting with
+“on” (so, for example, `onForgotPasswordClick`) and log it as well.
+
+–
+
+That’s it. It may seem a bit too complex, but this methodology really shines
+when there’s more elements. Eventually you arrive at the place where all your
+work consists of composition, and isn’t it what React is all about? At least it
+was 10 years ago.
+
+---
+
+Git repo:
+[Design Systems in React](https://github.com/tomekbuszewski/react-design-system/tree/part-1-atomic-design).

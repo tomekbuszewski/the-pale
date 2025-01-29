@@ -66,7 +66,15 @@
   @include media("md") {
     aspect-ratio: auto;
 
-    &[data-count="1"] { grid-column: 1 / 7; grid-row: 1/7; aspect-ratio: 1/1; }
+    &[data-count="1"] {
+      grid-column: 1 / 7;
+      grid-row: 1/7;
+      aspect-ratio: 1/1;
+
+      svg {
+        max-height: #{rem(160)};
+      }
+    }
     &[data-count="2"] { grid-column: 7/11; grid-row: 1/5; }
     &[data-count="3"] { grid-column: 7/11; grid-row: 5/7; }
     &[data-count="4"] { grid-column: 11/15; grid-row: 1/3; }

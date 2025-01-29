@@ -1,0 +1,289 @@
+---
+slug: 2024-11-18-my-remix-starter
+title: My Remix Starter
+summary:
+  A deep dive into my Remix starter, Slowcore Stack, and how to use it to create
+  a new app.
+pubdate: 2024-11-18
+tags: remix, react, typescript, testing, plop
+youtube: https://youtu.be/CSw91rahLBc
+---
+
+Last week we discussed how to initialize and use Remix. And, frankly, you can go
+and create a great app just with this knowledge. But as always, I like to go a
+bit further, especially since I am using these things in my daily work, and have
+my own starter.
+
+## Introduction
+
+Remix uses two kinds of starters: regular templates and stacks. The first are
+rather reserved for themes with minimum opinionated addons, the latter – quite
+the oposite. My here is Slowcore _Stack_. I am throwing a lot of my own thoughts
+and discoveries in here, along with my favorite patterns. If you’re interested,
+let’s go!
+
+> Remix convention is to name stacks using music genres. You can find blues
+> stack, indie stack (with Sonic Youth on the cover, woo!) and grunge stack,
+> which are authored by the Remix team, and much more that are community-made,
+> like this one.
+
+What is important to note is that a lot of stacks are geared towards serving as
+both the fully-fledged backend, and frontend together. So you might get database
+configuration and connection out of the way, deployment strategies and all these
+things. **It’s not the case here**. I am using different backends, sometimes
+with REST, sometimes with GraphQL, sometimes file-based and I don’t want my
+frontend to know all about it.
+
+That’s why Slowcore Stack is more of a _backend-for-frontend_ kind of solution.
+It utilizes the server to do all the rendering and data transactions, but it
+only communicated with APIs. This makes it very lightweight and cheap in
+maintenance. And gives you more freedom: you want to use Firebase? Go for it!
+Want to a headless CMS that you’ve just discovered? Sure thing! Want to serve
+from flat `.md` files? You can do that as well.
+
+Okay, so with that out of the way, let’s jump to the actual code and see how it
+handles.
+
+## Creating a Remix app using a stack
+
+Remix makes it really easy to create a new app using a predefined template. It
+has built-in support for Github as well, so all you need to do, is use:
+
+```bash
+~ npx create-remix@latest --template github-username/repo-name;
+# or
+~ pnpm dlx create-remix@latest --template github-username/repo-name;
+```
+
+You can also source local files, replacing `github-username/repo-name` with a
+directory name!
+
+Right, so let’s kick start by creating a new app using the Slowcore Stack:
+
+```bash
+~ pnpm dlx create-remix@latest --template tomekbuszewski/slowcore-stack;
+```
+
+> I will be using PNPM for the rest of this video, but you’re free to use
+> whatever you like.
+
+This now asks the normal questions, but in the end, it will ask whether we want
+to run `remix.init` script. This is a hard **yes**. This script will configure
+everything accordingly, like pick the correct package manager and adjust package
+scripts.
+
+First of all, there’s a README file with some mandatory music to listen to. I
+was even going to make a template and name it after the band Karate, but then I
+though to expand the scope a bit. And that’s how the slowcore stack has been
+born.
+
+## The gist
+
+Slowcore comes with a lot of things predefined. It has:
+
+- formatting with Prettier, enforcing double quotes, semicolons an trailing
+  commas;
+- linting with ESLint, with a rather standard setup, throwing in some hooks
+  recommendations and import sorting;
+- TypeScript, to have everything more-or-less type-safe;
+- Storybook for developing UI in isolation;
+- tests:
+  - unit and integration tests are written with Vitest;
+  - E2E tests are written using Playwright.
+- renovate to make sure all the packages are up-to-date;
+- styling with Tailwind, as it also comes with Remix by default;
+- `.env` validation against `.env.example`;
+- Plop generator for scaffolding UI (with Atomic Design principles), hooks and
+  features….
+
+> Fun fact: I’ve initialized this project using BiomeJS instead of
+> Prettier/ESLint combo, but it turned out to be a bit of a resource hog (in
+> IntelliJ, maybe it’s better in VSC), so I reverted back.
+
+Right, so let’s dive a bit deeper and see some details. And I will not discuss
+minor things like Prettier, TS or linting, simply to save you some time.
+
+### UI Generation
+
+If you saw my
+[video on Atomic Design for React](https://www.youtube.com/watch?v=ibIKjzYeQrI),
+you’ll feel like home here. I am following the same principles, to the point of
+carrying over a lot of files from that project. Basically, by running
+
+```bash
+~ pnpm run plop
+```
+
+you’ll get a prompt asking what you want to generate. Picking `ui` is followed
+by asking whether this should be an atom, a molecule or an organism. And that’s
+it, you pass the name and get the component, types, story and tests for it out
+of the box! Just remember that this is no magic and you’ll have to fill some of
+the blanks, as it comes with bare minimum.
+
+### Hooks generation
+
+Generating hooks is very similar to generating UI, as it is also conducted by
+Plop. It will create a new directory in `app/hooks` with your hook name
+(formatting it properly, so if you name it `use something something`, it will
+turn it into `useSomethingSomething`) and will export it using barrel imports in
+`app/hooks/index.ts`.
+
+### Feature generation
+
+Making features is also as easy. It generates the directory in `app/features`
+with action, loader, types, tests and the component itself. More on this later!
+
+### Testing
+
+As said earlier, Slowcore comes with Vitest for smaller tests, and Playwright
+for fully-fledged E2E experience. It takes care of running the server as well,
+so all you want is to run `pnpm run test:e2e` to get it running.
+
+Tests also come with MSW baked-in, so you can forget about intercepting requests
+and mocking your fetches. You just create the entire mock of your API (writable
+if you want!) and let it run!
+
+### ENV validation
+
+This is something I’ve been meaning to do for a long time. How many times did
+your build step failed simply because you forgot to define an environment
+variable? Well, say goodbye to this. Slowcore comes with a check that verifies
+if all of the fields defined in `.env.example` are available in the environment.
+They don’t have to be in the `.env` file, they can be defined however you see
+fit. If they’re accessible, they’re good to go. Otherwise nothing will run,
+including the dev server.
+
+It also generates a helper `getEnv` function that will tell you exactly what
+values are there, and it will assign the proper selection (so either
+`process.env` for server, or `import.meta.env` for client). Pretty neat!
+
+## Feature development
+
+Alright, the cream of the crop of this stack. Again, this was touched by me in
+the [Feature-based development for React](https://youtu.be/lLH8LAD4KTE) some
+time ago, but this has a bit of a nuisance here. Remember that Remix does a lot
+of things in the background, but in the same time, it does _most_ of it in
+routes. So, how to connect a feature that does server communication with a
+route? Well, quite easy it turns out. Thanks to the magic of typing and exports!
+
+Slowcore Stack comes with a exemplary “Jokes” feature which, as you might guess,
+fetches jokes from an API. Let’s go through it step by step.
+
+### `.action` file
+
+Going alphabetically, the first is the action file.
+
+> Action is Remix is responsible for handling user input, most notably forms.
+
+In there, we have the basic typed action with `ActionFunctionArgs` as a
+parameter and a `Promise` as return. In it, there’s really nothing fancy, just a
+bare-bones validation checking whether fields are filled and, if not, an `error`
+is being returned. If yes, perfect, we’re running this data through `createJoke`
+(which can be anything, from a simple function like here, to an API transaction,
+to a raw SQL query) and finally we return the response. That’s all there’s to
+it.
+
+### `.helpers` file
+
+This is the easiest one, just a collection of small functions. If you want, you
+can create a `helpers` directory and store every function separately, but I find
+this pattern working well for quite some time. Obviously, if the file grows
+bigger, you need to take action.
+
+### `.loader` file
+
+As `.action` is sending the data, `.loader` is, well, loading the data. A loader
+gets optional argument if you want to check the request, but in general it is
+responsible for fetching the data (as always, can be a raw `fetch` like here,
+can be an API client, SQL or whatever you feel like) and returning it. It can
+(and should!) handle errors as well!
+
+### `.test` file
+
+The test is nothing fancy, just checks if everything is rendering well. I am
+using `createRemixStub` to have all the Remix-related stuff like routing and
+loading out of the way and simply focus on the core of the problem.
+
+### the main file
+
+And here we are, the big boy. Main file is most often the whole React component
+with all the logic (outside of action and loader). In this example, it’s just a
+simple list rendering props and a form. But it can be expanded to whatever you
+want, you’re the driver here..
+
+### `.types` file
+
+Simple as it gets. I like to have types declared separately, because they are
+often used across the whole feature, so it’s a good way to avoid any circular
+dependencies (like type is defined in the main file, so helper imports that, and
+the main file imports something from helpers) and to have a cleaner view of
+what’s going on.
+
+### `components` directory
+
+Lastly, we’ve got a directory with some components. These can be UI or whatever
+else. Important thing is, you put here only things you use _within this
+feature_. If you see that something else needs this, you should move it to `ui`
+space.
+
+### `./features/index.ts` export
+
+This is the main file, you shouldn’t ever use anything deeper when importing
+features. It exports all you might need, so an action, a loader and a component.
+You can obviously expose more things, but this is the important piece.
+
+## Using features in routes
+
+Cool, so we have a feature, how to use it? If you navigate to
+`./routes/jokes/index.tsx`, you’ll see that the entire feature is imported
+there. And that we have the basic `loader` and `action` async functions
+exported. And that’s the gist: we’re using the loader and action imported from a
+feature and simply return it. If we would have another feature, that would’ve
+been as easy as to expand the returned object, for example:
+
+```ts
+export async function loader() {
+  return {
+    jokes: await Jokes.loader(),
+    anyOtherFearture: await AnyOtherFeature.loader(),
+  };
+}
+```
+
+Same thing with an action:
+
+```ts
+export async function action(args: ActionFunctionArgs) {
+  return {
+    jokes: await Jokes.action(args),
+    anyOtherFearture: await AnyOtherFeature.action(args),
+  };
+}
+```
+
+Then, in the view component, we simply take the data as:
+
+```tsx
+const jokesActionData = useActionData<typeof action>();
+const jokesLoaderData = useLoaderData<typeof loader>();
+```
+
+These are prefixed with `jokes`, but if there would be more data fields in the
+returns, we’d name it differently. But the name isn’t _that_ important. And then
+we’re simply rendering whatever we want, and in the place we see fit, we put the
+component with props got from our hooks. It’s as simple as that, and scales
+great too! Because your feature can be a whole page (which is kinda bad, you
+should split these into subfeatures), and it can be a simple alert. Again, cool
+thing!
+
+—
+
+Alright, that’s that for my Remix started. There are things I haven’t touched,
+like error handling (check `./routes/page-with-error.tsx` for that), mocking
+(check `./mocks`) and hooks, but I think these are ready for you to explore on
+your own!
+
+I invite you to join me next week, where I’ll be doing handling Remix errors at
+scale (so handling API errors, React errors, all that stuff).
+
+Happy coding!

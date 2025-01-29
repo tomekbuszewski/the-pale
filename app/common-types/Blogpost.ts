@@ -8,6 +8,7 @@ export interface BlogPost {
   link: string;
   icon?: never;
   onClick?: never;
-  children: ReactNode;
+  children?: ReactNode;
   active?: never;
+  cnt?: string;
 }

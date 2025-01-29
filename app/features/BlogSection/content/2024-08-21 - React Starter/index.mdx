@@ -1,0 +1,187 @@
+---
+slug: 2024-08-21-introducing-my-react-starter
+title: Introducing my React Starter
+pubdate: 2024-08-21
+tags: react, typescript, web-development
+summary:
+  I’ve always liked having starter kits for my apps. But ever since Vite came
+  into the scene, I thought having a React with TypeScript one doesn’t really
+  makes sense. Turns out, I was wrong.
+youtube: https://www.youtube.com/watch?v=odcubFkTE-M
+---
+
+I’ve always liked having starter kits for my apps. But ever since Vite came into
+the scene, I thought having a React with TypeScript one doesn’t really makes
+sense. Turns out, I was wrong.
+
+Looking back at the previous iteration of this starter, dated at late 2019/early
+2020, I vividly remember that the hardest and most annoying part there was the
+hot reloading. Configuring it with Webpack and TypeScript was really annoying,
+and even if I was doing it since 2016 or so, I always struggled. So when I’ve
+switched to Vite, I rendered my starter useless.
+
+## The “why”
+
+Recently, as I both started a channel that requires coding examples, and
+returned to working with clients, I realized how wrong I was. Installing and
+configuring tools I am always using takes a tremendous amounts of time. Even if
+I know the code by heart and rarely even consult documentation for Storybook or
+Plop, I still have to manually enter most of the things.
+
+My last commission was a React application. I started to install the usual
+tools, like Storybook, Plop, Tailwind, configure routing, tests… and I’ve
+realized this takes me a lot of time! Why my customers have to pay for me doing
+the same (boring, mind you) thing?
+
+That is why, during the past weekend, I’ve decided to put together
+[another starter, and make it public](https://github.com/tomekbuszewski/ts-react-starter-v2).
+It’s very opinionated, so it most likely won’t be everyone’s cup of tea, but
+that’s why it is a public repo. You can fork it and make it your own!
+
+## The ”what”
+
+If you’ve seen my video on
+[Design Systems Scaffoling](https://buszewski.com/writings/2024-08-13-design-systems-in-react-scaffolding-and-setup-part-0),
+you’ll recognize most of the things I’ve put in here. But not without few
+surprises.
+
+### Architecture
+
+I’ve decided to go with scalable solutions. Every space in here has its own
+directory, which exposes a single `index.ts` file.
+
+For **UI**, there’s Tailwind and Atomic Design, so atoms, molecules, organisms
+and views. Coding the entire view as a prop-augmented solution might be a chore,
+but testing it then is very easy and straightforward. But I am first to admit
+that sometimes building a page as one file in the pages directory is just
+quicker and more productive, given it is small enough.
+
+For **API communication**, I’ve put React Query in. In my experience, 90% of
+projects will still utilize REST, so it’s a safer bet. But adding Apollo for
+GraphQL is a breeze. Oh, and I’ve configured it to use the root API defined in
+`.env`, so whenever you’re doing a fetch, you just need to put the URI, e.g.
+`/products` instead of the whole URL.
+
+For **routing**, React Router. I was thinking of going with TanStack Router, but
+I’ve went with the popularity here, and given how the former caught up to
+Tanner’s solution, I think it sticks. Plus, upcoming transition of Remix might
+be a real game changer. But, as with everything here, replacing it is just a
+provider away. There’s also `pages` directory, which should be utilized as,
+well, pages, and, in `./src/App`, there’s the main routing config.
+Unfortunately, React Router doesn’t allow for multiple nested routers, so
+sometimes you need to export a feature as a route config, and declare it as
+`children` of a page:
+
+```tsx
+// ./src/App.tsx
+
+...
+{
+  path: "/with-fetch",
+  element: <ApiPage />,
+  children: activities,
+},
+```
+
+All your pages can be exported either as static imports, or as lazy ones. If you
+want to do the former, simply export it from `pages/index.ts`. If you’d like to
+have them lazy-loaded (which I recommend if the page is larger than a few
+words), use `pages/lazy.tsx`. In there you can import what you need using the
+React’s `lazy`:
+
+```tsx
+// ./src/pages/lazy.tsx
+
+import { lazy, Suspense } from "react";
+
+const AnyPage = lazy(() => import("./AnyPage/AnyPage"));
+```
+
+And then use the `lazyFactory` function that’ll wrap it in `Suspense`:
+
+```tsx
+// ./src/pages/lazy.tsx
+
+export const Any = lazyFactory(AnyPage);
+```
+
+It accepts another parameter, if you’d like to have a custom loading component:
+
+```tsx
+// ./src/pages/lazy.tsx
+
+import { LoadingBar } from "@ui/molecules";
+
+export const Any = lazyFactory(AnyPage, LoadingBar);
+```
+
+For **business features**, I’ve put the `features` directory, in which you
+should put all your business-related things, packed in a neat package. There’s
+an example that has fetching and routing, but in general, every self-contained
+feature should reside there. It can be as small as a cookie popup, or as big as
+a sign up flow.
+
+### Testing
+
+Tests are divided into two categories: units/integration and e2e.
+
+For **unit and integration** testing, you should use Vitest. It’s compatible
+with Jest (not 100%, which I’ve learn the hard way though), and I’ve added
+`@testing-library`’s packages to make sure all React and DOM assertions are
+there. All `.test.ts` and `.test.tsx` files will get automatically picked up by
+`npm t`;
+
+For **end-to-end**, there’s Playwright. As much as I like Cypress, this looks a
+way better alternative. All tests should go to `e2e` directory, but you’re free
+to expand this. All of the configuration, including base app url, is kept in
+`./playwright.config.ts`. One thing to notice here, is that I’ve added a script
+(`npm run test:e2e:mocks`) that will build the app (with mocked server), launch
+the localhost, then run the test suites, and, once it’s all done, gracefully
+exit.
+
+Oh, yes, **mocks**. I’ve picked MSW, which in my opinion, should be a standard
+for mocking any kind of communication. It has its own `mocks` directory, where
+you can define new endpoints that’ll be used for both unit and e2e tests. MSW is
+bound to run on every unit and integration test, and also can be picked up when
+building production app for testing (mentioned `test:e2e:mocks` command), or to
+work with a dev mode (`npm run dev:mocks`). What it does is that it intercepts
+all traffic coming from the application and if it finds a suitable handler,
+instead of letting the traffic further, it takes uses said handler.
+
+### Generators
+
+You might remember Plop, my generator of choice. In here, it’s far more robust,
+allowing to generate:
+
+- ui elements;
+- hooks;
+- utilities;
+- pages;
+- features.
+
+This way you can forget about copy-pasting all these boring files and just
+generate whatever you need and start working right off the bat.
+
+### Linting
+
+First of all, there’s more robust linting using ESLint. It now has more strict
+rules, thanks to `tseslint.configs.recommendedTypeChecked`, but also… import
+sorting. This is something I’ve always liked. Having imports grouped in vendors,
+internals, types, all this, out of the box (well, out of the… saving file, I
+guess) is just comfortable.
+
+### Development and Building
+
+There’s not much changed from the basic Vite config. App builds into a regular
+bundle that’ll get split if you're using the lazy imports. Dev mode also works
+in a standard way, with hot reloading out of the box.
+
+One thing to notice here is dependency offloading. I am pulling React and
+ReactDOM, the largest libraries, from CDN. This is handled by `vite-plugin-cdn2`
+plugin, which configuration lies in `./vite.config.ts`.
+
+—
+
+That’s it. My starter for medium-to-large React apps. I invite you to fork,
+create pull requests and issues. It will most certainly live, as I often find
+myself adding things to my tooling.

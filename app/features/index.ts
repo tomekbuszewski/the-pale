@@ -1,4 +1,5 @@
 import * as AboutSectionFeature from "./AboutSection";
+import * as BlogSectionFeature from "./BlogSection";
 import * as ClientsSectionFeature from "./ClientsSection";
 import * as FooterFeature from "./Footer";
 import * as HeaderFeature from "./Header";
@@ -39,4 +40,9 @@ export const FooterSection = {
 export const WorksSection = {
   component: WorksSectionFeature.WorksSection,
   loader: null,
+};
+
+export const BlogSection = {
+  component: BlogSectionFeature.BlogSection,
+  loader: BlogSectionFeature.loader,
 };

@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import {
   AboutSection,
+  BlogSection,
   ClientsSection,
   FooterSection,
   HeaderSection,
@@ -15,6 +16,12 @@ export function meta() {
     { title: "New React Router App" },
     { name: "description", content: "Welcome to React Router!" },
   ];
+}
+
+export async function loader() {
+  return {
+    blog: await BlogSection.loader(),
+  };
 }
 
 export default function Home() {
