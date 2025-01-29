@@ -1,10 +1,11 @@
 import { SectionWrapper } from "@ui/atoms";
 import { Box } from "@ui/molecules";
 
+import type { PaginationProps } from "@common-types/BlogPagination";
 import type { BlogPost } from "@common-types/Blogpost";
 import type { HTMLProps } from "react";
 
-import { Pagination, type PaginationProps } from "./BlogSection.helpers";
+import { Pagination } from "./BlogSection.helpers";
 
 import styles from "./BlogSection.module.scss";
 

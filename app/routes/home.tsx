@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { useLoaderData } from "react-router";
 import {
   AboutSection,
   BlogSection,
@@ -20,11 +21,13 @@ export function meta() {
 
 export async function loader() {
   return {
-    blog: await BlogSection.loader(),
+    blog: await BlogSection.loader({ withContent: false, limit: 6, page: 1 }),
   };
 }
 
 export default function Home() {
+  const { blog } = useLoaderData<typeof loader>();
+
   return (
     <Fragment>
       <HeaderSection.component />
@@ -33,6 +36,7 @@ export default function Home() {
         <WorksSection.component />
         <ServicesSection.component />
         <ClientsSection.component />
+        {BlogSection.guard(blog) ? <BlogSection.component {...blog} /> : null}
         <AboutSection.component />
       </MainWrapper>
       <FooterSection.component />

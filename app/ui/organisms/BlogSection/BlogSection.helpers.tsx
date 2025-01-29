@@ -1,13 +1,8 @@
 import { Button } from "@ui/atoms";
 
-import styles from "./BlogSection.module.scss";
+import type { PaginationProps } from "@common-types/BlogPagination";
 
-export interface PaginationProps {
-  nextPage?: number;
-  pages: number[];
-  currentPage: number;
-  prevPage?: number;
-}
+import styles from "./BlogSection.module.scss";
 
 function link(page: number) {
   return `/writings/page/${page}`;
@@ -19,14 +14,18 @@ export function Pagination({
   nextPage,
   currentPage,
 }: PaginationProps) {
+  const totalPages = pages.length;
+
   const displayPages = pages.reduce<number[]>((acc, page) => {
     if (
       page === 1 ||
-      page === pages.length ||
-      (page >= currentPage - 3 && page <= currentPage)
+      page === totalPages ||
+      (page >= currentPage - 2 && page <= currentPage + 2)
     ) {
-      acc.push(page);
-    } else if (acc[acc.length - 1] !== -1) {
+      if (!acc.includes(page)) {
+        acc.push(page);
+      }
+    } else if (acc[acc.length - 1] !== -1 && acc.length > 0) {
       acc.push(-1);
     }
     return acc;

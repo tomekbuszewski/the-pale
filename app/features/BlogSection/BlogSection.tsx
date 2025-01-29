@@ -1,1 +1,3 @@
-export default function BlogSection() {return <div>BlogSection</div>}
+import { BlogSection as Main } from "@ui/organisms";
+
+export default Main;

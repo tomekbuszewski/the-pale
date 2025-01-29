@@ -2,9 +2,8 @@ import React from "react";
 import { MemoryRouter } from "react-router";
 import { render, screen } from "@testing-library/react";
 
+import type { PaginationProps } from "@common-types/BlogPagination";
 import type { BlogPost } from "@common-types/Blogpost";
-
-import type { PaginationProps } from "./BlogSection.helpers";
 
 import BlogSection from "./BlogSection";
 

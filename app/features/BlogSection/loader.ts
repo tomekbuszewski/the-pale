@@ -5,12 +5,41 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
 
+import type { PaginationProps } from "@common-types/BlogPagination";
 import type { BlogPost } from "@common-types/Blogpost";
 import type { ReactNode } from "react";
 
 import { cache } from "./cache";
 
-export default async function loader() {
+interface LoaderConfig {
+  withContent?: boolean;
+  limit?: number;
+  page?: number;
+}
+
+function createPagination(
+  items: number,
+  perPage: number,
+  currentPage = 1,
+): PaginationProps {
+  const totalPages = Math.ceil(items / perPage);
+  const pages = new Array(totalPages).fill(null).map((_, i) => i + 1);
+  const nextPage = currentPage + 1;
+  const prevPage = currentPage - 1;
+
+  return {
+    pages,
+    currentPage,
+    nextPage: nextPage <= totalPages ? nextPage : undefined,
+    prevPage: prevPage > 0 ? prevPage : undefined,
+  };
+}
+
+export default async function loader({
+  withContent = true,
+  limit = Number.MAX_SAFE_INTEGER,
+  page = 1,
+}: LoaderConfig) {
   const contentDir = path.join(
     process.cwd(),
     "app/features/BlogSection/content",
@@ -48,21 +77,23 @@ export default async function loader() {
 
           const newPost = {
             link: "/writings/" + data.slug,
-            cnt: renderToString(
+            title: data.title as string,
+            date: data.pubdate as Date,
+            children: data.summary as string,
+            tags: (data.tags as string).split(", "),
+            youtube: data.youtube as string,
+          } as BlogPost;
+
+          if (withContent) {
+            newPost.cnt = renderToString(
               Content({
                 components: {
                   h3: "h1",
                   h2: "h1",
                 },
               }) as ReactNode,
-            ),
-            content: Content,
-            title: data.title as string,
-            date: data.pubdate as Date,
-            summary: data.summary as string,
-            tags: (data.tags as string).split(", "),
-            youtube: data.youtube as string,
-          } as BlogPost;
+            );
+          }
 
           posts.push(newPost);
 
@@ -75,11 +106,16 @@ export default async function loader() {
       }
     }
 
-    return posts.sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-    );
+    const items = posts
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .splice(0, limit);
+
+    return {
+      items,
+      pagination: createPagination(posts.length, limit, page),
+    };
   } catch (error) {
     console.error("Error loading blog posts:", error);
-    return [];
+    return {};
   }
 }
