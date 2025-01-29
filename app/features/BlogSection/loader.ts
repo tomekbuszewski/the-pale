@@ -15,6 +15,7 @@ interface LoaderConfig {
   withContent?: boolean;
   limit?: number;
   page?: number;
+  slug?: string;
 }
 
 function createPagination(

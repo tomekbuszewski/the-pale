@@ -63,6 +63,7 @@ function PageFooter({
   return (
     <SectionWrapper
       tag="footer"
+      id="contact"
       contentClassName={styles.wrapper}
       className={styles.parent}
     >
