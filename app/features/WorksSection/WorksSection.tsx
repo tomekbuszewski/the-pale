@@ -11,8 +11,12 @@ const data = [Gameshelf, Backlog, Hay24].sort(
 export default function WorksSection() {
   return (
     <section id="works">
-      {data.map((item) => (
-        <WorkItem {...item} key={item.title} />
+      {data.map((item, i) => (
+        <WorkItem
+          {...item}
+          key={item.title}
+          align={i % 2 === 0 ? "right" : "left"}
+        />
       ))}
     </section>
   );

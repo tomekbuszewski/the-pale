@@ -1,5 +1,6 @@
 import type { Work } from "@common-types/Work";
 
+import Background from "./background.jpg";
 import MainImage from "./thebacklog-main.jpg";
 import Mobile from "./thebacklog-mobile.jpg";
 
@@ -12,4 +13,5 @@ export default {
   tags: ["Development", "Design"],
   mobileImage: Mobile,
   desktopImage: MainImage,
+  background: Background,
 } as Work;

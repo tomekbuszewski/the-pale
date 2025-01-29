@@ -18,7 +18,7 @@
 
 .work.left {
   @include media("md") {
-    grid-template-columns: 1fr #{rem(296)};
+    grid-template-columns: 1fr #{rem(312)} !important;
 
     .details {
       grid-column: 2;

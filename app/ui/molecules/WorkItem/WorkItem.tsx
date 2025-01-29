@@ -1,3 +1,4 @@
+import { type HTMLProps } from "react";
 import { useIsMobile } from "@hooks";
 import { Button, SectionWrapper, Text } from "@ui/atoms";
 import { createMotionConfig } from "@utils/fadeIn";
@@ -5,7 +6,6 @@ import clsx from "clsx";
 import { motion } from "motion/react";
 
 import type { Work } from "@common-types/Work";
-import type { HTMLProps } from "react";
 
 import CodeIcon from "./assets/code.svg?react";
 import ConsultationIcon from "./assets/consultations.svg?react";
@@ -60,18 +60,23 @@ function WorkItem({
 }: Props) {
   const isMobile = useIsMobile();
   const classNames = [className, styles.parent];
-  const style = background ? { backgroundImage: `url(${background})` } : {};
+
+  const style = background
+    ? {
+        backgroundImage: `url(${background})`,
+      }
+    : {};
 
   return (
     <SectionWrapper
-      animate={false}
-      tag="article"
       className={clsx(classNames)}
       title="Works"
       breakout={align}
       contentClassName={clsx(styles.work, {
         [styles.left]: align === "left",
       })}
+      tag="article"
+      animate={false}
       style={style}
     >
       <section className={styles.details}>

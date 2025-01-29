@@ -16,6 +16,19 @@ export const Primary: StoryObj<typeof WorkItem> = {
   },
 };
 
+export const ToLeft: StoryObj<typeof WorkItem> = {
+  args: {
+    title: "GameShelf",
+    description: [
+      "Gameshelf aims to deliver latest new, world-class columns, interviews and insides for all the gamers around the world.",
+    ],
+    align: "left",
+    tags: ["Design", "Development"],
+    mobileImage: MockImage,
+    desktopImage: MockImageDesk,
+  },
+};
+
 export default {
   title: "Molecules/WorkItem",
   component: WorkItem,
