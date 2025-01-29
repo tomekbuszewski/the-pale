@@ -8,7 +8,6 @@ import path from "path";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
 import type { BlogPost } from "@common-types/Blogpost";
-import type { MDXComponents, MDXProps } from "mdx/types";
 import type { ReactNode } from "react";
 
 import { cache } from "./cache";
@@ -17,7 +16,6 @@ interface LoaderConfig {
   withContent?: boolean;
   limit?: number;
   page?: number;
-  components?: MDXProps["components"];
 }
 
 function createPagination(

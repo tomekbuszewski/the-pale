@@ -21,7 +21,7 @@
 
   a {
     position: relative;
-    transition: #{transition(background)}, #{transition(color)};
+    transition: #{transition(all)};
 
     &:after {
       content: "";
@@ -32,7 +32,7 @@
       height: #{rem(1)};
       background: var(--color-accent);
       opacity: 0.25;
-      transition: #{transition(opacity)}, #{transition(height)};
+      transition: #{transition(all)};
       z-index: -1;
     }
   }
@@ -43,6 +43,7 @@
     &:after {
       height: 110%;
       opacity: 1;
+      border-radius: #{rem(4)};
     }
   }
 }
