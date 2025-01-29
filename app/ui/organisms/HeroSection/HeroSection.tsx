@@ -35,7 +35,7 @@ function HeroSection({ keywords, copy }: Props) {
   });
 
   return (
-    <SectionWrapper title="Hello" animate={false}>
+    <SectionWrapper title="Hello" animate={false} className={styles.wrapper}>
       <LayoutGroup>
         <Text variant="hero" className={styles.heading}>
           Need&nbsp;a&nbsp;

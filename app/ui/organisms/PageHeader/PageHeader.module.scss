@@ -16,6 +16,7 @@
               #{transition(width)},
               #{transition(margin)},
               #{transition(left)},
+              #{transition(padding)},
               #{transition(background)},
               #{transition(opacity)};
 
@@ -30,6 +31,14 @@
 }
 
 .full {
+  transition: #{transition(transform)},
+  #{transition(width)} 600ms,
+  #{transition(margin)} 600ms,
+  #{transition(left)} 600ms,
+  #{transition(padding)} 600ms,
+  #{transition(background)},
+  #{transition(opacity)};
+
   @include media("lg") {
     background: var(--color-background);
     left: 0;

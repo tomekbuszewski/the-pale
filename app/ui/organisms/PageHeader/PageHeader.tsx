@@ -39,8 +39,8 @@ function useHiddenHeader(threshold = 160) {
 
 function PageHeader({ className, links, ...rest }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, isOnTop] = useHiddenHeader(64);
   const isMobile = useIsMobile();
+  const [isVisible, isOnTop] = useHiddenHeader(0);
 
   const hideMenu = useMemo(() => {
     if (isMobile) {

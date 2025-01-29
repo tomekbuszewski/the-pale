@@ -4,13 +4,10 @@ import {
   AboutSection,
   BlogSection,
   ClientsSection,
-  FooterSection,
-  HeaderSection,
   HeroSection,
   ServicesSection,
   WorksSection,
 } from "@features";
-import { MainWrapper } from "@ui/atoms";
 
 export function meta() {
   return [
@@ -30,16 +27,12 @@ export default function Home() {
 
   return (
     <Fragment>
-      <HeaderSection.component />
-      <MainWrapper>
-        <HeroSection.component />
-        <WorksSection.component />
-        <ServicesSection.component />
-        <ClientsSection.component />
-        {BlogSection.guard(blog) ? <BlogSection.component {...blog} /> : null}
-        <AboutSection.component />
-      </MainWrapper>
-      <FooterSection.component />
+      <HeroSection.component />
+      <WorksSection.component />
+      <ServicesSection.component />
+      <ClientsSection.component />
+      {BlogSection.guard(blog) ? <BlogSection.component {...blog} /> : null}
+      <AboutSection.component />
     </Fragment>
   );
 }
