@@ -27,6 +27,18 @@ export const baseConfig = defineConfig({
     }),
   ],
 
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes(".svg?react")) {
+            return "svgs";
+          }
+        },
+      },
+    },
+  },
+
   test: {
     globals: true,
     environment: "happy-dom",

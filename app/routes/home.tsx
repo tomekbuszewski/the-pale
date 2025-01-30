@@ -9,6 +9,7 @@ import {
   ServicesSection,
   WorksSection,
 } from "@features";
+import blogLoader from "@features/BlogSection/loader.server";
 import title from "@utils/title";
 
 export function meta() {
@@ -20,7 +21,7 @@ export function meta() {
 
 export async function loader() {
   return {
-    blog: await BlogSection.loader({
+    blog: await blogLoader({
       withContent: false,
       limit: 6,
       page: 1,

@@ -76,3 +76,18 @@
     --container: #{rem(960)};
   }
 }
+
+@media(prefers-color-scheme: dark) {
+  :root {
+    --color-background: #000;
+    --color-background-dark: #f8f2f2;
+    --color-lead: #574142;
+    --color-accent: #ea516a;
+    --color-accent-hover: rgba(234, 81, 106, .5);
+    --color-text: #775c5d;
+    --color-text-light: #9f8082;
+    --color-text-hover: rgb(198, 188, 188);
+    --color-lead-light: rgb(225, 216, 209);
+    --color-minor: rgb(225, 216, 209);
+  }
+}

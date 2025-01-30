@@ -1,11 +1,11 @@
 import { useLoaderData } from "react-router";
-import { BlogSection } from "@features";
+import blogLoader from "@features/BlogSection/loader.server";
 
 import type { Route } from "../../../.react-router/types/app/routes/blog/+types/post";
 
 export async function loader({ params }: Route.LoaderArgs) {
   const { slug } = params;
-  const content = await BlogSection.loader({ withContent: true });
+  const content = await blogLoader({ withContent: true });
 
   if (content?.items) {
     const post = content.items.find(

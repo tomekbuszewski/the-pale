@@ -1,14 +1,14 @@
 import * as runtime from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import { evaluate } from "@mdx-js/mdx";
-import { Text } from "@ui/atoms";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
 
-import type { PaginationProps } from "@common-types/BlogPagination";
-import type { BlogPost } from "@common-types/Blogpost";
 import type { ReactNode } from "react";
+
+import type { PaginationProps } from "../../common-types/BlogPagination";
+import type { BlogPost } from "../../common-types/Blogpost";
 
 import { cache } from "./cache";
 
@@ -89,19 +89,10 @@ export default async function loader({
           };
 
           if (withContent) {
+            const { components } = await import("./components");
             newPost.cnt = renderToString(
               Content({
-                components: {
-                  p: (props) => <Text {...props} variant="article-body" />,
-                  h2: (props) => <Text {...props} variant="h2" />,
-                  h3: (props) => <Text {...props} variant="h3" />,
-                  h4: (props) => <Text {...props} variant="h4" />,
-                  blockquote: (props) => (
-                    <Text {...props} variant="blockquote" />
-                  ),
-                  ul: (props) => <Text {...props} variant="ul" />,
-                  li: (props) => <Text {...props} variant="list" />,
-                },
+                components,
               }) as ReactNode,
             );
           }

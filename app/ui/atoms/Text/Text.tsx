@@ -90,6 +90,9 @@ function Text<T extends ElementType = "p">({
       case "h4":
         Tag = "h4";
         break;
+      case "ul":
+        Tag = "ul" as ElementType;
+        break;
       case "blockquote":
         Tag = "blockquote" as ElementType;
         break;
