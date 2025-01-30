@@ -80,3 +80,70 @@ export const Work: Story = {
     variant: "work",
   },
 };
+
+export const H2: Story = {
+  args: {
+    children: "H2 Heading Example",
+    variant: "h2",
+  },
+};
+
+export const H3: Story = {
+  args: {
+    children: "H3 Heading Example",
+    variant: "h3",
+  },
+};
+
+export const H4: Story = {
+  args: {
+    children: "H4 Heading Example",
+    variant: "h4",
+  },
+};
+
+export const Blockquote: Story = {
+  args: {
+    children: "Blockquote Example Text",
+    variant: "blockquote",
+  },
+};
+
+export const ArticleBody: Story = {
+  args: {
+    children: "Article Body Text Example",
+    variant: "article-body",
+  },
+};
+
+export const UnorderedList: Story = {
+  args: {
+    children: "Unordered List Item Example",
+    variant: "ul",
+  },
+};
+
+export const MonoText: Story = {
+  args: {
+    children: "Monospace Text Example",
+    variant: "regular",
+    mono: true,
+  },
+};
+
+export const BoldColoredText: Story = {
+  args: {
+    children: "Bold Colored Text Example",
+    variant: "regular",
+    bold: true,
+    color: "accent",
+  },
+};
+
+export const CenteredText: Story = {
+  args: {
+    children: "Centered Text Example",
+    variant: "regular",
+    align: "center",
+  },
+};

@@ -27,6 +27,12 @@ interface Props<T extends ElementType> extends HTMLProps<T> {
     | "button"
     | "list"
     | "about"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "blockquote"
+    | "article-body"
+    | "ul"
     | "work";
 }
 
@@ -74,6 +80,18 @@ function Text<T extends ElementType = "p">({
         break;
       case "work":
         Tag = "h3" as ElementType;
+        break;
+      case "h2":
+        Tag = "h2" as ElementType;
+        break;
+      case "h3":
+        Tag = "h3" as ElementType;
+        break;
+      case "h4":
+        Tag = "h4";
+        break;
+      case "blockquote":
+        Tag = "blockquote" as ElementType;
         break;
       default:
         Tag = "p" as ElementType;

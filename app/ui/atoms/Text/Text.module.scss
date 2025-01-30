@@ -91,6 +91,39 @@
   font-size: var(--font-size-work);
 }
 
+.article-body {
+  font-size: var(--font-size-article-body);
+  line-height: var(--leading-regular);
+}
+
+.h2 {
+  font-size: var(--font-size-article-h2);
+  font-weight: bold;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.025em;
+}
+
+.h3 {
+  font-size: var(--font-size-article-h3);
+  font-weight: bold;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.025em;
+}
+
+.h4 {
+  font-size: var(--font-size-article-h5);
+  font-weight: bold;
+  line-height: var(--leading-tight);
+}
+
+.blockquote {
+  font-size: var(--font-size-article-body);
+}
+
+.ul {
+  list-style: none;
+}
+
 .mono {
   font-family: "Geist Mono", serif;
   font-optical-sizing: auto;
