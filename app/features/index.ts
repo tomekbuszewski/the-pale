@@ -1,6 +1,7 @@
 import * as AboutSectionFeature from "./AboutSection";
 import * as BlogSectionFeature from "./BlogSection";
 import * as ClientsSectionFeature from "./ClientsSection";
+import * as ContactFeature from "./Contact";
 import * as FooterFeature from "./Footer";
 import * as HeaderFeature from "./Header";
 import * as HeroSectionFeature from "./HeroSection";
@@ -46,4 +47,9 @@ export const BlogSection = {
   component: BlogSectionFeature.BlogSection,
   loader: BlogSectionFeature.loader,
   guard: BlogSectionFeature.guard,
+};
+
+export const Contact = {
+  component: ContactFeature.Contact,
+  loader: null,
 };

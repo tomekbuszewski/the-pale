@@ -29,7 +29,7 @@ const data = {
   ],
   contact: [
     {
-      href: "mailto:tomasz@buszewski.studio",
+      href: "mailto:tomasz@buszewski.com",
       text: "tomasz@buszewski.com",
       icon: <Mail />,
     },

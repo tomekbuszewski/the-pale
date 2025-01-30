@@ -32,6 +32,10 @@
   margin-bottom: auto;
 }
 
+.body.noMargin {
+  margin-bottom: 0;
+}
+
 .body p + p {
   margin-top: #{rem(8)};
 }

@@ -1,6 +1,5 @@
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
-import { createMotionConfig } from "@utils/fadeIn";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
 import type { BlogPost } from "@common-types/Blogpost";
@@ -22,8 +21,8 @@ function BlogSection({ className, items, pagination }: Props) {
       contentClassName={styles.wrapper}
       className={className}
     >
-      {items.map((item, i) => (
-        <Box {...item} key={item.title} {...createMotionConfig(i + 1)}>
+      {items.map((item) => (
+        <Box {...item} key={item.title} noBottomMargin>
           <Text>{item.children}</Text>
         </Box>
       ))}

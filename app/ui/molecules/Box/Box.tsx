@@ -9,7 +9,10 @@ import { Footer, Meta, Tags } from "./Box.helpers";
 
 import styles from "./Box.module.scss";
 
-type Props = HTMLProps<HTMLDivElement> & (BlogPost | Service);
+type Props = HTMLProps<HTMLDivElement> &
+  (BlogPost | Service) & {
+    noBottomMargin?: boolean;
+  };
 
 function Box({
   title,
@@ -23,6 +26,7 @@ function Box({
   className,
   children,
   active,
+  noBottomMargin,
   ...rest
 }: Props) {
   const classNames = [className, styles.wrapper];
@@ -44,7 +48,13 @@ function Box({
         className={styles.title}
       />
 
-      <section className={styles.body}>{children}</section>
+      <section
+        className={clsx(styles.body, {
+          [styles.noMargin]: noBottomMargin,
+        })}
+      >
+        {children}
+      </section>
 
       <Tags tags={tags} />
 
