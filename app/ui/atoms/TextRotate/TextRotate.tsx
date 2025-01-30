@@ -61,7 +61,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
       exit = { y: "-120%" },
       animatePresenceMode = "wait",
       animatePresenceInitial = false,
-      rotationInterval = 2000,
+      rotationInterval = 4000,
       staggerDuration = 0.025,
       staggerFrom = "first",
       loop = true,
@@ -193,7 +193,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
 
     return (
       <motion.span
-        className={clsx(styles.wrapper, mainClassName)}
+        className={clsx(styles.wrapper, styles.wordWrapper, mainClassName)}
         {...props}
         layout
         transition={transition}

@@ -88,7 +88,6 @@
 
 .wrapper:not(.active):hover {
   background-color: var(--color-background);
-  transform: translateY(-#{rem(12)});
   transition-delay: 0s;
   z-index: var(--z-box);
 

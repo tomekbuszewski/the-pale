@@ -13,6 +13,7 @@ interface Props<T extends ElementType = "section"> extends HTMLProps<T> {
   breakout?: "left" | "right";
   contentClassName?: string;
   animate?: boolean;
+  animateOnlyHeader?: boolean;
 }
 
 function SectionWrapper<T extends ElementType = "section">({
@@ -23,11 +24,12 @@ function SectionWrapper<T extends ElementType = "section">({
   breakout,
   tag: Tag = "section",
   animate = true,
+  animateOnlyHeader = false,
   ...rest
 }: Props<T>) {
   const classNames = [styles.wrapper, className];
   const contentClassNames = [styles.content, contentClassName];
-  const motionConfig = animate ? createMotionConfig(3) : {};
+  const motionConfig = !animateOnlyHeader ? createMotionConfig(3) : {};
 
   if (breakout) {
     contentClassNames.push(styles.breakout, styles[breakout]);

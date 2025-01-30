@@ -1,3 +1,5 @@
+import { TextRotate } from "@ui/atoms";
+
 import type { Meta, StoryObj } from "@storybook/react";
 
 import HeroSection from "./HeroSection";
@@ -5,7 +7,17 @@ import HeroSection from "./HeroSection";
 export const Primary: StoryObj<typeof HeroSection> = {
   args: {
     copy: "Hello from Storybook",
-    keywords: ["design", "code", "consultant", "website"],
+    children: (
+      <>
+        Need&nbsp;a&nbsp;
+        <TextRotate
+          staggerFrom="last"
+          texts={["design", "code", "consultant", "website"]}
+        />
+        <br />
+        for&nbsp;your&nbsp;business?
+      </>
+    ),
   },
 };
 
