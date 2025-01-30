@@ -7,16 +7,22 @@
 .wrapper {
   width: 100%;
   padding: var(--spacing-2xl) calc(var(--gutter) / 2);
+  align-content: center;
 
   @include media("md") {
     padding: var(--spacing-3xl) 0;
     display: grid;
     grid-template-columns: 1fr var(--container) 1fr;
+    min-height: #{rem(720)};
   }
 
   @include media("lg") {
     padding: var(--spacing-huge) 0;
   }
+}
+
+.wrapper.dark {
+  background-color: var(--color-background-dark);
 }
 
 .content {

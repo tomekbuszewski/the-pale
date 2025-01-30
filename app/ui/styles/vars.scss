@@ -24,13 +24,14 @@
   --leading-regular: 1.5;
   --leading-tight: 1;
 
-  --color-background: rgb(255, 253, 250);
-  --color-lead: rgb(71, 51, 53);
-  --color-accent: rgb(234, 81, 106);
+  --color-background: #fff;
+  --color-background-dark: #f8f2f2;
+  --color-lead: #574142;
+  --color-accent: #ea516a;
   --color-accent-hover: rgba(234, 81, 106, .5);
-  --color-text: rgb(132, 115, 116);
-  --color-text-hover: rgba(132, 115, 116, .5);
-  --color-text-light: rgb(198, 188, 188);
+  --color-text: #775c5d;
+  --color-text-light: #9f8082;
+  --color-text-hover: rgb(198, 188, 188);
   --color-lead-light: rgb(225, 216, 209);
   --color-minor: rgb(225, 216, 209);
 

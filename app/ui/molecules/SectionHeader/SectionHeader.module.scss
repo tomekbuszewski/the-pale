@@ -15,6 +15,12 @@
   margin-bottom: #{rem(24)};
 
   @include media("lg") {
-    margin-bottom: #{rem(32)};
+    margin-bottom: var(--spacing-3xl);
   }
+}
+
+.title.dark {
+  h2 { color: var(--color-minor); }
+
+  .separator { background-color: var(--color-text); }
 }

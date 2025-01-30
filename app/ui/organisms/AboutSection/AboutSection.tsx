@@ -29,7 +29,7 @@ function AboutSection({ children }: Props) {
     <SectionWrapper
       ref={containerRef as unknown as RefObject<ElementType>}
       contentClassName={styles.container}
-      title="About"
+      dark
     >
       <div className={styles.wrapper}>
         <Text variant="about" bold className={styles.text}>

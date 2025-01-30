@@ -14,6 +14,7 @@ interface Props<T extends ElementType = "section"> extends HTMLProps<T> {
   contentClassName?: string;
   animate?: boolean;
   animateOnlyHeader?: boolean;
+  dark?: boolean;
 }
 
 function SectionWrapper<T extends ElementType = "section">({
@@ -25,6 +26,7 @@ function SectionWrapper<T extends ElementType = "section">({
   tag: Tag = "section",
   animate = true,
   animateOnlyHeader = false,
+  dark = false,
   ...rest
 }: Props<T>) {
   const classNames = [styles.wrapper, className];
@@ -36,9 +38,10 @@ function SectionWrapper<T extends ElementType = "section">({
   }
 
   return (
-    <Tag {...rest} className={clsx(classNames)}>
+    <Tag {...rest} className={clsx(classNames, { [styles.dark]: dark })}>
       {title && (
         <SectionHeader
+          dark={dark}
           title={title}
           className={styles.header}
           animate={animate}

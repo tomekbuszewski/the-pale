@@ -9,10 +9,11 @@ import {
   ServicesSection,
   WorksSection,
 } from "@features";
+import title from "@utils/title";
 
 export function meta() {
   return [
-    { title: "New React Router App" },
+    { title: title("Expertly-crafted websites for your business") },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }

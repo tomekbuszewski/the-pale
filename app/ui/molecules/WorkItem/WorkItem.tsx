@@ -78,6 +78,7 @@ function WorkItem({
       tag="article"
       animate={false}
       style={style}
+      dark
     >
       <section className={styles.details}>
         <motion.div {...createMotionConfig(0)}>

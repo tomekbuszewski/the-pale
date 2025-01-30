@@ -23,7 +23,7 @@
     position: relative;
     transition: #{transition(all)};
 
-    &:after {
+    &:before {
       content: "";
       position: absolute;
       bottom: -5%;
@@ -37,10 +37,22 @@
     }
   }
 
+  a[href^="http"] {
+    &:after {
+      content: "↗";
+      display: inline-block;
+      margin-left: 0.5em;
+      font-size: 0.5em;
+      position: relative;
+      top: -0.35em;
+      font-weight: bold;
+    }
+  }
+
   a:hover {
     color: var(--color-background);
 
-    &:after {
+    &:before {
       height: 110%;
       opacity: 1;
       border-radius: #{rem(4)};

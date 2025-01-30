@@ -19,7 +19,8 @@
               #{transition(color)};
 }
 
-.base:hover {
+.base:hover,
+.base:focus {
   transform: translateY(-#{rem(2)}) scale(1.05);
 }
 
@@ -27,7 +28,7 @@
   background: var(--color-accent);
   color: var(--color-background);
 
-  &:hover {
+  &:hover, &:focus {
     box-shadow: 0 #{rem(8)} #{rem(24)} #{rem(-4)} var(--color-accent-hover),
                 0 #{rem(8)} #{rem(16)} -#{rem(8)} var(--color-accent-hover);
   }
@@ -37,8 +38,7 @@
   color: var(--color-accent);
   border-color: var(--color-accent);
 
-  &:hover {
-
+  &:hover, &:focus {
     box-shadow: 0 #{rem(8)} #{rem(16)} #{rem(-4)} var(--color-accent-hover),
     0 #{rem(8)} #{rem(8)} -#{rem(8)} var(--color-accent-hover);  }
 }
@@ -47,7 +47,7 @@
   color: var(--color-text);
   border-color: var(--color-text);
 
-  &:hover {
+  &:hover, &:focus {
     box-shadow: 0 #{rem(8)} #{rem(16)} #{rem(-4)} var(--color-text-hover),
     0 #{rem(8)} #{rem(8)} -#{rem(8)} var(--color-text-hover);
   }
