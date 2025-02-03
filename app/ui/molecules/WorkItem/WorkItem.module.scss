@@ -73,7 +73,7 @@
   flex-flow: row wrap;
   align-items: center;
   gap: var(--spacing-small);
-  color: var(--color-background);
+  color: var(--color-minor-accent);
 
   svg {
     stroke: currentColor;
@@ -82,7 +82,7 @@
 }
 
 .imageWrapper {
-  border: #{rem(8)} solid rgba(255,255,255,0.25);
+  border: #{rem(8)} solid rgba(255, 255, 255, 0.25);
   overflow: hidden;
   border-radius: #{rem(16)};
 

@@ -40,8 +40,10 @@
   width: #{rem(16)};
   height: #{rem(2)};
   border-radius: #{rem(2)};
-  background: var(--color-text);
-  transition: #{transition(transform)}, #{transition(opacity)};
+  background: var(--color-main-body);
+  transition:
+    #{transition(transform)},
+    #{transition(opacity)};
 }
 
 .line:nth-of-type(1) {

@@ -37,7 +37,7 @@
       left: -2.5%;
       width: 105%;
       height: #{rem(1)};
-      background: var(--color-accent);
+      background: var(--color-main-accent);
       opacity: 0.25;
       transition: #{transition(all)};
       z-index: -1;
@@ -57,7 +57,7 @@
   }
 
   a:hover {
-    color: var(--color-background);
+    color: var(--color-main-background);
 
     &:before {
       height: 110%;
@@ -82,7 +82,7 @@
   line-height: var(--leading-tight);
   font-family: var(--font-face-mono);
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--color-main-body);
 }
 
 .title {
@@ -114,18 +114,18 @@
   font-family: var(--font-face-serif);
   font-size: var(--font-size-article-body-small);
   line-height: var(--leading-regular);
-  color: var(--color-text);
+  color: var(--color-main-body);
 
   @include media("md") {
     font-size: var(--font-size-article-body);
   }
 
   a {
-    color: var(--color-accent)
+    color: var(--color-main-accent);
   }
 
   code {
-    color: var(--color-text-light);
+    color: var(--color-minor-body);
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: #{rem(4)};
     display: inline-block;

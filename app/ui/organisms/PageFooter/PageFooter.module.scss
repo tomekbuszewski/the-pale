@@ -27,7 +27,7 @@
   text-align: left;
 
   svg {
-    fill: var(--color-text);
+    fill: var(--color-main-body);
     height: #{rem(32)};
   }
 }
@@ -43,7 +43,7 @@
   opacity: 0.05;
 
   svg {
-    fill: var(--color-text);
+    fill: var(--color-main-body);
   }
 }
 
@@ -72,7 +72,7 @@
   flex-flow: row nowrap;
   align-items: center;
   gap: var(--spacing-small);
-  color: var(--color-text);
+  color: var(--color-main-body);
 
   a {
     text-decoration: none;
@@ -80,7 +80,7 @@
 
   svg {
     width: #{rem(12)};
-    stroke: var(--color-text);
+    stroke: var(--color-main-body);
   }
 }
 

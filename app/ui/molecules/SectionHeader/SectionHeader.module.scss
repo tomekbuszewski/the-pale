@@ -8,7 +8,7 @@
 .separator {
   width: #{rem(24)};
   height: #{rem(2)};
-  background-color: var(--color-minor);
+  background-color: var(--color-minor-accent);
   border: 0;
   border-radius: #{rem(2)};
   margin-top: #{rem(8)};
@@ -20,9 +20,13 @@
 }
 
 .title.dark {
-  h2 { color: var(--color-minor); }
+  h2 {
+    color: var(--color-minor-body);
+  }
 
-  .separator { background-color: var(--color-text); }
+  .separator {
+    background-color: var(--color-minor-accent);
+  }
 }
 
 .withLevel {
@@ -40,7 +44,7 @@
     position: absolute;
     left: 0;
     top: -#{rem(4)};
-    color: var(--color-minor);
+    color: var(--color-minor-body);
     transform: translateX(calc(-100% - 1rem));
 
     @include media("md") {

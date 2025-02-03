@@ -42,7 +42,7 @@ them as such?
 ```css
 :root {
   --color-bg: #fafafa;
-  --color-text: #222;
+  --color-main-body: #222;
   --color-links: #ffffaa;
 }
 ```
@@ -62,14 +62,14 @@ contextual names allowed to define themes with ease:
 ```css
 :root {
   --color-bg: #fafafa;
-  --color-text: #222;
+  --color-main-body: #222;
   --color-links: #ffffaa;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #000;
-    --color-text: #666;
+    --color-main-body: #666;
     --color-links: #fcfcfc;
   }
 }

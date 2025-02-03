@@ -7,8 +7,11 @@
   top: 0;
   bottom: 0;
   z-index: var(--z-menu);
-  transition: #{transition(transform)}, #{transition(opacity)}, #{transition(box-shadow)};
-  background: var(--color-lead);
+  transition:
+    #{transition(transform)},
+    #{transition(opacity)},
+    #{transition(box-shadow)};
+  background: var(--color-main-heading);
   padding: var(--spacing-xl);
   box-shadow: 0 0 48px 0 rgba(0, 0, 0, 0.2);
 
@@ -46,14 +49,14 @@
 
 .link {
   display: block;
-  color: var(--color-text-light);
+  color: var(--color-minor-body);
   font-weight: bold;
   font-size: var(--font-size-regular);
   padding: var(--spacing-small) 0;
   text-decoration: none;
 
   @include media("lg") {
-    color: var(--color-text);
+    color: var(--color-main-body);
     font-weight: normal;
   }
 }

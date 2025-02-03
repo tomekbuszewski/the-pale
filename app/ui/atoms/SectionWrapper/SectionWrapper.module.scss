@@ -22,7 +22,7 @@
 }
 
 .wrapper.dark {
-  background-color: var(--color-background-dark);
+  background-color: var(--color-main-background);
 }
 
 .content {
@@ -47,4 +47,3 @@
 .content.breakout.right {
   grid-column: 2 / 4;
 }
-

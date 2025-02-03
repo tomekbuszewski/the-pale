@@ -20,13 +20,13 @@
 
 .title {
   margin: var(--spacing-mid) 0;
-  color: var(--color-lead);
+  color: var(--color-main-heading);
   transition: #{transition(color)};
   transition-delay: var(--animation-duration-medium);
 }
 
 .body {
-  color: var(--color-text);
+  color: var(--color-main-body);
   transition: #{transition(color)};
   transition-delay: var(--animation-duration-medium);
   margin-bottom: auto;
@@ -41,19 +41,19 @@
 }
 
 .date {
-  color: var(--color-text);
+  color: var(--color-main-body);
   display: flex;
   gap: #{rem(8)};
   align-items: center;
 }
 
 .wrapper svg {
-  stroke: var(--color-text);
+  stroke: var(--color-main-body);
   width: #{rem(16)};
 }
 
 .tags {
-  color: var(--color-text);
+  color: var(--color-main-body);
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -75,14 +75,15 @@
   opacity: 0;
   filter: blur(#{rem(4)});
   transform: translateY(var(--spacing-small));
-  transition: #{transition(opacity)},
-  #{transition(all)};
+  transition:
+    #{transition(opacity)},
+    #{transition(all)};
 }
 
 .tag:after {
   content: "·";
   margin-left: var(--spacing-small);
-  opacity: .5
+  opacity: 0.5;
 }
 
 .tag:last-child:after {
@@ -90,11 +91,12 @@
 }
 
 .wrapper:not(.active):hover {
-  background-color: var(--color-background);
+  background-color: var(--color-main-background);
   transition-delay: 0s;
   z-index: var(--z-box);
 
-  .title, .body {
+  .title,
+  .body {
     transition-delay: 0s;
   }
   .footer {

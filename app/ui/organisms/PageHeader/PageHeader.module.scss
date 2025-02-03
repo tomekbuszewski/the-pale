@@ -6,19 +6,20 @@
   left: 0;
   width: 100%;
   z-index: var(--z-menu);
-  background: var(--color-background);
+  background: var(--color-main-background);
   height: #{rem(64)};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   padding: 0 calc(var(--gutter) / 2);
-  transition: #{transition(transform)},
-              #{transition(width)},
-              #{transition(margin)},
-              #{transition(left)},
-              #{transition(padding)},
-              #{transition(background)},
-              #{transition(opacity)};
+  transition:
+    #{transition(transform)},
+    #{transition(width)},
+    #{transition(margin)},
+    #{transition(left)},
+    #{transition(padding)},
+    #{transition(background)},
+    #{transition(opacity)};
 
   @include media("lg") {
     background: none;
@@ -31,16 +32,17 @@
 }
 
 .full {
-  transition: #{transition(transform)},
-  #{transition(width)} 600ms,
-  #{transition(margin)} 600ms,
-  #{transition(left)} 600ms,
-  #{transition(padding)} 600ms,
-  #{transition(background)},
-  #{transition(opacity)};
+  transition:
+    #{transition(transform)},
+    #{transition(width)} 600ms,
+    #{transition(margin)} 600ms,
+    #{transition(left)} 600ms,
+    #{transition(padding)} 600ms,
+    #{transition(background)},
+    #{transition(opacity)};
 
   @include media("lg") {
-    background: var(--color-background);
+    background: var(--color-main-background);
     left: 0;
     margin-left: 0;
     width: 100%;
@@ -55,11 +57,11 @@
 
 .logo {
   height: #{rem(32)};
-  fill: var(--color-lead);
+  fill: var(--color-main-heading);
 }
 
 .contact {
   width: #{rem(16)};
-  fill: var(--color-text);
+  fill: var(--color-main-body);
   justify-self: end;
 }

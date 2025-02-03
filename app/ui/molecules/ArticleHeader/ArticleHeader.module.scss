@@ -13,7 +13,7 @@
 }
 
 .meta {
-  color: var(--color-text-light);
+  color: var(--color-minor-body);
 
   p + p {
     margin-top: var(--spacing-small);
@@ -21,7 +21,7 @@
 }
 
 .title {
-  color: var(--color-lead);
+  color: var(--color-main-heading);
 
   @include media("md") {
     width: 80%;

@@ -144,15 +144,15 @@
 }
 
 .additionalItem {
-  color: var(--color-text);
+  color: var(--color-main-body);
   position: relative;
   display: grid;
   grid-template-columns: #{rem(16)} 1fr;
   gap: var(--spacing-small);
 
   i {
-    background: var(--color-minor);
-    stroke: var(--color-text);
+    background: var(--color-minor-body);
+    stroke: var(--color-main-body);
     width: #{rem(16)};
     height: #{rem(16)};
     border-radius: 50%;
