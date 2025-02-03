@@ -1,9 +1,8 @@
+import type { Meta } from "@common-types/Meta";
 import type { ReactNode } from "react";
 
-export interface BlogPost {
+export interface BlogPost extends Meta {
   title: string;
-  date: Date;
-  tags: string[];
   youtube: string;
   link: string;
   icon?: never;

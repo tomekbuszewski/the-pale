@@ -1,6 +1,7 @@
 import * as runtime from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import { evaluate } from "@mdx-js/mdx";
+import shiki from "@shikijs/rehype";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
@@ -68,16 +69,13 @@ export default async function loader({
 
           if (cache.has(data.slug)) {
             const cachedPost = cache.get(data.slug);
+
             if (cachedPost) {
               posts.push(cachedPost);
             }
+
             break;
           }
-
-          const { default: Content } = await evaluate(content, {
-            ...runtime,
-            baseUrl: import.meta.url,
-          });
 
           const newPost: BlogPost = {
             link: "/writings/" + data.slug,
@@ -89,17 +87,33 @@ export default async function loader({
           };
 
           if (withContent) {
+            const { default: Content } = await evaluate(content, {
+              ...runtime,
+              baseUrl: import.meta.url,
+              rehypePlugins: [
+                [
+                  shiki,
+                  {
+                    themes: {
+                      light: "material-theme-lighter",
+                      dark: "catppuccin-mocha",
+                    },
+                  },
+                ],
+              ],
+            });
+
             const { components } = await import("./components");
             newPost.cnt = renderToString(
               Content({
                 components,
               }) as ReactNode,
             );
+
+            cache.set(data.slug, newPost);
           }
 
           posts.push(newPost);
-
-          cache.set(newPost.link, newPost);
 
           break;
         } catch {

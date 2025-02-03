@@ -3,6 +3,7 @@
 :root {
   --font-face-sans: "Bricolage Grotesque", sans-serif;
   --font-face-mono: "Geist Mono", monospace;
+  --font-face-serif: "Tinos", serif;
 
   --font-size-base: #{$baseline}px;
 
@@ -16,11 +17,13 @@
   --font-size-about: #{rem(36)};
   --font-size-work: #{rem(40)};
 
-  --font-size-article-body: #{rem(16)};
+  --font-size-article-body-small: #{rem(16)};
+  --font-size-article-body: #{rem(20)};
   --font-size-article-h2: 2em;
   --font-size-article-h3: 1.5em;
   --font-size-article-h4: 1em;
 
+  --leading-tall: 1.75;
   --leading-regular: 1.5;
   --leading-tight: 1;
 

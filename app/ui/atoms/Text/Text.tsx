@@ -33,6 +33,8 @@ interface Props<T extends ElementType> extends HTMLProps<T> {
     | "blockquote"
     | "article-body"
     | "ul"
+    | "pre"
+    | "code"
     | "work";
 }
 
@@ -95,6 +97,12 @@ function Text<T extends ElementType = "p">({
         break;
       case "blockquote":
         Tag = "blockquote" as ElementType;
+        break;
+      case "pre":
+        Tag = "pre" as ElementType;
+        break;
+      case "code":
+        Tag = "code" as ElementType;
         break;
       default:
         Tag = "p" as ElementType;

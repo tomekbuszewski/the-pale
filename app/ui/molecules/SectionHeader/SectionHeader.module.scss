@@ -24,3 +24,47 @@
 
   .separator { background-color: var(--color-text); }
 }
+
+.withLevel {
+  grid-row: auto;
+  position: relative;
+  margin: var(--spacing-2xl) 0 var(--spacing-lg);
+
+  .separator {
+    margin-bottom: 0;
+  }
+
+  &:before {
+    display: none;
+    font-size: 0.8em;
+    position: absolute;
+    left: 0;
+    top: -#{rem(4)};
+    color: var(--color-minor);
+    transform: translateX(calc(-100% - 1rem));
+
+    @include media("md") {
+      display: block;
+    }
+  }
+}
+
+.level-2:before {
+  content: "##";
+}
+
+.level-3:before {
+  content: "###";
+}
+
+.level-4:before {
+  content: "####";
+}
+
+.level-5:before {
+  content: "#####";
+}
+
+.level-6:before {
+  content: "######";
+}

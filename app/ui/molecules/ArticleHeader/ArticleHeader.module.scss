@@ -1,0 +1,30 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  display: grid;
+  gap: var(--gutter);
+  grid-template-rows: repeat(3, auto);
+  justify-items: flex-start;
+  padding: var(--spacing-3xl) 0;
+
+  @include media("md") {
+    padding: var(--spacing-huge) 0;
+  }
+}
+
+.meta {
+  color: var(--color-text-light);
+
+  p + p {
+    margin-top: var(--spacing-small);
+  }
+}
+
+.title {
+  color: var(--color-lead);
+
+  @include media("md") {
+    width: 80%;
+    padding-right: var(--gutter);
+  }
+}

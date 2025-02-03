@@ -2,6 +2,7 @@
 
 .hero {
   font-size: var(--font-size-hero);
+  font-weight: 900;
   line-height: var(--leading-tight);
 
   @include media("md") {
@@ -12,16 +13,22 @@
   @include media("lg") {
     line-height: var(--leading-tight);
   }
+
+  span {
+    font-weight: 200;
+  }
 }
 
 .regular,
-.list {
+.list,
+.article-body {
   font-size: var(--font-size-regular);
   line-height: var(--leading-regular);
 
   a {
     position: relative;
     transition: #{transition(all)};
+    text-decoration: none;
 
     &:before {
       content: "";
@@ -37,7 +44,7 @@
     }
   }
 
-  a[href^="http"] {
+  a[href^="http"]:not([href*="buszewski"]) {
     &:after {
       content: "↗";
       display: inline-block;
@@ -104,8 +111,26 @@
 }
 
 .article-body {
-  font-size: var(--font-size-article-body);
+  font-family: var(--font-face-serif);
+  font-size: var(--font-size-article-body-small);
   line-height: var(--leading-regular);
+  color: var(--color-text);
+
+  @include media("md") {
+    font-size: var(--font-size-article-body);
+  }
+
+  a {
+    color: var(--color-accent)
+  }
+
+  code {
+    color: var(--color-text-light);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: #{rem(4)};
+    display: inline-block;
+    padding: #{rem(4)} #{rem(8)};
+  }
 }
 
 .h2 {
@@ -144,4 +169,21 @@
 
 .bold {
   font-weight: 800;
+}
+
+.pre {
+  font-family: var(--font-face-mono);
+  padding: var(--spacing-mid);
+  line-height: var(--leading-regular);
+  border-radius: #{rem(8)};
+  overflow: auto;
+
+  @include media("md") {
+    padding: var(--spacing-lg);
+  }
+}
+
+.code {
+  font-family: var(--font-face-mono);
+  font-size: var(--font-size-regular);
 }

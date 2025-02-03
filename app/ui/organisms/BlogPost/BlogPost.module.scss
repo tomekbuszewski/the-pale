@@ -1,0 +1,41 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  grid-column: 1/-1;
+}
+
+.content {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--spacing-mid);
+    grid-template-rows: auto;
+    display: grid;
+
+    > * {
+      grid-column: 1 / 13;
+    }
+
+  @include media("md") {
+
+    > * {
+      grid-column: 1 / 11;
+    }
+  }
+
+  @include media("lg") {
+    > * {
+      grid-column: 1 / 8;
+    }
+  }
+}
+
+.youtube {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: var(--spacing-mid);
+  border-radius: #{rem(8)};
+  overflow: hidden;
+
+  @include media("md") {
+    margin-bottom: var(--spacing-3xl);
+  }
+}

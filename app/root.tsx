@@ -9,19 +9,12 @@ import {
 
 import type { Route } from "./+types/root";
 
+import "@fontsource-variable/geist-mono";
+import "@fontsource-variable/bricolage-grotesque";
+
 import stylesheet from "./app.scss?url";
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Geist+Mono:wght@100..900&display=swap",
-  },
   { rel: "stylesheet", href: stylesheet },
 ];
 
