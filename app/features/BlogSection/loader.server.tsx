@@ -11,7 +11,7 @@ import type { ReactNode } from "react";
 import type { PaginationProps } from "../../common-types/BlogPagination";
 import type { BlogPost } from "../../common-types/Blogpost";
 
-import { cache } from "./cache";
+import { cache, loadCacheFromFile, saveCacheToFile } from "./cache";
 
 interface LoaderConfig {
   withContent?: boolean;
@@ -47,6 +47,12 @@ export default async function loader({
     "app/features/BlogSection/content",
   );
   const posts: BlogPost[] = [];
+
+  try {
+    loadCacheFromFile(
+      path.join(process.cwd(), "app/features/BlogSection/cache.json"),
+    );
+  } catch {}
 
   try {
     const directories = await fs.readdir(contentDir);
@@ -125,6 +131,12 @@ export default async function loader({
     const items = posts
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .splice(0, limit);
+
+    if (!import.meta.env.CI) {
+      saveCacheToFile(
+        path.join(process.cwd(), "app/features/BlogSection/cache.json"),
+      );
+    }
 
     return {
       items,

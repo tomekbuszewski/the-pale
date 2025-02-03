@@ -20,6 +20,7 @@
     "clsx": "^2.1.1",
     "isbot": "^5.1.17",
     "motion": "^12.0.1",
+    "plop-pack-remove": "^1.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.1.3"
