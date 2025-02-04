@@ -1,0 +1,44 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  background: var(--color-minor-background);
+  border-radius: #{rem(8)};
+  padding: var(--spacing-mid);
+
+  @include media("md") {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.list {
+  list-style: none;
+  grid-column: 2/3;
+  grid-row: 1;
+
+  li {
+    position: relative;
+    padding-left: var(--spacing-small);
+    color: var(--color-minor-body);
+
+    &:before {
+      opacity: 0.64;
+      content: "·";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  @include media("lg") {
+    columns: 2;
+  }
+}
+
+.title hr {
+  margin-bottom: var(--spacing-mid);
+
+  @include media("md") {
+    margin-bottom: 0;
+  }
+}
