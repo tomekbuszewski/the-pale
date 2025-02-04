@@ -82,16 +82,14 @@ function WorkItem({
     >
       <section className={styles.details}>
         <motion.div {...createMotionConfig(0)}>
-          <Text color="background" variant="title" className={styles.title}>
+          <Text variant="title" className={styles.title}>
             {title}
           </Text>
         </motion.div>
 
         {description.length > 0 && (
           <motion.div {...createMotionConfig(1)}>
-            <Text color="background" className={styles.description}>
-              {description[0]}
-            </Text>
+            <Text className={styles.description}>{description[0]}</Text>
           </motion.div>
         )}
 

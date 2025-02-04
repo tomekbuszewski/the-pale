@@ -38,20 +38,20 @@
 }
 
 .secondary {
-  color: var(--color-main-accent);
-  border-color: var(--color-main-accent);
+  color: var(--color-main-body);
+  border-color: var(--color-main-body);
 
   &:hover,
   &:focus {
     box-shadow:
-      0 #{rem(8)} #{rem(16)} #{rem(-4)} var(--color-main-accent),
-      0 #{rem(8)} #{rem(8)} -#{rem(8)} var(--color-main-accent);
+      0 #{rem(8)} #{rem(16)} #{rem(-4)} var(--color-minor-accent),
+      0 #{rem(8)} #{rem(8)} -#{rem(8)} var(--color-minor-accent);
   }
 }
 
 .tertiary {
-  color: var(--color-main-body);
-  border-color: var(--color-main-body);
+  color: var(--color-minor-body);
+  border-color: var(--color-minor-accent);
 
   &:hover,
   &:focus {

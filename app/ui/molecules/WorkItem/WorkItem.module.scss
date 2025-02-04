@@ -1,7 +1,7 @@
 @use "../../styles/_fns.scss" as *;
 
 .parent {
-  background-color: black;
+  background-color: black !important;
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
@@ -54,10 +54,12 @@
 
 .title {
   margin-bottom: var(--spacing-xl);
+  color: var(--color-main-heading-dark);
 }
 
 .description {
   margin-bottom: var(--spacing-xl);
+  color: var(--color-main-body-dark);
 }
 
 .tags {
@@ -73,7 +75,8 @@
   flex-flow: row wrap;
   align-items: center;
   gap: var(--spacing-small);
-  color: var(--color-minor-accent);
+  color: var(--color-main-body-dark);
+  opacity: 0.64;
 
   svg {
     stroke: currentColor;
