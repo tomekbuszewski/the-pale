@@ -2,16 +2,18 @@
 
 .separator {
   margin: var(--spacing-lg) 0;
+  height: #{rem(8)};
 
   @include media("md") {
     margin: var(--spacing-xl) 0;
   }
 
   @include media("lg") {
-    margin: var(--spacing-2xl) 0;
+    margin: var(--spacing-xl) 0 var(--spacing-2xl);
   }
 
   svg {
     fill: var(--color-minor-accent);
+    height: 100%;
   }
 }

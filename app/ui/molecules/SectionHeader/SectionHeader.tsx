@@ -10,7 +10,7 @@ interface Props extends HTMLMotionProps<"header"> {
   animate?: boolean;
   dark?: boolean;
   level?: 2 | 3 | 4 | 5 | 6;
-  margin?: "none" | "auto";
+  margin?: "none" | "auto" | "small";
 }
 
 function SectionHeader({

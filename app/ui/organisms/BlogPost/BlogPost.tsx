@@ -15,28 +15,26 @@ interface Props extends HTMLProps<HTMLDivElement> {
 
 import styles from "./BlogPost.module.scss";
 
-function BlogPost({ body, title, meta, youtube, ...props }: Props) {
+function BlogPost({ body, title, meta, youtube }: Props) {
   return (
-    <SectionWrapper>
-      <article {...props} className={styles.wrapper}>
-        <ArticleHeader title={title} meta={meta} />
+    <SectionWrapper tag="article" contentClassName="largeText">
+      <ArticleHeader title={title} meta={meta} />
 
-        {youtube && (
-          <iframe
-            className={styles.youtube}
-            src={`https://www.youtube.com/embed/${youtube}`}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        )}
-
-        <div
-          dangerouslySetInnerHTML={{ __html: body }}
-          className={styles.content}
+      {youtube && (
+        <iframe
+          className={styles.youtube}
+          src={`https://www.youtube.com/embed/${youtube}`}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
         />
-      </article>
+      )}
+
+      <div
+        dangerouslySetInnerHTML={{ __html: body }}
+        className={styles.content}
+      />
     </SectionWrapper>
   );
 }

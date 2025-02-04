@@ -45,7 +45,6 @@ export const WorksSection = {
 
 export const BlogSection = {
   component: BlogSectionFeature.BlogSection,
-  loader: BlogSectionFeature.loader,
   guard: BlogSectionFeature.guard,
 };
 

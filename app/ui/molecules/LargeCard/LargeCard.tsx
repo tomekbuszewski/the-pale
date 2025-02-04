@@ -6,6 +6,7 @@ import type { HTMLProps, ReactNode } from "react";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   title: string;
+  align?: "left" | "right";
   description: ReactNode;
   more?: {
     href: string;
@@ -22,12 +23,13 @@ function LargeCard({
   description,
   body,
   className,
+  align = "left",
   ...props
 }: Props) {
   return (
     <section
       {...props}
-      className={clsx(styles.wrapper, className, "cardWrapper")}
+      className={clsx(styles.wrapper, className, "cardWrapper", styles[align])}
     >
       <div className={styles.desc}>
         <SectionHeader

@@ -28,14 +28,14 @@ export function Meta({ icon, date }: MetaProps) {
 interface FooterProps {
   onClick?: () => void;
   youtube?: string;
-  link?: string;
+  link: string;
   active?: boolean;
 }
 
 export function Footer({ onClick, youtube, link, active }: FooterProps) {
   return (
     <footer className={styles.footer}>
-      {link && youtube ? (
+      {youtube ? (
         <>
           <Button to={link} variant="primary">
             Read
@@ -44,7 +44,11 @@ export function Footer({ onClick, youtube, link, active }: FooterProps) {
             Watch
           </Button>
         </>
-      ) : null}
+      ) : (
+        <Button to={link} variant="primary">
+          Read more
+        </Button>
+      )}
 
       {onClick ? (
         <Button

@@ -1,4 +1,4 @@
-import {Text} from "@ui/atoms";
+import { Text } from "@ui/atoms";
 import { ServicesSection as Main } from "@ui/organisms";
 
 import ConsultationsIcon from "./assets/consultations.svg?react";
@@ -12,13 +12,11 @@ const items = [
     onClick: () => null,
     children: (
       <>
+        <Text>Full-Cycle Web Solutions: Design, Development, Delivery.</Text>
         <Text>
-          Full-Cycle Web Solutions: Design, Development, Delivery.
-        </Text>
-        <Text>
-          I provide a seamless experience from initial design concepts to
-          the final product. Whether you’re launching a new business or
-          revamping an existing site, I ensure everything works perfectly.
+          I provide a seamless experience from initial design concepts to the
+          final product. Whether you’re launching a new business or revamping an
+          existing site, I ensure everything works perfectly.
         </Text>
       </>
     ),
@@ -30,20 +28,22 @@ const items = [
       "Thorough testing for performance, compatibility, and usability",
       "Hosting, domains and deployments taken care of, with the option to transfer ownership free of charge",
     ],
+    link: "/services/website-design-development",
   },
   {
     title: "Front-end<br />Development",
     icon: <FrontendIcon />,
     onClick: () => null,
+    link: "/services/front-end",
     children: (
       <>
         <Text>
-          Have a design? I’ll make it a reality with clean, functional
-          front-end code.
+          Have a design? I’ll make it a reality with clean, functional front-end
+          code.
         </Text>
         <Text>
-          Tech choices are tailored to your project to ensure scalability
-          and smooth performance.
+          Tech choices are tailored to your project to ensure scalability and
+          smooth performance.
         </Text>
       </>
     ),
@@ -58,12 +58,13 @@ const items = [
   {
     title: "Project<br />Consulting",
     icon: <ConsultationsIcon />,
+    link: "/services/consulting",
     onClick: () => null,
     children: (
       <>
         <Text>
-          With experience as an engineering manager and tech lead, I
-          understand both technical and human aspects of team dynamics.
+          With experience as an engineering manager and tech lead, I understand
+          both technical and human aspects of team dynamics.
         </Text>
         <Text>
           I offer consulting to help your team thrive and reach its goals.
@@ -77,6 +78,8 @@ const items = [
       "Discuss ideas and solve technical challenges as your sparring partner",
     ],
   },
-]
+];
 
-export default function ServicesSection() {return <Main items={items} />}
+export default function ServicesSection() {
+  return <Main items={items} />;
+}

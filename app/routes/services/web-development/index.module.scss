@@ -1,0 +1,78 @@
+@use "../../../ui/styles/_fns.scss" as *;
+
+$padding: 64;
+$paddingLg: 128;
+
+.mainSection {
+  grid-column: 1/-1;
+
+  & + & {
+    margin-top: var(--spacing-3xl);
+
+    @include media("md") {
+      margin-top: var(--spacing-huge);
+    }
+  }
+
+  @include media("md") {
+    grid-column: 1 / 9;
+  }
+
+  @include media("lg") {
+    grid-column: 1 / 7;
+  }
+}
+
+.process {
+  margin: var(--spacing-lg) 0;
+  display: grid;
+  column-gap: var(--gutter);
+  grid-template-rows: repeat(3, auto);
+
+  @include media("md") {
+    margin: var(--spacing-xl) 0;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media("lg") {
+    margin: var(--spacing-2xl) 0;
+  }
+
+  div + div {
+    margin-top: var(--spacing-mid);
+
+    @include media("md") {
+      margin-top: 0;
+    }
+  }
+
+  div > * {
+    @include media("md") {
+      position: sticky;
+      top: var(--spacing-2xl);
+    }
+  }
+
+  @for $i from 1 through 3 {
+    > div:nth-of-type(#{$i}) {
+      @include media("md") {
+        padding-top: #{rem($padding * ($i - 1))};
+      }
+
+      @include media("lg") {
+        padding-top: #{rem($paddingLg * ($i - 1))};
+      }
+    }
+  }
+}
+
+.full {
+  @include media("md") {
+    grid-column: 1/-1;
+  }
+
+  @include media("lg") {
+    grid-column: 1/-1;
+  }
+}

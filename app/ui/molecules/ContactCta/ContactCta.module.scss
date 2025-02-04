@@ -1,0 +1,31 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  grid-column: 1/-1;
+  padding: var(--spacing-mid);
+  text-align: center;
+  background: var(--color-minor-accent);
+  border-radius: #{rem(8)};
+  color: var(--color-minor-body);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--gutter);
+
+  @include media("md") {
+    padding: var(--spacing-lg);
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  @include media("lg") {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: var(--spacing-mid);
+}

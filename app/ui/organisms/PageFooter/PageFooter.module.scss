@@ -4,6 +4,7 @@
   position: sticky;
   bottom: 0;
   z-index: 0;
+  background: var(--color-minor-background);
 }
 
 .wrapper {
@@ -51,6 +52,15 @@
   margin-top: var(--spacing-xl);
 }
 
+.navWrapper {
+  color: var(--color-minor-body);
+  opacity: 0.64;
+
+  hr {
+    margin-bottom: var(--spacing-mid) !important;
+  }
+}
+
 .navWrapper + .navWrapper {
   margin-top: var(--spacing-xl);
 
@@ -91,6 +101,8 @@
 .copyright {
   grid-column: 1/-1;
   margin-top: var(--spacing-3xl);
+  color: var(--color-minor-body);
+  opacity: 0.64;
 
   @include media("md") {
     display: flex;
@@ -99,6 +111,7 @@
 
     p {
       max-width: #{rem(300)};
+      text-align: right;
     }
   }
 

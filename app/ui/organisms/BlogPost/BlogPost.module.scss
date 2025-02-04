@@ -1,21 +1,17 @@
 @use "../../styles/_fns.scss" as *;
 
-.wrapper {
-  grid-column: 1/-1;
-}
-
 .content {
-    grid-template-columns: repeat(12, 1fr);
-    gap: var(--spacing-mid);
-    grid-template-rows: auto;
-    display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-mid);
+  grid-template-rows: auto;
+  display: grid;
+  grid-column: 1/-1;
 
-    > * {
-      grid-column: 1 / 13;
-    }
+  > * {
+    grid-column: 1 / 13;
+  }
 
   @include media("md") {
-
     > * {
       grid-column: 1 / 11;
     }
@@ -34,6 +30,7 @@
   margin-bottom: var(--spacing-mid);
   border-radius: #{rem(8)};
   overflow: hidden;
+  grid-column: 1/-1;
 
   @include media("md") {
     margin-bottom: var(--spacing-3xl);

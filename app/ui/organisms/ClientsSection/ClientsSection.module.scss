@@ -58,10 +58,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-main-background);
+    background: var(--color-minor-background);
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: #{rem(8)};
     z-index: 0;
+    transition: #{transition(all)};
   }
 
   &:hover {
@@ -69,6 +70,7 @@
 
     &:after {
       border: 0;
+      background: var(--color-main-background);
     }
   }
 

@@ -30,6 +30,7 @@ function Button({ variant, className, small, disabled, ...rest }: Props) {
 
   return (
     <Link
+      viewTransition
       className={clsx(classNames, {
         [styles.small]: small,
       })}

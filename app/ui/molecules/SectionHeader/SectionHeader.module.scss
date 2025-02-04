@@ -39,6 +39,16 @@
   }
 }
 
+.title.margin-small {
+  .separator {
+    margin-bottom: var(--spacing-mid);
+
+    @include media("md") {
+      margin-bottom: var(--spacing-2xl);
+    }
+  }
+}
+
 .withLevel {
   grid-row: auto;
   position: relative;

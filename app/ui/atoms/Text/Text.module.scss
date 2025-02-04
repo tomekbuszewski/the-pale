@@ -189,3 +189,11 @@
   font-family: var(--font-face-mono);
   font-size: var(--font-size-regular);
 }
+
+.large {
+  font-size: var(--font-size-large);
+
+  & + & {
+    margin-top: 1em;
+  }
+}

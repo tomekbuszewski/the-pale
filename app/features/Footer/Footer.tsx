@@ -1,3 +1,4 @@
+import { CAL, EMAIL, PHONE } from "@contact";
 import { PageFooter as Main } from "@ui/organisms";
 
 import Calendar from "./assets/calendar.svg?react";
@@ -29,18 +30,18 @@ const data = {
   ],
   contact: [
     {
-      href: "mailto:tomasz@buszewski.com",
-      text: "tomasz@buszewski.com",
+      href: `mailto:${EMAIL}`,
+      text: EMAIL,
       icon: <Mail />,
     },
     {
-      href: "https://cal.com/buszewski/intro",
+      href: CAL,
       text: "30-minute intro call",
       icon: <Calendar />,
     },
     {
-      href: "tel:+48784851146",
-      text: "+48 784 851 146",
+      href: `tel:${PHONE.replace(/\s/g, "")}`,
+      text: PHONE,
       icon: <Phone />,
     },
   ],

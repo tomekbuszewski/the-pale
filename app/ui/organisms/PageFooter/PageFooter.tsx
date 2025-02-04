@@ -70,38 +70,36 @@ function PageFooter({
       <Logo wrapperClassName={styles.logo} />
       <Logo wrapperClassName={styles.logoBg} />
 
-      <Text variant="regular" color="text" className={styles.navWrapper}>
+      <Text variant="regular" className={styles.navWrapper}>
         {copy}
       </Text>
 
       <nav className={styles.navWrapper}>
-        <SectionHeader title="Quick links" />
+        <SectionHeader title="Quick links" margin="none" />
         <Links items={quickLinks} />
       </nav>
 
       <nav className={styles.navWrapper}>
-        <SectionHeader title="Contact" />
+        <SectionHeader title="Contact" margin="none" />
         <Links items={contact} />
 
         {contactDisclaimer && (
-          <Text color="text" className={styles.disclaimer}>
-            {contactDisclaimer}
-          </Text>
+          <Text className={styles.disclaimer}>{contactDisclaimer}</Text>
         )}
       </nav>
 
       <nav className={styles.navWrapper}>
-        <SectionHeader title="Socials" />
+        <SectionHeader title="Socials" margin="none" />
         <Links items={socials} />
       </nav>
 
       <section className={styles.copyright}>
-        <Text color="text" align="right">
+        <Text align="right">
           © 2008 - {year}.<br />
           All rights reserved.
         </Text>
 
-        <Text tag="p" variant="highlight" color="text" align="right">
+        <Text tag="p" variant="highlight">
           This site collects cookies for analytics and testing purposes.
         </Text>
       </section>

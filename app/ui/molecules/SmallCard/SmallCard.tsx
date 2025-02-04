@@ -18,9 +18,11 @@ function SmallCard({ title, body, no, className, ...props }: Props) {
       {...props}
       className={clsx(styles.wrapper, className, "cardWrapper")}
     >
-      <Text variant="title" className={styles.title}>
-        {title}
-      </Text>
+      <Text
+        variant="title"
+        className={styles.title}
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
       <Text className={styles.body}>{body}</Text>
       <span className={styles.number}>{no}</span>
     </article>

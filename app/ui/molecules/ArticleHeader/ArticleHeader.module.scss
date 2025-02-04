@@ -6,9 +6,15 @@
   grid-template-rows: repeat(3, auto);
   justify-items: flex-start;
   padding: var(--spacing-3xl) 0;
+  grid-column: 1/-1;
 
   @include media("md") {
     padding: var(--spacing-huge) 0;
+    grid-column: 1/11;
+  }
+
+  @include media("lg") {
+    grid-column: 1/10;
   }
 }
 

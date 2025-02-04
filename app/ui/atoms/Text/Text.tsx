@@ -21,6 +21,7 @@ interface Props<T extends ElementType> extends HTMLProps<T> {
     | "hero"
     | "regular"
     | "small"
+    | "large"
     | "highlight"
     | "section-heading"
     | "title"
@@ -56,9 +57,6 @@ function Text<T extends ElementType = "p">({
       case "hero":
         Tag = "h1" as ElementType;
         break;
-      case "regular":
-        Tag = "p" as ElementType;
-        break;
       case "small":
         Tag = "span" as ElementType;
         break;
@@ -76,9 +74,6 @@ function Text<T extends ElementType = "p">({
         break;
       case "list":
         Tag = "li" as ElementType;
-        break;
-      case "about":
-        Tag = "p" as ElementType;
         break;
       case "work":
         Tag = "h3" as ElementType;
@@ -104,6 +99,9 @@ function Text<T extends ElementType = "p">({
       case "code":
         Tag = "code" as ElementType;
         break;
+      case "regular":
+      case "large":
+      case "about":
       default:
         Tag = "p" as ElementType;
         break;

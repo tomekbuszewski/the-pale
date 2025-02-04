@@ -1,4 +1,9 @@
 @use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  overflow: hidden;
+}
+
 .wrapper:hover {
   box-shadow: 0 #{rem(24)} #{rem(48)} 0 rgba(0, 0, 0, 0.24);
 }
@@ -26,6 +31,7 @@
   position: absolute;
   top: var(--spacing-mid);
   left: calc(var(--spacing-mid) * -1);
+  pointer-events: none;
 
   @include media("md") {
     top: var(--spacing-lg);

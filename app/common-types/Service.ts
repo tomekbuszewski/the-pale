@@ -8,7 +8,7 @@ export interface Service {
   date?: never;
   tags?: never;
   youtube?: never;
-  link?: never;
+  link: string;
   active?: boolean;
   children: ReactNode;
 }

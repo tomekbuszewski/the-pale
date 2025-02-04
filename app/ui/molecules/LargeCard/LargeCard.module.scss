@@ -1,18 +1,53 @@
 @use "../../styles/_fns.scss" as *;
 
+:root {
+  --card-height-md: #{rem(480)};
+  --card-height-lg: #{rem(560)};
+}
+
 .wrapper {
   overflow: hidden;
   grid-column: 1/-1;
+  border-radius: #{rem(8)};
+  color: var(--color-minor-body);
+
+  @media (min-width: 1024px) and (max-height: 1280px) {
+    position: sticky;
+    top: var(--spacing-lg);
+    outline: var(--spacing-small) solid var(--color-main-background);
+  }
+
+  & + & {
+    margin-top: var(--spacing-lg);
+  }
 
   @include media("md") {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
     gap: var(--gutter);
-    min-height: #{rem(480)};
+    height: var(--card-height-md);
+
+    & + & {
+      margin-top: var(--spacing-xl);
+    }
   }
 
   @include media("lg") {
-    min-height: #{rem(560)};
+    height: var(--card-height-lg);
+
+    & + & {
+      margin-top: var(--spacing-3xl);
+    }
+  }
+}
+
+.wrapper.right {
+  .desc {
+    order: 2;
+  }
+
+  .body {
+    order: 1;
   }
 }
 
@@ -21,12 +56,24 @@
 }
 
 .footer {
-  margin-top: auto;
+  margin-top: var(--spacing-lg);
+
+  @include media("md") {
+    margin-top: auto;
+  }
 }
 
 .desc {
   display: flex;
   flex-flow: column nowrap;
+
+  @include media("md") {
+    height: calc(var(--card-height-md) - (2 * var(--spacing-lg)));
+  }
+
+  @include media("lg") {
+    height: calc(var(--card-height-lg) - (2 * var(--spacing-xl)));
+  }
 }
 
 .body {

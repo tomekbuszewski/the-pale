@@ -1,0 +1,74 @@
+@use "../../styles/_fns.scss" as *;
+
+// inspired by https://github.com/HoanghoDev/youtube_v2/tree/main/auto_slider
+
+:root {
+  --local-gutter: #{rem(48)};
+  --time: 32s;
+}
+
+@keyframes run {
+  from {
+    top: 100%;
+  }
+
+  to {
+    top: calc((var(--width) * var(--count) * -0.25));
+  }
+}
+
+.wrapper {
+  display: none;
+  overflow: hidden;
+  gap: var(--local-gutter);
+  grid-template-columns: repeat(var(--columns), var(--width));
+  height: calc(var(--width) * var(--count));
+
+  @include media("md") {
+    display: grid;
+  }
+
+  section {
+    position: relative;
+    height: calc(var(--width) * var(--count));
+  }
+
+  section:nth-of-type(even) {
+    margin-top: calc((var(--icon) + (var(--local-gutter) / 2)) * -1);
+  }
+}
+
+.icon {
+  position: absolute;
+  overflow: hidden;
+  top: 100%;
+  width: var(--width);
+  background: var(--color-main-background);
+  border-radius: #{rem(8)};
+  aspect-ratio: var(--ratio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: run var(--time) linear infinite;
+  animation-delay: calc(
+    (var(--time) / var(--count)) * (var(--number) - 1) - var(--time)
+  );
+
+  img {
+    max-width: var(--icon);
+    max-height: var(--icon);
+    filter: grayscale(100%);
+    opacity: 0.48;
+    transition: #{transition(all)};
+  }
+
+  &:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+}
+
+.large .icon img {
+  max-width: 100%;
+  max-height: 100%;
+}
