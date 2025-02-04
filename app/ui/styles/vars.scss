@@ -8,14 +8,23 @@
   --font-size-base: #{$baseline}px;
 
   --font-size-hero: #{rem(40)};
+  --font-size-hero-md: #{rem(72)};
+  --font-size-hero-lg: #{rem(96)};
+
   --font-size-regular: #{rem(14)};
   --font-size-small: #{rem(12)};
+
   --font-size-highlight: #{rem(12)};
+
   --font-size-secion-heading: #{rem(12)};
+
   --font-size-title: #{rem(40)};
+
   --font-size-button: #{rem(12)};
+
   --font-size-about: #{rem(36)};
-  --font-size-work: #{rem(40)};
+
+  --font-size-work: var(--font-size-title);
 
   --font-size-article-body-small: #{rem(16)};
   --font-size-article-body: #{rem(20)};
@@ -35,6 +44,15 @@
   --color-minor-heading: #513a42;
   --color-minor-body: #725660;
   --color-minor-accent: #f9c5bd;
+
+  --color-main-background-dark: #1a202c;
+  --color-main-heading-dark: #f7efec;
+  --color-main-body-dark: #d1c7c5;
+  --color-main-accent-dark: #ea516a;
+  --color-minor-background-dark: #2a3d55;
+  --color-minor-heading-dark: #b1cced;
+  --color-minor-body-dark: #d5e3f5;
+  --color-minor-accent-dark: #a45b6b;
 
   --gutter: #{rem(24)};
   --container: auto;
@@ -80,13 +98,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-main-background: #1a202c;
-    --color-main-heading: #f7efec;
-    --color-main-body: #d1c7c5;
-    --color-main-accent: #ea516a;
-    --color-minor-background: #2a3d55;
-    --color-minor-heading: #b1cced;
-    --color-minor-body: #d5e3f5;
-    --color-minor-accent: #a45b6b;
+    --color-main-background: var(--color-main-background-dark);
+    --color-main-heading: var(--color-main-heading-dark);
+    --color-main-body: var(--color-main-body-dark);
+    --color-main-accent: var(--color-main-accent-dark);
+    --color-minor-background: var(--color-minor-background-dark);
+    --color-minor-heading: var(--color-minor-heading-dark);
+    --color-minor-body: var(--color-minor-body-dark);
+    --color-minor-accent: var(--color-minor-accent-dark);
   }
 }

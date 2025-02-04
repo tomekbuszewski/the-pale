@@ -1,0 +1,17 @@
+@use "../../styles/_fns.scss" as *;
+
+.separator {
+  margin: var(--spacing-lg) 0;
+
+  @include media("md") {
+    margin: var(--spacing-xl) 0;
+  }
+
+  @include media("lg") {
+    margin: var(--spacing-2xl) 0;
+  }
+
+  svg {
+    fill: var(--color-minor-accent);
+  }
+}

@@ -8,6 +8,12 @@ export const Primary: StoryObj<typeof SectionHeader> = {
   },
 };
 
+export const Secondary = () => (
+  <div style={{ background: "#000", padding: 60 }}>
+    <SectionHeader dark title="Hello from Storybook" />
+  </div>
+);
+
 export default {
   title: "Molecules/SectionHeader",
   component: SectionHeader,

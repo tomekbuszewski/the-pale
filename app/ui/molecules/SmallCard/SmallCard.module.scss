@@ -1,0 +1,54 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  border-radius: #{rem(8)};
+  background: var(--color-minor-background);
+  padding: var(--spacing-mid);
+  transition: #{transition(all)};
+  position: relative;
+
+  @include media("md") {
+    padding: var(--spacing-lg);
+  }
+
+  @include media("lg") {
+    padding: var(--spacing-xl);
+  }
+}
+
+.wrapper:hover {
+  box-shadow: 0 #{rem(24)} #{rem(48)} 0 rgba(0, 0, 0, 0.24);
+}
+
+.title {
+  color: var(--color-minor-heading);
+  margin-bottom: var(--spacing-mid);
+
+  @include media("md") {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+.body {
+  color: var(--color-minor-body);
+}
+
+.number {
+  color: var(--color-minor-body);
+  opacity: 0.16;
+  font-size: #{rem(116)};
+  font-family: var(--font-face-mono);
+  line-height: 1;
+  font-weight: 100;
+  position: absolute;
+  top: var(--spacing-mid);
+  left: calc(var(--spacing-mid) * -1);
+
+  @include media("md") {
+    top: var(--spacing-lg);
+  }
+
+  @include media("lg") {
+    top: var(--spacing-lg);
+  }
+}

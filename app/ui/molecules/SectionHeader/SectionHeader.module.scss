@@ -3,6 +3,10 @@
 .title {
   grid-column: 1 / -1;
   grid-row: 1;
+
+  h2 {
+    color: var(--color-minor-body);
+  }
 }
 
 .separator {
@@ -21,11 +25,11 @@
 
 .title.dark {
   h2 {
-    color: var(--color-minor-body);
+    color: var(--color-minor-body-dark);
   }
 
   .separator {
-    background-color: var(--color-minor-accent);
+    background-color: var(--color-minor-accent-dark);
   }
 }
 

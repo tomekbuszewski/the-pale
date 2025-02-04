@@ -8,10 +8,12 @@
   @include media("md") {
     line-height: var(--leading-regular);
     letter-spacing: -0.025em;
+    font-size: var(--font-size-hero-md);
   }
 
   @include media("lg") {
     line-height: var(--leading-tight);
+    font-size: var(--font-size-hero-lg);
   }
 
   span {
