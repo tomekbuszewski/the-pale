@@ -33,6 +33,12 @@
   }
 }
 
+.title.margin-none {
+  .separator {
+    margin-bottom: 0;
+  }
+}
+
 .withLevel {
   grid-row: auto;
   position: relative;

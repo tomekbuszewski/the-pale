@@ -14,7 +14,10 @@ import styles from "./SmallCard.module.scss";
 
 function SmallCard({ title, body, no, className, ...props }: Props) {
   return (
-    <article {...props} className={clsx(styles.wrapper, className)}>
+    <article
+      {...props}
+      className={clsx(styles.wrapper, className, "cardWrapper")}
+    >
       <Text variant="title" className={styles.title}>
         {title}
       </Text>

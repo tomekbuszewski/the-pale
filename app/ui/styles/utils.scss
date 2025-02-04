@@ -1,66 +1,4 @@
-.text-background {
-  color: var(--color-main-background);
-}
-
-.text-lead {
-  color: var(--color-main-heading);
-}
-
-.text-accent {
-  color: var(--color-main-accent);
-}
-
-.text-text {
-  color: var(--color-main-body);
-}
-
-.text-text-light {
-  color: var(--color-minor-body);
-}
-
-.text-lead-light {
-  color: var(--color-main-heading-light);
-}
-
-.text-minor {
-  color: var(--color-minor-body);
-}
-
-.bg-lead {
-  background-color: var(--color-main-heading);
-}
-
-.bg-accent {
-  background-color: var(--color-main-accent);
-}
-
-.bg-text {
-  background-color: var(--color-main-body);
-}
-
-.bg-text-light {
-  background-color: var(--color-minor-body);
-}
-
-.bg-lead-light {
-  background-color: var(--color-main-heading-light);
-}
-
-.bg-minor {
-  background-color: var(--color-minor-body);
-}
-
-.align-left {
-  text-align: left;
-}
-
-.align-center {
-  text-align: center;
-}
-
-.align-right {
-  text-align: right;
-}
+@use "./_fns.scss" as *;
 
 // https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
 .sr-only {
@@ -75,4 +13,20 @@
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+.cardWrapper {
+  border-radius: #{rem(8)};
+  background: var(--color-minor-background);
+  padding: var(--spacing-mid);
+  transition: #{transition(all)};
+  position: relative;
+
+  @include media("md") {
+    padding: var(--spacing-lg);
+  }
+
+  @include media("lg") {
+    padding: var(--spacing-xl);
+  }
 }

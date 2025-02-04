@@ -10,6 +10,7 @@ interface Props extends HTMLMotionProps<"header"> {
   animate?: boolean;
   dark?: boolean;
   level?: 2 | 3 | 4 | 5 | 6;
+  margin?: "none" | "auto";
 }
 
 function SectionHeader({
@@ -19,6 +20,7 @@ function SectionHeader({
   dark,
   children,
   level,
+  margin,
   ...rest
 }: Props) {
   if (animate) {
@@ -27,10 +29,16 @@ function SectionHeader({
 
   return (
     <motion.header
-      className={clsx(styles.title, className, styles[`level-${level}`], {
-        [styles.dark]: dark,
-        [styles.withLevel]: Boolean(level),
-      })}
+      className={clsx(
+        styles.title,
+        className,
+        margin && styles[`margin-${margin}`],
+        styles[`level-${level}`],
+        {
+          [styles.dark]: dark,
+          [styles.withLevel]: Boolean(level),
+        },
+      )}
       {...rest}
     >
       <Text variant="section-heading">{title ?? children}</Text>

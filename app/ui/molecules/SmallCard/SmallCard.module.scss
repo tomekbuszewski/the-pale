@@ -1,21 +1,4 @@
 @use "../../styles/_fns.scss" as *;
-
-.wrapper {
-  border-radius: #{rem(8)};
-  background: var(--color-minor-background);
-  padding: var(--spacing-mid);
-  transition: #{transition(all)};
-  position: relative;
-
-  @include media("md") {
-    padding: var(--spacing-lg);
-  }
-
-  @include media("lg") {
-    padding: var(--spacing-xl);
-  }
-}
-
 .wrapper:hover {
   box-shadow: 0 #{rem(24)} #{rem(48)} 0 rgba(0, 0, 0, 0.24);
 }

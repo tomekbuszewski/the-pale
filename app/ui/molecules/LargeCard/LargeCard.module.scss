@@ -1,0 +1,45 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  overflow: hidden;
+  grid-column: 1/-1;
+
+  @include media("md") {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+    min-height: #{rem(480)};
+  }
+
+  @include media("lg") {
+    min-height: #{rem(560)};
+  }
+}
+
+.header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.desc {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.body {
+  display: none;
+
+  @include media("md") {
+    display: block;
+    margin: calc(var(--spacing-lg) * -1);
+    margin-left: 0;
+  }
+
+  @include media("lg") {
+    margin: calc(var(--spacing-xl) * -1);
+    margin-left: 0;
+  }
+}
