@@ -23,49 +23,28 @@
 
 .regular,
 .list,
-.article-body {
+.article-body,
+.large {
   font-size: var(--font-size-regular);
   line-height: var(--leading-regular);
+}
 
-  a {
-    position: relative;
-    transition: #{transition(all)};
-    text-decoration: none;
+.list {
+  font-size: var(--font-size-article-body-small);
+  color: var(--color-main-body);
+  position: relative;
+  padding-left: var(--spacing-small);
 
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: -5%;
-      left: -2.5%;
-      width: 105%;
-      height: #{rem(1)};
-      background: var(--color-main-accent);
-      opacity: 0.25;
-      transition: #{transition(all)};
-      z-index: -1;
-    }
+  & + & {
+    margin-top: var(--spacing-small);
   }
 
-  a[href^="http"]:not([href*="buszewski"]) {
-    &:after {
-      content: "↗";
-      display: inline-block;
-      margin-left: 0.5em;
-      font-size: 0.5em;
-      position: relative;
-      top: -0.35em;
-      font-weight: bold;
-    }
-  }
-
-  a:hover {
-    color: var(--color-main-background);
-
-    &:before {
-      height: 110%;
-      opacity: 1;
-      border-radius: #{rem(4)};
-    }
+  &:before {
+    opacity: 0.64;
+    content: "·";
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }
 
@@ -118,12 +97,55 @@
   line-height: var(--leading-regular);
   color: var(--color-main-body);
 
+  & + & {
+    margin-top: 1em;
+  }
+
   @include media("md") {
     font-size: var(--font-size-article-body);
   }
+}
 
+.article-body,
+.list,
+.regular,
+.large {
   a {
     color: var(--color-main-accent);
+    position: relative;
+    transition: #{transition(all)};
+    text-decoration: none;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8FZhVBQAF8wIh9NkZDwAAAABJRU5ErkJggg==);
+    background-repeat: repeat-x;
+    background-size: 100% #{rem(1)};
+    background-position: bottom;
+    padding: 0 #{rem(4)};
+    margin: 0 -#{rem(4)};
+    border-radius: #{rem(4)};
+    box-decoration-break: clone;
+
+    &:hover {
+      color: var(--color-main-heading-dark);
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8FZj1HwAGeAKmnTamkAAAAABJRU5ErkJggg==);
+      background-size: 100% 2em;
+
+      &:before {
+        height: 110%;
+        opacity: 1;
+      }
+    }
+  }
+
+  a[href^="http"]:not([href*="buszewski"]) {
+    &:after {
+      content: "↗";
+      display: inline-block;
+      margin-left: 0.5em;
+      font-size: 0.5em;
+      position: relative;
+      top: -0.35em;
+      font-weight: bold;
+    }
   }
 
   code {
@@ -132,6 +154,7 @@
     border-radius: #{rem(4)};
     display: inline-block;
     padding: #{rem(4)} #{rem(8)};
+    font-size: 0.8em;
   }
 }
 

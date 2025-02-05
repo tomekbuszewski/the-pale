@@ -3,11 +3,34 @@
 .wrapper {
   background: var(--color-minor-background);
   border-radius: #{rem(8)};
-  padding: var(--spacing-mid);
+  color: var(--color-main-body);
+  align-items: flex-start;
+
+  & + & {
+    margin-top: var(--spacing-mid);
+  }
 
   @include media("md") {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+
+    & + & {
+      margin-top: var(--spacing-xl);
+    }
+  }
+}
+
+.desc {
+  position: sticky;
+  top: var(--spacing-xl);
+
+  @include media("md") {
+    top: var(--spacing-lg);
+  }
+
+  @include media("lg") {
+    top: var(--spacing-xl);
   }
 }
 
@@ -16,29 +39,20 @@
   grid-column: 2/3;
   grid-row: 1;
 
-  li {
-    position: relative;
-    padding-left: var(--spacing-small);
-    color: var(--color-minor-body);
-
-    &:before {
-      opacity: 0.64;
-      content: "·";
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
+  @include media("lg") {
+    columns: var(--columns);
+    margin-top: #{rem(38)};
   }
 
-  @include media("lg") {
-    columns: 2;
+  li + li {
+    margin-top: var(--spacing-mid);
+  }
+
+  li {
+    color: var(--color-minor-body);
   }
 }
 
 .title hr {
   margin-bottom: var(--spacing-mid);
-
-  @include media("md") {
-    margin-bottom: 0;
-  }
 }

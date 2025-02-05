@@ -38,11 +38,9 @@ function ArticleHeader({ title, meta, ...props }: Props) {
 
   return (
     <header {...props} className={styles.wrapper}>
-      {meta && (
-        <Button to="#" variant="tertiary" onClick={handleBack}>
-          Go back
-        </Button>
-      )}
+      <Button to="#" variant="tertiary" onClick={handleBack}>
+        Go back
+      </Button>
       <Text
         variant="hero"
         bold

@@ -14,6 +14,7 @@ import clsx from "clsx";
 
 import { COPY } from "./copy";
 
+import globals from "../service.module.scss";
 import styles from "./index.module.scss";
 
 export default function WebDevelopment() {
@@ -28,7 +29,7 @@ export default function WebDevelopment() {
     <SectionWrapper tag="article" contentClassName="largeText">
       <ArticleHeader title="Web&nbsp;Design &&nbsp;Development" />
 
-      <section className={styles.mainSection}>
+      <section className={globals.mainSection}>
         <Text variant="article-body">{COPY.INTRO}</Text>
 
         <Separator />
@@ -37,7 +38,7 @@ export default function WebDevelopment() {
       </section>
 
       <section
-        className={clsx(styles.mainSection, styles.process, styles.full)}
+        className={clsx(globals.mainSection, styles.process, globals.full)}
       >
         <SectionHeader title="The process" margin="small" />
 
@@ -48,7 +49,7 @@ export default function WebDevelopment() {
         ))}
       </section>
 
-      <section className={clsx(styles.full, styles.mainSection)}>
+      <section className={clsx(globals.full, globals.mainSection)}>
         <LargeCard
           onMouseEnter={() => setActiveCard(COPY.DESIGN_CARD_TITLE)}
           onMouseLeave={() => setActiveCard(null)}
@@ -119,7 +120,7 @@ export default function WebDevelopment() {
         />
       </section>
 
-      <section className={clsx(styles.full, styles.mainSection)}>
+      <section className={clsx(globals.full, globals.mainSection)}>
         <ContactCta
           buttons={[
             { variant: "primary", label: COPY.BTN_SCHEDULE, href: CAL },
