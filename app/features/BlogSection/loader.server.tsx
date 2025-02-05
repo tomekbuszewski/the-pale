@@ -1,3 +1,4 @@
+import { Children, type ReactNode } from "react";
 import * as runtime from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import { evaluate } from "@mdx-js/mdx";
@@ -6,12 +7,10 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
 
-import type { ReactNode } from "react";
-
 import type { PaginationProps } from "../../common-types/BlogPagination";
 import type { BlogPost } from "../../common-types/Blogpost";
 
-import { cache, loadCacheFromFile, saveCacheToFile } from "./cache";
+import { cache } from "./cache";
 
 interface LoaderConfig {
   withContent?: boolean;
@@ -47,12 +46,6 @@ export default async function loader({
     "app/features/BlogSection/content",
   );
   const posts: BlogPost[] = [];
-
-  try {
-    loadCacheFromFile(
-      path.join(process.cwd(), "app/features/BlogSection/cache.json"),
-    );
-  } catch {}
 
   try {
     const directories = await fs.readdir(contentDir);
@@ -110,13 +103,14 @@ export default async function loader({
             });
 
             const { components } = await import("./components");
+
             newPost.cnt = renderToString(
               Content({
                 components,
               }) as ReactNode,
             );
 
-            cache.set(data.slug, newPost);
+            // cache.set(data.slug, newPost);
           }
 
           posts.push(newPost);
@@ -131,12 +125,6 @@ export default async function loader({
     const items = posts
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .splice(0, limit);
-
-    if (!import.meta.env.CI) {
-      saveCacheToFile(
-        path.join(process.cwd(), "app/features/BlogSection/cache.json"),
-      );
-    }
 
     return {
       items,

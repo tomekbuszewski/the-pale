@@ -14,6 +14,8 @@ namely styling, animations and microinteractions, and the boring part, that’s
 the markup. Plus, most of the time I leave accessibility for last, and
 eventually forget about it.
 
+---
+
 Some time ago I’ve embarked on a journey to find a decent headless UI system
 that will lift this problem of my back.
 

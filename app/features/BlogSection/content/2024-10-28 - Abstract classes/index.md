@@ -12,6 +12,8 @@ youtube: https://youtu.be/yTt2OZTFmLs
 TypeScript, while being “only” a superset of JavaScript, provides quite robust
 system of typing. But, when to use what?
 
+---
+
 Before we go deep, a quick reminder, what is a class in general. It is something
 like a very robust blueprint of whatever functionality we want to achieve, which
 also can exist multiple times in a single program. That means, if we have a

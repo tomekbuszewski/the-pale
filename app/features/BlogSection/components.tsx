@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import { Text } from "@ui/atoms";
+import { Separator, Text } from "@ui/atoms";
 import { SectionHeader } from "@ui/molecules";
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
 }
 
 export const components = {
+  hr: () => <Separator />,
   p: (props: Props) => <Text {...props} variant="article-body" />,
   h2: (props: Props) => (
     <SectionHeader animate={false} level={2} id={props.children} {...props} />

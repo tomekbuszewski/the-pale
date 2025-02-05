@@ -13,6 +13,8 @@ A lot of things happened in the last days. React 19 was released, React Router 7
 (which is Remix 3 as well) was released, _Soul Reaver Remaster_ got released. So
 let’s talk about at least two of those things.
 
+---
+
 If you’ve been following the React world for a year or so, you might’ve heard
 about server components concept. It’s a great concept, in which every React
 component can be asynchronous _and_ rendered on the server. Right now, if you

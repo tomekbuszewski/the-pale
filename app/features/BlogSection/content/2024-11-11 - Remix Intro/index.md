@@ -14,6 +14,8 @@ The landscape of current React full-stack frameworks is pretty much dominated by
 Next.js. But I never quite liked it, and always felt it’s too complex for its
 own good. So recently I’ve started to use Remix.
 
+---
+
 If you were here in 2020, you might remember that the launch of Remix was quite
 the event. But back then it was a paid solution. And it had a pretty hefty price
 tag as well, with $250 for an “indie” license and a whopping $1000 for an
@@ -223,7 +225,7 @@ covered:
 ```tsx
 export async function loader() {
   const response = await fetch(
-    "https://official-joke-api.appspot.com/jokes/random/10"
+    "https://official-joke-api.appspot.com/jokes/random/10",
   );
   const jokes = await response.json();
 
@@ -255,7 +257,7 @@ interface Joke {
 
 export async function loader() {
   const response = await fetch(
-    "https://official-joke-api.appspot.com/jokes/random/10"
+    "https://official-joke-api.appspot.com/jokes/random/10",
   );
   const jokes = (await response.json()) as Joke[];
 
@@ -283,7 +285,7 @@ change? `loader` allows us to catch errors using `try/catch` statement:
 export async function loader() {
   try {
     const response = await fetch(
-      "https://official-joke-api.appspot.com/jokes/random/10"
+      "https://official-joke-api.appspot.com/jokes/random/10",
     );
     const jokes = await response.json();
 

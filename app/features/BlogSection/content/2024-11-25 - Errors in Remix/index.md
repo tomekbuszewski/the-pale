@@ -14,6 +14,8 @@ Alright, we’re getting further and further into this Remix thing. Today we’r
 looking at error handling. And let me just tell you right off the bat, Remix has
 some great error handling! So if you’re interested, let’s dive in.
 
+---
+
 I will be using just the built-in stuff, so you can use my Slowcore Stack, but
 you can also create an empty default Remix project, or use your own thing.
 
