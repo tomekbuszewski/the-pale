@@ -6,6 +6,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
   width?: string;
   icon?: string;
   large?: boolean;
+  active?: boolean;
 }
 
 import clsx from "clsx";
@@ -18,6 +19,7 @@ function Carousel({
   width = "16rem",
   icon = "8rem",
   large,
+  active,
 }: Props) {
   const itemsPerColumn = Math.ceil(icons.length / columns);
   const rows = Array.from({ length: columns }, (_, colIndex) => {
@@ -27,17 +29,21 @@ function Carousel({
 
   return (
     <div
-      className={clsx(styles.wrapper, { [styles.large]: large })}
+      className={clsx(styles.wrapper, {
+        [styles.large]: large,
+        [styles.active]: active,
+      })}
       style={{
         ["--columns" as keyof CSSProperties]: columns,
         ["--width" as keyof CSSProperties]: width,
         ["--icon" as keyof CSSProperties]: icon,
         ["--ratio" as keyof CSSProperties]: width === icon ? "auto" : "1/1",
         ["--count" as keyof CSSProperties]: itemsPerColumn,
+        ["--time" as keyof CSSProperties]: `${itemsPerColumn * 6}s`,
       }}
     >
       {rows.map((row, i) => (
-        <section key={i}>
+        <section key={i} className={styles.column}>
           {row.map(([src, alt], j) => (
             <i
               key={j}

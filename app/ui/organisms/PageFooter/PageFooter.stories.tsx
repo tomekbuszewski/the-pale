@@ -5,7 +5,7 @@ import PageFooter from "./PageFooter";
 
 export const Primary: StoryObj<typeof PageFooter> = {
   args: {
-    copy: "Buszewski.studio is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
+    copy: "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
     quickLinks: [
       {
         href: "#",

@@ -15,54 +15,27 @@ body {
   font-variation-settings: "wdth" 100;
 }
 
-.mt-sm { margin-top: var(--spacing-small); }
-.mt-md { margin-top: var(--spacing-mid); }
-.mt-lg { margin-top: var(--spacing-lg); }
-.mt-xl { margin-top: var(--spacing-xl); }
-.mt-2xl { margin-top: var(--spacing-2xl); }
-.mt-3xl { margin-top: var(--spacing-3xl); }
-.mt-huge { margin-top: var(--spacing-huge); }
-
-.mb-sm { margin-bottom: var(--spacing-small); }
-.mb-md { margin-bottom: var(--spacing-mid); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-.mb-xl { margin-bottom: var(--spacing-xl); }
-.mb-2xl { margin-bottom: var(--spacing-2xl); }
-.mb-3xl { margin-bottom: var(--spacing-3xl); }
-.mb-huge { margin-bottom: var(--spacing-huge); }
-
-@include media("md") {
-  .md\:mt-sm { margin-top: var(--spacing-small); }
-  .md\:mt-md { margin-top: var(--spacing-mid); }
-  .md\:mt-lg { margin-top: var(--spacing-lg); }
-  .md\:mt-xl { margin-top: var(--spacing-xl); }
-  .md\:mt-2xl { margin-top: var(--spacing-2xl); }
-  .md\:mt-3xl { margin-top: var(--spacing-3xl); }
-  .md\:mt-huge { margin-top: var(--spacing-huge); }
-
-  .md\:mb-sm { margin-bottom: var(--spacing-small); }
-  .md\:mb-md { margin-bottom: var(--spacing-mid); }
-  .md\:mb-lg { margin-bottom: var(--spacing-lg); }
-  .md\:mb-xl { margin-bottom: var(--spacing-xl); }
-  .md\:mb-2xl { margin-bottom: var(--spacing-2xl); }
-  .md\:mb-3xl { margin-bottom: var(--spacing-3xl); }
-  .md\:mb-huge { margin-bottom: var(--spacing-huge); }
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@include media("lg") {
-  .lg\:mt-sm { margin-top: var(--spacing-small); }
-  .lg\:mt-md { margin-top: var(--spacing-mid); }
-  .lg\:mt-lg { margin-top: var(--spacing-lg); }
-  .lg\:mt-xl { margin-top: var(--spacing-xl); }
-  .lg\:mt-2xl { margin-top: var(--spacing-2xl); }
-  .lg\:mt-3xl { margin-top: var(--spacing-3xl); }
-  .lg\:mt-huge { margin-top: var(--spacing-huge); }
+@keyframes show {
+  from {
+    opacity: 1;
+    top: 0;
+  }
 
-  .lg\:mb-sm { margin-bottom: var(--spacing-small); }
-  .lg\:mb-md { margin-bottom: var(--spacing-mid); }
-  .lg\:mb-lg { margin-bottom: var(--spacing-lg); }
-  .lg\:mb-xl { margin-bottom: var(--spacing-xl); }
-  .lg\:mb-2xl { margin-bottom: var(--spacing-2xl); }
-  .lg\:mb-3xl { margin-bottom: var(--spacing-3xl); }
-  .lg\:mb-huge { margin-bottom: var(--spacing-huge); }
+  to {
+    opacity: 0;
+    top: -#{rem(24)};
+  }
+}
+
+::view-transition-old(root) {
+  animation: show 0.3s ease-in-out forwards;
+}
+
+:view-transition-new(root) {
+  animation: show 0.3s ease-in-out reverse;
 }

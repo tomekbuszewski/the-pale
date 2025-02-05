@@ -19,7 +19,7 @@ function Logo({
 }: Props) {
   return (
     <figure className={clsx(wrapperClassName, styles.wrapper)}>
-      <Link to="/">
+      <Link to="/" viewTransition>
         <Image {...rest} />
         <figcaption className="sr-only">{title}</figcaption>
       </Link>

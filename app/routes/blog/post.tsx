@@ -1,4 +1,5 @@
-import { useLoaderData } from "react-router";
+import { useLayoutEffect } from "react";
+import { useLoaderData, useLocation } from "react-router";
 import blogLoader from "@features/BlogSection/loader.server";
 import { BlogPost } from "@ui/organisms";
 import title from "@utils/title";
@@ -36,7 +37,12 @@ function extractYouTubeID(link: string): string | undefined {
 }
 
 export default function Post() {
+  const location = useLocation();
   const data = useLoaderData<typeof loader>();
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location.pathname]);
 
   if (data.cnt) {
     return (
