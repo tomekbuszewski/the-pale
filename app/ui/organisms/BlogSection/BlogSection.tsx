@@ -1,5 +1,6 @@
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
+import clsx from "clsx";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
 import type { BlogPost } from "@common-types/Blogpost";
@@ -19,7 +20,7 @@ function BlogSection({ className, items, pagination }: Props) {
     <SectionWrapper
       title="Videos & Writings"
       contentClassName={styles.wrapper}
-      className={className}
+      className={clsx(className, styles.parent)}
     >
       {items.map((item) => (
         <Box {...item} key={item.title} noBottomMargin>

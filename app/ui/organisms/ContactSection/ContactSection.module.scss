@@ -25,4 +25,14 @@
 
 .item {
   cursor: pointer;
+  color: var(--color-main-body);
+
+  &.noClick {
+    cursor: auto;
+  }
+}
+
+.title {
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-main-heading);
 }

@@ -1,5 +1,9 @@
 @use "../../styles/_fns.scss" as *;
 
+.parent {
+  background: var(--color-minor-background);
+}
+
 .wrapper {
   grid-template-columns: 1fr;
   gap: var(--spacing-mid);

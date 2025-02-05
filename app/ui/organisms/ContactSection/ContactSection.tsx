@@ -37,38 +37,34 @@ function ContactSection({ email, calendar, location }: Props) {
         onClick={() => window.open(calendar, "_blank")}
         className={styles.item}
       >
-        <Text variant="title" className="mb-lg" color="lead">
+        <Text className={styles.title} variant="title">
           Book a 30-min Call
         </Text>
-        <Text className="mb-lg" color="text">
+        <Text>
           Book a free 30-minute call for a no-obligation quote and consultation.
         </Text>
-        <Text variant="highlight" color="text">
+        <Text>
           Meeting takes place on Google Meet and is scheduled using Cal.com.
         </Text>
       </div>
 
       <div onClick={() => window.open(email)} className={styles.item}>
-        <Text variant="title" className="mb-lg" color="lead">
+        <Text className={styles.title} variant="title">
           Write me an email
         </Text>
-        <Text className="mb-lg" color="text">
-          Write me an email to kick things off!
-        </Text>
-        <Text variant="highlight" color="text">
-          I’ll get back to you within 24 hours (Mon-Fri).
-        </Text>
+        <Text>Write me an email to kick things off!</Text>
+        <Text>I’ll get back to you within 24 hours (Mon-Fri).</Text>
       </div>
 
-      <div>
+      <div className={clsx(styles.item, styles.noClick)}>
         <Text
           variant="title"
-          className={clsx(styles.hiddenTitle, "mb-lg")}
+          className={clsx(styles.hiddenTitle, styles.title)}
           color="lead"
         >
           Designed and developed in
         </Text>
-        <Text color="text">
+        <Text>
           {location}
           <br />
           {localTime}, {localDate}

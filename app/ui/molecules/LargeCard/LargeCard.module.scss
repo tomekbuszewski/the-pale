@@ -23,7 +23,7 @@
 
   @include media("md") {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--gutter);
     height: var(--card-height-md);
 
@@ -48,6 +48,18 @@
 
   .body {
     order: 1;
+    justify-self: flex-end;
+    overflow: hidden;
+
+    @include media("md") {
+      margin: calc(var(--spacing-lg) * -1);
+      margin-right: 0;
+    }
+
+    @include media("lg") {
+      margin: calc(var(--spacing-xl) * -1);
+      margin-right: 0;
+    }
   }
 }
 

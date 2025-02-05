@@ -91,9 +91,10 @@
 }
 
 .wrapper:not(.active):hover {
-  background-color: var(--color-main-background);
+  background-color: var(--color-minor-background);
   transition-delay: 0s;
   z-index: var(--z-box);
+  box-shadow: 0 #{rem(24)} #{rem(48)} 0 rgba(0, 0, 0, 0.24);
 
   .title,
   .body {
