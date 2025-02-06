@@ -14,6 +14,19 @@
   --gradient-syzygy: #00ee4d;
   --gradient-zety: #3983fa;
   --gradient-4finance: #0055b8;
+  --gradient-radio-zet-shadow: rgba(213, 0, 50, 0.48);
+  --gradient-olx-shadow: rgba(35, 229, 219, 0.48);
+  --gradient-optilyz-shadow: rgba(23, 113, 221, 0.48);
+  --gradient-incogni-shadow: rgba(0, 180, 101, 0.48);
+  --gradient-tvn-shadow: rgba(92, 135, 220, 0.48);
+  --gradient-chopin-vodka-shadow: rgba(255, 0, 0, 0.48);
+  --gradient-beehype-shadow: rgba(86, 52, 68, 0.48);
+  --gradient-batmaid-shadow: rgba(84, 0, 253, 0.48);
+  --gradient-parkiet-shadow: rgba(0, 130, 255, 0.48);
+  --gradient-rzeczpospolitapl-shadow: rgba(215, 189, 124, 0.48);
+  --gradient-syzygy-shadow: rgba(0, 238, 77, 0.48);
+  --gradient-zety-shadow: rgba(57, 131, 250, 0.48);
+  --gradient-4finance-shadow: rgba(0, 85, 184, 0.48);
 }
 
 .wrapper {
@@ -41,6 +54,7 @@
   justify-content: center;
   transition: #{transition(all)};
   position: relative;
+  background: var(--color-minor-background);
 
   svg {
     fill: var(--color-minor-body);
@@ -51,27 +65,8 @@
     z-index: 2;
   }
 
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-minor-background);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: #{rem(8)};
-    z-index: 0;
-    transition: #{transition(all)};
-  }
-
   &:hover {
-    transform: translateY(-#{rem(4)});
-
-    &:after {
-      border: 0;
-      background: var(--color-main-background);
-    }
+    background: var(--color-main-background);
   }
 
   @include media("md") {
@@ -116,6 +111,8 @@
 }
 
 .item:hover {
+  box-shadow: 0 #{rem(24)} #{rem(48)} 0 var(--shadow);
+
   svg {
     fill: var(--color);
   }

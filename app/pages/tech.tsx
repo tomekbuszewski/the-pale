@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { SectionWrapper, Separator, Text } from "@ui/atoms";
 import { ArticleHeader, List } from "@ui/molecules";
 import clsx from "clsx";

@@ -1,4 +1,3 @@
-import alacritty from "../icons/alacritty.png";
 import astro from "../icons/astro.png";
 import bitbucket from "../icons/bitbucket.png";
 import cc from "../icons/cc.png";
