@@ -1,0 +1,26 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  display: inline-grid;
+  grid-template-columns: #{rem(32)} 1fr;
+  height: #{rem(40)};
+  gap: #{rem(8)};
+  padding: 0 #{rem(16)} 0 #{rem(2)};
+  margin-left: auto;
+
+  .imgWrapper {
+    width: #{rem(32)};
+    height: #{rem(32)};
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+  }
+}

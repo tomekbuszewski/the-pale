@@ -1,5 +1,6 @@
 export { default as BouncingArrow } from "./BouncingArrow/BouncingArrow";
 export { default as Button } from "./Button/Button";
+export { default as ContactButton } from "./ContactButton/ContactButton";
 export { default as Logo } from "./Logo/Logo";
 export { default as MainWrapper } from "./MainWrapper/MainWrapper";
 export { default as MenuToggleButton } from "./MenuToggleButton/MenuToggleButton";

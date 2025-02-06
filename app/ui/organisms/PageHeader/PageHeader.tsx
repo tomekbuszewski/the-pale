@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router";
 import { useIsMobile } from "@hooks";
-import { Logo, MenuToggleButton } from "@ui/atoms";
+import { ContactButton, Logo, MenuToggleButton } from "@ui/atoms";
 import { PageNavigation } from "@ui/organisms";
 import clsx from "clsx";
 import {
@@ -75,9 +75,13 @@ function PageHeader({ className, links, ...rest }: Props) {
 
       <Logo className={styles.logo} />
 
-      <Link to={contactLink.href} className={styles.contact}>
-        <ContactIcon />
-      </Link>
+      {isMobile ? (
+        <Link to={contactLink.href} className={styles.contact}>
+          <ContactIcon />
+        </Link>
+      ) : (
+        <ContactButton />
+      )}
     </motion.header>
   );
 }
