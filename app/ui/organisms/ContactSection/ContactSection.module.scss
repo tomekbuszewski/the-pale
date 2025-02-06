@@ -12,6 +12,7 @@
 
 .wrapper {
   grid-template-columns: 1fr;
+  align-items: flex-start;
 
   @include media("md") {
     grid-column: 1 / -1;
@@ -20,29 +21,9 @@
   }
 }
 
-.hiddenTitle {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.item {
-  cursor: pointer;
-  color: var(--color-main-body);
-
-  & + & {
-    margin-top: var(--gutter);
-
-    @include media("md") {
-      margin-top: 0;
-    }
+.developed {
+  @include media("md") {
+    margin-top: #{rem(94)} !important;
+    text-align: right;
   }
-
-  &.noClick {
-    cursor: auto;
-  }
-}
-
-.title {
-  margin-bottom: var(--spacing-lg);
-  color: var(--color-main-heading);
 }

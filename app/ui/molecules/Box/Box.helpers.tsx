@@ -30,9 +30,16 @@ interface FooterProps {
   youtube?: string;
   link: string;
   active?: boolean;
+  readMoreLabel?: string;
 }
 
-export function Footer({ onClick, youtube, link, active }: FooterProps) {
+export function Footer({
+  onClick,
+  youtube,
+  link,
+  active,
+  readMoreLabel = "Read more",
+}: FooterProps) {
   return (
     <footer className={styles.footer}>
       {youtube ? (
@@ -46,7 +53,7 @@ export function Footer({ onClick, youtube, link, active }: FooterProps) {
         </>
       ) : (
         <Button to={link} variant="primary">
-          Read more
+          {readMoreLabel}
         </Button>
       )}
 

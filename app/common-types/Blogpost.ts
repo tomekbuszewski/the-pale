@@ -10,4 +10,5 @@ export interface BlogPost extends Meta {
   children?: ReactNode;
   active?: never;
   cnt?: string;
+  readMoreLabel?: string;
 }

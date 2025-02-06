@@ -5,6 +5,7 @@ import {
   useMemo,
   useRef,
 } from "react";
+import { Sections } from "@nav";
 import { SectionWrapper, Text } from "@ui/atoms";
 import { useScroll } from "motion/react";
 
@@ -27,6 +28,7 @@ function AboutSection({ children }: Props) {
 
   return (
     <SectionWrapper
+      id={Sections.about}
       ref={containerRef as unknown as RefObject<ElementType>}
       contentClassName={styles.container}
       dark

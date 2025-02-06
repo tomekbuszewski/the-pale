@@ -11,7 +11,7 @@ export default function HeroSection() {
         Need&nbsp;a&nbsp;
         <TextRotate
           staggerFrom="last"
-          texts={["design", "code", "consultant", "website"]}
+          texts={["website", "design", "code", "consultant"]}
         />
         <br />
         for&nbsp;your&nbsp;business?

@@ -11,4 +11,5 @@ export interface Service {
   link: string;
   active?: boolean;
   children: ReactNode;
+  readMoreLabel?: string;
 }

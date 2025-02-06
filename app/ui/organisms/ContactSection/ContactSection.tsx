@@ -1,4 +1,5 @@
 import { SectionWrapper, Text } from "@ui/atoms";
+import { Box } from "@ui/molecules";
 
 import type { HTMLProps } from "react";
 
@@ -9,7 +10,6 @@ interface Props extends HTMLProps<HTMLDivElement> {
 }
 
 import { Sections } from "@nav";
-import clsx from "clsx";
 
 import styles from "./ContactSection.module.scss";
 
@@ -27,6 +27,27 @@ function ContactSection({ email, calendar, location }: Props) {
     day: "numeric",
   });
 
+  const COPY = [
+    {
+      TITLE: "Book a 30-min Call",
+      BODY: [
+        "Book a free 30-minute call for a no-obligation quote and consultation.",
+        "Meeting takes place on Google Meet and is scheduled using Cal.com.",
+      ],
+      LINK: calendar,
+      READ_MORE: "Book a call",
+    },
+    {
+      TITLE: "Write me an email",
+      BODY: [
+        "Write me an email to kick things off!",
+        "I’ll get back to you within 24 hours (Mon-Fri).",
+      ],
+      LINK: email,
+      READ_MORE: "Shoot an email",
+    },
+  ];
+
   return (
     <SectionWrapper
       id={Sections.contact}
@@ -34,43 +55,28 @@ function ContactSection({ email, calendar, location }: Props) {
       contentClassName={styles.wrapper}
       className={styles.parent}
     >
-      <div
-        onClick={() => window.open(calendar, "_blank")}
-        className={styles.item}
-      >
-        <Text className={styles.title} variant="title">
-          Book a 30-min Call
-        </Text>
-        <Text>
-          Book a free 30-minute call for a no-obligation quote and consultation.
-        </Text>
-        <Text>
-          Meeting takes place on Google Meet and is scheduled using Cal.com.
-        </Text>
-      </div>
-
-      <div onClick={() => window.open(email)} className={styles.item}>
-        <Text className={styles.title} variant="title">
-          Write me an email
-        </Text>
-        <Text>Write me an email to kick things off!</Text>
-        <Text>I’ll get back to you within 24 hours (Mon-Fri).</Text>
-      </div>
-
-      <div className={clsx(styles.item, styles.noClick)}>
-        <Text
-          variant="title"
-          className={clsx(styles.hiddenTitle, styles.title)}
-          color="lead"
+      {COPY.map((item) => (
+        <Box
+          link={item.LINK}
+          title={item.TITLE}
+          key={item.TITLE}
+          readMoreLabel={item.READ_MORE}
         >
-          Designed and developed in
-        </Text>
-        <Text>
+          {item.BODY.map((text, i) => (
+            <Text key={i}>{text}</Text>
+          ))}
+        </Box>
+      ))}
+
+      <Box>
+        <Text className="sr-only">Designed and developed in</Text>
+
+        <Text className={styles.developed}>
           {location}
           <br />
           {localTime}, {localDate}
         </Text>
-      </div>
+      </Box>
     </SectionWrapper>
   );
 }

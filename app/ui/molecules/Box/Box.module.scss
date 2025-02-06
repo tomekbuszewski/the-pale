@@ -90,7 +90,7 @@
   content: "";
 }
 
-.wrapper:not(.active):hover {
+.wrapper:not(.active):not([data-disabled="true"]):hover {
   background-color: var(--color-minor-background);
   transition-delay: 0s;
   z-index: var(--z-box);
