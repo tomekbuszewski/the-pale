@@ -5,18 +5,17 @@ import {
   type RouteConfig,
 } from "@react-router/dev/routes";
 
+import { Routes } from "./nav";
+
 export default [
   layout("./layouts/Main.tsx", [
-    index("routes/home.tsx"),
-    route(
-      "/services/website-design-development",
-      "routes/services/web-development/index.tsx",
-    ),
-    route("/services/consulting", "routes/services/consulting/index.tsx"),
-    route("/services/front-end", "routes/services/front-end/index.tsx"),
-    route("/uses", "routes/pages/uses.tsx"),
-    route("/tech", "routes/pages/tech.tsx"),
+    index("pages/home.tsx"),
+    route(Routes.website, "pages/services/web-development/index.tsx"),
+    route(Routes.frontend, "pages/services/front-end/index.tsx"),
+    route(Routes.consulting, "pages/services/consulting/index.tsx"),
+    route(Routes.uses, "pages/uses.tsx"),
+    route(Routes.tech, "pages/tech.tsx"),
     // route("/services", "routes/services/index.tsx"),
-    route("/writings/:slug", "routes/blog/post.tsx"),
+    route(Routes.post, "pages/blog/post.tsx"),
   ]),
 ] satisfies RouteConfig;

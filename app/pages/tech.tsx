@@ -3,7 +3,7 @@ import { SectionWrapper, Separator, Text } from "@ui/atoms";
 import { ArticleHeader, List } from "@ui/molecules";
 import clsx from "clsx";
 
-import globals from "../services/service.module.scss";
+import globals from "./pages.module.scss";
 
 const COPY = {
   INTRO:

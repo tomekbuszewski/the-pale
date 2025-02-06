@@ -1,4 +1,4 @@
-import { Children, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import * as runtime from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
 import { evaluate } from "@mdx-js/mdx";
@@ -9,6 +9,8 @@ import path from "path";
 
 import type { PaginationProps } from "../../common-types/BlogPagination";
 import type { BlogPost } from "../../common-types/Blogpost";
+
+import { Routes } from "../../nav";
 
 import { cache } from "./cache";
 
@@ -77,7 +79,7 @@ export default async function loader({
           }
 
           const newPost: BlogPost = {
-            link: "/writings/" + data.slug,
+            link: Routes.post.replace(":slug", data.slug),
             title: data.title as string,
             date: data.pubdate as Date,
             children: data.summary as string,

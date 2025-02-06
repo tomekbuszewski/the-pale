@@ -14,7 +14,7 @@ import clsx from "clsx";
 
 import { COPY } from "./copy";
 
-import globals from "../service.module.scss";
+import globals from "../../pages.module.scss";
 import styles from "./index.module.scss";
 
 export default function WebDevelopment() {

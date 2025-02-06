@@ -1,3 +1,4 @@
+import { Routes } from "@nav";
 import { Button } from "@ui/atoms";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
@@ -5,7 +6,7 @@ import type { PaginationProps } from "@common-types/BlogPagination";
 import styles from "./BlogSection.module.scss";
 
 function link(page: number) {
-  return `/writings/page/${page}`;
+  return Routes.pagination.replace(":page", page.toString());
 }
 
 export function Pagination({

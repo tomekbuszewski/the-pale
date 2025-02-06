@@ -68,6 +68,14 @@
   height: 0;
   transform: translateY(#{rem(16)});
 
+  li {
+    padding-left: 0;
+
+    &:before {
+      content: none;
+    }
+  }
+
   @include media("md") {
     transform: translateY(#{rem(32)});
   }

@@ -1,3 +1,4 @@
+import { Routes } from "@nav";
 import { Text } from "@ui/atoms";
 import { ServicesSection as Main } from "@ui/organisms";
 
@@ -28,13 +29,13 @@ const items = [
       "Thorough testing for performance, compatibility, and usability",
       "Hosting, domains and deployments taken care of, with the option to transfer ownership free of charge",
     ],
-    link: "/services/website-design-development",
+    link: Routes.website,
   },
   {
     title: "Front-end<br />Development",
     icon: <FrontendIcon />,
     onClick: () => null,
-    link: "/services/front-end",
+    link: Routes.frontend,
     children: (
       <>
         <Text>
@@ -58,7 +59,7 @@ const items = [
   {
     title: "Project<br />Consulting",
     icon: <ConsultationsIcon />,
-    link: "/services/consulting",
+    link: Routes.consulting,
     onClick: () => null,
     children: (
       <>

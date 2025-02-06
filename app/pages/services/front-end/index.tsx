@@ -1,7 +1,7 @@
 import { SectionWrapper, Separator, Text } from "@ui/atoms";
 import { ArticleHeader } from "@ui/molecules";
 
-import globals from "../service.module.scss";
+import globals from "../../pages.module.scss";
 
 const COPY = {
   INTRO:

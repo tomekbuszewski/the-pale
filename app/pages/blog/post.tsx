@@ -1,10 +1,11 @@
 import { useLayoutEffect } from "react";
 import { useLoaderData, useLocation } from "react-router";
 import blogLoader from "@features/BlogSection/loader.server";
+import { Routes } from "@nav";
 import { BlogPost } from "@ui/organisms";
 import title from "@utils/title";
 
-import type { Route } from "../../../.react-router/types/app/routes/blog/+types/post";
+import type { Route } from "../../../.react-router/types/app/pages/blog/+types/post";
 
 export function meta({ data }: Route.MetaArgs) {
   return [{ title: title(data.title) }];
@@ -16,7 +17,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 
   if (content?.items) {
     const post = content.items.find(
-      (item) => item.link.replace("/writings/", "") === slug,
+      (item) => item.link === Routes.post.replace(":slug", slug),
     );
 
     if (post) {

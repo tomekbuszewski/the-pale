@@ -29,6 +29,7 @@ const defaultMeta: [string, string][] = [
   ["article:section", "Home"],
   ["article:author", "Tomasz Buszewski"],
   ["article:author:twitter", "@tomekbuszewski"],
+  ["theme-color", "#ea516a"],
 ];
 
 type MetaEntry = { name: string; content: string } | { title: string };
