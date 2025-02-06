@@ -10,7 +10,7 @@ const COPY = {
     "Throughout the years I’ve worked with tons and tons of different tech.",
   BODY: "I feel comfortable with almost any (roughly modern) stack. I’ve worked with tons of variations, including PHP, Node, JavaScript and TypeScript, Python, Java and Go.",
   BODY2:
-    "If you’re looking for a detailed list, here it is, in order of most familiar to least familiar:",
+    "If you’re looking for a (more or less) comprehensive list, here it is:",
 
   SECTIONS: [
     {

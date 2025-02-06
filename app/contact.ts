@@ -8,10 +8,14 @@ export const FOOTER_SOCIAL = [
   { title: "LinkedIn", link: "https://linkedin.com/in/tomek-buszewski/" },
 ];
 
-export const DEFAULT_TITLE = "Buszewski.studio";
+export const DEFAULT_TITLE = "Buszewski.com";
 export const EXP_YEARS = new Date().getFullYear() - 2008;
-export const PAGE_URL = "https://buszewski.studio";
+export const PAGE_URL = "https://buszewski.com";
 export const KEYWORDS = [
+  "websites",
+  "website creation",
+  "hosting",
+  "website maintenance",
   "web design",
   "web development",
   "frontend",

@@ -12,11 +12,7 @@ interface Props extends SVGProps<SVGSVGElement> {
   wrapperClassName?: string;
 }
 
-function Logo({
-  title = "Buszewski.studio",
-  wrapperClassName,
-  ...rest
-}: Props) {
+function Logo({ title = "Buszewski.com", wrapperClassName, ...rest }: Props) {
   return (
     <figure className={clsx(wrapperClassName, styles.wrapper)}>
       <Link to="/" viewTransition>

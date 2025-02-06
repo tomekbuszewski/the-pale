@@ -1,3 +1,3 @@
 export default function title(prefix: string) {
-  return `${prefix} · Buszewski.studio`;
+  return `${prefix} · Buszewski.com`;
 }

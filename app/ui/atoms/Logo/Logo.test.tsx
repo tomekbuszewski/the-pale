@@ -15,7 +15,7 @@ describe("UI / Atoms / Logo", () => {
   it("renders the logo with default title", () => {
     const { container } = renderLogo();
     expect(container.querySelector("figcaption")).toHaveTextContent(
-      "Buszewski.studio",
+      "Buszewski.com",
     );
   });
 

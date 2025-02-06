@@ -3,6 +3,7 @@ import * as BlogSectionFeature from "./BlogSection";
 import * as ClientsSectionFeature from "./ClientsSection";
 import * as ContactFeature from "./Contact";
 import * as FooterFeature from "./Footer";
+import * as HeadFeature from "./Head";
 import * as HeaderFeature from "./Header";
 import * as HeroSectionFeature from "./HeroSection";
 import * as ServicesSectionFeature from "./ServicesSection";
@@ -51,4 +52,8 @@ export const BlogSection = {
 export const Contact = {
   component: ContactFeature.Contact,
   loader: null,
+};
+
+export const Head = {
+  component: HeadFeature.Head,
 };

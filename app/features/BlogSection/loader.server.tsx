@@ -110,7 +110,7 @@ export default async function loader({
               }) as ReactNode,
             );
 
-            // cache.set(data.slug, newPost);
+            cache.set(data.slug, newPost);
           }
 
           posts.push(newPost);

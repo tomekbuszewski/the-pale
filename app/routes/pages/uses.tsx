@@ -8,7 +8,7 @@ import globals from "../services/service.module.scss";
 const COPY = {
   INTRO: (
     <>
-      This page, inspired by
+      This page, inspired by{" "}
       <Link to="https://wesbos.com/uses">Wes Bos’ /uses</Link>, details the
       hardware and software I use on a daily basis.
     </>
@@ -152,9 +152,9 @@ const COPY = {
           from JDS Atom and Topping D10 and it’s night and day.
         </>,
         <>
-          Apple Music offers lossless, vast library. Simple as that. I’ve used
-          Qobuz earlier, which had this hand-curated feel, but too much music
-          was missing. I mean, Apple Music even has{" "}
+          <b>Apple Music</b> offers lossless, vast library. Simple as that. I’ve
+          used Qobuz earlier, which had this hand-curated feel, but too much
+          music was missing. I mean, Apple Music even has{" "}
           <Link
             target="_blank"
             to="https://music.apple.com/pl/album/information-overload-unit/1562887788"
@@ -184,23 +184,26 @@ const COPY = {
         <>
           <b>Xbox Series X</b> is something I got due to sheer “I collect these”
           feeling. After 360 I feel that Microsoft really lost the ball. Buying
-          studios and whipping mediocre games (looking at you, latest Forza)
-          doesn’t really help here.
+          studios and whipping mediocre games (looking at you, latest{" "}
+          <i>Forza</i>) doesn’t really help here.
         </>,
         <>
           <b>Nintendo Switch</b> is a special thing. Its hardware is basically
           Wii U, which was too little even then it launched, but the games. Oh,
-          the games. Mario Kart 8 is enough to recommend the entire thing, with
-          Metroid Dread, the two Zeldas and other Mario titles to boot.
+          the games. <i>Mario Kart 8</i> is enough to recommend the entire
+          thing, with
+          <i>Metroid Dread</i>, the two <i>Zeldas</i> and other Mario titles to
+          boot.
         </>,
         <>
-          <b>PC</b> with RTX 3080Ti and Ryzen 7. I was against gaming on PC for
-          years, mostly due to “I work with computers, so I don’t want them on
-          my free time”, but the games not available on consoles are just too
-          much to ignore. From indies, to oldies (I actually bought the rig to
-          play classic Fallout games), to titles better adjusted for mouse
-          (shooters, RPGs, aRPGs). Fun fact: the first game I launched on my new
-          computer was Quake II, which I wanted to play for over 15 years.
+          <b>PC</b> with RTX 3080Ti and Ryzen 7 is my main gaming platform as of
+          recent. I was against gaming on PC for years, mostly due to “I work
+          with computers, so I don’t want them on my free time”, but the games
+          not available on consoles are just too much to ignore. From indies, to
+          oldies (I actually bought the rig to play classic <i>Fallout</i>{" "}
+          games), to titles better adjusted for mouse (shooters, RPGs, aRPGs).
+          Fun fact: the first game I launched on my new computer was Quake II,
+          which I wanted to play for over 15 years.
         </>,
         <>
           <b>Beelink SER5</b> is a tiny computer I use as an emulation and media

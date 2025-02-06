@@ -10,14 +10,6 @@ import {
   WorksSection,
 } from "@features";
 import blogLoader from "@features/BlogSection/loader.server";
-import title from "@utils/title";
-
-export function meta() {
-  return [
-    { title: title("Expertly-crafted websites for your business") },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
 
 export async function loader() {
   return {
