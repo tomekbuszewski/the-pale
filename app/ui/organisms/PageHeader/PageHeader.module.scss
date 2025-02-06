@@ -18,6 +18,7 @@
     #{transition(opacity)};
 
   @include media("lg") {
+    height: #{rem(80)};
     background: none;
     grid-template-columns: 2fr 1fr 2fr;
     width: var(--container);
