@@ -16,7 +16,7 @@ import ContactIcon from "./assets/Phone.svg?react";
 import styles from "./PageHeader.module.scss";
 
 interface Props extends HTMLMotionProps<"header"> {
-  links: { title: string; href: string }[];
+  links: { text: string; href: string }[];
 }
 
 function useHiddenHeader(threshold = 160) {
@@ -41,6 +41,8 @@ function PageHeader({ className, links, ...rest }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const [isVisible, isOnTop] = useHiddenHeader(0);
+  const navigationLinks = links.slice(0, -1);
+  const contactLink = links[links.length - 1];
 
   const hideMenu = useMemo(() => {
     if (isMobile) {
@@ -69,11 +71,11 @@ function PageHeader({ className, links, ...rest }: Props) {
         onClose={() => setIsMenuOpen(false)}
       />
 
-      <PageNavigation links={links} visible={isMenuOpen} />
+      <PageNavigation links={navigationLinks} visible={isMenuOpen} />
 
       <Logo className={styles.logo} />
 
-      <Link to="#contact" className={styles.contact}>
+      <Link to={contactLink.href} className={styles.contact}>
         <ContactIcon />
       </Link>
     </motion.header>

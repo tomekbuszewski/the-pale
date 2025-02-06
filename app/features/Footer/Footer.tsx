@@ -1,4 +1,5 @@
 import { CAL, EMAIL, PHONE } from "@contact";
+import * as nav from "@nav";
 import { PageFooter as Main } from "@ui/organisms";
 
 import Calendar from "./assets/calendar.svg?react";
@@ -10,24 +11,7 @@ import YouTube from "./assets/yt.svg?react";
 
 const data = {
   copy: "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
-  quickLinks: [
-    {
-      href: "#about",
-      text: "About",
-    },
-    {
-      href: "#services",
-      text: "Services",
-    },
-    {
-      href: "#videos",
-      text: "Videos & Writings",
-    },
-    {
-      href: "#contact",
-      text: "Contact",
-    },
-  ],
+  quickLinks: [...nav.HeaderNav, ...nav.Pages],
   contact: [
     {
       href: `mailto:${EMAIL}`,

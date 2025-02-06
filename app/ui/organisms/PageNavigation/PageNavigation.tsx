@@ -6,7 +6,7 @@ import type { HTMLProps } from "react";
 import styles from "./PageNavigation.module.scss";
 
 interface Link {
-  title: string;
+  text: string;
   href: string;
 }
 
@@ -35,7 +35,7 @@ function PageNavigation({ className, visible, links, ...rest }: Props) {
             })}
           >
             <NavLink to={link.href} className={clsx(styles.link)}>
-              {link.title}
+              {link.text}
             </NavLink>
           </li>
         ))}
