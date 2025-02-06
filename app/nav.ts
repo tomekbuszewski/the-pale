@@ -26,14 +26,17 @@ export const Pages = [
 
 const BASE_SERVICES = "/services";
 
-export const Routes = {
-  services: BASE_SERVICES,
+export const StaticRoutes = {
+  // services: BASE_SERVICES,
   website: BASE_SERVICES + "/website",
   frontend: BASE_SERVICES + "/frontend",
   consulting: BASE_SERVICES + "/consulting",
-
   uses: "/uses",
   tech: "/tech",
+};
+
+export const Routes = {
+  ...StaticRoutes,
   writings: "/writings",
   post: "/writings/:slug",
   pagination: "/writings/page/:page",

@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const components = {
-  hr: () => <Separator />,
+  hr: (props: Props) => <Separator {...props} />,
   p: (props: Props) => <Text {...props} variant="article-body" />,
   h2: (props: Props) => (
     <SectionHeader animate={false} level={2} id={props.children} {...props} />

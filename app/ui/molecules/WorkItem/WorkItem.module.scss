@@ -106,12 +106,21 @@
 
 .mobileWrapper {
   aspect-ratio: 9/16;
+
+  @include media("md") {
+    display: none;
+  }
 }
 
 .desktopWrapper {
   aspect-ratio: 16/9;
   height: 100dvh;
   max-height: #{rem(720)};
+  display: none;
+
+  @include media("md") {
+    display: block;
+  }
 }
 
 .footer {

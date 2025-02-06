@@ -2,11 +2,11 @@ import type { HTMLProps } from "react";
 
 import Icon from "./assets/separator.svg?react";
 
-import styles from "./Separator.module.scss";
+import "./Separator.scss";
 
 function Separator(props: HTMLProps<HTMLDivElement>) {
   return (
-    <div {...props} className={styles.separator}>
+    <div className="separator" {...props}>
       <Icon />
     </div>
   );

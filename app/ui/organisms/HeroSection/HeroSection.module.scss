@@ -2,7 +2,7 @@
 
 .wrapper {
   @include media("lg") {
-    min-height: #{rem(800)};
+    min-height: #{rem(920)} !important;
     align-content: center;
     height: 90dvh;
     padding: 0;

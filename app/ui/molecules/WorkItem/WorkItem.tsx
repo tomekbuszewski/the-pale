@@ -97,15 +97,12 @@ function WorkItem({
       </section>
 
       <motion.section className={styles.images} {...createMotionConfig(8)}>
-        {isMobile ? (
-          <figure className={clsx(styles.mobileWrapper, styles.imageWrapper)}>
-            <img src={mobileImage} alt={title} />
-          </figure>
-        ) : (
-          <figure className={clsx(styles.desktopWrapper, styles.imageWrapper)}>
-            <img src={desktopImage} alt={title} />
-          </figure>
-        )}
+        <figure className={clsx(styles.mobileWrapper, styles.imageWrapper)}>
+          <img src={mobileImage} alt={title} />
+        </figure>
+        <figure className={clsx(styles.desktopWrapper, styles.imageWrapper)}>
+          <img src={desktopImage} alt={title} />
+        </figure>
       </motion.section>
 
       <motion.footer className={styles.footer} {...createMotionConfig(4)}>

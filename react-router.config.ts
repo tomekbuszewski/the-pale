@@ -1,6 +1,7 @@
 import type { Config } from "@react-router/dev/config";
 
 import loader from "./app/features/BlogSection/loader.server";
+import { StaticRoutes } from "./app/nav";
 
 export default {
   // Config options...
@@ -8,7 +9,7 @@ export default {
   ssr: true,
   prerender: async () => {
     const posts = await loader({ withContent: false });
-    const items: string[] = ["/"];
+    const items: string[] = Object.values(StaticRoutes);
 
     if (posts.items) {
       for (const item of posts.items) {
