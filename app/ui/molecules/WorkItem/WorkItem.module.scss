@@ -75,8 +75,17 @@
   flex-flow: row wrap;
   align-items: center;
   gap: var(--spacing-small);
-  color: var(--color-main-body-dark);
+  color: var(--color-main-body-dark) !important;
   opacity: 0.64;
+  padding-left: 0 !important;
+
+  &:before {
+    content: none !important;
+  }
+
+  & + & {
+    margin: 0 !important;
+  }
 
   svg {
     stroke: currentColor;
