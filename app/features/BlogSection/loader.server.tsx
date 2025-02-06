@@ -124,9 +124,10 @@ export default async function loader({
       }
     }
 
+    const startIndex = (page - 1) * limit;
     const items = posts
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      .splice(0, limit);
+      .slice(startIndex, startIndex + limit);
 
     return {
       items,

@@ -17,5 +17,6 @@ export default [
     route(Routes.tech, "pages/tech.tsx"),
     // route("/services", "routes/services/index.tsx"),
     route(Routes.post, "pages/blog/post.tsx"),
+    route(Routes.pagination, "pages/blog/pagination.tsx"),
   ]),
 ] satisfies RouteConfig;
