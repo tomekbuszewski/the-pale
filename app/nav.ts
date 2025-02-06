@@ -1,11 +1,22 @@
+export const Sections = {
+  hero: "hero",
+  about: "about",
+  services: "services",
+  clients: "clients",
+  works: "works",
+  contact: "contact",
+  videos: "videos",
+  footer: "footer",
+};
+
 export const HeaderNav = [
-  { text: "Works", href: "/#works" },
-  { text: "Services", href: "/#services" },
-  { text: "Videos", href: "/#videos" },
-  { text: "About", href: "/#about" },
+  { text: "Works", href: "/#" + Sections.works },
+  { text: "Services", href: "/#" + Sections.services },
+  { text: "Videos", href: "/#" + Sections.videos },
+  { text: "About", href: "/#" + Sections.about },
 ];
 
-export const Contact = { text: "Contact", href: "#contact" };
+export const Contact = { text: "Contact", href: "#" + Sections.contact };
 
 export const Pages = [
   { text: "Home", href: "/" },

@@ -1,3 +1,4 @@
+import { Sections } from "@nav";
 import { WorkItem } from "@ui/molecules";
 
 import Gameshelf from "./items/gameshelf";
@@ -10,7 +11,7 @@ const data = [Gameshelf, Backlog, Hay24].sort(
 
 export default function WorksSection() {
   return (
-    <section id="works">
+    <section id={Sections.works}>
       {data.map((item, i) => (
         <WorkItem
           {...item}

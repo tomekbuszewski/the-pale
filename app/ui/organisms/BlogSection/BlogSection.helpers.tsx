@@ -59,7 +59,7 @@ export function Pagination({
               <Button
                 small
                 aria-current={current ? "true" : "false"}
-                variant={current ? "primary" : "secondary"}
+                variant={current ? "primary" : "tertiary"}
                 to={link(page)}
               >
                 {page}

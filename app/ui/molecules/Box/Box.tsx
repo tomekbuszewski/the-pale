@@ -27,13 +27,11 @@ function Box({
   children,
   active,
   noBottomMargin,
-  ...rest
 }: Props) {
   const classNames = [className, styles.wrapper];
 
   return (
     <article
-      {...rest}
       data-active={active}
       className={clsx(classNames, {
         [styles.hidden]: hidden,

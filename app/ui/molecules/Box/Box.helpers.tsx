@@ -40,8 +40,8 @@ export function Footer({ onClick, youtube, link, active }: FooterProps) {
           <Button to={link} variant="primary">
             Read
           </Button>
-          <Button to={youtube} variant="secondary">
-            Watch
+          <Button to={youtube} variant="tertiary" target="_blank">
+            Watch ↗
           </Button>
         </>
       ) : (
@@ -56,7 +56,7 @@ export function Footer({ onClick, youtube, link, active }: FooterProps) {
             e.preventDefault();
             onClick();
           }}
-          variant="secondary"
+          variant="tertiary"
           to="#services"
         >
           {active ? "Collapse" : "Expand"}

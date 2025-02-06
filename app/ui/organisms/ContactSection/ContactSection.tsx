@@ -8,6 +8,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
   location: string;
 }
 
+import { Sections } from "@nav";
 import clsx from "clsx";
 
 import styles from "./ContactSection.module.scss";
@@ -28,7 +29,7 @@ function ContactSection({ email, calendar, location }: Props) {
 
   return (
     <SectionWrapper
-      id="contact"
+      id={Sections.contact}
       title="Contact"
       contentClassName={styles.wrapper}
       className={styles.parent}

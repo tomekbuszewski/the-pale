@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Sections } from "@nav";
 import { SectionWrapper } from "@ui/atoms";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -49,7 +50,7 @@ function ClientsSection({ items }: Props) {
   }, [triggerInterval]);
 
   return (
-    <SectionWrapper title="Clients">
+    <SectionWrapper title="Clients" id={Sections.clients}>
       <motion.div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

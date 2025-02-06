@@ -34,7 +34,8 @@
     #{transition(background)},
     #{transition(opacity)};
 
-  @include media("lg") {
+  @include media("md") {
+    box-shadow: 0 0 #{rem(128)} 0 rgba(81, 58, 66, 0.2);
     background: var(--color-main-background);
     left: 0;
     margin-left: 0;
@@ -50,7 +51,7 @@
 
 .logo {
   height: #{rem(32)};
-  fill: var(--color-main-heading);
+  fill: var(--color-minor-heading);
 }
 
 .contact {

@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { Sections } from "@nav";
 import { Logo, SectionWrapper, Text } from "@ui/atoms";
 import { SectionHeader } from "@ui/molecules";
 import clsx from "clsx";
@@ -33,6 +34,11 @@ function Links({ items, className, ...rest }: LinksProps) {
     <ul className={clsx(className, styles.list)} {...rest}>
       {items.map((item) => {
         const withIcon = isLinkHrefWithIcon(item);
+        const linkProps = {
+          to: item.href,
+          target: item.external ? "_blank" : undefined,
+          rel: item.external ? "noopener noreferrer" : undefined,
+        };
 
         return (
           <Text
@@ -43,7 +49,7 @@ function Links({ items, className, ...rest }: LinksProps) {
             })}
           >
             {withIcon ? item.icon : null}
-            <Link to={item.href}>{item.text}</Link>
+            <Link {...linkProps}>{item.text}</Link>
           </Text>
         );
       })}
@@ -63,7 +69,7 @@ function PageFooter({
   return (
     <SectionWrapper
       tag="footer"
-      id="contact"
+      id={Sections.footer}
       contentClassName={styles.wrapper}
       className={styles.parent}
     >

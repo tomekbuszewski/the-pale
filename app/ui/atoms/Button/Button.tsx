@@ -28,6 +28,10 @@ function Button({ variant, className, small, disabled, ...rest }: Props) {
     };
   }
 
+  if ("target" in rest && rest.target === "_blank") {
+    rest.rel = "noreferrer noopener";
+  }
+
   return (
     <Link
       viewTransition

@@ -11,6 +11,8 @@
 }
 
 .wrapper {
+  grid-template-columns: 1fr;
+
   @include media("md") {
     grid-column: 1 / -1;
     grid-template-columns: repeat(3, 1fr);
@@ -26,6 +28,14 @@
 .item {
   cursor: pointer;
   color: var(--color-main-body);
+
+  & + & {
+    margin-top: var(--gutter);
+
+    @include media("md") {
+      margin-top: 0;
+    }
+  }
 
   &.noClick {
     cursor: auto;

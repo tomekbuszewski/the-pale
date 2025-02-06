@@ -4,6 +4,6 @@
   background: var(--color-main-background);
   position: relative;
   z-index: 1;
-  box-shadow: 0 #{rem(8)} #{rem(256)} 0px rgba(0, 0, 0, 0.125);
+  box-shadow: 0 #{rem(8)} #{rem(256)} 0px rgba(81, 58, 66, 0.2);
   border-bottom: #{rem(1)} solid var(--color-minor-background);
 }

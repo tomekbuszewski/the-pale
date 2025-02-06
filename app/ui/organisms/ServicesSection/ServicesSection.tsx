@@ -1,5 +1,6 @@
 import { type CSSProperties, type HTMLProps, useRef, useState } from "react";
 import { useIsMobile } from "@hooks";
+import { Sections } from "@nav";
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
 import clsx from "clsx";
@@ -57,7 +58,11 @@ function ServicesSection({ items }: Props) {
   const itemRefs = useRef<HTMLDivElement[]>([]);
 
   return (
-    <SectionWrapper className={styles.container} title="Services">
+    <SectionWrapper
+      className={styles.container}
+      title="Services"
+      id={Sections.services}
+    >
       <div
         style={isSectionActive ? { [activeKey]: String(active) } : {}}
         className={clsx(styles.wrapper, {

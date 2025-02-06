@@ -44,8 +44,8 @@
   &:hover,
   &:focus {
     box-shadow:
-      0 #{rem(8)} #{rem(16)} #{rem(-4)} var(--color-main-body),
-      0 #{rem(8)} #{rem(8)} -#{rem(8)} var(--color-main-body);
+      0 #{rem(8)} #{rem(16)} #{rem(-4)} var(--color-minor-body),
+      0 #{rem(8)} #{rem(8)} -#{rem(8)} var(--color-minor-body);
   }
 }
 

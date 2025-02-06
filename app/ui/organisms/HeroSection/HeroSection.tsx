@@ -1,3 +1,4 @@
+import { Sections } from "@nav";
 import { BouncingArrow, Button, SectionWrapper, Text } from "@ui/atoms";
 import { LayoutGroup, useScroll, useTransform } from "motion/react";
 
@@ -28,7 +29,12 @@ function HeroSection({ children, copy }: Props) {
   });
 
   return (
-    <SectionWrapper title="Hello" animate={false} className={styles.wrapper}>
+    <SectionWrapper
+      title="Hello"
+      id={Sections.hero}
+      animate={false}
+      className={styles.wrapper}
+    >
       <LayoutGroup>
         <Text variant="hero" className={styles.heading}>
           {children}

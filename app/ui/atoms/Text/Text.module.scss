@@ -136,7 +136,8 @@
     }
   }
 
-  a[href^="http"]:not([href*="buszewski"]) {
+  a[href^="http"]:not([href^="https://buszewski"]):not([href^="https://www.buszewski"])
+  {
     &:after {
       content: "↗";
       display: inline-block;

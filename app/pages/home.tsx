@@ -4,7 +4,6 @@ import {
   AboutSection,
   BlogSection,
   ClientsSection,
-  Contact,
   HeroSection,
   ServicesSection,
   WorksSection,
@@ -32,7 +31,6 @@ export default function Home() {
       <ClientsSection.component />
       {BlogSection.guard(blog) ? <BlogSection.component {...blog} /> : null}
       <AboutSection.component />
-      <Contact.component />
     </Fragment>
   );
 }

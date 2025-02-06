@@ -22,6 +22,7 @@ const data = {
       href: CAL,
       text: "30-minute intro call",
       icon: <Calendar />,
+      external: true,
     },
     {
       href: `tel:${PHONE.replace(/\s/g, "")}`,
@@ -35,16 +36,19 @@ const data = {
     {
       href: "https://youtube.com/@tomaszbuszewski",
       text: "@tomaszbuszewski",
+      external: true,
       icon: <YouTube />,
     },
     {
       href: "https://linkedin.com/in/tomek-buszewski/",
       text: "tomek-buszewski",
+      external: true,
       icon: <LinkedIn />,
     },
     {
       href: "https://github.com/tomekbuszewski/",
       text: "tomekbuszewski",
+      external: true,
       icon: <Github />,
     },
   ],

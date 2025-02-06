@@ -1,3 +1,4 @@
+import { Sections } from "@nav";
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
 import clsx from "clsx";
@@ -18,6 +19,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
 function BlogSection({ className, items, pagination }: Props) {
   return (
     <SectionWrapper
+      id={Sections.videos}
       title="Videos & Writings"
       contentClassName={styles.wrapper}
       className={clsx(className, styles.parent)}

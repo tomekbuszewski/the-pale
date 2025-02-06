@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Outlet } from "react-router";
-import { FooterSection, Head, HeaderSection } from "@features";
+import { Contact, FooterSection, Head, HeaderSection } from "@features";
 import { MainWrapper } from "@ui/atoms";
 
 export function meta() {
@@ -13,6 +13,7 @@ export default function LayoutMain() {
       <HeaderSection.component />
       <MainWrapper>
         <Outlet />
+        <Contact.component />
       </MainWrapper>
 
       <FooterSection.component />

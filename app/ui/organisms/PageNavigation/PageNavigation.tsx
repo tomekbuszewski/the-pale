@@ -27,13 +27,8 @@ function PageNavigation({ className, visible, links, ...rest }: Props) {
       })}
     >
       <ul className={styles.linkWrapper}>
-        {links.map((link, i) => (
-          <li
-            key={link.href}
-            className={clsx({
-              [styles.contact]: i === links.length - 1,
-            })}
-          >
+        {links.map((link) => (
+          <li key={link.href}>
             <NavLink to={link.href} className={clsx(styles.link)}>
               {link.text}
             </NavLink>
