@@ -1,0 +1,74 @@
+{
+  "contact-button.label": "Contact me",
+  "menu-toggle.open": "Open menu",
+  "menu-toggle.close": "Close menu",
+  "article-header.meta.posted-on": "Posted on",
+  "article-header.meta.back": "Go back",
+  "contact-cta.title": "Ready to create your website?",
+  "blog-section.pagination.newer": "Newer",
+  "blog-section.pagination.older": "Older",
+
+  "contact-section.title": "Contact",
+  "contact-section.call.title": "Book a 30-min Call",
+  "contact-section.call.body": [
+    "Book a free 30-minute call for a no-obligation quote and consultation.",
+    "Meeting takes place on Google Meet and is scheduled using Cal.com."
+  ],
+  "contact-section.call.read-more": "Book a call",
+
+  "contact-section.email.title": "Write me an email",
+  "contact-section.email.body": [
+    "Write me an email to kick things off!",
+    "I’ll get back to you within 24 hours (Mon-Fri)."
+  ],
+  "contact-section.email.read-more": "Shoot an email",
+  "contact-section.designed": "Designed and developed in",
+
+  "hero-section.contact": "Contact",
+  "hero-section.explore": "Explore",
+
+  "footer-section.copyright": "© 2008 - {{year}}<br />All rights reserved.",
+  "footer-section.cookies": "This site collects cookies for analytics and testing purposes.",
+
+  "services-section.title": "Services",
+
+  "services-feature.data": "With 18 years of experience in web, I partner with clients across industries to bring their ideas to life. <br/> I combine technical expertise with experience to create innovative websites that drive results.",
+
+  "contact-feature.title": "Contact",
+  "contact-feature.location": "Warsaw, Poland",
+
+  "footer-feature.copy": "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
+  "footer-feature.call-button": "30-minute intro call",
+  "footer-feature.contact-disclaimer": "I'll get back to you within 24 hours, but usually much sooner (Mon-Fri).",
+
+  "head-feature.description": "Expertly-crafted websites for your business.",
+
+  "hero-feature.copy": "Say goodbye to website headaches. Enjoy seamless, worry-free solutions so you can focus on growing your product and business.",
+  "hero-feature.keywords": ["website", "design", "code", "consultant"],
+  "hero-feature.first-line": "Need&nbsp;&nbsp;",
+  "hero-feature.second-line": "for&nbsp;your&nbsp;business?",
+
+  "services-feature.title": "Services",
+  "services-feature.website.title": "Website<br />Design",
+  "services-feature.website.copy": [
+    "Full-Cycle Web Solutions: Design, Development, Delivery.",
+    "I provide a seamless experience from initial design concepts to the final product. Whether you’re launching a new business or revamping an existing site, I ensure everything works perfectly."
+  ],
+  "services-feature.website.additional": [
+    "Unique, tailor-made designs that reflect your brand and vision",
+    "Clean, efficient code for optimal performance and scalability",
+    "Code stored in a private repository with full access and the option to take ownership",
+    "Preview available for every change, ensuring everything looks perfect at all times",
+    "Thorough testing for performance, compatibility, and usability",
+    "Hosting, domains and deployments taken care of, with the option to transfer ownership free of charge"
+  ],
+
+  "work-item.study.na": "Study n/a",
+  "work-item.study.ok": "Case study",
+  "work-item.online.na": "Online n/a",
+  "work-item.online.ok": "View online",
+
+  "work-item.tag.design": "Design",
+  "work-item.tag.development": "Development",
+  "work-item.tag.consultations": "Consultations"
+}

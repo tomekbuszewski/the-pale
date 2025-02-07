@@ -1,5 +1,4 @@
 import { type HTMLProps } from "react";
-import { useIsMobile } from "@hooks";
 import { Button, SectionWrapper, Text } from "@ui/atoms";
 import { createMotionConfig } from "@utils/fadeIn";
 import clsx from "clsx";
@@ -58,7 +57,6 @@ function WorkItem({
   background,
   align = "right",
 }: Props) {
-  const isMobile = useIsMobile();
   const classNames = [className, styles.parent];
 
   const style = background
