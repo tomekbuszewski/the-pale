@@ -1,10 +1,14 @@
 {
   "contact-button.label": "Contact me",
+
   "menu-toggle.open": "Open menu",
   "menu-toggle.close": "Close menu",
+
   "article-header.meta.posted-on": "Posted on",
   "article-header.meta.back": "Go back",
+
   "contact-cta.title": "Ready to create your website?",
+
   "blog-section.pagination.newer": "Newer",
   "blog-section.pagination.older": "Older",
 
@@ -70,5 +74,13 @@
 
   "work-item.tag.design": "Design",
   "work-item.tag.development": "Development",
-  "work-item.tag.consultations": "Consultations"
+  "work-item.tag.consultations": "Consultations",
+
+  "nav.home": "Home",
+  "nav.tech": "Technology I use",
+  "nav.uses": "Hardware & Software",
+  "nav.works": "Works",
+  "nav.services": "Services",
+  "nav.videos": "Videos",
+  "nav.about": "About"
 }
