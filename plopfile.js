@@ -10,8 +10,6 @@ function getCurrentDate() {
 }
 
 export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
-  plop.load("plop-pack-remove");
-
   plop.setHelper("slugify", (text) =>
     slugify(`${getCurrentDate()}-${text}`, { lower: true }),
   );
@@ -157,10 +155,6 @@ export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
     ],
 
     actions: [
-      {
-        type: "remove",
-        path: "./app/features/BlogSection/cache.json",
-      },
       {
         type: "add",
         path: `./app/features/BlogSection/content/${getCurrentDate()} - {{title}}/index.md`,
