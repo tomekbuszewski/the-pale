@@ -11,7 +11,7 @@ import YouTube from "./assets/yt.svg?react";
 
 const data = {
   copy: "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
-  quickLinks: [...nav.HeaderNav, ...nav.Pages],
+  quickLinks: [...nav.Pages, ...nav.HeaderNav],
   contact: [
     {
       href: `mailto:${EMAIL}`,
