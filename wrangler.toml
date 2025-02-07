@@ -1,0 +1,8 @@
+workers_dev = true
+name = "the-pale"
+compatibility_date = "2025-02-07"
+main = "./build/server/index.js"
+assets = { directory = "./build/client/" }
+
+[vars]
+VALUE_FROM_CLOUDFLARE = "Hello from Cloudflare"
