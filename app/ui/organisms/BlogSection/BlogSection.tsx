@@ -23,6 +23,7 @@ function BlogSection({ className, items, pagination }: Props) {
       title="Videos & Writings"
       contentClassName={styles.wrapper}
       className={clsx(className, styles.parent)}
+      columns={{ sm: 1, md: 3, lg: 3 }}
     >
       {items.map((item) => (
         <Box {...item} key={item.title} noBottomMargin>

@@ -8,11 +8,9 @@
 }
 
 .wrapper {
-  grid-template-columns: 1fr;
   grid-template-rows: repeat(4, auto);
 
   @include media("md") {
-    grid-template-columns: repeat(4, 1fr) !important;
     grid-template-rows: auto;
   }
 }

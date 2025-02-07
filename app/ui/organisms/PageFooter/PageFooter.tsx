@@ -71,6 +71,7 @@ function PageFooter({
       tag="footer"
       id={Sections.footer}
       contentClassName={styles.wrapper}
+      columns={{ sm: 12, md: 4, lg: 4 }}
       className={styles.parent}
     >
       <Logo wrapperClassName={styles.logo} />

@@ -31,8 +31,16 @@
   margin: auto;
   grid-column: 2;
   display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-columns: repeat(var(--columns-xs), 1fr);
   column-gap: var(--gutter);
+
+  @include media("md") {
+    grid-template-columns: repeat(var(--columns-md), 1fr);
+  }
+
+  @include media("lg") {
+    grid-template-columns: repeat(var(--columns-lg), 1fr);
+  }
 }
 
 .content.breakout {

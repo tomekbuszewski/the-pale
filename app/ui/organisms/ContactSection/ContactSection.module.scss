@@ -11,12 +11,10 @@
 }
 
 .wrapper {
-  grid-template-columns: 1fr;
   align-items: flex-start;
 
   @include media("md") {
     grid-column: 1 / -1;
-    grid-template-columns: repeat(3, 1fr) !important;
     gap: var(--gutter);
   }
 }

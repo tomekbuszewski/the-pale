@@ -3,9 +3,15 @@ import { createMotionConfig } from "@utils/fadeIn";
 import clsx from "clsx";
 import { motion } from "motion/react";
 
-import type { ElementType, HTMLProps } from "react";
+import type { CSSProperties, ElementType, HTMLProps } from "react";
 
 import styles from "./SectionWrapper.module.scss";
+
+interface ColumnConfig {
+  sm?: number;
+  md?: number;
+  lg?: number;
+}
 
 interface Props<T extends ElementType = "section"> extends HTMLProps<T> {
   title?: string;
@@ -15,6 +21,7 @@ interface Props<T extends ElementType = "section"> extends HTMLProps<T> {
   animate?: boolean;
   animateOnlyHeader?: boolean;
   dark?: boolean;
+  columns?: ColumnConfig;
 }
 
 function SectionWrapper<T extends ElementType = "section">({
@@ -27,11 +34,22 @@ function SectionWrapper<T extends ElementType = "section">({
   animate = true,
   animateOnlyHeader = false,
   dark = false,
+  columns,
   ...rest
 }: Props<T>) {
   const classNames = [styles.wrapper, className];
   const contentClassNames = [styles.content, contentClassName];
   const motionConfig = !animateOnlyHeader ? createMotionConfig(3) : {};
+
+  const smColumn = columns?.sm ?? 12;
+  const mdColumn = columns?.md ?? 12;
+  const lgColumn = columns?.lg ?? 12;
+
+  const style = {
+    ["--columns-sm" as keyof CSSProperties]: smColumn,
+    ["--columns-md" as keyof CSSProperties]: mdColumn,
+    ["--columns-lg" as keyof CSSProperties]: lgColumn,
+  };
 
   if (breakout) {
     contentClassNames.push(styles.breakout, styles[breakout]);
@@ -47,7 +65,11 @@ function SectionWrapper<T extends ElementType = "section">({
           animate={animate}
         />
       )}
-      <motion.div className={clsx(contentClassNames)} {...motionConfig}>
+      <motion.div
+        className={clsx(contentClassNames)}
+        {...motionConfig}
+        style={style}
+      >
         {children}
       </motion.div>
     </Tag>

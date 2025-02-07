@@ -53,6 +53,7 @@ function ContactSection({ email, calendar, location }: Props) {
       id={Sections.contact}
       title="Contact"
       contentClassName={styles.wrapper}
+      columns={{ sm: 1, md: 3, lg: 3 }}
       className={styles.parent}
     >
       {COPY.map((item) => (

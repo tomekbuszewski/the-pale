@@ -5,12 +5,10 @@
 }
 
 .wrapper {
-  grid-template-columns: 1fr;
   gap: var(--spacing-mid);
   align-items: flex-start;
 
   @include media("md") {
-    grid-template-columns: repeat(3, 1fr) !important;
     gap: var(--gutter);
   }
 }
