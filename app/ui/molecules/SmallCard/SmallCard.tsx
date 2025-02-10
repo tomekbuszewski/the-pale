@@ -1,7 +1,5 @@
 import { Text } from "@ui/atoms";
 
-import type { HTMLProps } from "react";
-
 interface Props extends HTMLMotionProps<"article"> {
   title: string;
   no: string | number;

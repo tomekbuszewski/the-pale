@@ -1,0 +1,365 @@
+{
+  "contact": {
+    "button": {
+      "label": "Contact me"
+    },
+    "cta": {
+      "title": "Ready to create your website?"
+    },
+    "section": {
+      "title": "Contact",
+      "call": {
+        "title": "Book a 30-min Call",
+        "body": [
+          "Book a free 30-minute call for a no-obligation quote and consultation.",
+          "Meeting takes place on Google Meet and is scheduled using Cal.com."
+        ],
+        "read-more": "Book a call"
+      },
+      "email": {
+        "title": "Write me an email",
+        "body": [
+          "Write me an email to kick things off!"
+        ],
+        "read-more": "Shoot an email"
+      },
+      "designed": "Designed and developed in"
+    },
+    "feature": {
+      "title": "Contact",
+      "location": "Warsaw, Poland"
+    }
+  },
+  "menu": {
+    "toggle": {
+      "open": "Open menu",
+      "close": "Close menu"
+    }
+  },
+  "article": {
+    "header": {
+      "meta": {
+        "posted-on": "Posted on",
+        "back": "Go back"
+      }
+    }
+  },
+  "blog": {
+    "section": {
+      "pagination": {
+        "newer": "Newer",
+        "older": "Older"
+      }
+    },
+    "feature": {
+      "title": "Videos & Writings"
+    }
+  },
+  "hero": {
+    "section": {
+      "contact": "Contact",
+      "explore": "Explore"
+    },
+    "feature": {
+      "title": "Hello",
+      "copy": "Say goodbye to website headaches. Enjoy seamless, worry-free solutions so you can focus on growing your product and business.",
+      "keywords": ["website", "design", "code", "consultant"],
+      "first-line": "Need a ",
+      "second-line": "for your business?"
+    }
+  },
+  "footer": {
+    "section": {
+      "copyright": "© {{start}} - {{current}}<br />All rights reserved.",
+      "cookies": "This site collects cookies for analytics and testing purposes."
+    },
+    "feature": {
+      "copy": "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
+      "call-button": "30-minute intro call",
+      "contact-disclaimer": "I'll get back to you within 24 hours, but usually much sooner (Mon-Fri)."
+    }
+  },
+  "about": {
+    "feature": {
+      "data": "With {{years}} years of experience in web, I partner with clients across industries to bring their ideas to life. <br/> I combine technical expertise with experience to create innovative websites that drive results."
+    }
+  },
+  "head": {
+    "feature": {
+      "description": "Expertly-crafted websites for your business."
+    }
+  },
+  "services": {
+    "section": {
+      "title": "Services"
+    },
+    "feature": {
+      "title": "Services",
+      "process": "The process",
+      "website": {
+        "title": "Website&nbsp;Design &&nbsp;Development",
+        "short-title": "Website<br />Design&Dev",
+        "copy": [
+          "Full-Cycle Web Solutions: Design, Development, Delivery.",
+          "I provide a seamless experience from initial design concepts to the final product. Whether you’re launching a new business or revamping an existing site, I ensure everything works perfectly."
+        ],
+        "additional": [
+          "Unique, tailor-made designs that reflect your brand and vision",
+          "Clean, efficient code for optimal performance and scalability",
+          "Code stored in a private repository with full access and the option to take ownership",
+          "Preview available for every change, ensuring everything looks perfect at all times",
+          "Thorough testing for performance, compatibility, and usability",
+          "Hosting, domains and deployments taken care of, with the option to transfer ownership free of charge"
+        ],
+        "full": {
+          "intro": "Beautiful, user-friendly websites tailored to your brand and goals.",
+          "body": ["I believe design is about more than just aesthetics — it's about creating an experience. Whether you're a startup or a growing small business, I create custom websites that look great and perform even better", "Your website should be as unique as your brand, and that's why we build everything from scratch, no templates, no shortcuts."],
+          "process": {
+            "discovery": {
+              "title": "Discovery & Strategy",
+              "body": "Every project is unique. First, we talk about what makes yours special and how we can make it shine online."
+            },
+            "design": {
+              "title": "Design &&nbsp;Review",
+              "body": "Next, I create custom wireframes and design mockups for your approval before building the site."
+            },
+            "coding": {
+              "title": "Coding &&nbsp;Launch",
+              "body": "Once you approve the designs, I bring them to life with robust development, ensuring everything is responsive, secure, and fast."
+            }
+          },
+          "card": {
+            "design": {
+              "title": "Design tailored to you",
+              "body": [
+                "I will design a website that fits your brand and your business. Designs are always revised and polished until you are satisfied.",
+                "Once we're done, I hand over the Sketch files, so you or your team can carry on with it if needed."
+              ],
+              "cta": "See my works"
+            },
+            "tech": {
+              "title": "Technology picked for you",
+              "body": [
+                "I don't have one-size-fits-all solutions. For every client, I analyze and pick what is the most suitable. Sometimes it will be a simple site generator, sometimes a headless CMS with server-rendered frontend as a separate service. And sometimes something in between.",
+                "One thing you can be sure is, I will never propose you something “just because”. You'll always know why certain technology is used.",
+                "All my projects came with E2E tests and preview environments. This guarantees all changes to be fully tested and verified before your visitors see them."
+              ],
+              "cta": "More about tech"
+            },
+            "repo": {
+              "title": "Code in the repository",
+              "body": [
+                "I use Github to keep all my code. My commits follow Conventional Commits patterns, and I use pull requests to introduce changes. After my work is done, I transfer the repo ownership to you (if you want).",
+                "If this is just a tech mumbo-jumbo, don't fret. All I am saying is that I keep the work in a private space which will be given to you once my work is done.",
+                "I also offer hosting with monitoring and maintenance with a monthly fee."
+              ]
+            }
+          },
+          "btn": {
+            "schedule": "Schedule a call",
+            "contact": "Contact me"
+          },
+          "cta": "Ready to take your business to the next level?"
+        }
+      },
+      "frontend": {
+        "title": "Frontend<br />Development",
+        "copy": [
+          "Have a design? I'll make it a reality with clean, functional front-end code.",
+          "Tech choices are tailored to your project to ensure scalability and smooth performance."
+        ],
+        "additional": [
+          "Design consultations and suggest improvements for smoother implementation",
+          "Front-end developed specifically to meet your unique needs",
+          "Code stored in a repository with full access for future ownership",
+          "Preview available for live changes before they go live",
+          "Automated end-to-end tests to ensure everything works flawlessly after changes"
+        ],
+        "intro": "You already have a design (or a designer) and want to get your site coded? Say no more — I can get it up and running with tech adjusted for your needs.",
+        "body": ["With over {{years}} of experience, I've worked with tons of different front-end stacks and challenges. I am happy to offer advice you on your project and help you find the best solution for your needs.", "I am strongly against “one size fits all” solutions."],
+        "process": {
+          "design": {
+            "title": "Design Overview",
+            "description": "We discuss your design and what will be the best way to implement it."
+          },
+          "technical": {
+            "title": "Technical Summary",
+            "description": "Based on what we've discussed, I prepare a technical summary of the project with explanation of every step."
+          },
+          "implementation": {
+            "title": "Code &<br />Handover",
+            "description": "Once we're settled on the tech, I get to work and code it for you. Once I am done, you're getting everything in a neat repo."
+          }
+        },
+        "card": {
+          "design": {
+            "title": "Design Overview",
+            "description": ["A well-thought-out design is more than just visuals—it needs to function seamlessly across different devices and user scenarios.", "I conduct a thorough review of the design, pinpointing potential bottlenecks, usability concerns, and technical constraints that could impact development. By addressing these early, the final product remains intuitive, accessible, and optimized for performance.", "My goal is to ensure that what looks great on paper translates flawlessly into a fully functional digital experience."]
+          },
+          "technical": {
+            "title": "Technical Outline",
+            "description": ["Selecting the right technology is crucial for building a scalable, maintainable, and high-performing product.", "I create a comprehensive technical document that outlines the best tools, frameworks, and architecture for your specific needs—always prioritizing what serves the project best. This ensures a clear roadmap for development, minimizing future technical debt and optimizing for both efficiency and flexibility.", "Whether it’s framework, library or architecture, every decision is made with long-term success in mind."]
+          },
+          "implementation": {
+            "title": "Implementation",
+            "description": ["With a solid plan in place, I bring the design to life, coding the project using the best-suited technologies defined in the technical summary.", "Every component is built with attention to detail, ensuring maintainability, scalability, and performance from the ground up. Once development is complete, the entire codebase is handed over in a structured and well-documented manner, allowing your team to take over seamlessly.", "Whether you need ongoing support or a smooth transition, I ensure the final product is ready for real-world use without unnecessary complexity."]
+          }
+        }
+      },
+      "consultations": {
+        "title": "Engineering &&nbsp;Project Management Consultations",
+        "short-title": "Project<br />Consulting",
+        "copy": [
+          "With experience as an engineering manager and tech lead, I understand both technical and human aspects of team dynamics.",
+          "I offer consulting to help your team thrive and reach its goals."
+        ],
+        "additional": [
+          "Guidance on tech and team management",
+          "Support with recruitment and candidate assessments",
+          "Code reviews to ensure clean, efficient, and maintainable codebase",
+          "Discuss ideas and solve technical challenges as your sparring partner"
+        ],
+        "intro": "If you or your team needs suggestions, is stuck or simply want to bounce off ideas, I am here.",
+        "body": [
+          "As a seasoned lead, manager and developer working for both the big and small, I am certain I will be able to assist you in your pickle."
+        ],
+        "process": {
+          "talk": {
+            "title": "Initial Meeting",
+            "description": "We discuss your needs and I give you an estimate of what I can do for you."
+          },
+          "timeline": {
+            "title": "Agreement<br />&&nbsp;Scope",
+            "description": "We agree on a timeline and I prepare what I can on my own."
+          },
+          "implementation": {
+            "title": "The Work",
+            "description": "We're working together (via whatever suits you) on the ongoing process."
+          }
+        },
+        "card": {
+          "mgmt": {
+            "title": "Project management consulting",
+            "description": ["A well-managed project stays on track, avoids unnecessary complexity, and delivers results efficiently.", "With experience leading both small and large teams, I help refine project scope, prevent feature creep, and ensure that technical and business goals align from the start."]
+          },
+          "hiring": {
+            "title": "Help with recruiting the best developers",
+            "description": ["Building a strong development team is crucial, especially for new companies.", "I assist in identifying top talent, evaluating both technical expertise and essential soft skills to ensure a great fit. Whether you're hiring your first developers or expanding your team, I provide the insight needed to make the right choices."]
+          },
+          "sparring": {
+            "title": "Sparring partner",
+            "description": ["Great ideas become stronger through challenge.", "As a sparring partner, I offer a critical, strategic perspective — asking the right questions, exploring alternatives, and helping refine concepts before they move into development."]
+          }
+        }
+      }
+    }
+  },
+  "work": {
+    "item": {
+      "study": {
+        "na": "Study n/a",
+        "ok": "Case study"
+      },
+      "online": {
+        "na": "Online n/a",
+        "ok": "View online"
+      },
+      "tag": {
+        "design": "Design",
+        "development": "Development",
+        "consultations": "Consultations"
+      }
+    },
+    "gameshelf": [
+      "Gameshelf aims to deliver latest new, world-class columns, interviews and insides for all the gamers around the world."
+    ],
+    "hay": [
+      "Hundred a Year is a personal project for creating and curating end-of-the-year music lists."
+    ],
+    "backlog": [
+      "The Backlog aims to provide microblogging experience enhanced with gaming features, like ratings, statuses and title tagging."
+    ]
+  },
+  "nav": {
+    "home": "Home",
+    "tech": "Technology I use",
+    "uses": "Hardware & Software",
+    "works": "Works",
+    "services": "Services",
+    "videos": "Videos",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "tech": {
+    "title": "Technology I Use",
+    "intro": "Throughout the years I've worked with tons and tons of different tech.",
+    "body": [
+      "I feel comfortable with almost any (roughly modern) stack. I've worked with tons of variations, including PHP, Node, JavaScript and TypeScript, Python, Java and Go.",
+      "If you're looking for a (more or less) comprehensive list, here it is:"
+    ],
+    "languages": {
+      "title": "Languages",
+      "desc": "These are the languages I have commercial experience with. Besides these, I've dabbled with Ruby, Rust and tons of others."
+    },
+    "libs": {
+      "title": "Frameworks & Important Libraries",
+      "desc": "A list of frameworks and libraries I have the most experience with. By no means exhaustive."
+    },
+    "testing": {
+      "title": "Testing",
+      "desc": "These are the testing tools I have built at least one commercial app with."
+    }
+  },
+  "uses": {
+    "title": "Uses",
+    "copy": "This page, inspired by <a href=\"https://wesbos.com/uses\">Wes Bos' /uses</a>, details the hardware and software I use on a daily basis.",
+    "section": {
+      "hardware": {
+        "title": "Hardware",
+        "desc": "I am a Mac guy for years. My first iMac with i5 is still around (although shut down), as well as my second iMac 5K with i9 and whopping 128GB of RAM (also shut down). I try not to replace my hardware too often, simply because I don't need cutting edge performance, and yearly bumps aren't worth the money.",
+        "items": [
+          "<b>MacBook Pro M1 Max 16</b> bought in 2022 is my main work station. Previously, I had  a 27“ iMac with i9 processor. Switch to M1 was kind of terrifying, because at first I thought my apps don't build. Only after googling “node doesn't build on m1”, I realized that build times went down to under a second.",
+          "<b>Apple Studio Display 27“</b> with nano-texture glass. I was always a big display guy, so getting this on a good deal was a no-brainer. While not the best display ever (this award goes to my glossy iMac 5K), I do appreciate its sharpness and near-perfect sunlight handling. I have large windows in my office, and that's the only screen that is fully readable at all times.",
+          "<b>LG 28MQ780-B</b> is my second monitor. Previously I had a BenQ one, but it has terrible ghosting. Initially I wanted a 4K one, but this LG bad boy is basically two displays put on top of each other, so, yeah. I use it only for coding (terminal, tests, documentation), so it's perfect.",
+          "<b>iPhone 14 Pro</b> is my iPhone X replacement. I bought it purely for the island thingy, but apart from that, kinda meh. I mean, it's an iPhone. Great camera that can double as a webcam works wonders for recording my videos though.",
+          "<b>ZSA Moonlander MK1</b> is my latest keyboard. I went into computers to type, so when few years ago I realized I am still using this boring Apple Keyboard, I wanted something more exciting. I went through Keychrons (which breaks easily, for some reason), had a Nuphy Air, some Epomaker and even a Logitech POP. Then a colleague suggested the Moonlander, which is a split keyboard. And I fell in love. It's a tough relationship, given the price tag and 20 years of muscle memory, but worth it.",
+          "<b>Logitech MX Master 3</b> is the mouse I thought I'll never use. Apple Magic Mouse had all these touch miracles that I fell head over heels for, but eventually its poor ergonomics took its toll on my hand and wrist. MX3 is extremely comfortable, has tons of configuration options (down to the physical wheel behavior) and its battery (after 4 years) still keeps up."
+        ]
+      },
+      "software": {
+        "title": "Software",
+        "desc": "I try to keep my software minimalistic. That means, one application for one thing, but I don't do that much apart from work and music here.",
+        "items": [
+          "IntelliJ IDEA is my IDE of choice. It has everything I need, including great introspection, intellisense, comfortable jumping between files, classes, interfaces, whatever. And a great window manager that allows you to split a pane and put it somewhere else on your desktop. You name it, IDEA has it.",
+          "Neovim (Lazyvim variant) for quick edits. While I am by no means fluent in Vim, handling everything by keyboard is strangely comfortable. I still am not fully convinced to use Vim Mode in IntelliJ, but I am getting there.",
+          "Vivaldi is my recent browser of choice. I've left Chrome after using it for over 15 years, simply due to lack of features like workspaces and decent theming. As for the other popular browsers, Arc didn't click due to navigation, Firefox due to poor JS tools (although I still use it for debugging grids) and rendering, Safari due to, well, being Safari.",
+          "oh-my-zsh for my terminal configuration. It has nice themes, but I use it like once every few days, because 99% of my terminal things are happening inside IntelliJ.",
+          "Alacritty for the terminal emulator. I honestly don't know why I am using it instead of a regular terminal shipped with the system, as I only do one thing there: type 'zellij' and press '[return]'. (Yes, technically these are two things.)",
+          "Obsidian for writing. I've used iA Writer, but Obsidian has more customizations and themes. I store the vault on iCloud, so there's the same sync mechanism I had previously.",
+          "Sketch for all the UI design. I've really wanted to like Figma and even used it for sometime, did some projects and was happy, but eventually I just decided to go back to Sketch. It's what I am familiar and productive with the most. And it's a native app, which also comes in handy, especially when I work with a lot of external assets.",
+          "Affinity Designer and Photo for more detailed designs. I still am learning these tools, but Adobe's rates and licence handling just doesn't sit right with me."
+        ]
+      },
+      "music": {
+        "title": "Music",
+        "desc": "I spend a lot of time listening to music, and in high school I fell into the headphones rabbit hole. Luckily, I was able to catch that rabbit! Oh, and check <a href=\"https://rateyourmusic.com/~_tomek\" target=\"_blank\">my RateYourMusic profile </a> for the albums I like.",
+        "items": [
+          "Focal Stellia headphones are basically the pinnacle of music listening. Perfect in every detail, from form (I can wear them even during the Summer for hours without discomfort) to factor. I would like to also have Focal Utopias, but given the noise outside my apartment, open-back headphones sadly aren't an option.",
+          "Cayin iHA-6 paired with Cayin iDAC6-MK2 are my headphones amplifier and digital-analogue converter. I've switched from JDS Atom and Topping D10 and it's night and day.",
+          "Apple Music offers lossless, vast library. Simple as that. I've used Qobuz earlier, which had this hand-curated feel, but too much music was missing. I mean, Apple Music even has obscure Australian industrial from the 80s (warning: early industrial is a hole you might emerge after ten years) or an early Young Guv EP. Come on!"
+        ]
+      },
+      "gaming": {
+        "title": "Gaming",
+        "desc": "I recently realized that I play games for almost 30 years.",
+        "items": [
+          "PS5 is a must-have. I am a PlayStation fan ever since the first one (which I got in second grade).",
+          "Xbox Series X is something I got due to sheer \"I collect these\" feeling. After 360 I feel that Microsoft really lost the ball. Buying studios and whipping mediocre games (looking at you, latest Forza) doesn't really help here.",
+          "Nintendo Switch is a special thing. Its hardware is basically Wii U, which was too little even then it launched, but the games. Oh, the games. Mario Kart 8 is enough to recommend the entire thing, with Metroid Dread, the two Zeldas and other Mario titles to boot.",
+          "PC with RTX 3080Ti and Ryzen 7 is my main gaming platform as of recent. I was against gaming on PC for years, mostly due to \"I work with computers, so I don't want them on my free time\", but the games not available on consoles are just too much to ignore. From indies, to oldies (I actually bought the rig to play classic Fallout games), to titles better adjusted for mouse (shooters, RPGs, aRPGs). Fun fact: the first game I launched on my new computer was Quake II, which I wanted to play for over 15 years.",
+          "Beelink SER5 is a tiny computer I use as an emulation and media station. My old LG OLED TV doesn't work well with streaming apps, some (like Canal+) don't have dedicated apps at all, so using this is a perfect solution. Plus, since I don't have my PS1 with me, I can still play the games (and some PS2 titles as well, but not as many)."
+        ]
+      }
+    }
+  }
+}

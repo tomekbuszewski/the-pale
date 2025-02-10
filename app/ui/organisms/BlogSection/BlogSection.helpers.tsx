@@ -46,7 +46,7 @@ export function Pagination({
             to={link(prevPage)}
             className={styles.button}
           >
-            {translate("blog-section.pagination.newer")}
+            {translate("blog.section.pagination.newer")}
           </Button>
         ) : null}
         {displayPages.map((page, index) => {
@@ -70,7 +70,7 @@ export function Pagination({
         })}
         {nextPage ? (
           <Button variant="primary" to={link(nextPage)}>
-            {translate("blog-section.pagination.older")}
+            {translate("blog.section.pagination.older")}
           </Button>
         ) : null}
       </ul>

@@ -69,8 +69,8 @@ const Blockquote: BlockquoteType = styled.blockquote`
   margin-bottom: 3rem;
   margin-left: 1rem;
   padding: 0 1rem;
-  border-left: 1rem solid ${() =>
-      `var(--section-${React.useContext(ColorContext)}-highlight)`};
+  border-left: 1rem solid
+    ${() => `var(-.section-${React.useContext(ColorContext)}-highlight)`};
 
   & > ${Paragraph}:first-of-type {
     font-size: 2rem;

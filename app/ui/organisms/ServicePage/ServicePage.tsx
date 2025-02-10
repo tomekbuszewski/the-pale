@@ -30,7 +30,7 @@ interface CardWithIcons extends Omit<Card, "body"> {
 interface Props extends HTMLProps<HTMLDivElement> {
   title: string;
   intro: string;
-  body: string;
+  body: string | string[];
   process?: string;
   processItems?: Process[];
   cards?: CardWithIcons[];
@@ -38,16 +38,16 @@ interface Props extends HTMLProps<HTMLDivElement> {
 }
 
 const defaultCTA = {
-  text: translate("services-feature.website.full.cta") as string,
+  text: translate("services.feature.website.full.cta") as string,
   buttons: [
     {
       variant: "primary",
-      label: translate("services-feature.website.full.btn.schedule") as string,
+      label: translate("services.feature.website.full.btn.schedule") as string,
       href: CAL,
     },
     {
       variant: "secondary",
-      label: translate("services-feature.website.full.btn.contact") as string,
+      label: translate("services.feature.website.full.btn.contact") as string,
       href: "#contact",
     },
   ],
@@ -73,10 +73,21 @@ function ServicePage({
           dangerouslySetInnerHTML={{ __html: intro }}
         />
         <Separator />
-        <Text
-          variant="article-body"
-          dangerouslySetInnerHTML={{ __html: body }}
-        />
+
+        {Array.isArray(body) ? (
+          body.map((item, index) => (
+            <Text
+              key={index}
+              variant="article-body"
+              dangerouslySetInnerHTML={{ __html: item }}
+            />
+          ))
+        ) : (
+          <Text
+            variant="article-body"
+            dangerouslySetInnerHTML={{ __html: body }}
+          />
+        )}
       </section>
 
       {processItems && process ? (

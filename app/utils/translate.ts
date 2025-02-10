@@ -1,8 +1,15 @@
-import en from "../content/en.json";
+import en from "../content/en-nested.json";
 
 type Languages = "en";
-type TranslationKey = keyof typeof en;
-const translations = {
+type NestedKeyOf<ObjectType extends object> = {
+  [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
+    ? `${Key}` | `${Key}.${NestedKeyOf<ObjectType[Key]>}`
+    : `${Key}`;
+}[keyof ObjectType & (string | number)];
+
+type TranslationKey = NestedKeyOf<typeof en>;
+
+const translations: Record<Languages, typeof en> = {
   en,
 };
 
@@ -17,21 +24,47 @@ export function getCurrentLanguage(): Languages {
 }
 
 export function translate(
-  key: TranslationKey,
+  path: TranslationKey,
   ...args: string[]
 ): string | string[] {
   const currentLanguage = getCurrentLanguage();
-  const translation = translations[currentLanguage][key] as string;
+  const keys = path.split(".");
 
-  if (!translation) {
-    console.warn(`Translation for key "${key}" not found.`);
-    return key;
+  let translation: unknown = translations[currentLanguage];
+
+  for (const key of keys) {
+    if (!translation || typeof translation !== "object") {
+      console.warn(`Translation path "${path}" is invalid.`);
+      return path;
+    }
+    translation = (translation as Record<string, unknown>)[key];
   }
 
-  return args.reduce((acc, arg) => {
-    const pattern = new RegExp(`{{[^}]*}}`);
-    return acc.replace(pattern, arg);
-  }, translation);
+  if (translation === undefined) {
+    console.warn(`Translation for path "${path}" not found.`);
+    return path;
+  }
+
+  // Handle array translations with replacements
+  if (Array.isArray(translation)) {
+    return translation.map((item: string) =>
+      args.reduce((acc: string, arg: string) => {
+        const pattern = new RegExp(`{{[^}]*}}`);
+        return acc.replace(pattern, arg);
+      }, item),
+    );
+  }
+
+  // Handle string translations with replacements
+  if (typeof translation === "string") {
+    return args.reduce((acc, arg) => {
+      const pattern = new RegExp(`{{[^}]*}}`);
+      return acc.replace(pattern, arg);
+    }, translation);
+  }
+
+  // If translation is neither an array nor a string, return the path
+  return path;
 }
 
 export function setLanguage(lang: Languages) {

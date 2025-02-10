@@ -3,11 +3,11 @@ import { HeroSection as Main } from "@ui/organisms";
 import { translate } from "@utils/translate";
 
 const COPY = {
-  BODY: translate("hero-feature.copy") as string,
-  TITLE: translate("hero-feature.title") as string,
-  FIRST_LINE: translate("hero-feature.first-line"),
-  KEYWORDS: translate("hero-feature.keywords") as string[],
-  SECOND_LINE: translate("hero-feature.second-line"),
+  BODY: translate("hero.feature.copy") as string,
+  TITLE: translate("hero.feature.title") as string,
+  FIRST_LINE: translate("hero.feature.first-line"),
+  KEYWORDS: translate("hero.feature.keywords") as string[],
+  SECOND_LINE: translate("hero.feature.second-line"),
 };
 
 export default function HeroSection() {

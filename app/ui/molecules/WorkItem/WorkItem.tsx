@@ -1,6 +1,7 @@
 import { type HTMLProps } from "react";
 import { Button, SectionWrapper, Text } from "@ui/atoms";
 import { createMotionConfig } from "@utils/fadeIn";
+import { translate } from "@utils/translate";
 import clsx from "clsx";
 import { motion } from "motion/react";
 
@@ -18,11 +19,11 @@ interface TagsProps {
 
 function resolveIcon(tag: string) {
   switch (tag) {
-    case "Design":
+    case translate("work.item.tag.design"):
       return <DesignIcon />;
-    case "Development":
+    case translate("work.item.tag.development"):
       return <CodeIcon />;
-    case "Consultations":
+    case translate("work.item.tag.consultations"):
       return <ConsultationIcon />;
 
     default:

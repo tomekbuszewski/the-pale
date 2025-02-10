@@ -1,5 +1,5 @@
 import { MemoryRouter } from "react-router";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import ServicePage from "./ServicePage";
 
@@ -13,19 +13,6 @@ describe("UI / Organisms / ServicePage", () => {
   const mockProcessItems = [
     { title: "Step 1", body: "First step" },
     { title: "Step 2", body: "Second step" },
-  ];
-
-  const mockCards = [
-    {
-      title: "Card 1",
-      description: "Description 1",
-      icons: [["icon1"], ["icon2"]],
-    },
-    {
-      title: "Card 2",
-      description: "Description 2",
-      icons: [["icon3"], ["icon4"]],
-    },
   ];
 
   const renderWithRouter = (ui: React.ReactElement) => {

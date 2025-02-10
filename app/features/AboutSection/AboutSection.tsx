@@ -4,6 +4,6 @@ import { translate } from "@utils/translate";
 
 export default function AboutSection() {
   return (
-    <Main>{translate("about-feature.data", String(EXP_YEARS)) as string}</Main>
+    <Main>{translate("about.feature.data", String(EXP_YEARS)) as string}</Main>
   );
 }

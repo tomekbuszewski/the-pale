@@ -11,8 +11,8 @@ export default {
   date: new Date("2024-01-01"),
   description: translate("work.backlog"),
   tags: [
-    translate("work-item.tag.design"),
-    translate("work-item.tag.development"),
+    translate("work.item.tag.design"),
+    translate("work.item.tag.development"),
   ],
   mobileImage: Mobile,
   desktopImage: MainImage,

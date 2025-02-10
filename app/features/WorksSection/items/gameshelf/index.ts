@@ -8,8 +8,8 @@ import GameShelfMobile from "./gameshelf-mobile.jpg";
 
 export default {
   tags: [
-    translate("work-item.tag.design"),
-    translate("work-item.tag.development"),
+    translate("work.item.tag.design"),
+    translate("work.item.tag.development"),
   ],
   description: translate("work.gameshelf"),
   date: new Date("2024-03-01"),

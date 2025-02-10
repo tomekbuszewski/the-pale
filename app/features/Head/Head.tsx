@@ -3,7 +3,7 @@ import { translate } from "@utils/translate";
 
 import sharing from "./assets/sharing.jpg";
 
-const baseDescription = translate("head-feature.description") as string;
+const baseDescription = translate("head.feature.description") as string;
 
 const defaultMeta = [
   ["description", "Tomasz Buszewski"],

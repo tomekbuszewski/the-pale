@@ -9,13 +9,13 @@ import WebsiteIcon from "./assets/website.svg?react";
 
 const items = [
   {
-    title: translate("services-feature.website.title") as string,
+    title: translate("services.feature.website.short-title") as string,
     icon: <WebsiteIcon />,
     onClick: () => null,
-    children: (translate("services-feature.website.copy") as string[]).map(
+    children: (translate("services.feature.website.copy") as string[]).map(
       (s, i) => <Text key={i}>{s}</Text>,
     ),
-    additional: translate("services-feature.website.additional") as string[],
+    additional: translate("services.feature.website.additional") as string[],
     link: Routes.website,
   },
   {
@@ -23,27 +23,27 @@ const items = [
     icon: <FrontendIcon />,
     onClick: () => null,
     link: Routes.frontend,
-    children: (translate("services-feature.frontend.copy") as string[]).map(
+    children: (translate("services.feature.frontend.copy") as string[]).map(
       (s, i) => <Text key={i}>{s}</Text>,
     ),
-    additional: translate("services-feature.frontend.additional") as string[],
+    additional: translate("services.feature.frontend.additional") as string[],
   },
   {
-    title: translate("services-feature.consultations.title") as string,
+    title: translate("services.feature.consultations.title") as string,
     icon: <ConsultationsIcon />,
     link: Routes.consulting,
     onClick: () => null,
     children: (
-      translate("services-feature.consultations.copy") as string[]
+      translate("services.feature.consultations.copy") as string[]
     ).map((s, i) => <Text key={i}>{s}</Text>),
     additional: translate(
-      "services-feature.consultations.additional",
+      "services.feature.consultations.additional",
     ) as string[],
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <Main items={items} title={translate("services-feature.title") as string} />
+    <Main items={items} title={translate("services.feature.title") as string} />
   );
 }

@@ -8,8 +8,8 @@ import Mobile from "./hay24-mobile.jpg";
 
 export default {
   tags: [
-    translate("work-item.tag.design"),
-    translate("work-item.tag.development"),
+    translate("work.item.tag.design"),
+    translate("work.item.tag.development"),
   ],
   description: translate("work.hay"),
   date: new Date("2024-02-01"),

@@ -9,59 +9,59 @@
 
   "contact-cta.title": "Ready to create your website?",
 
-  "blog-section.pagination.newer": "Newer",
-  "blog-section.pagination.older": "Older",
+  "blog.section.pagination.newer": "Newer",
+  "blog.section.pagination.older": "Older",
 
-  "contact-section.title": "Contact",
-  "contact-section.call.title": "Book a 30-min Call",
-  "contact-section.call.body": [
+  "contact.section.title": "Contact",
+  "contact.section.call.title": "Book a 30-min Call",
+  "contact.section.call.body": [
     "Book a free 30-minute call for a no-obligation quote and consultation.",
     "Meeting takes place on Google Meet and is scheduled using Cal.com."
   ],
-  "contact-section.call.read-more": "Book a call",
+  "contact.section.call.read-more": "Book a call",
 
-  "contact-section.email.title": "Write me an email",
-  "contact-section.email.body": [
+  "contact.section.email.title": "Write me an email",
+  "contact.section.email.body": [
     "Write me an email to kick things off!"
   ],
-  "contact-section.email.read-more": "Shoot an email",
-  "contact-section.designed": "Designed and developed in",
+  "contact.section.email.read-more": "Shoot an email",
+  "contact.section.designed": "Designed and developed in",
 
-  "hero-section.contact": "Contact",
-  "hero-section.explore": "Explore",
+  "hero.section.contact": "Contact",
+  "hero.section.explore": "Explore",
 
-  "footer-section.copyright": "© {{start}} - {{current}}<br />All rights reserved.",
-  "footer-section.cookies": "This site collects cookies for analytics and testing purposes.",
+  "footer.section.copyright": "© {{start}} - {{current}}<br />All rights reserved.",
+  "footer.section.cookies": "This site collects cookies for analytics and testing purposes.",
 
-  "services-section.title": "Services",
+  "services.section.title": "Services",
 
-  "about-feature.data": "With {{years}} years of experience in web, I partner with clients across industries to bring their ideas to life. <br/> I combine technical expertise with experience to create innovative websites that drive results.",
+  "about.feature.data": "With {{years}} years of experience in web, I partner with clients across industries to bring their ideas to life. <br/> I combine technical expertise with experience to create innovative websites that drive results.",
 
-  "contact-feature.title": "Contact",
-  "contact-feature.location": "Warsaw, Poland",
+  "contact.feature.title": "Contact",
+  "contact.feature.location": "Warsaw, Poland",
 
-  "blog-feature.title": "Videos & Writings",
+  "blog.feature.title": "Videos & Writings",
 
-  "footer-feature.copy": "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
-  "footer-feature.call-button": "30-minute intro call",
-  "footer-feature.contact-disclaimer": "I'll get back to you within 24 hours, but usually much sooner (Mon-Fri).",
+  "footer.feature.copy": "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
+  "footer.feature.call-button": "30-minute intro call",
+  "footer.feature.contact-disclaimer": "I'll get back to you within 24 hours, but usually much sooner (Mon-Fri).",
 
-  "head-feature.description": "Expertly-crafted websites for your business.",
+  "head.feature.description": "Expertly-crafted websites for your business.",
 
-  "hero-feature.title": "Hello",
-  "hero-feature.copy": "Say goodbye to website headaches. Enjoy seamless, worry-free solutions so you can focus on growing your product and business.",
-  "hero-feature.keywords": ["website", "design", "code", "consultant"],
-  "hero-feature.first-line": "Need a ",
-  "hero-feature.second-line": "for your business?",
+  "hero.feature.title": "Hello",
+  "hero.feature.copy": "Say goodbye to website headaches. Enjoy seamless, worry-free solutions so you can focus on growing your product and business.",
+  "hero.feature.keywords": ["website", "design", "code", "consultant"],
+  "hero.feature.first-line": "Need a ",
+  "hero.feature.second-line": "for your business?",
 
-  "services-feature.title": "Services",
-  "services-feature.process": "The process",
-  "services-feature.website.title": "Website Design &&nbsp;Development",
-  "services-feature.website.copy": [
+  "services.feature.title": "Services",
+  "services.feature.process": "The process",
+  "services.feature.website.title": "Website Design &&nbsp;Development",
+  "services.feature.website.copy": [
     "Full-Cycle Web Solutions: Design, Development, Delivery.",
     "I provide a seamless experience from initial design concepts to the final product. Whether you’re launching a new business or revamping an existing site, I ensure everything works perfectly."
   ],
-  "services-feature.website.additional": [
+  "services.feature.website.additional": [
     "Unique, tailor-made designs that reflect your brand and vision",
     "Clean, efficient code for optimal performance and scalability",
     "Code stored in a private repository with full access and the option to take ownership",
@@ -69,43 +69,43 @@
     "Thorough testing for performance, compatibility, and usability",
     "Hosting, domains and deployments taken care of, with the option to transfer ownership free of charge"
   ],
-  "services-feature.website.full.intro": "Beautiful, user-friendly websites tailored to your brand and goals.",
-  "services-feature.website.full.body": "I believe design is about more than just aesthetics — it’s about creating an experience. Whether you’re a startup or a growing small business, I create custom websites that look great and perform even better. Your website should be as unique as your brand, and that’s why we build everything from scratch, no templates, no shortcuts.",
-  "services-feature.website.full.process.discovery.title": "Discovery & Strategy",
-  "services-feature.website.full.process.discovery.body": "Every project is unique. First, we talk about what makes yours special and how we can make it shine online.",
-  "services-feature.website.full.process.design.title": "Design &&nbsp;Review",
-  "services-feature.website.full.process.design.body": "Next, I create custom wireframes and design mockups for your approval before building the site.",
-  "services-feature.website.full.process.coding.title": "Coding &&nbsp;Launch",
-  "services-feature.website.full.process.coding.body": "Once you approve the designs, I bring them to life with robust development, ensuring everything is responsive, secure, and fast.",
-  "services-feature.website.full.card.design.title": "Design tailored to you",
-  "services-feature.website.full.card.design.body": [
+  "services.feature.website.full.intro": "Beautiful, user-friendly websites tailored to your brand and goals.",
+  "services.feature.website.full.body": "I believe design is about more than just aesthetics — it’s about creating an experience. Whether you’re a startup or a growing small business, I create custom websites that look great and perform even better. Your website should be as unique as your brand, and that’s why we build everything from scratch, no templates, no shortcuts.",
+  "services.feature.website.full.process.discovery.title": "Discovery & Strategy",
+  "services.feature.website.full.process.discovery.body": "Every project is unique. First, we talk about what makes yours special and how we can make it shine online.",
+  "services.feature.website.full.process.design.title": "Design &&nbsp;Review",
+  "services.feature.website.full.process.design.body": "Next, I create custom wireframes and design mockups for your approval before building the site.",
+  "services.feature.website.full.process.coding.title": "Coding &&nbsp;Launch",
+  "services.feature.website.full.process.coding.body": "Once you approve the designs, I bring them to life with robust development, ensuring everything is responsive, secure, and fast.",
+  "services.feature.website.full.card.design.title": "Design tailored to you",
+  "services.feature.website.full.card.design.body": [
     "I will design a website that fits your brand and your business. Designs are always revised and polished until you are satisfied.",
     "Once we're done, I hand over the Sketch files, so you or your team can carry on with it if needed."
   ],
-  "services-feature.website.full.card.design.cta": "See my works",
-  "services-feature.website.full.card.tech.title": "Technology picked for you",
-  "services-feature.website.full.card.tech.body": [
+  "services.feature.website.full.card.design.cta": "See my works",
+  "services.feature.website.full.card.tech.title": "Technology picked for you",
+  "services.feature.website.full.card.tech.body": [
     "I don’t have one-size-fits-all solutions. For every client, I analyze and pick what is the most suitable. Sometimes it will be a simple site generator, sometimes a headless CMS with server-rendered frontend as a separate service. And sometimes something in between.",
     "One thing you can be sure is, I will never propose you something “just because”. You’ll always know why certain technology is used.",
     "All my projects came with E2E tests and preview environments. This guarantees all changes to be fully tested and verified before your visitors see them."
   ],
-  "services-feature.website.full.card.tech.cta": "More about tech",
-  "services-feature.website.full.card.repo.title": "Code in the repository",
-  "services-feature.website.full.card.repo.body": [
+  "services.feature.website.full.card.tech.cta": "More about tech",
+  "services.feature.website.full.card.repo.title": "Code in the repository",
+  "services.feature.website.full.card.repo.body": [
     "I use Github to keep all my code. My commits follow Conventional Commits patterns, and I use pull requests to introduce changes. After my work is done, I transfer the repo ownership to you (if you want).",
     "If this is just a tech mumbo-jumbo, don’t fret. All I am saying is that I keep the work in a private space which will be given to you once my work is done.",
     "I also offer hosting with monitoring and maintenance with a monthly fee."
   ],
-  "services-feature.website.full.btn.schedule": "Schedule a call",
-  "services-feature.website.full.btn.contact": "Contact me",
-  "services-feature.website.full.cta": "Ready to take your business to the next level?",
+  "services.feature.website.full.btn.schedule": "Schedule a call",
+  "services.feature.website.full.btn.contact": "Contact me",
+  "services.feature.website.full.cta": "Ready to take your business to the next level?",
 
-  "services-feature.frontend.title": "Frontend<br />Development",
-  "services-feature.frontend.copy": [
+  "services.feature.frontend.title": "Frontend<br />Development",
+  "services.feature.frontend.copy": [
     "Have a design? I’ll make it a reality with clean, functional front-end code.",
     "Tech choices are tailored to your project to ensure scalability and smooth performance."
   ],
-  "services-feature.frontend.additional": [
+  "services.feature.frontend.additional": [
     "Design consultations and suggest improvements for smoother implementation",
     "Front-end developed specifically to meet your unique needs",
     "Code stored in a repository with full access for future ownership",
@@ -113,33 +113,33 @@
     "Automated end-to-end tests to ensure everything works flawlessly after changes"
   ],
 
-  "services-feature.consultations.title": "Project<br />Consulting",
-  "services-feature.consultations.copy": [
+  "services.feature.consultations.title": "Project<br />Consulting",
+  "services.feature.consultations.copy": [
     "With experience as an engineering manager and tech lead, I understand both technical and human aspects of team dynamics.",
     "I offer consulting to help your team thrive and reach its goals."
   ],
-  "services-feature.consultations.additional": [
+  "services.feature.consultations.additional": [
     "Guidance on tech and team management",
     "Support with recruitment and candidate assessments",
     "Code reviews to ensure clean, efficient, and maintainable codebase",
     "Discuss ideas and solve technical challenges as your sparring partner"
   ],
 
-  "services-feature.frontend.intro": "You already have a design (or a designer) and want to get your site coded? Say no more — I can get it up and running with tech adjusted for your needs.",
-  "services-feature.frontend.body": "With over {{years}} of experience, I've worked with tons of different front-end stacks and challenges. I am happy to offer advice you on your project and help you find the best solution for your needs. I am strongly against “one size fits all” solutions.",
-  "services-feature.frontend.process.design.title": "Design Overview",
-  "services-feature.frontend.process.design.description": "We discuss your design and what will be the best way to implement it.",
-  "services-feature.frontend.process.technical.title": "Technical Summary",
-  "services-feature.frontend.process.technical.description": "Based on what we've discussed, I prepare a technical summary of the project with explanation of every step.",
-  "services-feature.frontend.process.implementation.title": "Code &<br />Handover",
-  "services-feature.frontend.process.implementation.description": "Once we're settled on the tech, I get to work and code it for you. Once I am done, you're getting everything in a neat repo.",
+  "services.feature.frontend.intro": "You already have a design (or a designer) and want to get your site coded? Say no more — I can get it up and running with tech adjusted for your needs.",
+  "services.feature.frontend.body": "With over {{years}} of experience, I've worked with tons of different front-end stacks and challenges. I am happy to offer advice you on your project and help you find the best solution for your needs. I am strongly against “one size fits all” solutions.",
+  "services.feature.frontend.process.design.title": "Design Overview",
+  "services.feature.frontend.process.design.description": "We discuss your design and what will be the best way to implement it.",
+  "services.feature.frontend.process.technical.title": "Technical Summary",
+  "services.feature.frontend.process.technical.description": "Based on what we've discussed, I prepare a technical summary of the project with explanation of every step.",
+  "services.feature.frontend.process.implementation.title": "Code &<br />Handover",
+  "services.feature.frontend.process.implementation.description": "Once we're settled on the tech, I get to work and code it for you. Once I am done, you're getting everything in a neat repo.",
 
-  "services-feature.frontend.card.design.title": "Design Overview",
-  "services-feature.frontend.card.design.description": "Before development begins, every design is carefully reviewed to ensure a smooth build. Bottlenecks and potential challenges are identified early, with clear suggestions for improvements when needed.",
-  "services-feature.frontend.card.technical.title": "Technical Summary",
-  "services-feature.frontend.card.technical.description": "A detailed technical document outlines the proposed stack, ensuring transparency and alignment. Every decision is explained, so the chosen technologies fit the project's goals and future scalability.",
-  "services-feature.frontend.card.implementation.title": "Implementation",
-  "services-feature.frontend.card.implementation.description": "With everything planned, the development begins. The project is built efficiently based on the agreed-upon specifications, and once completed, the full repository is handed over, ready for deployment or further iteration.",
+  "services.feature.frontend.card.design.title": "Design Overview",
+  "services.feature.frontend.card.design.description": "Before development begins, every design is carefully reviewed to ensure a smooth build. Bottlenecks and potential challenges are identified early, with clear suggestions for improvements when needed.",
+  "services.feature.frontend.card.technical.title": "Technical Summary",
+  "services.feature.frontend.card.technical.description": "A detailed technical document outlines the proposed stack, ensuring transparency and alignment. Every decision is explained, so the chosen technologies fit the project's goals and future scalability.",
+  "services.feature.frontend.card.implementation.title": "Implementation",
+  "services.feature.frontend.card.implementation.description": "With everything planned, the development begins. The project is built efficiently based on the agreed-upon specifications, and once completed, the full repository is handed over, ready for deployment or further iteration.",
 
   "work-item.study.na": "Study n/a",
   "work-item.study.ok": "Case study",

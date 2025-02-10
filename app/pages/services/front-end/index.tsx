@@ -25,42 +25,42 @@ import {
 } from "../icons";
 
 const COPY = {
-  TITLE: translate("services-feature.frontend.title") as string,
-  INTRO: translate("services-feature.frontend.intro") as string,
+  TITLE: translate("services.feature.frontend.title") as string,
+  INTRO: translate("services.feature.frontend.intro") as string,
   BODY: translate(
-    "services-feature.frontend.body",
+    "services.feature.frontend.body",
     EXP_YEARS.toString(),
-  ) as string,
+  ) as string[],
   PROCESS: [
     {
       title: translate(
-        "services-feature.frontend.process.design.title",
+        "services.feature.frontend.process.design.title",
       ) as string,
       body: translate(
-        "services-feature.frontend.process.design.description",
+        "services.feature.frontend.process.design.description",
       ) as string,
     },
     {
       title: translate(
-        "services-feature.frontend.process.technical.title",
+        "services.feature.frontend.process.technical.title",
       ) as string,
       body: translate(
-        "services-feature.frontend.process.technical.description",
+        "services.feature.frontend.process.technical.description",
       ) as string,
     },
     {
       title: translate(
-        "services-feature.frontend.process.implementation.title",
+        "services.feature.frontend.process.implementation.title",
       ) as string,
       body: translate(
-        "services-feature.frontend.process.implementation.description",
+        "services.feature.frontend.process.implementation.description",
       ) as string,
     },
   ],
 
   CARDS: [
     {
-      title: translate("services-feature.frontend.card.design.title") as string,
+      title: translate("services.feature.frontend.card.design.title") as string,
       icons: [
         figma,
         sketch,
@@ -76,21 +76,21 @@ const COPY = {
         designer,
       ],
       description: translate(
-        "services-feature.frontend.card.design.description",
+        "services.feature.frontend.card.design.description",
       ) as string,
     },
     {
       title: translate(
-        "services-feature.frontend.card.technical.title",
+        "services.feature.frontend.card.technical.title",
       ) as string,
       icons: [astro, css, html, js, ts, react, router, sass, tailwind, next],
       description: translate(
-        "services-feature.frontend.card.technical.description",
+        "services.feature.frontend.card.technical.description",
       ) as string,
     },
     {
       title: translate(
-        "services-feature.frontend.card.implementation.title",
+        "services.feature.frontend.card.implementation.title",
       ) as string,
       icons: [
         astro,
@@ -109,7 +109,7 @@ const COPY = {
         puppeteer,
       ],
       description: translate(
-        "services-feature.frontend.card.implementation.description",
+        "services.feature.frontend.card.implementation.description",
       ) as string,
     },
   ],
@@ -121,7 +121,7 @@ export default function Frontend() {
       title={COPY.TITLE}
       intro={COPY.INTRO}
       body={COPY.BODY}
-      process={translate("services-feature.process") as string}
+      process={translate("services.feature.process") as string}
       processItems={COPY.PROCESS}
       cards={COPY.CARDS}
     />

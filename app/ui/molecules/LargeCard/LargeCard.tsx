@@ -1,4 +1,4 @@
-import { Button } from "@ui/atoms";
+import { Button, Text } from "@ui/atoms";
 import { SectionHeader } from "@ui/molecules";
 import clsx from "clsx";
 import { motion } from "motion/react";
@@ -29,7 +29,13 @@ function LargeCard({
           className={styles.header}
         />
 
-        {description}
+        {Array.isArray(description)
+          ? description.map((item) => (
+              <Text key={item} variant="large">
+                {item}
+              </Text>
+            ))
+          : description}
 
         {more && (
           <footer className={styles.footer}>

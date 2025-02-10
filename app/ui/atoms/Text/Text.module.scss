@@ -29,6 +29,12 @@
   line-height: var(--leading-regular);
 }
 
+.regular {
+  & + & {
+    margin-top: 1em;
+  }
+}
+
 .list {
   font-size: var(--font-size-article-body-small);
   color: var(--color-main-body);
@@ -191,9 +197,10 @@
   }
 
   &:after {
+    color: var(--color-main-body);
     content: "“";
     font-size: var(--font-size-hero-lg);
-    opacity: 0.05;
+    opacity: 0.1;
     position: absolute;
     top: -#{rem(16)};
     left: -#{rem(32)};
