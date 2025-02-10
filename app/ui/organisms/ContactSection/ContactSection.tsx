@@ -1,19 +1,18 @@
+import { Sections } from "@nav";
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
 
+import type { ContactItem } from "@common-types/ContactItem";
 import type { HTMLProps } from "react";
-
-interface Props extends HTMLProps<HTMLDivElement> {
-  email: string;
-  calendar: string;
-  location: string;
-}
-
-import { Sections } from "@nav";
 
 import styles from "./ContactSection.module.scss";
 
-function ContactSection({ email, calendar, location }: Props) {
+interface Props extends HTMLProps<HTMLDivElement> {
+  location: string;
+  copy: ContactItem[];
+}
+
+function ContactSection({ location, copy }: Props) {
   const localTime = new Date().toLocaleTimeString("en-GB", {
     timeZone: "Europe/Warsaw",
     hour: "numeric",
@@ -27,27 +26,6 @@ function ContactSection({ email, calendar, location }: Props) {
     day: "numeric",
   });
 
-  const COPY = [
-    {
-      TITLE: "Book a 30-min Call",
-      BODY: [
-        "Book a free 30-minute call for a no-obligation quote and consultation.",
-        "Meeting takes place on Google Meet and is scheduled using Cal.com.",
-      ],
-      LINK: calendar,
-      READ_MORE: "Book a call",
-    },
-    {
-      TITLE: "Write me an email",
-      BODY: [
-        "Write me an email to kick things off!",
-        "I’ll get back to you within 24 hours (Mon-Fri).",
-      ],
-      LINK: email,
-      READ_MORE: "Shoot an email",
-    },
-  ];
-
   return (
     <SectionWrapper
       id={Sections.contact}
@@ -56,7 +34,7 @@ function ContactSection({ email, calendar, location }: Props) {
       columns={{ sm: 1, md: 3, lg: 3 }}
       className={styles.parent}
     >
-      {COPY.map((item) => (
+      {copy.map((item) => (
         <Box
           link={item.LINK}
           title={item.TITLE}

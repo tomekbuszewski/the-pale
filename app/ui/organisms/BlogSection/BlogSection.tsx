@@ -14,13 +14,14 @@ import styles from "./BlogSection.module.scss";
 interface Props extends HTMLProps<HTMLDivElement> {
   items: BlogPost[];
   pagination: PaginationProps;
+  title?: string;
 }
 
-function BlogSection({ className, items, pagination }: Props) {
+function BlogSection({ className, items, pagination, title }: Props) {
   return (
     <SectionWrapper
       id={Sections.videos}
-      title="Videos & Writings"
+      title={title}
       contentClassName={styles.wrapper}
       className={clsx(className, styles.parent)}
       columns={{ sm: 1, md: 3, lg: 3 }}

@@ -17,6 +17,7 @@ interface ExpandedService extends Service {
 
 interface Props extends HTMLProps<HTMLDivElement> {
   items: ExpandedService[];
+  title: string;
 }
 
 interface AdditionalProps {
@@ -50,7 +51,7 @@ function Additional({ items, isActive }: AdditionalProps) {
   );
 }
 
-function ServicesSection({ items }: Props) {
+function ServicesSection({ items, title }: Props) {
   const isMobile = useIsMobile();
   const [active, setActive] = useState<number | undefined>(undefined);
   const activeKey = "--active" as keyof CSSProperties;
@@ -60,7 +61,7 @@ function ServicesSection({ items }: Props) {
   return (
     <SectionWrapper
       className={styles.container}
-      title="Services"
+      title={title}
       id={Sections.services}
     >
       <div

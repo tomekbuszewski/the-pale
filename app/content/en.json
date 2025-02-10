@@ -22,8 +22,7 @@
 
   "contact-section.email.title": "Write me an email",
   "contact-section.email.body": [
-    "Write me an email to kick things off!",
-    "I’ll get back to you within 24 hours (Mon-Fri)."
+    "Write me an email to kick things off!"
   ],
   "contact-section.email.read-more": "Shoot an email",
   "contact-section.designed": "Designed and developed in",
@@ -31,15 +30,17 @@
   "hero-section.contact": "Contact",
   "hero-section.explore": "Explore",
 
-  "footer-section.copyright": "© 2008 - {{year}}<br />All rights reserved.",
+  "footer-section.copyright": "© {{start}} - {{current}}<br />All rights reserved.",
   "footer-section.cookies": "This site collects cookies for analytics and testing purposes.",
 
   "services-section.title": "Services",
 
-  "services-feature.data": "With 18 years of experience in web, I partner with clients across industries to bring their ideas to life. <br/> I combine technical expertise with experience to create innovative websites that drive results.",
+  "about-feature.data": "With {{years}} years of experience in web, I partner with clients across industries to bring their ideas to life. <br/> I combine technical expertise with experience to create innovative websites that drive results.",
 
   "contact-feature.title": "Contact",
   "contact-feature.location": "Warsaw, Poland",
+
+  "blog-feature.title": "Videos & Writings",
 
   "footer-feature.copy": "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
   "footer-feature.call-button": "30-minute intro call",
@@ -47,10 +48,11 @@
 
   "head-feature.description": "Expertly-crafted websites for your business.",
 
+  "hero-feature.title": "Hello",
   "hero-feature.copy": "Say goodbye to website headaches. Enjoy seamless, worry-free solutions so you can focus on growing your product and business.",
   "hero-feature.keywords": ["website", "design", "code", "consultant"],
-  "hero-feature.first-line": "Need&nbsp;&nbsp;",
-  "hero-feature.second-line": "for&nbsp;your&nbsp;business?",
+  "hero-feature.first-line": "Need a ",
+  "hero-feature.second-line": "for your business?",
 
   "services-feature.title": "Services",
   "services-feature.website.title": "Website<br />Design",
@@ -65,6 +67,29 @@
     "Preview available for every change, ensuring everything looks perfect at all times",
     "Thorough testing for performance, compatibility, and usability",
     "Hosting, domains and deployments taken care of, with the option to transfer ownership free of charge"
+  ],
+  "services-feature.frontend.title": "Frontend<br />Development",
+  "services-feature.frontend.copy": [
+    "Have a design? I’ll make it a reality with clean, functional front-end code.",
+    "Tech choices are tailored to your project to ensure scalability and smooth performance."
+  ],
+  "services-feature.frontend.additional": [
+    "Design consultations and suggest improvements for smoother implementation",
+    "Front-end developed specifically to meet your unique needs",
+    "Code stored in a repository with full access for future ownership",
+    "Preview available for live changes before they go live",
+    "Automated end-to-end tests to ensure everything works flawlessly after changes"
+  ],
+  "services-feature.consultations.title": "Project<br />Consulting",
+  "services-feature.consultations.copy": [
+    "With experience as an engineering manager and tech lead, I understand both technical and human aspects of team dynamics.",
+    "I offer consulting to help your team thrive and reach its goals."
+  ],
+  "services-feature.consultations.additional": [
+    "Guidance on tech and team management",
+    "Support with recruitment and candidate assessments",
+    "Code reviews to ensure clean, efficient, and maintainable codebase",
+    "Discuss ideas and solve technical challenges as your sparring partner"
   ],
 
   "work-item.study.na": "Study n/a",
@@ -82,5 +107,10 @@
   "nav.works": "Works",
   "nav.services": "Services",
   "nav.videos": "Videos",
-  "nav.about": "About"
+  "nav.about": "About",
+  "nav.contact": "Contact",
+
+  "work.gameshelf": ["Gameshelf aims to deliver latest new, world-class columns, interviews and insides for all the gamers around the world."],
+  "work.hay": ["Hundred a Year is a personal project for creating and curating end-of-the-year music lists."],
+  "work.backlog": ["The Backlog aims to provide microblogging experience enhanced with gaming features, like ratings, statuses and title tagging."]
 }

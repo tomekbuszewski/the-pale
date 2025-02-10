@@ -1,6 +1,16 @@
-import { CAL, EMAIL, PHONE } from "@contact";
+import {
+  CAL,
+  EMAIL,
+  GITHUB,
+  LINKEDIN,
+  PHONE,
+  START_YEAR,
+  YOUTUBE,
+} from "@contact";
 import * as nav from "@nav";
 import { PageFooter as Main } from "@ui/organisms";
+import { resolveHandle } from "@utils/resolveHandle";
+import { translate } from "@utils/translate";
 
 import Calendar from "./assets/calendar.svg?react";
 import Github from "./assets/gh.svg?react";
@@ -10,7 +20,7 @@ import Phone from "./assets/phone.svg?react";
 import YouTube from "./assets/yt.svg?react";
 
 const data = {
-  copy: "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
+  copy: translate("footer-feature.copy") as string,
   quickLinks: [...nav.Pages, ...nav.HeaderNav],
   contact: [
     {
@@ -20,7 +30,7 @@ const data = {
     },
     {
       href: CAL,
-      text: "30-minute intro call",
+      text: translate("footer-feature.call-button") as string,
       icon: <Calendar />,
       external: true,
     },
@@ -30,24 +40,23 @@ const data = {
       icon: <Phone />,
     },
   ],
-  contactDisclaimer:
-    "I'll get back to you within 24 hours, but usually much sooner (Mon-Fri).",
+  contactDisclaimer: translate("footer-feature.contact-disclaimer") as string,
   socials: [
     {
-      href: "https://youtube.com/@tomaszbuszewski",
-      text: "@tomaszbuszewski",
+      href: YOUTUBE,
+      text: resolveHandle(YOUTUBE),
       external: true,
       icon: <YouTube />,
     },
     {
-      href: "https://linkedin.com/in/tomek-buszewski/",
-      text: "tomek-buszewski",
+      href: LINKEDIN,
+      text: resolveHandle(LINKEDIN),
       external: true,
       icon: <LinkedIn />,
     },
     {
-      href: "https://github.com/tomekbuszewski/",
-      text: "tomekbuszewski",
+      href: GITHUB,
+      text: resolveHandle(GITHUB),
       external: true,
       icon: <Github />,
     },
@@ -55,5 +64,17 @@ const data = {
 };
 
 export default function Footer() {
-  return <Main {...data} />;
+  return (
+    <Main
+      {...data}
+      cookies={translate("footer-section.cookies") as string}
+      copyright={
+        translate(
+          "footer-section.copyright",
+          START_YEAR.toString(),
+          new Date().getFullYear().toString(),
+        ) as string
+      }
+    />
+  );
 }

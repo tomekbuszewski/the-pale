@@ -1,5 +1,6 @@
 import { Routes } from "@nav";
 import { Button } from "@ui/atoms";
+import { translate } from "@utils/translate";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
 
@@ -45,7 +46,7 @@ export function Pagination({
             to={link(prevPage)}
             className={styles.button}
           >
-            Newer
+            {translate("blog-section.pagination.newer")}
           </Button>
         ) : null}
         {displayPages.map((page, index) => {
@@ -69,7 +70,7 @@ export function Pagination({
         })}
         {nextPage ? (
           <Button variant="primary" to={link(nextPage)}>
-            Older
+            {translate("blog-section.pagination.older")}
           </Button>
         ) : null}
       </ul>

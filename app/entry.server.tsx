@@ -1,6 +1,7 @@
 import { renderToPipeableStream } from "react-dom/server";
 import { ServerRouter } from "react-router";
 import { createReadableStreamFromReadable } from "@react-router/node";
+import { setDefaultLanguage } from "@utils/translate";
 import { isbot } from "isbot";
 import { PassThrough } from "node:stream";
 
@@ -15,17 +16,7 @@ export default function handleRequest(
   responseHeaders: Headers,
   routerContext: EntryContext,
 ) {
-  const cookieHeader = request.headers.get("cookie") ?? "";
-  const languageCookie = cookieHeader
-    .split(";")
-    .find((cookie) => cookie.trim().startsWith("language="));
-  const language = languageCookie ? languageCookie.split("=")[1] : "en";
-
-  // Set or update the language cookie
-  responseHeaders.append(
-    "Set-Cookie",
-    `language=${language}; Path=/; Max-Age=31536000`,
-  );
+  setDefaultLanguage(request, responseHeaders);
 
   return new Promise((resolve, reject) => {
     let shellRendered = false;
@@ -58,6 +49,7 @@ export default function handleRequest(
           pipe(body);
         },
         onShellError(error: unknown) {
+          // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
           reject(error);
         },
         onError(error: unknown) {

@@ -6,7 +6,7 @@ const translations = {
   en,
 };
 
-function getCurrentLanguage(): Languages {
+export function getCurrentLanguage(): Languages {
   if (typeof document === "undefined") return "en";
 
   const cookie = document.cookie
@@ -16,7 +16,10 @@ function getCurrentLanguage(): Languages {
   return (cookie ? cookie.split("=")[1] : "en") as Languages;
 }
 
-export function translate(key: TranslationKey, ...args: string[]) {
+export function translate(
+  key: TranslationKey,
+  ...args: string[]
+): string | string[] {
   const currentLanguage = getCurrentLanguage();
   const translation = translations[currentLanguage][key] as string;
 
@@ -33,4 +36,17 @@ export function translate(key: TranslationKey, ...args: string[]) {
 
 export function setLanguage(lang: Languages) {
   document.cookie = `language=${lang}; path=/; max-age=31536000`;
+}
+
+export function setDefaultLanguage(request: Request, headers: Headers) {
+  const cookieHeader = request.headers.get("cookie") ?? "";
+  const languageCookie = cookieHeader
+    .split(";")
+    .find((cookie) => cookie.trim().startsWith("language="));
+  const language = languageCookie ? languageCookie.split("=")[1] : "en";
+
+  headers.append(
+    "Set-Cookie",
+    `language=${language}; Path=/; Max-Age=31536000`,
+  );
 }

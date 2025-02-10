@@ -1,10 +1,11 @@
-import { DEFAULT_TITLE, KEYWORDS, PAGE_URL } from "@contact";
+import { DEFAULT_TITLE, KEYWORDS, PAGE_URL, TWITTER } from "@contact";
+import { translate } from "@utils/translate";
 
 import sharing from "./assets/sharing.jpg";
 
-const baseDescription = "Expertly-crafted websites for your business";
+const baseDescription = translate("head-feature.description") as string;
 
-const defaultMeta: [string, string][] = [
+const defaultMeta = [
   ["description", "Tomasz Buszewski"],
   ["keywords", KEYWORDS.join(", ")],
   ["og:description", baseDescription],
@@ -16,8 +17,8 @@ const defaultMeta: [string, string][] = [
   ["og:image", PAGE_URL + sharing],
   ["og:site_name", baseDescription + DEFAULT_TITLE],
   ["twitter:card", PAGE_URL + sharing],
-  ["twitter:site", "@tomekbuszewski"],
-  ["twitter:creator", "@tomekbuszewski"],
+  ["twitter:site", TWITTER],
+  ["twitter:creator", TWITTER],
   ["twitter:title", baseDescription + DEFAULT_TITLE],
   ["twitter:image", PAGE_URL + sharing],
   ["twitter:description", "Tomasz Buszewski"],
@@ -28,10 +29,11 @@ const defaultMeta: [string, string][] = [
   ["article:modified_time", new Date().toLocaleDateString("en-US")],
   ["article:section", "Home"],
   ["article:author", "Tomasz Buszewski"],
-  ["article:author:twitter", "@tomekbuszewski"],
+  ["article:author:twitter", TWITTER],
   ["theme-color", "#ea516a"],
   ["apple-mobile-web-app-title", DEFAULT_TITLE],
-];
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+].filter(([_, value]) => value !== null) as [string, string][];
 
 type MetaEntry = { name: string; content: string } | { title: string };
 

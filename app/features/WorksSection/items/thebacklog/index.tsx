@@ -1,3 +1,5 @@
+import { translate } from "@utils/translate";
+
 import type { Work } from "@common-types/Work";
 
 import Background from "./background.jpg";
@@ -7,10 +9,11 @@ import Mobile from "./thebacklog-mobile.jpg";
 export default {
   title: "The Backlog",
   date: new Date("2024-01-01"),
-  description: [
-    "The Backlog aims to provide microblogging experience ehnaced with gaming features, like ratings, statuses and title tagging.",
+  description: translate("work.backlog"),
+  tags: [
+    translate("work-item.tag.design"),
+    translate("work-item.tag.development"),
   ],
-  tags: ["Development", "Design"],
   mobileImage: Mobile,
   desktopImage: MainImage,
   background: Background,

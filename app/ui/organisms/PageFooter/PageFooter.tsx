@@ -19,6 +19,8 @@ interface Props extends HTMLProps<HTMLDivElement> {
   contact: HrefWithIcon[];
   contactDisclaimer: string;
   socials: HrefWithIcon[];
+  copyright: string;
+  cookies: string;
 }
 
 interface LinksProps extends HTMLProps<HTMLUListElement> {
@@ -63,9 +65,9 @@ function PageFooter({
   contact,
   contactDisclaimer,
   socials,
+  copyright,
+  cookies,
 }: Props) {
-  const year = new Date().getFullYear();
-
   return (
     <SectionWrapper
       tag="footer"
@@ -101,14 +103,13 @@ function PageFooter({
       </nav>
 
       <section className={styles.copyright}>
-        <Text align="right">
-          © 2008 - {year}.<br />
-          All rights reserved.
-        </Text>
+        <Text align="right" dangerouslySetInnerHTML={{ __html: copyright }} />
 
-        <Text tag="p" variant="highlight">
-          This site collects cookies for analytics and testing purposes.
-        </Text>
+        <Text
+          tag="p"
+          variant="highlight"
+          dangerouslySetInnerHTML={{ __html: cookies }}
+        />
       </section>
     </SectionWrapper>
   );

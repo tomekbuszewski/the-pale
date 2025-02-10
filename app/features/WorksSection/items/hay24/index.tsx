@@ -1,3 +1,5 @@
+import { translate } from "@utils/translate";
+
 import type { Work } from "@common-types/Work";
 
 import Background from "./background.jpg";
@@ -5,10 +7,11 @@ import MainImage from "./hay24-main.jpg";
 import Mobile from "./hay24-mobile.jpg";
 
 export default {
-  tags: ["Design", "Development"],
-  description: [
-    "Hundred a Year is a personal project for creating and curating end-of-the-year music lists.",
+  tags: [
+    translate("work-item.tag.design"),
+    translate("work-item.tag.development"),
   ],
+  description: translate("work.hay"),
   date: new Date("2024-02-01"),
   mobileImage: Mobile,
   desktopImage: MainImage,

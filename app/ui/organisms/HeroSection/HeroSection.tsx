@@ -8,9 +8,10 @@ import styles from "./HeroSection.module.scss";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   copy: string;
+  title?: string;
 }
 
-function HeroSection({ children, copy }: Props) {
+function HeroSection({ children, copy, title }: Props) {
   const { scrollY } = useScroll();
   const halfWindowHeight =
     typeof window !== "undefined" ? window.innerHeight / 2 : 1;
@@ -30,7 +31,7 @@ function HeroSection({ children, copy }: Props) {
 
   return (
     <SectionWrapper
-      title="Hello"
+      title={title}
       id={Sections.hero}
       animate={false}
       className={styles.wrapper}

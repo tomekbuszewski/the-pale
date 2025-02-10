@@ -1,3 +1,5 @@
+import { translate } from "./utils/translate";
+
 export const Sections = {
   hero: "hero",
   about: "about",
@@ -10,18 +12,21 @@ export const Sections = {
 };
 
 export const HeaderNav = [
-  { text: "Works", href: "/#" + Sections.works },
-  { text: "Services", href: "/#" + Sections.services },
-  { text: "Videos", href: "/#" + Sections.videos },
-  { text: "About", href: "/#" + Sections.about },
+  { text: translate("nav.works") as string, href: "/#" + Sections.works },
+  { text: translate("nav.services") as string, href: "/#" + Sections.services },
+  { text: translate("nav.videos") as string, href: "/#" + Sections.videos },
+  { text: translate("nav.about") as string, href: "/#" + Sections.about },
 ];
 
-export const Contact = { text: "Contact", href: "#" + Sections.contact };
+export const Contact = {
+  text: translate("nav.contact") as string,
+  href: "#" + Sections.contact,
+};
 
 export const Pages = [
-  { text: "Home", href: "/" },
-  { text: "Technology I use", href: "/tech" },
-  { text: "Hardware & Software", href: "/uses" },
+  { text: translate("nav.home") as string, href: "/" },
+  { text: translate("nav.tech") as string, href: "/tech" },
+  { text: translate("nav.uses") as string, href: "/uses" },
 ];
 
 const BASE_SERVICES = "/services";

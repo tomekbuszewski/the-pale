@@ -1,20 +1,23 @@
 import { TextRotate } from "@ui/atoms";
 import { HeroSection as Main } from "@ui/organisms";
+import { translate } from "@utils/translate";
+
+const COPY = {
+  BODY: translate("hero-feature.copy") as string,
+  TITLE: translate("hero-feature.title") as string,
+  FIRST_LINE: translate("hero-feature.first-line"),
+  KEYWORDS: translate("hero-feature.keywords") as string[],
+  SECOND_LINE: translate("hero-feature.second-line"),
+};
 
 export default function HeroSection() {
   return (
-    <Main
-      copy="Say goodbye to website headaches. Enjoy seamless, worry-free solutions
-        so you can focus on growing your product and business."
-    >
+    <Main title={COPY.TITLE} copy={COPY.BODY}>
       <>
-        Need&nbsp;a&nbsp;
-        <TextRotate
-          staggerFrom="last"
-          texts={["website", "design", "code", "consultant"]}
-        />
+        {COPY.FIRST_LINE}
+        <TextRotate staggerFrom="last" texts={COPY.KEYWORDS} />
         <br />
-        for&nbsp;your&nbsp;business?
+        {COPY.SECOND_LINE}
       </>
     </Main>
   );
