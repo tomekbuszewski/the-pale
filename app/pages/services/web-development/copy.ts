@@ -1,3 +1,5 @@
+import { translate } from "@utils/translate";
+
 import astro from "../icons/astro.png";
 import bitbucket from "../icons/bitbucket.png";
 import cc from "../icons/cc.png";
@@ -31,45 +33,36 @@ import vite from "../icons/vite.png";
 import vitest from "../icons/vitest.png";
 
 export const COPY = {
-  INTRO: "Beautiful, user-friendly websites tailored to your brand and goals.",
-  BODY: " I believe design is about more than just aesthetics — it’s about creating an experience. Whether you’re a startup or a growing small business, I create custom websites that look great and perform even better. Your website should be as unique as your brand, and that’s why we build everything from scratch, no templates, no shortcuts.",
+  INTRO: translate("services-feature.website.full.intro"),
+  BODY: translate("services-feature.website.full.body"),
   PROCESS: [
     {
-      title: "Discovery & Strategy",
-      body: "Every project is unique, just like your business.",
+      title: translate("services-feature.website.full.process.discovery.title"),
+      body: translate("services-feature.website.full.process.discovery.body"),
     },
     {
-      title: "Design &&nbsp;Review",
-      body: "I create custom wireframes and design mockups for your approval before building the site",
+      title: translate("services-feature.website.full.process.design.title"),
+      body: translate("services-feature.website.full.process.design.body"),
     },
     {
-      title: "Coding &&nbsp;Launch",
-      body: "Once you approve the designs, I bring them to life with robust development, ensuring everything is responsive, secure, and fast.",
+      title: translate("services-feature.website.full.process.coding.title"),
+      body: translate("services-feature.website.full.process.coding.body"),
     },
   ],
-  DESIGN_CARD_TITLE: "Design tailored to you",
-  DESIGN_CARD: [
-    "I will design a website that fits your brand and your business. Designs are always revised and polished until you are satisfied.",
-    "Once we're done, I hand over the Sketch files, so you or your team can carry on with it if needed.",
-  ],
-  DESIGN_CARD_BTN: "See my works",
+  DESIGN_CARD_TITLE: translate(
+    "services-feature.website.full.card.design.title",
+  ),
+  DESIGN_CARD: translate("services-feature.website.full.card.design.body"),
+  DESIGN_CARD_BTN: translate("services-feature.website.full.card.design.cta"),
 
-  TECH_CARD_TITLE: "Technology picked for you",
-  TECH_CARD: [
-    "I don’t have one-size-fits-all solutions. For every client, I analyze and pick what is the most suitable. Sometimes it will be a simple site generator, sometimes a headless CMS with server-rendered frontend as a separate service. And sometimes something in between.",
-    "One thing you can be sure is, I will never propose you something “just because”. You’ll always know why certain technology is used.",
-    "All my projects came with E2E tests and preview environments. This guarantees all changes to be fully tested and verified before your visitors see them.",
-  ],
-  TECH_CARD_BTN: "More about tech",
+  TECH_CARD_TITLE: translate("services-feature.website.full.card.tech.title"),
+  TECH_CARD: translate("services-feature.website.full.card.tech.body"),
+  TECH_CARD_BTN: translate("services-feature.website.full.card.tech.cta"),
 
-  REPO_CARD_TITLE: "Code in the repository",
-  REPO_CARD: [
-    "I use Github to keep all my code. My commits follow Conventional Commits patterns, and I use pull requests to introduce changes. After my work is done, I transfer the repo ownership to you (if you want).",
-    "If this is just a tech mumbo-jumbo, don’t fret. All I am saying is that I keep the work in a private space which will be given to you once my work is done.",
-    "I also offer hosting with monitoring and maintenance with a monthly fee.",
-  ],
-  BTN_SCHEDULE: "Schedule a call",
-  BTN_CONTACT: "Contact me",
+  REPO_CARD_TITLE: translate("services-feature.website.full.card.repo.title"),
+  REPO_CARD: translate("services-feature.website.full.card.repo.body"),
+  BTN_SCHEDULE: translate("services-feature.website.full.btn.schedule"),
+  BTN_CONTACT: translate("services-feature.website.full.btn.contact"),
 
   ICONS: [
     [astro, "Astro"],

@@ -181,6 +181,24 @@
 
 .blockquote {
   font-size: var(--font-size-article-body);
+  padding: var(--spacing-small);
+  position: relative;
+  background: var(--color-minor-background);
+  border-radius: #{rem(8)};
+
+  @include media("md") {
+    padding: var(--spacing-lg);
+  }
+
+  &:after {
+    content: "“";
+    font-size: var(--font-size-hero-lg);
+    opacity: 0.05;
+    position: absolute;
+    top: -#{rem(16)};
+    left: -#{rem(32)};
+    font-family: var(--font-face-serif);
+  }
 }
 
 .ul {

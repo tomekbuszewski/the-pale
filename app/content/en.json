@@ -68,6 +68,36 @@
     "Thorough testing for performance, compatibility, and usability",
     "Hosting, domains and deployments taken care of, with the option to transfer ownership free of charge"
   ],
+  "services-feature.website.full.intro": "Beautiful, user-friendly websites tailored to your brand and goals.",
+  "services-feature.website.full.body": "I believe design is about more than just aesthetics — it’s about creating an experience. Whether you’re a startup or a growing small business, I create custom websites that look great and perform even better. Your website should be as unique as your brand, and that’s why we build everything from scratch, no templates, no shortcuts.",
+  "services-feature.website.full.process.discovery.title": "Discovery & Strategy",
+  "services-feature.website.full.process.discovery.body": "Every project is unique, just like your business.",
+  "services-feature.website.full.process.design.title": "Design &&nbsp;Review",
+  "services-feature.website.full.process.design.body": "I create custom wireframes and design mockups for your approval before building the site",
+  "services-feature.website.full.process.coding.title": "Coding &&nbsp;Launch",
+  "services-feature.website.full.process.coding.body": "Once you approve the designs, I bring them to life with robust development, ensuring everything is responsive, secure, and fast.",
+  "services-feature.website.full.card.design.title": "Design tailored to you",
+  "services-feature.website.full.card.design.body": [
+    "I will design a website that fits your brand and your business. Designs are always revised and polished until you are satisfied.",
+    "Once we're done, I hand over the Sketch files, so you or your team can carry on with it if needed."
+  ],
+  "services-feature.website.full.card.design.cta": "See my works",
+  "services-feature.website.full.card.tech.title": "Technology picked for you",
+  "services-feature.website.full.card.tech.body": [
+    "I don’t have one-size-fits-all solutions. For every client, I analyze and pick what is the most suitable. Sometimes it will be a simple site generator, sometimes a headless CMS with server-rendered frontend as a separate service. And sometimes something in between.",
+    "One thing you can be sure is, I will never propose you something “just because”. You’ll always know why certain technology is used.",
+    "All my projects came with E2E tests and preview environments. This guarantees all changes to be fully tested and verified before your visitors see them."
+  ],
+  "services-feature.website.full.card.tech.cta": "More about tech",
+  "services-feature.website.full.card.repo.title": "Code in the repository",
+  "services-feature.website.full.card.repo.body": [
+    "I use Github to keep all my code. My commits follow Conventional Commits patterns, and I use pull requests to introduce changes. After my work is done, I transfer the repo ownership to you (if you want).",
+    "If this is just a tech mumbo-jumbo, don’t fret. All I am saying is that I keep the work in a private space which will be given to you once my work is done.",
+    "I also offer hosting with monitoring and maintenance with a monthly fee."
+  ],
+  "services-feature.website.full.btn.schedule": "Schedule a call",
+  "services-feature.website.full.btn.contact": "Contact me",
+
   "services-feature.frontend.title": "Frontend<br />Development",
   "services-feature.frontend.copy": [
     "Have a design? I’ll make it a reality with clean, functional front-end code.",
@@ -80,6 +110,7 @@
     "Preview available for live changes before they go live",
     "Automated end-to-end tests to ensure everything works flawlessly after changes"
   ],
+
   "services-feature.consultations.title": "Project<br />Consulting",
   "services-feature.consultations.copy": [
     "With experience as an engineering manager and tech lead, I understand both technical and human aspects of team dynamics.",

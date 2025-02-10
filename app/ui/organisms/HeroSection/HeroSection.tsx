@@ -48,7 +48,7 @@ function HeroSection({ children, copy, title }: Props) {
         <Button to="#contact" variant="primary">
           Contact
         </Button>
-        <Button to="#works" variant="secondary">
+        <Button to="#works" variant="tertiary">
           Explore
         </Button>
       </div>
