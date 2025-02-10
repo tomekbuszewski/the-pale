@@ -1,19 +1,9 @@
 import { Button } from "@ui/atoms";
 import { SectionHeader } from "@ui/molecules";
 import clsx from "clsx";
+import { motion } from "motion/react";
 
-import type { HTMLProps, ReactNode } from "react";
-
-interface Props extends HTMLProps<HTMLDivElement> {
-  title: string;
-  align?: "left" | "right";
-  description: ReactNode;
-  more?: {
-    href: string;
-    label: string;
-  };
-  body: ReactNode;
-}
+import type { LargeCard as Props } from "@common-types/LargeCard";
 
 import styles from "./LargeCard.module.scss";
 
@@ -27,7 +17,7 @@ function LargeCard({
   ...props
 }: Props) {
   return (
-    <section
+    <motion.section
       {...props}
       className={clsx(styles.wrapper, className, "cardWrapper", styles[align])}
     >
@@ -50,7 +40,7 @@ function LargeCard({
         )}
       </div>
       <div className={styles.body}>{body}</div>
-    </section>
+    </motion.section>
   );
 }
 

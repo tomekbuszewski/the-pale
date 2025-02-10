@@ -1,18 +1,12 @@
 import { Button, Text } from "@ui/atoms";
 import clsx from "clsx";
-import { type HTMLMotionProps, motion } from "motion/react";
+import { motion } from "motion/react";
+
+import type { ContactCTA as Props } from "@common-types/ContactCTA";
 
 import styles from "./ContactCta.module.scss";
 
-interface Props extends HTMLMotionProps<"footer"> {
-  buttons: {
-    label: string;
-    href: string;
-    variant: string;
-  }[];
-}
-
-function ContactCta({ className, buttons, ...props }: Props) {
+function ContactCta({ className, buttons, text, ...props }: Props) {
   return (
     <motion.footer
       className={clsx(styles.wrapper, className)}
@@ -22,7 +16,7 @@ function ContactCta({ className, buttons, ...props }: Props) {
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <Text variant="large">Ready to create your website?</Text>
+      <Text variant="large" dangerouslySetInnerHTML={{ __html: text }} />
 
       <div className={styles.buttons}>
         {buttons.map((button) => (

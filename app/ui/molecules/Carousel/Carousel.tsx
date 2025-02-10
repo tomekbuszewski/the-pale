@@ -1,7 +1,7 @@
 import type { CSSProperties, HTMLProps } from "react";
 
 interface Props extends HTMLProps<HTMLDivElement> {
-  icons: [string, string][];
+  icons: string[][];
   columns: number;
   width?: string;
   icon?: string;

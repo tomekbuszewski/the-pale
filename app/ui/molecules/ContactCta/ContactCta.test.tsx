@@ -13,16 +13,15 @@ describe("UI / Molecules / ContactCta", () => {
     { label: "Get Started", href: "/start", variant: "primary" },
     { label: "Learn More", href: "/learn", variant: "secondary" },
   ];
+  const mockText = "Ready to create your website?";
 
   it("renders the component with the correct text", () => {
-    render(<ContactCta buttons={mockButtons} />);
-    expect(
-      screen.getByText("Ready to create your website?"),
-    ).toBeInTheDocument();
+    render(<ContactCta buttons={mockButtons} text={mockText} />);
+    expect(screen.getByText(mockText)).toBeInTheDocument();
   });
 
   it("renders all buttons with correct labels and hrefs", () => {
-    render(<ContactCta buttons={mockButtons} />);
+    render(<ContactCta buttons={mockButtons} text={mockText} />);
     mockButtons.forEach((button) => {
       const buttonElement = screen.getByText(button.label);
       expect(buttonElement).toBeInTheDocument();
@@ -33,13 +32,17 @@ describe("UI / Molecules / ContactCta", () => {
   it("applies the correct className to the root element", () => {
     const customClassName = "custom-class";
     const { container } = render(
-      <ContactCta buttons={mockButtons} className={customClassName} />,
+      <ContactCta
+        buttons={mockButtons}
+        text={mockText}
+        className={customClassName}
+      />,
     );
     expect(container.firstChild).toHaveClass(customClassName);
   });
 
   it("renders buttons with the correct variants", () => {
-    render(<ContactCta buttons={mockButtons} />);
+    render(<ContactCta buttons={mockButtons} text={mockText} />);
     mockButtons.forEach((button) => {
       const buttonElement = screen.getByText(button.label);
       expect(buttonElement.className).toMatch(

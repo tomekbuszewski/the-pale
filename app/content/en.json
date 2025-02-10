@@ -55,7 +55,8 @@
   "hero-feature.second-line": "for your business?",
 
   "services-feature.title": "Services",
-  "services-feature.website.title": "Website<br />Design",
+  "services-feature.process": "The process",
+  "services-feature.website.title": "Website Design &&nbsp;Development",
   "services-feature.website.copy": [
     "Full-Cycle Web Solutions: Design, Development, Delivery.",
     "I provide a seamless experience from initial design concepts to the final product. Whether you’re launching a new business or revamping an existing site, I ensure everything works perfectly."
@@ -71,9 +72,9 @@
   "services-feature.website.full.intro": "Beautiful, user-friendly websites tailored to your brand and goals.",
   "services-feature.website.full.body": "I believe design is about more than just aesthetics — it’s about creating an experience. Whether you’re a startup or a growing small business, I create custom websites that look great and perform even better. Your website should be as unique as your brand, and that’s why we build everything from scratch, no templates, no shortcuts.",
   "services-feature.website.full.process.discovery.title": "Discovery & Strategy",
-  "services-feature.website.full.process.discovery.body": "Every project is unique, just like your business.",
+  "services-feature.website.full.process.discovery.body": "Every project is unique. First, we talk about what makes yours special and how we can make it shine online.",
   "services-feature.website.full.process.design.title": "Design &&nbsp;Review",
-  "services-feature.website.full.process.design.body": "I create custom wireframes and design mockups for your approval before building the site",
+  "services-feature.website.full.process.design.body": "Next, I create custom wireframes and design mockups for your approval before building the site.",
   "services-feature.website.full.process.coding.title": "Coding &&nbsp;Launch",
   "services-feature.website.full.process.coding.body": "Once you approve the designs, I bring them to life with robust development, ensuring everything is responsive, secure, and fast.",
   "services-feature.website.full.card.design.title": "Design tailored to you",
@@ -97,6 +98,7 @@
   ],
   "services-feature.website.full.btn.schedule": "Schedule a call",
   "services-feature.website.full.btn.contact": "Contact me",
+  "services-feature.website.full.cta": "Ready to take your business to the next level?",
 
   "services-feature.frontend.title": "Frontend<br />Development",
   "services-feature.frontend.copy": [
@@ -123,6 +125,22 @@
     "Discuss ideas and solve technical challenges as your sparring partner"
   ],
 
+  "services-feature.frontend.intro": "You already have a design (or a designer) and want to get your site coded? Say no more — I can get it up and running with tech adjusted for your needs.",
+  "services-feature.frontend.body": "With over {{years}} of experience, I've worked with tons of different front-end stacks and challenges. I am happy to offer advice you on your project and help you find the best solution for your needs. I am strongly against “one size fits all” solutions.",
+  "services-feature.frontend.process.design.title": "Design Overview",
+  "services-feature.frontend.process.design.description": "We discuss your design and what will be the best way to implement it.",
+  "services-feature.frontend.process.technical.title": "Technical Summary",
+  "services-feature.frontend.process.technical.description": "Based on what we've discussed, I prepare a technical summary of the project with explanation of every step.",
+  "services-feature.frontend.process.implementation.title": "Code &<br />Handover",
+  "services-feature.frontend.process.implementation.description": "Once we're settled on the tech, I get to work and code it for you. Once I am done, you're getting everything in a neat repo.",
+
+  "services-feature.frontend.card.design.title": "Design Overview",
+  "services-feature.frontend.card.design.description": "Before development begins, every design is carefully reviewed to ensure a smooth build. Bottlenecks and potential challenges are identified early, with clear suggestions for improvements when needed.",
+  "services-feature.frontend.card.technical.title": "Technical Summary",
+  "services-feature.frontend.card.technical.description": "A detailed technical document outlines the proposed stack, ensuring transparency and alignment. Every decision is explained, so the chosen technologies fit the project's goals and future scalability.",
+  "services-feature.frontend.card.implementation.title": "Implementation",
+  "services-feature.frontend.card.implementation.description": "With everything planned, the development begins. The project is built efficiently based on the agreed-upon specifications, and once completed, the full repository is handed over, ready for deployment or further iteration.",
+
   "work-item.study.na": "Study n/a",
   "work-item.study.ok": "Case study",
   "work-item.online.na": "Online n/a",
@@ -140,6 +158,60 @@
   "nav.videos": "Videos",
   "nav.about": "About",
   "nav.contact": "Contact",
+
+  "tech.title": "Technology I Use",
+  "tech.intro": "Throughout the years I’ve worked with tons and tons of different tech.",
+  "tech.body": ["I feel comfortable with almost any (roughly modern) stack. I’ve worked with tons of variations, including PHP, Node, JavaScript and TypeScript, Python, Java and Go.","If you’re looking for a (more or less) comprehensive list, here it is:"],
+
+  "tech.languages.title": "Languages",
+  "tech.languages.desc": "These are the languages I have commercial experience with. Besides these, I've dabbled with Ruby, Rust and tons of others.",
+
+  "tech.libs.title": "Frameworks & Important Libraries",
+  "tech.libs.desc": "A list of frameworks and libraries I have the most experience with. By no means exhaustive.",
+
+  "tech.testing.title": "Testing",
+  "tech.testing.desc": "These are the testing tools I have built at least one commercial app with.",
+  
+  "uses.title": "Uses",
+  "uses.copy": "This page, inspired by <a href=\"https://wesbos.com/uses\">Wes Bos’ /uses</a>, details the hardware and software I use on a daily basis.",
+  "uses.section.hardware.title": "Hardware",
+  "uses.section.hardware.desc": "I am a Mac guy for years. My first iMac with i5 is still around (although shut down), as well as my second iMac 5K with i9 and whopping 128GB of RAM (also shut down). I try not to replace my hardware too often, simply because I don’t need cutting edge performance, and yearly bumps aren’t worth the money.",
+  "uses.section.hardware.items": [
+    "<b>MacBook Pro M1 Max 16</b> bought in 2022 is my main work station. Previously, I had  a 27” iMac with i9 processor. Switch to M1 was kind of terrifying, because at first I thought my apps don’t build. Only after googling “node doesn’t build on m1” I realized that build times went down to under a second.",
+    "<b>Apple Studio Display 27”</b> with nano-texture glass. I was always a big display guy, so getting this on a good deal was a no-brainer. While not the best display ever (this award goes to my glossy iMac 5K), I do appreciate its sharpness and near-perfect sunlight handling. I have large windows in my office, and that’s the only screen that is fully readable at all times.",
+    "<b>LG 28MQ780-B</b> is my second monitor. Previously I had a BenQ one, but it has terrible ghosting. Initially I wanted a 4K one, but this LG bad boy is basically two displays put on top of each other, so, yeah. I use it only for coding (terminal, tests, documentation), so it’s perfect.",
+    "<b>iPhone 14 Pro</b> is my iPhone X replacement. I bought it purely for the island thingy, but apart from that, kinda meh. I mean, it’s an iPhone. Great camera that can double as a webcam works wonders for recording my videos though.",
+    "<b>ZSA Moonlander MK1</b> is my latest keyboard. I went into computers to type, so when few years ago I realized I am still using this boring Apple Keyboard, I wanted something more exciting. I went through Keychrons (which breaks easily, for some reason), had a Nuphy Air, some Epomaker and even a Logitech POP. Then a colleague suggested the Moonlander, which is a split keyboard. And I fell in love. It’s a tough relationship, given the price tag and 20 years of muscle memory, but worth it.",
+    "<b>Logitech MX Master 3</b> is the mouse I thought I’ll never use. Apple Magic Mouse had all these touch miracles that I fell head over heels for, but eventually its poor ergonomics took its toll on my hand and wrist. MX3 is extremely comfortable, has tons of configuration options (down to the physical wheel behavior) and its battery (after 4 years) still keeps up."
+  ],
+  "uses.section.software.title": "Software",
+  "uses.section.software.desc": "I try to keep my software minimalistic. That means, one application for one thing, but I don’t do that much apart from work and music here.",
+  "uses.section.software.items": [
+    "IntelliJ IDEA is my IDE of choice. It has everything I need, including great introspection, intellisense, comfortable jumping between files, classes, interfaces, whatever. And a great window manager that allows you to split a pane and put it somewhere else on your desktop. You name it, IDEA has it.",
+    "Neovim (Lazyvim variant) for quick edits. While I am by no means fluent in Vim, handling everything by keyboard is strangely comfortable. I still am not fully convinced to use Vim Mode in IntelliJ, but I am getting there.",
+    "Vivaldi is my recent browser of choice. I've left Chrome after using it for over 15 years, simply due to lack of features like workspaces and decent theming. As for the other popular browsers, Arc didn't click due to navigation, Firefox due to poor JS tools (although I still use it for debugging grids) and rendering, Safari due to, well, being Safari.",
+    "oh-my-zsh for my terminal configuration. It has nice themes, but I use it like once every few days, because 99% of my terminal things are happening inside IntelliJ.",
+    "Alacritty for the terminal emulator. I honestly don't know why I am using it instead of a regular terminal shipped with the system, as I only do one thing there: type 'zellij' and press '[return]'. (Yes, technically these are two things.)",
+    "Obsidian for writing. I've used iA Writer, but Obsidian has more customizations and themes. I store the vault on iCloud, so there's the same sync mechanism I had previously.",
+    "Sketch for all the UI design. I've really wanted to like Figma and even used it for sometime, did some projects and was happy, but eventually I just decided to go back to Sketch. It's what I am familiar and productive with the most. And it's a native app, which also comes in handy, especially when I work with a lot of external assets.",
+    "Affinity Designer and Photo for more detailed designs. I still am learning these tools, but Adobe's rates and licence handling just doesn't sit right with me."
+  ],
+  "uses.section.music.title": "Music",
+  "uses.section.music.desc": "I spend a lot of time listening to music, and in high school I fell into the headphones rabbit hole. Luckily, I was able to catch that rabbit! Oh, and check <a href=\"https://rateyourmusic.com/~_tomek\" target=\"_blank\">my RateYourMusic profile </a> for the albums I like.",
+  "uses.section.music.items": [
+    "Focal Stellia headphones are basically the pinnacle of music listening. Perfect in every detail, from form (I can wear them even during the Summer for hours without discomfort) to factor. I would like to also have Focal Utopias, but given the noise outside my apartment, open-back headphones sadly aren't an option.",
+    "Cayin iHA-6 paired with Cayin iDAC6-MK2 are my headphones amplifier and digital-analogue converter. I've switched from JDS Atom and Topping D10 and it's night and day.",
+    "Apple Music offers lossless, vast library. Simple as that. I've used Qobuz earlier, which had this hand-curated feel, but too much music was missing. I mean, Apple Music even has obscure Australian industrial from the 80s (warning: early industrial is a hole you might emerge after ten years) or an early Young Guv EP. Come on!"
+  ],
+  "uses.section.gaming.title": "Gaming",
+  "uses.section.gaming.desc": "I recently realized that I play games for almost 30 years.",
+  "uses.section.gaming.items": [
+    "PS5 is a must-have. I am a PlayStation fan ever since the first one (which I got in second grade).",
+    "Xbox Series X is something I got due to sheer \"I collect these\" feeling. After 360 I feel that Microsoft really lost the ball. Buying studios and whipping mediocre games (looking at you, latest Forza) doesn't really help here.",
+    "Nintendo Switch is a special thing. Its hardware is basically Wii U, which was too little even then it launched, but the games. Oh, the games. Mario Kart 8 is enough to recommend the entire thing, with Metroid Dread, the two Zeldas and other Mario titles to boot.",
+    "PC with RTX 3080Ti and Ryzen 7 is my main gaming platform as of recent. I was against gaming on PC for years, mostly due to \"I work with computers, so I don't want them on my free time\", but the games not available on consoles are just too much to ignore. From indies, to oldies (I actually bought the rig to play classic Fallout games), to titles better adjusted for mouse (shooters, RPGs, aRPGs). Fun fact: the first game I launched on my new computer was Quake II, which I wanted to play for over 15 years.",
+    "Beelink SER5 is a tiny computer I use as an emulation and media station. My old LG OLED TV doesn't work well with streaming apps, some (like Canal+) don't have dedicated apps at all, so using this is a perfect solution. Plus, since I don't have my PS1 with me, I can still play the games (and some PS2 titles as well, but not as many)."
+  ],
 
   "work.gameshelf": ["Gameshelf aims to deliver latest new, world-class columns, interviews and insides for all the gamers around the world."],
   "work.hay": ["Hundred a Year is a personal project for creating and curating end-of-the-year music lists."],

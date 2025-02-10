@@ -31,7 +31,10 @@ function List({
     >
       <div className={styles.desc}>
         <SectionHeader title={title} className={styles.title} animate={false} />
-        <Text variant="large">{description}</Text>
+        <Text
+          variant="large"
+          dangerouslySetInnerHTML={{ __html: description as string }}
+        />
       </div>
 
       <ul
@@ -39,9 +42,11 @@ function List({
         style={{ ["--columns" as keyof CSSProperties]: columns }}
       >
         {items.map((item, i) => (
-          <Text variant="list" key={i}>
-            {item}
-          </Text>
+          <Text
+            variant="list"
+            key={i}
+            dangerouslySetInnerHTML={{ __html: item as string }}
+          />
         ))}
       </ul>
     </section>

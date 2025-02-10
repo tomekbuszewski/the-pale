@@ -1,133 +1,159 @@
-import { useLayoutEffect, useState } from "react";
-import { useLocation } from "react-router";
-import { CAL } from "@contact";
-import { SectionWrapper, Separator, Text } from "@ui/atoms";
+import { Sections, StaticRoutes } from "@nav";
+import { ServicePage } from "@ui/organisms";
+import { translate } from "@utils/translate";
+
 import {
-  ArticleHeader,
-  Carousel,
-  ContactCta,
-  LargeCard,
-  SectionHeader,
-  SmallCard,
-} from "@ui/molecules";
-import clsx from "clsx";
+  alacritty,
+  astro,
+  bitbucket,
+  cc,
+  css,
+  designer,
+  directus,
+  docker,
+  figma,
+  git,
+  github,
+  gitlab,
+  html,
+  jest,
+  js,
+  netlify,
+  next,
+  notebook,
+  photo,
+  procreate,
+  puppeteer,
+  react,
+  router,
+  sass,
+  sketch,
+  storybook,
+  tailwind,
+  tower,
+  ts,
+  vercel,
+  vite,
+  vitest,
+} from "../icons";
 
-import { COPY } from "./copy";
-
-import globals from "../../pages.module.scss";
-import styles from "./index.module.scss";
+export const COPY = {
+  TITLE: translate("services-feature.website.title") as string,
+  INTRO: translate("services-feature.website.full.intro") as string,
+  BODY: translate("services-feature.website.full.body") as string,
+  PROCESS: [
+    {
+      title: translate(
+        "services-feature.website.full.process.discovery.title",
+      ) as string,
+      body: translate(
+        "services-feature.website.full.process.discovery.body",
+      ) as string,
+    },
+    {
+      title: translate(
+        "services-feature.website.full.process.design.title",
+      ) as string,
+      body: translate(
+        "services-feature.website.full.process.design.body",
+      ) as string,
+    },
+    {
+      title: translate(
+        "services-feature.website.full.process.coding.title",
+      ) as string,
+      body: translate(
+        "services-feature.website.full.process.coding.body",
+      ) as string,
+    },
+  ],
+  CARDS: [
+    {
+      icons: [
+        figma,
+        designer,
+        sketch,
+        procreate,
+        photo,
+        notebook,
+        figma,
+        designer,
+        sketch,
+        procreate,
+        photo,
+        notebook,
+      ],
+      title: translate(
+        "services-feature.website.full.card.design.title",
+      ) as string,
+      description: translate(
+        "services-feature.website.full.card.design.body",
+      ) as string[],
+      more: {
+        label: translate(
+          "services-feature.website.full.card.design.cta",
+        ) as string,
+        href: "/#" + Sections.works,
+      },
+    },
+    {
+      icons: [
+        vite,
+        vitest,
+        vercel,
+        alacritty,
+        astro,
+        css,
+        html,
+        docker,
+        directus,
+        storybook,
+        git,
+        tailwind,
+        jest,
+        js,
+        ts,
+        next,
+        sass,
+        router,
+        react,
+        puppeteer,
+      ],
+      title: translate(
+        "services-feature.website.full.card.tech.title",
+      ) as string,
+      description: translate(
+        "services-feature.website.full.card.tech.body",
+      ) as string[],
+      more: {
+        label: translate(
+          "services-feature.website.full.card.tech.cta",
+        ) as string,
+        href: StaticRoutes.tech,
+      },
+    },
+    {
+      icons: [github, gitlab, cc, bitbucket, netlify, tower, vercel, tower],
+      title: translate(
+        "services-feature.website.full.card.repo.title",
+      ) as string,
+      description: translate(
+        "services-feature.website.full.card.repo.body",
+      ) as string[],
+    },
+  ],
+  CTA: translate("services-feature.website.full.cta") as string,
+};
 
 export default function WebDevelopment() {
-  const [activeCard, setActiveCard] = useState<string | null>(null);
-  const location = useLocation();
-
-  useLayoutEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [location.pathname]);
-
   return (
-    <SectionWrapper tag="article" contentClassName="largeText">
-      <ArticleHeader title="Web&nbsp;Design &&nbsp;Development" />
-
-      <section className={globals.mainSection}>
-        <Text variant="article-body">{COPY.INTRO}</Text>
-
-        <Separator />
-
-        <Text variant="article-body">{COPY.BODY}</Text>
-      </section>
-
-      <section
-        className={clsx(globals.mainSection, styles.process, globals.full)}
-      >
-        <SectionHeader title="The process" margin="small" />
-
-        {COPY.PROCESS.map((item, index) => (
-          <div key={item.title}>
-            <SmallCard no={index + 1} {...item} />
-          </div>
-        ))}
-      </section>
-
-      <section className={clsx(globals.full, globals.mainSection)}>
-        <LargeCard
-          onMouseEnter={() => setActiveCard(COPY.DESIGN_CARD_TITLE)}
-          onMouseLeave={() => setActiveCard(null)}
-          title={COPY.DESIGN_CARD_TITLE}
-          more={{
-            label: COPY.DESIGN_CARD_BTN,
-            href: "/#works",
-          }}
-          description={COPY.DESIGN_CARD.map((item) => (
-            <Text variant="large" key={item}>
-              {item}
-            </Text>
-          ))}
-          body={
-            <Carousel
-              active={activeCard === COPY.DESIGN_CARD_TITLE}
-              width="12rem"
-              icon="6rem"
-              columns={2}
-              icons={COPY.DESIGN as [string, string][]}
-            />
-          }
-        />
-
-        <LargeCard
-          onMouseEnter={() => setActiveCard(COPY.TECH_CARD_TITLE)}
-          onMouseLeave={() => setActiveCard(null)}
-          align="right"
-          title={COPY.TECH_CARD_TITLE}
-          more={{
-            label: COPY.TECH_CARD_BTN,
-            href: "/tech",
-          }}
-          description={COPY.TECH_CARD.map((item) => (
-            <Text variant="large" key={item}>
-              {item}
-            </Text>
-          ))}
-          body={
-            <Carousel
-              active={activeCard === COPY.TECH_CARD_TITLE}
-              width="12rem"
-              icon="6rem"
-              columns={2}
-              icons={COPY.ICONS as [string, string][]}
-            />
-          }
-        />
-
-        <LargeCard
-          onMouseEnter={() => setActiveCard(COPY.REPO_CARD_TITLE)}
-          onMouseLeave={() => setActiveCard(null)}
-          title={COPY.REPO_CARD_TITLE}
-          description={COPY.REPO_CARD.map((item) => (
-            <Text variant="large" key={item}>
-              {item}
-            </Text>
-          ))}
-          body={
-            <Carousel
-              active={activeCard === COPY.REPO_CARD_TITLE}
-              width="12rem"
-              icon="6rem"
-              columns={2}
-              icons={COPY.REPO as [string, string][]}
-            />
-          }
-        />
-      </section>
-
-      <section className={clsx(globals.full, globals.mainSection)}>
-        <ContactCta
-          buttons={[
-            { variant: "primary", label: COPY.BTN_SCHEDULE, href: CAL },
-            { variant: "secondary", label: COPY.BTN_CONTACT, href: "#contact" },
-          ]}
-        />
-      </section>
-    </SectionWrapper>
+    <ServicePage
+      title={COPY.TITLE}
+      intro={COPY.INTRO}
+      body={COPY.BODY}
+      processItems={COPY.PROCESS}
+      cards={COPY.CARDS}
+      process={translate("services-feature.process") as string}
+    />
   );
 }

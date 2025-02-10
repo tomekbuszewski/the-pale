@@ -1,25 +1,22 @@
 import { SectionWrapper, Separator, Text } from "@ui/atoms";
 import { ArticleHeader, List } from "@ui/molecules";
+import { translate } from "@utils/translate";
 import clsx from "clsx";
 
 import globals from "./pages.module.scss";
 
 const COPY = {
-  INTRO:
-    "Throughout the years I’ve worked with tons and tons of different tech.",
-  BODY: "I feel comfortable with almost any (roughly modern) stack. I’ve worked with tons of variations, including PHP, Node, JavaScript and TypeScript, Python, Java and Go.",
-  BODY2:
-    "If you’re looking for a (more or less) comprehensive list, here it is:",
+  INTRO: translate("tech.intro") as string,
+  BODY: translate("tech.body") as string[],
 
   SECTIONS: [
     {
-      TITLE: "Languages",
+      TITLE: translate("tech.languages.title") as string,
       ITEMS: ["JavaScript", "TypeScript", "CSS", "Python", "Go", "Java"],
-      DESCRIPTION:
-        "These are the languages I have commercial experience with. Besides these, I've dabbled with Ruby, Rust and tons of others.",
+      DESCRIPTION: translate("tech.languages.desc") as string,
     },
     {
-      TITLE: "Frameworks and Important Libraries",
+      TITLE: translate("tech.libs.title") as string,
       ITEMS: [
         "React",
         "Next.js",
@@ -36,11 +33,10 @@ const COPY = {
         "Encore",
         "Spring Boot",
       ],
-      DESCRIPTION:
-        "A list of frameworks and libraries I have the most experience with. By no means exhaustive.",
+      DESCRIPTION: translate("tech.libs.desc") as string,
     },
     {
-      TITLE: "Testing",
+      TITLE: translate("tech.testing.title") as string,
       ITEMS: [
         "Vitest",
         "Jest",
@@ -51,8 +47,7 @@ const COPY = {
         "Go Test Runner",
         "JUnit",
       ],
-      DESCRIPTION:
-        "These are the testing tools I have built at least one commercial app with.",
+      DESCRIPTION: translate("tech.testing.desc") as string,
     },
   ],
 };
@@ -60,13 +55,16 @@ const COPY = {
 export default function Consulting() {
   return (
     <SectionWrapper tag="article" contentClassName="largeText">
-      <ArticleHeader title="Uses" />
+      <ArticleHeader title={translate("tech.title") as string} />
 
       <section className={clsx(globals.mainSection)}>
         <Text variant="article-body">{COPY.INTRO}</Text>
         <Separator />
-        <Text variant="article-body">{COPY.BODY}</Text>
-        <Text variant="article-body">{COPY.BODY2}</Text>
+        {COPY.BODY.map((item, index) => (
+          <Text key={index} variant="article-body">
+            {item}
+          </Text>
+        ))}
       </section>
 
       <section className={clsx(globals.mainSection, globals.full)}>
