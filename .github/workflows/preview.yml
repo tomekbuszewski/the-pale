@@ -57,6 +57,49 @@ jobs:
           script: |
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             
+            # Create Traefik network if it doesn't exist
+            docker network create traefik-public || true
+            
+            # Generate Traefik compose file if it doesn't exist
+            TRAEFIK_PATH="/home/${{ secrets.VPS_USERNAME }}/apps/traefik"
+            mkdir -p $TRAEFIK_PATH
+            
+            if [ ! -f "$TRAEFIK_PATH/docker-compose.yml" ]; then
+              cat > $TRAEFIK_PATH/docker-compose.yml << EOL
+            version: '3'
+            
+            services:
+              traefik:
+                image: traefik:v2.10
+                command:
+                  - "--api.insecure=true"
+                  - "--providers.docker=true"
+                  - "--providers.docker.exposedbydefault=false"
+                  - "--entrypoints.web.address=:80"
+                  - "--entrypoints.websecure.address=:443"
+                  - "--certificatesresolvers.letsencrypt.acme.email=your@email.com"
+                  - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+                  - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+                  - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+                ports:
+                  - "80:80"
+                  - "443:443"
+                volumes:
+                  - "/var/run/docker.sock:/var/run/docker.sock:ro"
+                  - "./letsencrypt:/letsencrypt"
+                networks:
+                  - traefik-public
+            
+            networks:
+              traefik-public:
+                external: true
+            EOL
+            
+              cd $TRAEFIK_PATH
+              docker-compose up -d
+            fi
+            
+            # Create preview docker-compose
             PREVIEW_PATH="/home/${{ secrets.VPS_USERNAME }}/apps/the-pale/previews/${{ steps.preview-tag.outputs.tag }}"
             mkdir -p $PREVIEW_PATH
             
@@ -80,7 +123,6 @@ jobs:
             networks:
               traefik-public:
                 external: true
-                name: traefik-public
             EOL
             
             docker rm -f the-pale-${{ steps.preview-tag.outputs.tag }} || true
