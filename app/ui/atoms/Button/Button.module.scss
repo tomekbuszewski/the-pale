@@ -14,6 +14,7 @@
   padding: 0 var(--spacing-lg);
   border: #{rem(2)} solid transparent;
   transition: #{transition(all)};
+  white-space: nowrap;
 }
 
 .base:hover,

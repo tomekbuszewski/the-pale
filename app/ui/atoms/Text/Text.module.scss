@@ -6,7 +6,6 @@
   line-height: var(--leading-tight);
 
   @include media("md") {
-    line-height: var(--leading-regular);
     letter-spacing: -0.025em;
     font-size: var(--font-size-hero-md);
   }

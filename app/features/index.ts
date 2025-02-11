@@ -2,6 +2,7 @@ import * as AboutSectionFeature from "./AboutSection";
 import * as BlogSectionFeature from "./BlogSection";
 import * as ClientsSectionFeature from "./ClientsSection";
 import * as ContactFeature from "./Contact";
+import * as ErrorBoundaryFeature from "./ErrorBoundary";
 import * as FooterFeature from "./Footer";
 import * as HeadFeature from "./Head";
 import * as HeaderFeature from "./Header";
@@ -56,4 +57,8 @@ export const Contact = {
 
 export const Head = {
   component: HeadFeature.Head,
+};
+
+export const ErrorBoundary = {
+  component: ErrorBoundaryFeature.ErrorBoundary,
 };

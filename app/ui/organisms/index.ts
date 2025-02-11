@@ -3,6 +3,7 @@ export { default as BlogPost } from "./BlogPost/BlogPost";
 export { default as BlogSection } from "./BlogSection/BlogSection";
 export { default as ClientsSection } from "./ClientsSection/ClientsSection";
 export { default as ContactSection } from "./ContactSection/ContactSection";
+export { default as ErrorPage } from "./ErrorPage/ErrorPage";
 export { default as HeroSection } from "./HeroSection/HeroSection";
 export { default as PageFooter } from "./PageFooter/PageFooter";
 export { default as PageHeader } from "./PageHeader/PageHeader";

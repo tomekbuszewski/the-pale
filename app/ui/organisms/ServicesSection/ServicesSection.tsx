@@ -20,17 +20,17 @@ interface Props extends HTMLProps<HTMLDivElement> {
   title: string;
 }
 
-interface AdditionalProps {
+interface AdditionalProps extends HTMLProps<HTMLDivElement> {
   items: string[];
   isActive?: boolean;
 }
 
-function Additional({ items, isActive }: AdditionalProps) {
+function Additional({ items, isActive, ...rest }: AdditionalProps) {
   const left = items.slice(0, 3);
   const right = items.slice(3);
 
   return (
-    <div className={styles.additionalWrapper}>
+    <div className={styles.additionalWrapper} {...rest}>
       {[left, right].map((item) => (
         <ul
           className={styles.additional}
@@ -74,7 +74,7 @@ function ServicesSection({ items, title }: Props) {
           const shouldHide = typeof active !== "undefined" && i !== active;
           const isActive = i === active;
 
-          function handleClick(item: number) {
+          function handleClick(item: number | undefined) {
             const setter = isSectionActive ? undefined : item;
 
             setActive(setter);
@@ -101,7 +101,6 @@ function ServicesSection({ items, title }: Props) {
               className={styles.item}
               key={item.title}
               data-active={isActive ? "true" : "false"}
-              onClick={() => handleClick(i)}
             >
               <Box
                 {...item}
@@ -116,7 +115,11 @@ function ServicesSection({ items, title }: Props) {
                 }}
               />
 
-              <Additional items={item.additional} isActive={isActive} />
+              <Additional
+                items={item.additional}
+                isActive={isActive}
+                onClick={() => handleClick(undefined)}
+              />
             </div>
           );
         })}

@@ -19,7 +19,7 @@ const items = [
     link: Routes.website,
   },
   {
-    title: "Front-end<br />Development",
+    title: translate("services.feature.frontend.title") as string,
     icon: <FrontendIcon />,
     onClick: () => null,
     link: Routes.frontend,
@@ -29,7 +29,7 @@ const items = [
     additional: translate("services.feature.frontend.additional") as string[],
   },
   {
-    title: translate("services.feature.consultations.title") as string,
+    title: translate("services.feature.consultations.short-title") as string,
     icon: <ConsultationsIcon />,
     link: Routes.consulting,
     onClick: () => null,

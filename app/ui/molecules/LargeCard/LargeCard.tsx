@@ -30,11 +30,7 @@ function LargeCard({
         />
 
         {Array.isArray(description)
-          ? description.map((item) => (
-              <Text key={item} variant="large">
-                {item}
-              </Text>
-            ))
+          ? description.map((item) => <Text key={item}>{item}</Text>)
           : description}
 
         {more && (
