@@ -45,7 +45,7 @@ jobs:
           context: .
           file: Dockerfile.pnpm
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/the-pale:${{ steps.preview-tag.outputs.tag }}
+          tags: ghcr.io/${{ github.repository_owner }}/the-pale-${{ steps.preview-tag.outputs.tag }}
 
       - name: Deploy preview
         if: success()
