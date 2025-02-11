@@ -1,0 +1,22 @@
+name: Workers PR Preview
+
+on: [pull_request]
+
+jobs:
+  preview_app1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shidil/cloudflare-workers-preview@v1
+        id: preview_step
+        with:
+          cf_token: ${{ secrets.CF_API_TOKEN }}
+          cf_account: ${{ secrets.CF_ACCOUNT_ID }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          domain: the-pale.tomasz-b26.workers.dev
+          project_path: apps/app1
+          build: |
+            pnpm install
+            pnpm run build
+      - name: Get the preview_url
+        run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
