@@ -12,3 +12,5 @@ directory = "./build/client"
 
 [build]
 command = "pnpm run build"
+
+compatibility_flags = [ "nodejs_compat" ]
