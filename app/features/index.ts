@@ -1,4 +1,5 @@
 import * as AboutSectionFeature from "./AboutSection";
+import * as AnalyticsFeature from "./Analytics";
 import * as BlogSectionFeature from "./BlogSection";
 import * as ClientsSectionFeature from "./ClientsSection";
 import * as ContactFeature from "./Contact";
@@ -61,4 +62,8 @@ export const Head = {
 
 export const ErrorBoundary = {
   component: ErrorBoundaryFeature.ErrorBoundary,
+};
+
+export const Analytics = {
+  component: AnalyticsFeature.Analytics,
 };

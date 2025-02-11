@@ -1,5 +1,15 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
-import { ErrorBoundary as ErrorBoundaryFeature } from "@features";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+} from "react-router";
+import {
+  Analytics as AnalyticsFeature,
+  ErrorBoundary as ErrorBoundaryFeature,
+} from "@features";
 
 import type { ReactNode } from "react";
 
@@ -37,10 +47,22 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+export function loader() {
+  const gaID = import.meta.env.VITE_GA as string;
+  if (!gaID) {
+    return;
+  }
+
+  return gaID;
+}
+
 export function Layout({ children }: { children: ReactNode }) {
+  const gaID = useLoaderData<typeof loader>();
+
   return (
     <html lang="en">
       <head>
+        <AnalyticsFeature.component id={gaID} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
