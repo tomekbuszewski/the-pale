@@ -1,5 +1,5 @@
 {
-  "name": "remix-cloudflare-workers-template",
+  "name": "the-pale",
   "main": "./server.ts",
   "workers_dev": true,
   "compatibility_date": "2024-09-26",
