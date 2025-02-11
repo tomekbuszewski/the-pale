@@ -26,7 +26,7 @@ jobs:
       - name: Generate preview tag
         id: preview-tag
         run: |
-          PR_NAME=$(echo "${{ github.event.pull_request.title }}" | sed -e 's/[^A-Za-z0-9]/-/g' | tr '[:upper:]' '[:lower:]')
+          PR_NAME=$(echo "${{ github.event.pull_request.title }}" | sed -e 's/[^A-Za-z0-9]/-/g' | tr '[:upper:]' '[:lower:]' | sed -e 's/--/-/g')
           echo "tag=${PR_NAME}" >> $GITHUB_OUTPUT
 
       - name: Set up Docker Build
@@ -132,6 +132,7 @@ jobs:
             
             cd $PREVIEW_PATH
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+            docker compose down
             docker compose pull
             docker compose up -d
             
