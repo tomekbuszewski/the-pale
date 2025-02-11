@@ -25,42 +25,42 @@ import {
 } from "../icons";
 
 const COPY = {
-  TITLE: translate("services.feature.frontend.title") as string,
-  INTRO: translate("services.feature.frontend.intro") as string,
+  TITLE: translate("services.feature.frontend.title"),
+  INTRO: translate("services.feature.frontend.intro"),
   BODY: translate(
     "services.feature.frontend.body",
     EXP_YEARS.toString(),
-  ) as string[],
+  ),
   PROCESS: [
     {
       title: translate(
         "services.feature.frontend.process.design.title",
-      ) as string,
+      ),
       body: translate(
         "services.feature.frontend.process.design.description",
-      ) as string,
+      ),
     },
     {
       title: translate(
         "services.feature.frontend.process.technical.title",
-      ) as string,
+      ),
       body: translate(
         "services.feature.frontend.process.technical.description",
-      ) as string,
+      ),
     },
     {
       title: translate(
         "services.feature.frontend.process.implementation.title",
-      ) as string,
+      ),
       body: translate(
         "services.feature.frontend.process.implementation.description",
-      ) as string,
+      ),
     },
   ],
 
   CARDS: [
     {
-      title: translate("services.feature.frontend.card.design.title") as string,
+      title: translate("services.feature.frontend.card.design.title"),
       icons: [
         figma,
         sketch,
@@ -82,7 +82,7 @@ const COPY = {
     {
       title: translate(
         "services.feature.frontend.card.technical.title",
-      ) as string,
+      ),
       icons: [astro, css, html, js, ts, react, router, sass, tailwind, next],
       description: translate(
         "services.feature.frontend.card.technical.description",
@@ -91,7 +91,7 @@ const COPY = {
     {
       title: translate(
         "services.feature.frontend.card.implementation.title",
-      ) as string,
+      ),
       icons: [
         astro,
         css,
@@ -121,7 +121,7 @@ export default function Frontend() {
       title={COPY.TITLE}
       intro={COPY.INTRO}
       body={COPY.BODY}
-      process={translate("services.feature.process") as string}
+      process={translate("services.feature.process")}
       processItems={COPY.PROCESS}
       cards={COPY.CARDS}
     />

@@ -6,17 +6,17 @@ import clsx from "clsx";
 import globals from "./pages.module.scss";
 
 const COPY = {
-  INTRO: translate("tech.intro") as string,
-  BODY: translate("tech.body") as string[],
+  INTRO: translate("tech.intro"),
+  BODY: translate("tech.body"),
 
   SECTIONS: [
     {
-      TITLE: translate("tech.languages.title") as string,
+      TITLE: translate("tech.languages.title"),
       ITEMS: ["JavaScript", "TypeScript", "CSS", "Python", "Go", "Java"],
-      DESCRIPTION: translate("tech.languages.desc") as string,
+      DESCRIPTION: translate("tech.languages.desc"),
     },
     {
-      TITLE: translate("tech.libs.title") as string,
+      TITLE: translate("tech.libs.title"),
       ITEMS: [
         "React",
         "Next.js",
@@ -33,10 +33,10 @@ const COPY = {
         "Encore",
         "Spring Boot",
       ],
-      DESCRIPTION: translate("tech.libs.desc") as string,
+      DESCRIPTION: translate("tech.libs.desc"),
     },
     {
-      TITLE: translate("tech.testing.title") as string,
+      TITLE: translate("tech.testing.title"),
       ITEMS: [
         "Vitest",
         "Jest",
@@ -47,7 +47,7 @@ const COPY = {
         "Go Test Runner",
         "JUnit",
       ],
-      DESCRIPTION: translate("tech.testing.desc") as string,
+      DESCRIPTION: translate("tech.testing.desc"),
     },
   ],
 };
@@ -55,7 +55,7 @@ const COPY = {
 export default function Consulting() {
   return (
     <SectionWrapper tag="article" contentClassName="largeText">
-      <ArticleHeader title={translate("tech.title") as string} />
+      <ArticleHeader title={translate("tech.title")} />
 
       <section className={clsx(globals.mainSection)}>
         <Text variant="article-body">{COPY.INTRO}</Text>

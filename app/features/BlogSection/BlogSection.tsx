@@ -13,7 +13,7 @@ export default function BlogSection({
 }) {
   return (
     <Main
-      title={translate("blog.feature.title") as string}
+      title={translate("blog.feature.title")}
       items={items}
       pagination={pagination}
     />

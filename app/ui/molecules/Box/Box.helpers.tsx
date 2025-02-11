@@ -20,7 +20,7 @@ export function Meta({ icon, date }: MetaProps) {
           <Text variant="highlight">{date.toDateString()}</Text>
         </time>
       ) : null}
-      {icon ? icon : null}
+      {icon ?? null}
     </>
   );
 }

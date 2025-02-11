@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+
 import MainWrapper from "./MainWrapper";
 
     export const Primary: StoryObj<typeof MainWrapper> = {

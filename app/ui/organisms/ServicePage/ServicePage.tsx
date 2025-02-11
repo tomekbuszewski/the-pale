@@ -38,16 +38,16 @@ interface Props extends HTMLProps<HTMLDivElement> {
 }
 
 const defaultCTA = {
-  text: translate("services.feature.website.full.cta") as string,
+  text: translate("services.feature.website.full.cta"),
   buttons: [
     {
       variant: "primary",
-      label: translate("services.feature.website.full.btn.schedule") as string,
+      label: translate("services.feature.website.full.btn.schedule"),
       href: CAL,
     },
     {
       variant: "secondary",
-      label: translate("services.feature.website.full.btn.contact") as string,
+      label: translate("services.feature.website.full.btn.contact"),
       href: "#contact",
     },
   ],

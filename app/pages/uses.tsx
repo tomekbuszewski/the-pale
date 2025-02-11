@@ -48,11 +48,11 @@ export default function Consulting() {
       <section className={clsx(globals.mainSection, globals.full)}>
         {COPY.SECTIONS.map(({ TITLE, DESCRIPTION, ITEMS }) => (
           <List
-            key={TITLE as string}
+            key={TITLE}
             columns={1}
             description={DESCRIPTION}
-            title={TITLE as string}
-            items={ITEMS as string[]}
+            title={TITLE}
+            items={ITEMS}
           />
         ))}
       </section>

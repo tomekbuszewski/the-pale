@@ -20,7 +20,7 @@ import Phone from "./assets/phone.svg?react";
 import YouTube from "./assets/yt.svg?react";
 
 const data = {
-  copy: translate("footer.feature.copy") as string,
+  copy: translate("footer.feature.copy"),
   quickLinks: [...nav.Pages, ...nav.HeaderNav],
   contact: [
     {
@@ -30,7 +30,7 @@ const data = {
     },
     {
       href: CAL,
-      text: translate("footer.feature.call-button") as string,
+      text: translate("footer.feature.call-button"),
       icon: <Calendar />,
       external: true,
     },
@@ -40,7 +40,7 @@ const data = {
       icon: <Phone />,
     },
   ],
-  contactDisclaimer: translate("footer.feature.contact-disclaimer") as string,
+  contactDisclaimer: translate("footer.feature.contact-disclaimer"),
   socials: [
     {
       href: YOUTUBE,
@@ -67,13 +67,13 @@ export default function Footer() {
   return (
     <Main
       {...data}
-      cookies={translate("footer.section.cookies") as string}
+      cookies={translate("footer.section.cookies")}
       copyright={
         translate(
           "footer.section.copyright",
           START_YEAR.toString(),
           new Date().getFullYear().toString(),
-        ) as string
+        )
       }
     />
   );

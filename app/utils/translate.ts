@@ -9,6 +9,14 @@ type NestedKeyOf<ObjectType extends object> = {
 
 type TranslationKey = NestedKeyOf<typeof en>;
 
+type TranslationValue<T, P extends string> = P extends keyof T
+  ? T[P]
+  : P extends `${infer K}.${infer R}`
+    ? K extends keyof T
+      ? TranslationValue<T[K], R>
+      : never
+    : never;
+
 const translations: Record<Languages, typeof en> = {
   en,
 };
@@ -22,11 +30,23 @@ export function getCurrentLanguage(): Languages {
 
   return (cookie ? cookie.split("=")[1] : "en") as Languages;
 }
-
-export function translate(
-  path: TranslationKey,
+export function translate<K extends TranslationKey>(
+  path: K extends string
+    ? TranslationValue<typeof en, K> extends string[]
+      ? K
+      : never
+    : never,
   ...args: string[]
-): string | string[] {
+): string[];
+export function translate<K extends TranslationKey>(
+  path: K extends string
+    ? TranslationValue<typeof en, K> extends string
+      ? K
+      : never
+    : never,
+  ...args: string[]
+): string;
+export function translate(path: TranslationKey, ...args: string[]) {
   const currentLanguage = getCurrentLanguage();
   const keys = path.split(".");
 

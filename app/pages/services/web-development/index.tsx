@@ -38,33 +38,33 @@ import {
 } from "../icons";
 
 export const COPY = {
-  TITLE: translate("services.feature.website.title") as string,
-  INTRO: translate("services.feature.website.full.intro") as string,
+  TITLE: translate("services.feature.website.title"),
+  INTRO: translate("services.feature.website.full.intro"),
   BODY: translate("services.feature.website.full.body") as string,
   PROCESS: [
     {
       title: translate(
         "services.feature.website.full.process.discovery.title",
-      ) as string,
+      ),
       body: translate(
         "services.feature.website.full.process.discovery.body",
-      ) as string,
+      ),
     },
     {
       title: translate(
         "services.feature.website.full.process.design.title",
-      ) as string,
+      ),
       body: translate(
         "services.feature.website.full.process.design.body",
-      ) as string,
+      ),
     },
     {
       title: translate(
         "services.feature.website.full.process.coding.title",
-      ) as string,
+      ),
       body: translate(
         "services.feature.website.full.process.coding.body",
-      ) as string,
+      ),
     },
   ],
   CARDS: [
@@ -85,14 +85,14 @@ export const COPY = {
       ],
       title: translate(
         "services.feature.website.full.card.design.title",
-      ) as string,
+      ),
       description: translate(
         "services.feature.website.full.card.design.body",
-      ) as string[],
+      ),
       more: {
         label: translate(
           "services.feature.website.full.card.design.cta",
-        ) as string,
+        ),
         href: "/#" + Sections.works,
       },
     },
@@ -121,14 +121,14 @@ export const COPY = {
       ],
       title: translate(
         "services.feature.website.full.card.tech.title",
-      ) as string,
+      ),
       description: translate(
         "services.feature.website.full.card.tech.body",
-      ) as string[],
+      ),
       more: {
         label: translate(
           "services.feature.website.full.card.tech.cta",
-        ) as string,
+        ),
         href: StaticRoutes.tech,
       },
     },
@@ -136,13 +136,13 @@ export const COPY = {
       icons: [github, gitlab, cc, bitbucket, netlify, tower, vercel, tower],
       title: translate(
         "services.feature.website.full.card.repo.title",
-      ) as string,
+      ),
       description: translate(
         "services.feature.website.full.card.repo.body",
-      ) as string[],
+      ),
     },
   ],
-  CTA: translate("services.feature.website.full.cta") as string,
+  CTA: translate("services.feature.website.full.cta"),
 };
 
 export default function WebDevelopment() {
@@ -153,7 +153,7 @@ export default function WebDevelopment() {
       body={COPY.BODY}
       processItems={COPY.PROCESS}
       cards={COPY.CARDS}
-      process={translate("services.feature.process") as string}
+      process={translate("services.feature.process")}
     />
   );
 }

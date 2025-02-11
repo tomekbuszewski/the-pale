@@ -19,43 +19,37 @@ import {
 } from "../icons";
 
 const COPY = {
-  TITLE: translate("services.feature.consultations.title") as string,
-  INTRO: translate("services.feature.consultations.intro") as string,
-  BODY: translate("services.feature.consultations.body") as string[],
+  TITLE: translate("services.feature.consultations.title"),
+  INTRO: translate("services.feature.consultations.intro"),
+  BODY: translate("services.feature.consultations.body"),
   PROCESS: [
     {
-      title: translate(
-        "services.feature.consultations.process.talk.title",
-      ) as string,
+      title: translate("services.feature.consultations.process.talk.title"),
       body: translate(
         "services.feature.consultations.process.talk.description",
-      ) as string,
+      ),
     },
     {
-      title: translate(
-        "services.feature.consultations.process.timeline.title",
-      ) as string,
+      title: translate("services.feature.consultations.process.timeline.title"),
       body: translate(
         "services.feature.consultations.process.timeline.description",
-      ) as string,
+      ),
     },
     {
       title: translate(
         "services.feature.consultations.process.implementation.title",
-      ) as string,
+      ),
       body: translate(
         "services.feature.consultations.process.implementation.description",
-      ) as string,
+      ),
     },
   ],
   CARDS: [
     {
-      title: translate(
-        "services.feature.consultations.card.mgmt.title",
-      ) as string,
+      title: translate("services.feature.consultations.card.mgmt.title"),
       description: translate(
         "services.feature.consultations.card.mgmt.description",
-      ) as string[],
+      ),
       icons: [
         miro,
         airtable,
@@ -70,12 +64,10 @@ const COPY = {
       ],
     },
     {
-      title: translate(
-        "services.feature.consultations.card.hiring.title",
-      ) as string,
+      title: translate("services.feature.consultations.card.hiring.title"),
       description: translate(
         "services.feature.consultations.card.hiring.description",
-      ) as string[],
+      ),
       icons: [
         meet,
         zoom,
@@ -92,12 +84,10 @@ const COPY = {
       ],
     },
     {
-      title: translate(
-        "services.feature.consultations.card.sparring.title",
-      ) as string,
+      title: translate("services.feature.consultations.card.sparring.title"),
       description: translate(
         "services.feature.consultations.card.sparring.description",
-      ) as string[],
+      ),
       icons: [
         meet,
         zoom,
@@ -122,7 +112,7 @@ export default function Consulting() {
       title={COPY.TITLE}
       intro={COPY.INTRO}
       body={COPY.BODY}
-      process={translate("services.feature.process") as string}
+      process={translate("services.feature.process")}
       processItems={COPY.PROCESS}
       cards={COPY.CARDS}
     />
