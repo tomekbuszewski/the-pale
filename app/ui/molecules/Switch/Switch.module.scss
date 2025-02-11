@@ -1,0 +1,54 @@
+@use "../../styles/_fns.scss" as *;
+
+:root {
+  --gap: #{rem(4)};
+  --padding: #{rem(2)};
+  --width: #{rem(24)};
+}
+
+.wrapper {
+  border: #{rem(2)} solid var(--color-minor-accent);
+  background: var(--color-minor-background);
+  padding: var(--padding);
+  height: #{rem(32)};
+  border-radius: #{rem(32)};
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--gap);
+  position: relative;
+
+  &:before {
+    transition: #{transition(all)};
+    content: "";
+    position: absolute;
+    top: var(--padding);
+    left: var(--padding);
+    border-radius: var(--width);
+    width: var(--width);
+    height: var(--width);
+    background: var(--color-main-accent);
+    pointer-events: none;
+    transform: translateX(
+      calc(var(--width) * var(--active) + var(--gap) * var(--active))
+    );
+  }
+}
+
+.item {
+  width: var(--width);
+  aspect-ratio: 1/1;
+  color: var(--color-main-body);
+  font-size: #{rem(10)};
+  font-family: var(--font-face-mono);
+  text-align: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  z-index: 1;
+
+  &.active {
+    transition: #{transition(all)};
+    transition-delay: var(--animation-duration-short);
+    color: var(--color-minor-background);
+  }
+}
