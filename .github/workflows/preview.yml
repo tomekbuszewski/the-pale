@@ -16,7 +16,7 @@ jobs:
           domain: the-pale.tomasz-b26.workers.dev
           project_path: apps/app1
           build: |
-            pnpm install
-            pnpm run build
+            npm install
+            npm run build
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
