@@ -2,7 +2,7 @@
   "name": "the-pale",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.2.1",
+  "packageManager": "pnpm@10.3.0",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
