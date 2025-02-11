@@ -63,18 +63,28 @@ const data = {
   ],
 };
 
+const languages = [
+  {
+    label: "EN",
+    value: "en",
+  },
+  {
+    label: "PL",
+    value: "pl",
+  },
+];
+
 export default function Footer() {
   return (
     <Main
       {...data}
+      languages={languages}
       cookies={translate("footer.section.cookies")}
-      copyright={
-        translate(
-          "footer.section.copyright",
-          START_YEAR.toString(),
-          new Date().getFullYear().toString(),
-        )
-      }
+      copyright={translate(
+        "footer.section.copyright",
+        START_YEAR.toString(),
+        new Date().getFullYear().toString(),
+      )}
     />
   );
 }

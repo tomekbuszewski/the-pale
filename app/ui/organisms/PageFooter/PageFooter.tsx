@@ -1,10 +1,11 @@
 import { Link } from "react-router";
 import { Sections } from "@nav";
 import { Logo, SectionWrapper, Text } from "@ui/atoms";
-import { SectionHeader } from "@ui/molecules";
+import { SectionHeader, Switch } from "@ui/molecules";
 import clsx from "clsx";
 
 import type { Href } from "@common-types/Href";
+import type { LanguageOption } from "@common-types/LanguageOption";
 import type { HTMLProps, ReactNode } from "react";
 
 import styles from "./PageFooter.module.scss";
@@ -21,6 +22,8 @@ interface Props extends HTMLProps<HTMLDivElement> {
   socials: HrefWithIcon[];
   copyright: string;
   cookies: string;
+  onLanguageChange?: (lang: string) => void;
+  languages?: LanguageOption[];
 }
 
 interface LinksProps extends HTMLProps<HTMLUListElement> {
@@ -67,6 +70,8 @@ function PageFooter({
   socials,
   copyright,
   cookies,
+  languages,
+  onLanguageChange,
 }: Props) {
   return (
     <SectionWrapper
@@ -79,9 +84,16 @@ function PageFooter({
       <Logo wrapperClassName={styles.logo} />
       <Logo wrapperClassName={styles.logoBg} />
 
-      <Text variant="regular" className={styles.navWrapper}>
-        {copy}
-      </Text>
+      <aside className={styles.navWrapper}>
+        <Text variant="regular">{copy}</Text>
+        {onLanguageChange && languages ? (
+          <Switch
+            items={languages}
+            onChange={onLanguageChange}
+            className={styles.switch}
+          />
+        ) : null}
+      </aside>
 
       <nav className={styles.navWrapper}>
         <SectionHeader title="Quick links" margin="none" />
