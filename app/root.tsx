@@ -48,7 +48,7 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function loader() {
-  const gaID = import.meta.env.VITE_GA as string;
+  const gaID = (import.meta.env.VITE_GA as string) ?? process.env.VITE_ID;
   if (!gaID) {
     return;
   }
