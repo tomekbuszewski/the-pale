@@ -3,7 +3,6 @@
   "main": "./server.ts",
   "workers_dev": true,
   "compatibility_date": "2024-09-26",
-  "pages_build_output_dir": "./build/client",
   "assets": {
     "directory": "./build/client"
   },
