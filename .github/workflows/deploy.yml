@@ -26,7 +26,7 @@ jobs:
           context: .
           file: Dockerfile.pnpm
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/depeche:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/the-pale:latest
 
       - name: Deploy on VPS
         uses: appleboy/ssh-action@master
@@ -39,10 +39,10 @@ jobs:
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
             # Stop and remove existing containers
-            docker rm -f depeche depeche-traefik || true
+            docker rm -f the-pale the-pale-traefik || true
             
             # Pull latest image
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/depeche:latest
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/the-pale:latest
             
             # Start services with docker-compose
-            DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }} docker-compose -f /home/${{ secrets.VPS_USERNAME }}/apps/depeche/current/docker-compose.yml up -d
+            DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }} docker compose -f /home/${{ secrets.VPS_USERNAME }}/apps/the-pale/current/docker-compose.yml up -d

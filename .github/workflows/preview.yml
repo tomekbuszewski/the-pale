@@ -1,0 +1,139 @@
+name: Preview Deploy
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  preview:
+    if: "!contains(github.head_ref, 'renovate') && !contains(github.event.pull_request.title, 'renovate')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify SSH connection
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            echo "SSH connection successful"
+            whoami
+            pwd
+
+      - name: Generate preview tag
+        id: preview-tag
+        run: |
+          PR_NAME=$(echo "${{ github.event.pull_request.title }}" | sed -e 's/[^A-Za-z0-9]/-/g' | tr '[:upper:]' '[:lower:]' | sed -e 's/--/-/g')
+          echo "tag=${PR_NAME}" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Build
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile.pnpm
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/the-pale:${{ steps.preview-tag.outputs.tag }}
+
+      - name: Deploy preview
+        if: success()
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+            
+            # Create Traefik network if it doesn't exist
+            docker network create traefik-public || true
+            
+            # Generate Traefik compose file if it doesn't exist
+            TRAEFIK_PATH="/home/${{ secrets.VPS_USERNAME }}/apps/traefik"
+            mkdir -p $TRAEFIK_PATH
+            
+            if [ ! -f "$TRAEFIK_PATH/docker-compose.yml" ]; then
+              cat > $TRAEFIK_PATH/docker-compose.yml << EOL
+            version: '3'
+            
+            services:
+              traefik:
+                mem_limit: 256m
+                mem_reservation: 128m
+                image: traefik@sha256:f1fdee7fda041872cff24e36a08f45ca53f006ded88f743a8e30e3d87ca52b48
+                command:
+                  - "--api.insecure=true"
+                  - "--providers.docker=true"
+                  - "--providers.docker.exposedbydefault=false"
+                  - "--entrypoints.web.address=:80"
+                  - "--entrypoints.websecure.address=:443"
+                  - "--certificatesresolvers.letsencrypt.acme.email=your@email.com"
+                  - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+                  - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+                  - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+                ports:
+                  - "80:80"
+                  - "443:443"
+                volumes:
+                  - "/var/run/docker.sock:/var/run/docker.sock:ro"
+                  - "./letsencrypt:/letsencrypt"
+                networks:
+                  - traefik-public
+            
+            networks:
+              traefik-public:
+                external: true
+            EOL
+            
+              cd $TRAEFIK_PATH
+              docker compose up -d
+            fi
+            
+            # Create preview docker-compose
+            PREVIEW_PATH="/home/${{ secrets.VPS_USERNAME }}/apps/the-pale/previews/${{ steps.preview-tag.outputs.tag }}"
+            mkdir -p $PREVIEW_PATH
+            
+            cat > $PREVIEW_PATH/docker-compose.yml << EOL
+            version: '3'
+            
+            services:
+              app:
+                container_name: the-pale:${{ steps.preview-tag.outputs.tag }}
+                image: ghcr.io/${{ github.repository_owner }}/the-pale:${{ steps.preview-tag.outputs.tag }}
+                labels:
+                  - "traefik.enable=true"
+                  - "traefik.http.routers.${{ steps.preview-tag.outputs.tag }}.rule=Host(\`${{ steps.preview-tag.outputs.tag }}.beta.buszewski.studio\`)"
+                  - "traefik.http.routers.${{ steps.preview-tag.outputs.tag }}.tls=true"
+                  - "traefik.http.routers.${{ steps.preview-tag.outputs.tag }}.tls.certresolver=letsencrypt"
+                  - "traefik.http.services.${{ steps.preview-tag.outputs.tag }}.loadbalancer.server.port=3000"
+                  - "traefik.http.routers.${{ steps.preview-tag.outputs.tag }}.entrypoints=websecure"
+                networks:
+                  - traefik-public
+            
+            networks:
+              traefik-public:
+                external: true
+            EOL
+            
+            docker rm -f the-pale:${{ steps.preview-tag.outputs.tag }} || true
+            
+            cd $PREVIEW_PATH
+            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+            docker compose down
+            docker compose pull
+            docker compose up -d
+            
+            echo "Preview deployed at: https://${{ steps.preview-tag.outputs.tag }}.beta.buszewski.studio"
