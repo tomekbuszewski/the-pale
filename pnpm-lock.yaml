@@ -128,7 +128,7 @@ importers:
         version: 4.0.3
       happy-dom:
         specifier: ^17.0.0
-        version: 17.0.2
+        version: 17.0.3
       plop:
         specifier: ^4.0.1
         version: 4.0.1
@@ -170,7 +170,7 @@ importers:
         version: 5.1.4(typescript@5.7.3)(vite@6.1.0(@types/node@20.17.17)(jiti@1.21.7)(sass-embedded@1.83.4)(yaml@2.7.0))
       vitest:
         specifier: ^3.0.5
-        version: 3.0.5(@types/debug@4.1.12)(@types/node@20.17.17)(happy-dom@17.0.2)(jiti@1.21.7)(sass-embedded@1.83.4)(yaml@2.7.0)
+        version: 3.0.5(@types/debug@4.1.12)(@types/node@20.17.17)(happy-dom@17.0.3)(jiti@1.21.7)(sass-embedded@1.83.4)(yaml@2.7.0)
 
 packages:
 
@@ -205,7 +205,7 @@ packages:
     resolution: {integrity: sha512-IXuyn5EkouFJscIDuFF5EsiSolseme1s0CZB+QxVugqJLYmKdxI1VfIBOst0SUu4rnk2Z7kqTwmoO1lp3HIfnA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helper-create-class.features-plugin@7.25.9':
+  '@babel/helper-create-class-features-plugin@7.25.9':
     resolution: {integrity: sha512-UTZQMvt0d/rSz6KI+qdu7GQze5TIajwTS++GUozlw8VBJDEOAqSXwm1WvmYEZwqdqSGQshRocPDqrt4HBZB3fQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
@@ -2356,8 +2356,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@17.0.2:
-    resolution: {integrity: sha512-PWXllOadphR7angD3ndG5/Ax3yg1PFRvnN8Zu+xVtRsZjJE4RtJF1RBeWN9JFvF5EJmHOCiekdYVTxJr2NBibA==}
+  happy-dom@17.0.3:
+    resolution: {integrity: sha512-1vWCwpeguN02wQF8kGeaj69FDX19bXKQXmyUKcE+O0WLY0uhS0RPTLCJR8Omy8hrjMHwV3dUJ24JUrK07aOA9Q==}
     engines: {node: '>=18.0.0'}
 
   has-bigints@1.1.0:
@@ -4506,7 +4506,7 @@ snapshots:
       lru-cache: 5.1.1
       semver: 6.3.1
 
-  '@babel/helper-create-class.features-plugin@7.25.9(@babel/core@7.26.7)':
+  '@babel/helper-create-class-features-plugin@7.25.9(@babel/core@7.26.7)':
     dependencies:
       '@babel/core': 7.26.7
       '@babel/helper-annotate-as-pure': 7.25.9
@@ -4606,7 +4606,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.26.7
       '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-create-class.features-plugin': 7.25.9(@babel/core@7.26.7)
+      '@babel/helper-create-class-features-plugin': 7.25.9(@babel/core@7.26.7)
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/helper-skip-transparent-expression-wrappers': 7.25.9
       '@babel/plugin-syntax-typescript': 7.25.9(@babel/core@7.26.7)
@@ -7042,7 +7042,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@17.0.2:
+  happy-dom@17.0.3:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
@@ -9361,7 +9361,7 @@ snapshots:
       sass-embedded: 1.83.4
       yaml: 2.7.0
 
-  vitest@3.0.5(@types/debug@4.1.12)(@types/node@20.17.17)(happy-dom@17.0.2)(jiti@1.21.7)(sass-embedded@1.83.4)(yaml@2.7.0):
+  vitest@3.0.5(@types/debug@4.1.12)(@types/node@20.17.17)(happy-dom@17.0.3)(jiti@1.21.7)(sass-embedded@1.83.4)(yaml@2.7.0):
     dependencies:
       '@vitest/expect': 3.0.5
       '@vitest/mocker': 3.0.5(vite@6.1.0(@types/node@20.17.17)(jiti@1.21.7)(sass-embedded@1.83.4)(yaml@2.7.0))
@@ -9386,7 +9386,7 @@ snapshots:
     optionalDependencies:
       '@types/debug': 4.1.12
       '@types/node': 20.17.17
-      happy-dom: 17.0.2
+      happy-dom: 17.0.3
     transitivePeerDependencies:
       - jiti
       - less
