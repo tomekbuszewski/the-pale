@@ -14,6 +14,7 @@
     "@fontsource-variable/bricolage-grotesque": "^5.1.1",
     "@fontsource-variable/geist-mono": "^5.0.1",
     "@fontsource/tinos": "^5.1.1",
+    "@react-router/cloudflare": "^7.1.5",
     "@react-router/node": "^7.1.5",
     "@react-router/serve": "^7.1.5",
     "@shikijs/rehype": "^2.3.2",
@@ -22,9 +23,11 @@
     "motion": "^12.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.1.5"
+    "react-router": "^7.1.5",
+    "wrangler": "^3.107.3"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250204.0",
     "@eslint/js": "^9.19.0",
     "@mdx-js/mdx": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
