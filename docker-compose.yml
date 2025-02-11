@@ -1,7 +1,7 @@
 services:
   app:
     container_name: the-pale
-    image: ${DOCKERHUB_USERNAME}/the-pale:latest
+    image: ghcr.io/${GITHUB_OWNER}/the-pale:latest
     ulimits:
       nofile:
         soft: 65535
