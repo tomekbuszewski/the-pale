@@ -99,7 +99,7 @@ jobs:
             EOL
             
               cd $TRAEFIK_PATH
-              docker-compose up -d
+              docker compose up -d
             fi
             
             # Create preview docker-compose
