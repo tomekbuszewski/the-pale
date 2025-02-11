@@ -1,23 +1,83 @@
-name: Workers PR Preview
+name: Preview Deploy
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  preview_app1:
+  preview:
+    if: "!contains(github.head_ref, 'renovate') && !contains(github.event.pull_request.title, 'renovate')"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: shidil/cloudflare-workers-preview@v1
-        id: preview_step
+      - uses: actions/checkout@v4
+
+      - name: Generate preview tag
+        id: preview-tag
+        run: |
+          PR_NAME=$(echo "${{ github.event.pull_request.title }}" | sed -e 's/[^A-Za-z0-9]/-/g' | tr '[:upper:]' '[:lower:]')
+          echo "tag=${PR_NAME}" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
         with:
-          cf_token: ${{ secrets.CF_API_TOKEN }}
-          cf_account: ${{ secrets.CF_ACCOUNT_ID }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          domain: the-pale.tomasz-b26.workers.dev
-          project_path: apps/app1
-          teardown: 'true'
-          build: |
-            npm install
-            npm run build
-      - name: Get the preview_url
-        run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile.pnpm
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/depeche:${{ steps.preview-tag.outputs.tag }}
+
+      - name: Deploy preview
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+            
+            # Create preview docker-compose
+            PREVIEW_PATH="/home/${{ secrets.VPS_USERNAME }}/apps/depeche/previews/${{ steps.preview-tag.outputs.tag }}"
+            mkdir -p $PREVIEW_PATH
+            
+            # Generate preview docker-compose.yml
+            cat > $PREVIEW_PATH/docker-compose.yml << EOL
+            version: '3'
+            
+            services:
+              app:
+                container_name: depeche-${{ steps.preview-tag.outputs.tag }}
+                image: ${{ secrets.DOCKERHUB_USERNAME }}/depeche:${{ steps.preview-tag.outputs.tag }}
+                labels:
+                  - "traefik.enable=true"
+                  - "traefik.http.routers.${{ steps.preview-tag.outputs.tag }}.rule=Host(\`${{ steps.preview-tag.outputs.tag }}.beta.buszewski.studio\`)"
+                  - "traefik.http.routers.${{ steps.preview-tag.outputs.tag }}.tls=true"
+                  - "traefik.http.routers.${{ steps.preview-tag.outputs.tag }}.tls.certresolver=letsencrypt"
+                  - "traefik.http.services.${{ steps.preview-tag.outputs.tag }}.loadbalancer.server.port=3000"
+                  - "traefik.http.routers.${{ steps.preview-tag.outputs.tag }}.entrypoints=websecure"
+                networks:
+                  - traefik-public
+            
+            networks:
+              traefik-public:
+                external: true
+                name: traefik-public
+            EOL
+            
+            # Clean up any existing preview deployment
+            docker rm -f depeche-${{ steps.preview-tag.outputs.tag }} || true
+            
+            # Deploy preview
+            cd $PREVIEW_PATH
+            docker-compose pull
+            docker-compose up -d
+            
+            echo "Preview deployed at: https://${{ steps.preview-tag.outputs.tag }}.beta.buszewski.studio"
