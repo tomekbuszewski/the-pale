@@ -1,6 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
+import type { IncomingRequestCfProperties } from "@cloudflare/workers-types";
 import type { PlatformProxy } from "wrangler";
 
 interface GetLoadContextArgs {
@@ -18,6 +16,7 @@ interface GetLoadContextArgs {
 }
 
 declare module "react-router" {
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   interface AppLoadContext extends ReturnType<typeof getLoadContext> {}
 }
 

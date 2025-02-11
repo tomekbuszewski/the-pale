@@ -1,25 +1,28 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import { createRequestHandler, type ServerBuild } from "react-router";
 
+import type {
+  EventContext,
+  IncomingRequestCfProperties,
+} from "@cloudflare/workers-types";
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import * as build from "./build/server";
 import { getLoadContext } from "./load-context";
 
 const requestHandler = createRequestHandler(build as unknown as ServerBuild);
 
 export default {
-  async fetch(request, env, ctx) {
+  async fetch(
+    request: Request & { cf: IncomingRequestCfProperties },
+    env: Env,
+    ctx: EventContext<string, string, undefined>,
+  ) {
     try {
       const loadContext = getLoadContext({
         request,
         context: {
           cloudflare: {
-            // This object matches the return value from Wrangler's
-            // `getPlatformProxy` used during development via Remix's
-            // `cloudflareDevProxyVitePlugin`:
-            // https://developers.cloudflare.com/workers/wrangler/api/#getplatformproxy
-            // @ts-ignore
             cf: request.cf,
             ctx: {
               waitUntil: ctx.waitUntil.bind(ctx),
@@ -36,4 +39,4 @@ export default {
       return new Response("An unexpected error occurred", { status: 500 });
     }
   },
-} satisfies ExportedHandler<Env>;
+};
