@@ -15,6 +15,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           domain: the-pale.tomasz-b26.workers.dev
           project_path: apps/app1
+          teardown: 'true'
           build: |
             npm install
             npm run build
