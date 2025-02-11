@@ -2,22 +2,13 @@ services:
   app:
     container_name: the-pale
     image: ghcr.io/${GITHUB_OWNER}/the-pale:latest
-    ulimits:
-      nofile:
-        soft: 65535
-        hard: 65535
     deploy:
       resources:
         limits:
-          cpus: '0.7'  # Match observed usage
-    mem_limit: 512m
-    mem_reservation: 256m
-    restart: "no"  # Prevents auto-restart to see actual failure
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
+          cpus: '0.7'
+          memory: 512M
+        reservations:
+          memory: 256M
     networks:
       - traefik-public
     labels:
