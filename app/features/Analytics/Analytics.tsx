@@ -2,7 +2,10 @@ import { Fragment } from "react";
 
 export default function Analytics({ id }: { id?: string }) {
   if (!id) {
-    console.warn("No id for Analytics feature", import.meta.env.VITE_GA);
+    console.warn(
+      "No id for Analytics feature",
+      (import.meta.env.VITE_GA as string) ?? process.env.VITE_GA,
+    );
     return null;
   }
 
