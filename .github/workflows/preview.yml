@@ -71,7 +71,9 @@ jobs:
             
             services:
               traefik:
-                image: traefik:v2.10
+                mem_limit: 256m
+                mem_reservation: 128m
+                image: traefik:v3.3
                 command:
                   - "--api.insecure=true"
                   - "--providers.docker=true"
