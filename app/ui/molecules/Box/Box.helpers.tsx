@@ -1,4 +1,5 @@
 import { Button, Text } from "@ui/atoms";
+import { translate } from "@utils/translate";
 
 import type { ReactNode } from "react";
 
@@ -31,6 +32,7 @@ interface FooterProps {
   link: string;
   active?: boolean;
   readMoreLabel?: string;
+  title: string;
 }
 
 export function Footer({
@@ -38,21 +40,30 @@ export function Footer({
   youtube,
   link,
   active,
+  title,
   readMoreLabel = "Read more",
 }: FooterProps) {
   return (
     <footer className={styles.footer}>
       {youtube ? (
         <>
-          <Button to={link} variant="primary">
-            Read
+          <Button
+            to={link}
+            variant="primary"
+            aria-label={translate("blog.section.read-more", title)}
+          >
+            {translate("blog.section.buttons.read-more")}
           </Button>
           <Button to={youtube} variant="tertiary" target="_blank">
-            Watch ↗
+            {translate("blog.section.buttons.watch")} ↗
           </Button>
         </>
       ) : (
-        <Button to={link} variant="primary">
+        <Button
+          to={link}
+          variant="primary"
+          aria-label={translate("services.section.read-more", title)}
+        >
           {readMoreLabel}
         </Button>
       )}

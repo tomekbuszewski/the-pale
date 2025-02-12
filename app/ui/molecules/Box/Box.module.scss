@@ -25,6 +25,10 @@
   transition-delay: var(--animation-duration-medium);
 }
 
+.wrapper > *:first-child {
+  margin-top: 0;
+}
+
 .body {
   color: var(--color-main-body);
   transition: #{transition(color)};

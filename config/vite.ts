@@ -10,9 +10,7 @@ import { configDefaults } from "vitest/config";
 export const baseConfig = defineConfig({
   css: {
     preprocessorOptions: {
-      scss: {
-        api: "modern-compiler",
-      },
+      scss: {},
     },
     postcss: {
       plugins: [autoprefixer],
@@ -26,18 +24,6 @@ export const baseConfig = defineConfig({
       defaultDirectives: new URLSearchParams({ quality: "90", format: "webp" }),
     }),
   ],
-
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes(".svg?react")) {
-            return "svgs";
-          }
-        },
-      },
-    },
-  },
 
   test: {
     globals: true,

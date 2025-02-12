@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.pnpm
-    container_name: depeche
+    container_name: the-pale
     volumes:
       - .:/app
       - /app/node_modules

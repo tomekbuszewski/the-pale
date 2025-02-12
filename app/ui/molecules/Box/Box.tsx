@@ -74,6 +74,7 @@ function Box({
 
       {link && (
         <Footer
+          title={title ?? ""}
           readMoreLabel={readMoreLabel}
           link={link}
           youtube={youtube}
