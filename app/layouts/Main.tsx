@@ -3,6 +3,8 @@ import { Outlet } from "react-router";
 import { Contact, FooterSection, Head, HeaderSection } from "@features";
 import { MainWrapper } from "@ui/atoms";
 
+import "../ui/styles/utils.scss";
+
 export function meta() {
   return Head.component();
 }
