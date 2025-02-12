@@ -1,4 +1,4 @@
-import { TextRotate } from "@ui/atoms";
+// import { TextRotate } from "@ui/atoms";
 import { HeroSection as Main } from "@ui/organisms";
 import { translate } from "@utils/translate";
 
@@ -15,7 +15,7 @@ export default function HeroSection() {
     <Main title={COPY.TITLE} copy={COPY.BODY}>
       <>
         {COPY.FIRST_LINE}
-        <TextRotate staggerFrom="last" texts={COPY.KEYWORDS} />
+        {/*<TextRotate staggerFrom="last" texts={COPY.KEYWORDS} />*/}
         <br />
         {COPY.SECOND_LINE}
       </>

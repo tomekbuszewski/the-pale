@@ -30,12 +30,7 @@ function HeroSection({ children, copy, title }: Props) {
   });
 
   return (
-    <SectionWrapper
-      title={title}
-      id={Sections.hero}
-      animate={false}
-      className={styles.wrapper}
-    >
+    <SectionWrapper title={title} id={Sections.hero} className={styles.wrapper}>
       <LayoutGroup>
         <Text variant="hero" className={styles.heading}>
           {children}
