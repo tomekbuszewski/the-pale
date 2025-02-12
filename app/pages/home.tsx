@@ -1,10 +1,10 @@
 import { Fragment } from "react";
-// import { useLoaderData } from "react-router";
+import { useLoaderData } from "react-router";
 import {
   AboutSection,
-  // BlogSection,
+  BlogSection,
   ClientsSection,
-  HeroSection,
+  // HeroSection,
   ServicesSection,
   WorksSection,
 } from "@features";
@@ -21,14 +21,15 @@ export async function loader() {
 }
 
 export default function Home() {
-  // const { blog } = useLoaderData<typeof loader>();
+  const { blog } = useLoaderData<typeof loader>();
 
   return (
     <Fragment>
-      <HeroSection.component />
+      {/*<HeroSection.component />*/}
       <WorksSection.component />
       <ServicesSection.component />
       <ClientsSection.component />
+      {BlogSection.guard(blog) ? <BlogSection.component {...blog} /> : null}
       <AboutSection.component />
     </Fragment>
   );
