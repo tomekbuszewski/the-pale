@@ -20,10 +20,7 @@ import "@fontsource-variable/bricolage-grotesque";
 
 import stylesheet from "./app.scss?url";
 
-import "./ui/styles/utils.scss";
-
 export const links: Route.LinksFunction = () => [
-  { rel: "stylesheet", href: stylesheet },
   {
     rel: "icon",
     sizes: "96x96",
@@ -47,6 +44,7 @@ export const links: Route.LinksFunction = () => [
     rel: "manifest",
     href: "/site.webmanifest",
   },
+  { rel: "stylesheet", href: stylesheet },
 ];
 
 export function loader() {
