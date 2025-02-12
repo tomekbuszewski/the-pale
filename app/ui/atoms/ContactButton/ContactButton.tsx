@@ -28,7 +28,7 @@ function ContactButton() {
       )}
     >
       <div className={styles.imgWrapper}>
-        <img src={loaded ? tomek : ""} alt="Book a call!" />
+        <img src={loaded ? tomek : undefined} alt="Book a call!" />
       </div>
       Contact me
     </Link>

@@ -7,7 +7,6 @@
   gap: #{rem(8)};
   padding: 0 #{rem(16)} 0 #{rem(2)} !important;
   margin-left: auto;
-  transition: #{all} var(--animation-duration-short);
 
   .imgWrapper {
     width: #{rem(32)};
@@ -23,6 +22,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 100%;
+    transition: #{all} var(--animation-duration-short);
   }
 
   @include media("md") {
@@ -31,6 +31,7 @@
 }
 
 .wrapper.hidden {
-  opacity: 0;
-  transform: translateY(-#{rem(16)});
+  img {
+    opacity: 0;
+  }
 }
