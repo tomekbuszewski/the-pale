@@ -41,13 +41,15 @@ export function Pagination({
     >
       <ul className={styles.paginationContainer}>
         {prevPage ? (
-          <Button
-            variant="primary"
-            to={link(prevPage)}
-            className={styles.button}
-          >
-            {translate("blog.section.pagination.newer")}
-          </Button>
+          <li>
+            <Button
+              variant="primary"
+              to={link(prevPage)}
+              className={styles.button}
+            >
+              {translate("blog.section.pagination.newer")}
+            </Button>
+          </li>
         ) : null}
         {displayPages.map((page, index) => {
           const current = page === currentPage;
@@ -76,9 +78,11 @@ export function Pagination({
           );
         })}
         {nextPage ? (
-          <Button variant="primary" to={link(nextPage)}>
-            {translate("blog.section.pagination.older")}
-          </Button>
+          <li>
+            <Button variant="primary" to={link(nextPage)}>
+              {translate("blog.section.pagination.older")}
+            </Button>
+          </li>
         ) : null}
       </ul>
     </nav>

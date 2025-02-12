@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { useIsMobile } from "@hooks";
 import { ContactButton, Logo, MenuToggleButton } from "@ui/atoms";
 import { PageNavigation } from "@ui/organisms";
+import { translate } from "@utils/translate";
 import clsx from "clsx";
 import {
   type HTMLMotionProps,
@@ -75,7 +76,11 @@ function PageHeader({ className, links, ...rest }: Props) {
 
       <Logo className={styles.logo} />
 
-      <Link to={contactLink.href} className={styles.contact}>
+      <Link
+        to={contactLink.href}
+        className={styles.contact}
+        aria-label={translate("nav.buttons.phone")}
+      >
         <ContactIcon />
       </Link>
       <ContactButton />

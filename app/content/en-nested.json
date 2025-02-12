@@ -294,7 +294,10 @@
     "services": "Services",
     "videos": "Videos",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "buttons": {
+      "phone": "Contact me"
+    }
   },
   "tech": {
     "title": "Technology I Use",
