@@ -115,6 +115,7 @@ jobs:
               app:
                 container_name: the-pale-${{ steps.preview-tag.outputs.tag }}
                 image: ghcr.io/${{ github.repository_owner }}/the-pale:${{ steps.preview-tag.outputs.tag }}
+                pull_policy: always
                 labels:
                   - "traefik.enable=true"
                   - "traefik.http.routers.${{ steps.preview-tag.outputs.tag }}.rule=Host(\`${{ steps.preview-tag.outputs.tag }}.beta.buszewski.studio\`)"
