@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { Sections } from "@nav";
 import { SectionWrapper } from "@ui/atoms";
 import { AnimatePresence, motion } from "motion/react";
@@ -15,6 +21,7 @@ interface Props {
 }
 
 function ClientsSection({ items }: Props) {
+  const [ready, setReady] = useState(false);
   const [visibleItems, setVisibleItems] = useState<Client[]>([]);
   const intervalId = useRef<NodeJS.Timeout | null>(null);
   const isFirstRender = useRef(true);
@@ -48,6 +55,14 @@ function ClientsSection({ items }: Props) {
 
     return () => clearInterval(intervalId.current!);
   }, [triggerInterval]);
+
+  useLayoutEffect(() => {
+    if (ready) return;
+
+    setReady(true);
+  }, [ready]);
+
+  if (!ready) return null;
 
   return (
     <SectionWrapper title="Clients" id={Sections.clients}>
