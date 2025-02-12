@@ -2,6 +2,7 @@ services:
   app:
     container_name: the-pale
     image: ghcr.io/${GITHUB_OWNER}/the-pale:latest
+    pull_policy: always
     deploy:
       resources:
         limits:
