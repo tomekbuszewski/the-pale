@@ -136,6 +136,11 @@ jobs:
             docker compose pull
             docker compose up -d
             
+            if ! docker ps | grep -q "the-pale-${{ steps.preview-tag.outputs.tag }}"; then
+              echo "Container failed to start"
+              exit 1
+            fi
+            
             echo "Preview deployed at: https://${{ steps.preview-tag.outputs.tag }}.beta.buszewski.studio"
 
       - name: Discord notification
