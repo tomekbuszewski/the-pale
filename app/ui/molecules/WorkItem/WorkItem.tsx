@@ -6,30 +6,10 @@ import { motion, useInView } from "motion/react";
 
 import type { Work } from "@common-types/Work";
 
+import { Image } from "./helpers/Image";
 import { Tags } from "./helpers/Tags";
 
 import styles from "./WorkItem.module.scss";
-
-function Image({
-  image,
-  title,
-}: {
-  image: string | OutputMetadata;
-  title: string;
-}) {
-  if (typeof image === "string") {
-    return <img src={image} alt={title} />;
-  }
-
-  return (
-    <img
-      src={image.src}
-      alt={title}
-      width={image.width}
-      height={image.height}
-    />
-  );
-}
 
 interface Props extends HTMLProps<HTMLDivElement>, Omit<Work, "title"> {}
 
@@ -48,7 +28,7 @@ function WorkItem({
   const classNames = [className, styles.parent];
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
-    amount: 0.2,
+    amount: 0.1,
     once: true,
   });
 
