@@ -50,13 +50,7 @@ importers:
       shiki:
         specifier: ^2.3.2
         version: 2.3.2
-      wrangler:
-        specifier: ^3.108.1
-        version: 3.108.1(@cloudflare/workers-types@4.20250204.0)
     devDependencies:
-      '@cloudflare/workers-types':
-        specifier: ^4.20250204.0
-        version: 4.20250204.0
       '@eslint/js':
         specifier: ^9.20.0
         version: 9.20.0
@@ -5108,6 +5102,7 @@ snapshots:
   '@cloudflare/kv-asset-handler@0.3.4':
     dependencies:
       mime: 3.0.0
+    optional: true
 
   '@cloudflare/workerd-darwin-64@1.20250204.0':
     optional: true
@@ -5129,6 +5124,7 @@ snapshots:
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
+    optional: true
 
   '@emnapi/runtime@1.3.1':
     dependencies:
@@ -5138,12 +5134,14 @@ snapshots:
   '@esbuild-plugins/node-globals-polyfill@0.2.3(esbuild@0.17.19)':
     dependencies:
       esbuild: 0.17.19
+    optional: true
 
   '@esbuild-plugins/node-modules-polyfill@0.2.2(esbuild@0.17.19)':
     dependencies:
       esbuild: 0.17.19
       escape-string-regexp: 4.0.0
       rollup-plugin-node-polyfills: 0.2.1
+    optional: true
 
   '@esbuild/aix-ppc64@0.24.2':
     optional: true
@@ -5330,7 +5328,8 @@ snapshots:
       '@eslint/core': 0.10.0
       levn: 0.4.1
 
-  '@fastify/busboy@2.1.1': {}
+  '@fastify/busboy@2.1.1':
+    optional: true
 
   '@fontsource-variable/bricolage-grotesque@5.1.1': {}
 
@@ -5467,6 +5466,7 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+    optional: true
 
   '@mdx-js/mdx@3.1.0(acorn@8.14.0)':
     dependencies:
@@ -6363,7 +6363,8 @@ snapshots:
     dependencies:
       acorn: 8.14.0
 
-  acorn-walk@8.3.2: {}
+  acorn-walk@8.3.2:
+    optional: true
 
   acorn@8.14.0: {}
 
@@ -6484,6 +6485,7 @@ snapshots:
   as-table@1.0.55:
     dependencies:
       printable-characters: 1.0.42
+    optional: true
 
   assertion-error@2.0.1: {}
 
@@ -6538,7 +6540,8 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 3.6.2
 
-  blake3-wasm@2.1.5: {}
+  blake3-wasm@2.1.5:
+    optional: true
 
   body-parser@1.20.3:
     dependencies:
@@ -6750,7 +6753,8 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  confbox@0.1.8: {}
+  confbox@0.1.8:
+    optional: true
 
   consola@3.4.0: {}
 
@@ -6770,7 +6774,8 @@ snapshots:
 
   cookie-signature@1.0.6: {}
 
-  cookie@0.5.0: {}
+  cookie@0.5.0:
+    optional: true
 
   cookie@0.7.1: {}
 
@@ -6797,7 +6802,8 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  data-uri-to-buffer@2.0.2: {}
+  data-uri-to-buffer@2.0.2:
+    optional: true
 
   data-view-buffer@1.0.2:
     dependencies:
@@ -6857,7 +6863,8 @@ snapshots:
       has-property-descriptors: 1.0.2
       object-keys: 1.1.1
 
-  defu@6.1.4: {}
+  defu@6.1.4:
+    optional: true
 
   del@7.1.0:
     dependencies:
@@ -7098,6 +7105,7 @@ snapshots:
       '@esbuild/win32-arm64': 0.17.19
       '@esbuild/win32-ia32': 0.17.19
       '@esbuild/win32-x64': 0.17.19
+    optional: true
 
   esbuild@0.24.2:
     optionalDependencies:
@@ -7326,7 +7334,8 @@ snapshots:
       '@types/estree-jsx': 1.0.5
       '@types/unist': 3.0.3
 
-  estree-walker@0.6.1: {}
+  estree-walker@0.6.1:
+    optional: true
 
   estree-walker@2.0.2: {}
 
@@ -7547,6 +7556,7 @@ snapshots:
     dependencies:
       data-uri-to-buffer: 2.0.2
       source-map: 0.6.1
+    optional: true
 
   get-symbol-description@1.1.0:
     dependencies:
@@ -7566,7 +7576,8 @@ snapshots:
     dependencies:
       is-glob: 4.0.3
 
-  glob-to-regexp@0.4.1: {}
+  glob-to-regexp@0.4.1:
+    optional: true
 
   glob@10.4.5:
     dependencies:
@@ -8151,6 +8162,7 @@ snapshots:
   magic-string@0.25.9:
     dependencies:
       sourcemap-codec: 1.4.8
+    optional: true
 
   magic-string@0.27.0:
     dependencies:
@@ -8506,7 +8518,8 @@ snapshots:
 
   mime@1.6.0: {}
 
-  mime@3.0.0: {}
+  mime@3.0.0:
+    optional: true
 
   mimic-fn@2.1.0: {}
 
@@ -8530,6 +8543,7 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+    optional: true
 
   minimatch@3.1.2:
     dependencies:
@@ -8551,6 +8565,7 @@ snapshots:
       pathe: 2.0.3
       pkg-types: 1.3.1
       ufo: 1.5.4
+    optional: true
 
   morgan@1.10.0:
     dependencies:
@@ -8580,7 +8595,8 @@ snapshots:
 
   ms@2.1.3: {}
 
-  mustache@4.2.0: {}
+  mustache@4.2.0:
+    optional: true
 
   mute-stream@1.0.0: {}
 
@@ -8709,7 +8725,8 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  ohash@1.1.4: {}
+  ohash@1.1.4:
+    optional: true
 
   on-finished@2.3.0:
     dependencies:
@@ -8869,7 +8886,8 @@ snapshots:
 
   path-to-regexp@0.1.12: {}
 
-  path-to-regexp@6.3.0: {}
+  path-to-regexp@6.3.0:
+    optional: true
 
   path-type@4.0.0: {}
 
@@ -8898,6 +8916,7 @@ snapshots:
       confbox: 0.1.8
       mlly: 1.7.4
       pathe: 2.0.3
+    optional: true
 
   plop@4.0.1:
     dependencies:
@@ -8944,7 +8963,8 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 17.0.2
 
-  printable-characters@1.0.42: {}
+  printable-characters@1.0.42:
+    optional: true
 
   proc-log@3.0.0: {}
 
@@ -9217,14 +9237,17 @@ snapshots:
       estree-walker: 0.6.1
       magic-string: 0.25.9
       rollup-pluginutils: 2.8.2
+    optional: true
 
   rollup-plugin-node-polyfills@0.2.1:
     dependencies:
       rollup-plugin-inject: 3.0.2
+    optional: true
 
   rollup-pluginutils@2.8.2:
     dependencies:
       estree-walker: 0.6.1
+    optional: true
 
   rollup@4.34.6:
     dependencies:
@@ -9553,7 +9576,8 @@ snapshots:
     dependencies:
       whatwg-url: 7.1.0
 
-  sourcemap-codec@1.4.8: {}
+  sourcemap-codec@1.4.8:
+    optional: true
 
   space-separated-tokens@2.0.2: {}
 
@@ -9581,6 +9605,7 @@ snapshots:
     dependencies:
       as-table: 1.0.55
       get-source: 2.0.12
+    optional: true
 
   statuses@2.0.1: {}
 
@@ -9588,7 +9613,8 @@ snapshots:
 
   stdin-discarder@0.2.2: {}
 
-  stoppable@1.1.0: {}
+  stoppable@1.1.0:
+    optional: true
 
   storybook@8.5.4(prettier@3.5.0):
     dependencies:
@@ -9907,7 +9933,8 @@ snapshots:
 
   typescript@5.7.3: {}
 
-  ufo@1.5.4: {}
+  ufo@1.5.4:
+    optional: true
 
   uglify-js@3.19.3:
     optional: true
@@ -9926,6 +9953,7 @@ snapshots:
   undici@5.28.5:
     dependencies:
       '@fastify/busboy': 2.1.1
+    optional: true
 
   undici@6.21.1: {}
 
@@ -9936,6 +9964,7 @@ snapshots:
       ohash: 1.1.4
       pathe: 1.1.2
       ufo: 1.5.4
+    optional: true
 
   unified@11.0.5:
     dependencies:
@@ -10252,6 +10281,7 @@ snapshots:
       '@cloudflare/workerd-linux-64': 1.20250204.0
       '@cloudflare/workerd-linux-arm64': 1.20250204.0
       '@cloudflare/workerd-windows-64': 1.20250204.0
+    optional: true
 
   wrangler@3.108.1(@cloudflare/workers-types@4.20250204.0):
     dependencies:
@@ -10271,6 +10301,7 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+    optional: true
 
   wrap-ansi@6.2.0:
     dependencies:
@@ -10310,7 +10341,9 @@ snapshots:
       cookie: 0.5.0
       mustache: 4.2.0
       stacktracey: 2.1.8
+    optional: true
 
-  zod@3.22.3: {}
+  zod@3.22.3:
+    optional: true
 
   zwitch@2.0.4: {}
