@@ -54,8 +54,6 @@ function PageHeader({ className, links, ...rest }: Props) {
 
   const classNames = [className, styles.header];
 
-  return null;
-
   return (
     <motion.header
       data-top={isOnTop}

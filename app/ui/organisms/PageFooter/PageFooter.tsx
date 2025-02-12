@@ -73,6 +73,7 @@ function PageFooter({
   languages,
   onLanguageChange,
 }: Props) {
+  return null;
   return (
     <SectionWrapper
       tag="footer"
