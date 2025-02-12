@@ -2,8 +2,8 @@ type Tag = "Design" | "Development" | "Consultation";
 
 export interface Work {
   description: string[];
-  mobileImage: string;
-  desktopImage: string;
+  mobileImage: string | OutputMetadata;
+  desktopImage: string | OutputMetadata;
   background?: string;
   link?: string;
   study?: string;

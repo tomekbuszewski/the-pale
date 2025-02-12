@@ -98,6 +98,11 @@
   overflow: hidden;
   border-radius: #{rem(16)};
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   @include media("md") {
     margin: -#{rem(64)} 0;
     width: 110%;

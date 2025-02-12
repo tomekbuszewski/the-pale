@@ -3,8 +3,8 @@ import { translate } from "@utils/translate";
 import type { Work } from "@common-types/Work";
 
 import Background from "./background.jpg";
-import MainImage from "./thebacklog-main.jpg";
-import Mobile from "./thebacklog-mobile.jpg";
+import MainImage from "./thebacklog-main.jpg?as=metadata&imagetools-gallery";
+import Mobile from "./thebacklog-mobile.jpg?as=metadata&imagetools-gallery";
 
 export default {
   title: "The Backlog",
@@ -14,7 +14,7 @@ export default {
     translate("work.item.tag.design"),
     translate("work.item.tag.development"),
   ],
-  mobileImage: Mobile,
-  desktopImage: MainImage,
+  mobileImage: Mobile as unknown as OutputMetadata,
+  desktopImage: MainImage as unknown as OutputMetadata,
   background: Background,
 } as Work;
