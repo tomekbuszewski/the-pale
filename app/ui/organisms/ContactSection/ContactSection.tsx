@@ -1,9 +1,9 @@
+import { type HTMLProps, useEffect, useRef, useState } from "react";
 import { Sections } from "@nav";
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
 
 import type { ContactItem } from "@common-types/ContactItem";
-import type { HTMLProps } from "react";
 
 import styles from "./ContactSection.module.scss";
 
@@ -12,19 +12,39 @@ interface Props extends HTMLProps<HTMLDivElement> {
   copy: ContactItem[];
 }
 
-function ContactSection({ location, copy }: Props) {
-  const localTime = new Date().toLocaleTimeString("en-GB", {
-    timeZone: "Europe/Warsaw",
-    hour: "numeric",
-    minute: "numeric",
-  });
+function getCurrentTime() {
+  return [
+    new Date().toLocaleTimeString("en-GB", {
+      timeZone: "Europe/Warsaw",
+      hour: "numeric",
+      minute: "numeric",
+    }),
+    new Date().toLocaleDateString("en-GB", {
+      timeZone: "Europe/Warsaw",
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+    }),
+  ];
+}
 
-  const localDate = new Date().toLocaleDateString("en-GB", {
-    timeZone: "Europe/Warsaw",
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-  });
+function ContactSection({ location, copy }: Props) {
+  const [time, setTime] = useState<string[]>();
+  const intervalId = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    setTime(getCurrentTime());
+
+    intervalId.current = setInterval(() => {
+      setTime(getCurrentTime());
+    }, 1000);
+
+    return () => {
+      if (intervalId?.current) {
+        clearInterval(intervalId.current);
+      }
+    };
+  }, [setTime]);
 
   return (
     <SectionWrapper
@@ -53,7 +73,7 @@ function ContactSection({ location, copy }: Props) {
         <Text className={styles.developed}>
           {location}
           <br />
-          {localTime}, {localDate}
+          {time?.join(", ")}
         </Text>
       </Box>
     </SectionWrapper>
