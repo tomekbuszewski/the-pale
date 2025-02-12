@@ -1,8 +1,8 @@
 import { type ReactNode } from "react";
 import * as runtime from "react/jsx-runtime";
 import { renderToString } from "react-dom/server";
+import shiki from "@leafac/rehype-shiki";
 import { evaluate } from "@mdx-js/mdx";
-import shiki from "@shikijs/rehype";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
