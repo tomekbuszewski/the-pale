@@ -1,3 +1,4 @@
+import { useLayoutEffect, useState } from "react";
 import { Link } from "react-router";
 import { Contact } from "@nav";
 import clsx from "clsx";
@@ -8,13 +9,26 @@ import buttonStyles from "../Button/Button.module.scss";
 import styles from "./ContactButton.module.scss";
 
 function ContactButton() {
+  const [loaded, setLoaded] = useState(false);
+
+  useLayoutEffect(() => {
+    setLoaded(true);
+  }, []);
+
   return (
     <Link
       to={Contact.href}
-      className={clsx(styles.wrapper, buttonStyles.base, buttonStyles.tertiary)}
+      className={clsx(
+        styles.wrapper,
+        buttonStyles.base,
+        buttonStyles.tertiary,
+        {
+          [styles.hidden]: !loaded,
+        },
+      )}
     >
       <div className={styles.imgWrapper}>
-        <img src={tomek} alt="Book a call!" />
+        <img src={loaded ? tomek : ""} alt="Book a call!" />
       </div>
       Contact me
     </Link>
