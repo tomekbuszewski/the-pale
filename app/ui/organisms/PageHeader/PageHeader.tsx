@@ -63,7 +63,7 @@ function PageHeader({ className, links, ...rest }: Props) {
         [styles.hidden]: hideMenu,
         [styles.full]: !isOnTop,
       })}
-      aria-hidden={isVisible ? "false" : "true"}
+      inert={!isVisible}
     >
       <MenuToggleButton
         isOpen={isMenuOpen}
