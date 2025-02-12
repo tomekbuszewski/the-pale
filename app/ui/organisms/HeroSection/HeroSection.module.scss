@@ -1,10 +1,14 @@
 @use "../../styles/_fns.scss" as *;
 
 .wrapper {
-  min-height: 80dvh;
+  min-height: 90dvh;
+
+  @include media("md") {
+    min-height: #{rem(920)} !important;
+  }
 
   @include media("lg") {
-    min-height: #{rem(920)} !important;
+    min-height: 90dvh;
     align-content: center;
     padding: 0;
   }
