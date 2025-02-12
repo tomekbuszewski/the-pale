@@ -73,7 +73,13 @@ function PageHeader({ className, links, ...rest }: Props) {
           onClose={() => setIsMenuOpen(false)}
         />
 
-        <PageNavigation links={navigationLinks} visible={isMenuOpen} />
+        <PageNavigation
+          links={navigationLinks}
+          visible={isMenuOpen}
+          onLinkClick={() => {
+            setTimeout(() => setIsMenuOpen(false), 1000);
+          }}
+        />
 
         <Logo className={styles.logo} />
 

@@ -13,9 +13,16 @@ interface Link {
 interface Props extends HTMLProps<HTMLDivElement> {
   links: Link[];
   visible?: boolean;
+  onLinkClick?: () => void;
 }
 
-function PageNavigation({ className, visible, links, ...rest }: Props) {
+function PageNavigation({
+  className,
+  visible,
+  links,
+  onLinkClick,
+  ...rest
+}: Props) {
   const classNames = [className, styles.navigation];
 
   return (
@@ -29,7 +36,11 @@ function PageNavigation({ className, visible, links, ...rest }: Props) {
       <ul className={styles.linkWrapper}>
         {links.map((link) => (
           <li key={link.href}>
-            <NavLink to={link.href} className={clsx(styles.link)}>
+            <NavLink
+              to={link.href}
+              className={clsx(styles.link)}
+              onClick={onLinkClick}
+            >
               {link.text}
             </NavLink>
           </li>
