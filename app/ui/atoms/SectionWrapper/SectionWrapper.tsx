@@ -39,7 +39,8 @@ function SectionWrapper<T extends ElementType = "section">({
 }: Props<T>) {
   const classNames = [styles.wrapper, className];
   const contentClassNames = [styles.content, contentClassName];
-  const motionConfig = !animateOnlyHeader ? createMotionConfig(3) : {};
+  const motionConfig =
+    animate && !animateOnlyHeader ? createMotionConfig(3) : {};
 
   const smColumn = columns?.sm ?? 12;
   const mdColumn = columns?.md ?? 12;
