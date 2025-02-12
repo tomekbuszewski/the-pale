@@ -6,7 +6,7 @@ import {
   ClientsSection,
   HeroSection,
   ServicesSection,
-  // WorksSection,
+  WorksSection,
 } from "@features";
 import blogLoader from "@features/BlogSection/loader.server";
 
@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <Fragment>
       <HeroSection.component />
-      {/*<WorksSection.component />*/}
+      <WorksSection.component />
       <ServicesSection.component />
       <ClientsSection.component />
       {BlogSection.guard(blog) ? <BlogSection.component {...blog} /> : null}

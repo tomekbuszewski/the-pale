@@ -1,7 +1,7 @@
 @use "../../styles/_fns.scss" as *;
 
 .wrapper {
-  display: inline-grid;
+  display: none;
   grid-template-columns: #{rem(32)} 1fr;
   height: #{rem(40)};
   gap: #{rem(8)};
@@ -22,5 +22,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 100%;
+  }
+
+  @include media("md") {
+    display: inline-grid;
   }
 }

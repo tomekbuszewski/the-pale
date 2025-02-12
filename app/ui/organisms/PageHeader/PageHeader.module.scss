@@ -58,4 +58,8 @@
   width: #{rem(16)};
   fill: var(--color-main-body);
   justify-self: end;
+
+  @include media("md") {
+    display: none;
+  }
 }

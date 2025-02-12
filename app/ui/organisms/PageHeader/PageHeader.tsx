@@ -75,13 +75,10 @@ function PageHeader({ className, links, ...rest }: Props) {
 
       <Logo className={styles.logo} />
 
-      {isMobile ? (
-        <Link to={contactLink.href} className={styles.contact}>
-          <ContactIcon />
-        </Link>
-      ) : (
-        <ContactButton />
-      )}
+      <Link to={contactLink.href} className={styles.contact}>
+        <ContactIcon />
+      </Link>
+      <ContactButton />
     </motion.header>
   );
 }
