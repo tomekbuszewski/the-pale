@@ -1,48 +1,15 @@
-import { type HTMLProps } from "react";
+import { type HTMLProps, useRef } from "react";
 import { Button, SectionWrapper, Text } from "@ui/atoms";
 import { createMotionConfig } from "@utils/fadeIn";
-import { translate } from "@utils/translate";
 import clsx from "clsx";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 
 import type { Work } from "@common-types/Work";
 
-import CodeIcon from "./assets/code.svg?react";
-import ConsultationIcon from "./assets/consultations.svg?react";
-import DesignIcon from "./assets/design.svg?react";
+import { Image } from "./helpers/Image";
+import { Tags } from "./helpers/Tags";
 
 import styles from "./WorkItem.module.scss";
-
-interface TagsProps {
-  tags: string[];
-}
-
-function resolveIcon(tag: string) {
-  switch (tag) {
-    case translate("work.item.tag.design"):
-      return <DesignIcon />;
-    case translate("work.item.tag.development"):
-      return <CodeIcon />;
-    case translate("work.item.tag.consultations"):
-      return <ConsultationIcon />;
-
-    default:
-      throw new Error("Unknown tag");
-  }
-}
-
-function Tags(props: TagsProps) {
-  return (
-    <motion.ul className={styles.tags} {...createMotionConfig(3)}>
-      {props.tags.map((tag) => (
-        <Text variant="list" key={tag} className={styles.tag}>
-          {resolveIcon(tag)}
-          {tag}
-        </Text>
-      ))}
-    </motion.ul>
-  );
-}
 
 interface Props extends HTMLProps<HTMLDivElement>, Omit<Work, "title"> {}
 
@@ -59,15 +26,22 @@ function WorkItem({
   align = "right",
 }: Props) {
   const classNames = [className, styles.parent];
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, {
+    amount: 0.1,
+    once: true,
+  });
 
-  const style = background
-    ? {
-        backgroundImage: `url(${background})`,
-      }
-    : {};
+  const style =
+    background && isInView
+      ? {
+          backgroundImage: `url(${background})`,
+        }
+      : {};
 
   return (
     <SectionWrapper
+      ref={sectionRef}
       className={clsx(classNames)}
       title="Works"
       breakout={align}
@@ -97,22 +71,28 @@ function WorkItem({
 
       <motion.section className={styles.images} {...createMotionConfig(8)}>
         <figure className={clsx(styles.mobileWrapper, styles.imageWrapper)}>
-          <img src={mobileImage} alt={title} />
+          {isInView && <Image image={mobileImage} title={title ?? ""} />}
         </figure>
         <figure className={clsx(styles.desktopWrapper, styles.imageWrapper)}>
-          <img src={desktopImage} alt={title} />
+          {isInView && <Image image={desktopImage} title={title ?? ""} />}
         </figure>
       </motion.section>
 
-      <motion.footer className={styles.footer} {...createMotionConfig(4)}>
-        <Button variant="primary" to={study ?? ""} disabled={!study}>
-          {study ? "Case study" : "Study n/a"}
-        </Button>
+      {(study ?? link) ? (
+        <motion.footer className={styles.footer} {...createMotionConfig(4)}>
+          {study ? (
+            <Button variant="primary" to={study ?? ""} disabled={!study}>
+              {study ? "Case study" : "Study n/a"}
+            </Button>
+          ) : null}
 
-        <Button to={link ?? ""} variant="secondary" disabled={!link}>
-          {link ? "View online" : "Online n/a"}
-        </Button>
-      </motion.footer>
+          {link ? (
+            <Button to={link ?? ""} variant="secondary" disabled={!link}>
+              {link ? "View online" : "Online n/a"}
+            </Button>
+          ) : null}
+        </motion.footer>
+      ) : null}
     </SectionWrapper>
   );
 }
