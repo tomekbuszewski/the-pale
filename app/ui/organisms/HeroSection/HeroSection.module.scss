@@ -1,10 +1,11 @@
 @use "../../styles/_fns.scss" as *;
 
 .wrapper {
+  min-height: 80dvh;
+
   @include media("lg") {
     min-height: #{rem(920)} !important;
     align-content: center;
-    height: 90dvh;
     padding: 0;
   }
 }
@@ -70,11 +71,7 @@
 
 .arrow {
   grid-column: 1/-1;
-  margin-top: var(--spacing-xl);
-
-  @include media("md") {
-    margin-top: var(--spacing-2xl);
-  }
+  margin-top: var(--spacing-3xl);
 
   @include media("lg") {
     margin-top: var(--spacing-huge);
