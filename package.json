@@ -14,7 +14,6 @@
     "@fontsource-variable/bricolage-grotesque": "^5.1.1",
     "@fontsource-variable/geist-mono": "^5.0.1",
     "@fontsource/tinos": "^5.1.1",
-    "@leafac/rehype-shiki": "^2.2.1",
     "@react-router/cloudflare": "^7.1.5",
     "@react-router/node": "^7.1.5",
     "@react-router/serve": "^7.1.5",
