@@ -13,7 +13,6 @@ export function BaseLayout({ children }: HTMLProps<HTMLDivElement>) {
   return (
     <Fragment>
       <HeaderSection.component />
-      <HeaderSection.component />
       <MainWrapper>
         {children}
         <Contact.component />

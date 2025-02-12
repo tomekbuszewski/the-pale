@@ -66,24 +66,26 @@ function PageHeader({ className, links, ...rest }: Props) {
       })}
       inert={!isVisible}
     >
-      <MenuToggleButton
-        isOpen={isMenuOpen}
-        onOpen={() => setIsMenuOpen(true)}
-        onClose={() => setIsMenuOpen(false)}
-      />
+      <div className={styles.inner}>
+        <MenuToggleButton
+          isOpen={isMenuOpen}
+          onOpen={() => setIsMenuOpen(true)}
+          onClose={() => setIsMenuOpen(false)}
+        />
 
-      <PageNavigation links={navigationLinks} visible={isMenuOpen} />
+        <PageNavigation links={navigationLinks} visible={isMenuOpen} />
 
-      <Logo className={styles.logo} />
+        <Logo className={styles.logo} />
 
-      <Link
-        to={contactLink.href}
-        className={styles.contact}
-        aria-label={translate("nav.buttons.phone")}
-      >
-        <ContactIcon />
-      </Link>
-      <ContactButton />
+        <Link
+          to={contactLink.href}
+          className={styles.contact}
+          aria-label={translate("nav.buttons.phone")}
+        >
+          <ContactIcon />
+        </Link>
+        <ContactButton />
+      </div>
     </motion.header>
   );
 }
