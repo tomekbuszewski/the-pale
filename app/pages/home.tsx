@@ -12,7 +12,7 @@ import blogLoader from "@features/BlogSection/loader.server";
 
 export async function loader() {
   const blog = await blogLoader({
-    withContent: true,
+    withContent: false,
     limit: 6,
     page: 1,
   });

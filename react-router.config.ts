@@ -17,6 +17,6 @@ export default {
       }
     }
 
-    return items;
+    return ["/", ...items];
   },
 } satisfies Config;
