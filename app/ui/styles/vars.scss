@@ -1,8 +1,9 @@
 @use "./_fns.scss" as *;
 
 :root {
-  --font-face-sans: "Bricolage Grotesque", sans-serif;
-  --font-face-mono: "Geist Mono", monospace;
+  --font-face-sans:
+    "Bricolage Grotesque", "Bricolage Grotesque Variable", sans-serif;
+  --font-face-mono: "Geist Mono", "Geist Mono Variable", monospace;
   --font-face-serif: "Tinos", serif;
 
   --font-size-base: #{$baseline}px;
