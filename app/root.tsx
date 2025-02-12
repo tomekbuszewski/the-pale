@@ -20,6 +20,8 @@ import "@fontsource-variable/bricolage-grotesque";
 
 import stylesheet from "./app.scss?url";
 
+import "./ui/styles/utils.scss";
+
 export const links: Route.LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
   {
