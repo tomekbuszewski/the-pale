@@ -11,13 +11,13 @@ import {
 import blogLoader from "@features/BlogSection/loader.server";
 
 export async function loader() {
-  return {
-    blog: await blogLoader({
-      withContent: false,
-      limit: 6,
-      page: 1,
-    }),
-  };
+  const blog = await blogLoader({
+    withContent: false,
+    limit: 6,
+    page: 1,
+  });
+
+  return { blog };
 }
 
 export default function Home() {

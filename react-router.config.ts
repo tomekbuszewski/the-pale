@@ -9,6 +9,7 @@ export default {
   ssr: true,
   prerender: async () => {
     const posts = await loader({ withContent: false });
+    const pagination = await loader({ withContent: false, limit: 6 });
     const items: string[] = Object.values(StaticRoutes);
 
     if (posts.items) {
@@ -17,6 +18,12 @@ export default {
       }
     }
 
-    return items;
+    if (pagination.pagination?.pages) {
+      for (const page of pagination.pagination.pages) {
+        items.push(`/writings/page/${page}`);
+      }
+    }
+
+    return ["/", ...items];
   },
 } satisfies Config;
