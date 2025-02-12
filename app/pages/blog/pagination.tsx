@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router";
 import { BlogSection } from "@features";
-import blogLoader from "@features/BlogSection/loader";
+import blogLoader from "@features/BlogSection/loader.server";
 
 import type { BlogPost } from "@common-types/Blogpost";
 

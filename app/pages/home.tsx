@@ -8,7 +8,7 @@ import {
   ServicesSection,
   WorksSection,
 } from "@features";
-import blogLoader from "@features/BlogSection/loader";
+import blogLoader from "@features/BlogSection/loader.server";
 
 export async function loader() {
   const blog = await blogLoader({

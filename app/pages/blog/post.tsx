@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "react";
 import { useLoaderData, useLocation } from "react-router";
-import blogLoader from "@features/BlogSection/loader";
+import blogLoader from "@features/BlogSection/loader.server";
 import { Routes } from "@nav";
 import { BlogPost } from "@ui/organisms";
 import title from "@utils/title";
