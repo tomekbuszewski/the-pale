@@ -98,15 +98,21 @@ function WorkItem({
         </figure>
       </motion.section>
 
-      <motion.footer className={styles.footer} {...createMotionConfig(4)}>
-        <Button variant="primary" to={study ?? ""} disabled={!study}>
-          {study ? "Case study" : "Study n/a"}
-        </Button>
+      {(study ?? link) ? (
+        <motion.footer className={styles.footer} {...createMotionConfig(4)}>
+          {study ? (
+            <Button variant="primary" to={study ?? ""} disabled={!study}>
+              {study ? "Case study" : "Study n/a"}
+            </Button>
+          ) : null}
 
-        <Button to={link ?? ""} variant="secondary" disabled={!link}>
-          {link ? "View online" : "Online n/a"}
-        </Button>
-      </motion.footer>
+          {link ? (
+            <Button to={link ?? ""} variant="secondary" disabled={!link}>
+              {link ? "View online" : "Online n/a"}
+            </Button>
+          ) : null}
+        </motion.footer>
+      ) : null}
     </SectionWrapper>
   );
 }

@@ -1,7 +1,7 @@
 @use "../../styles/_fns.scss" as *;
 
 .parent {
-  background-image: url("./assets/bg.jpg");
+  background-image: url("./assets/bg.webp");
   background-size: cover;
   background-attachment: fixed;
 
@@ -28,6 +28,6 @@
 
 @media (prefers-color-scheme: dark) {
   .parent {
-    background-image: url("./assets/bg-dark.jpg");
+    background-image: url("./assets/bg-dark.webp");
   }
 }

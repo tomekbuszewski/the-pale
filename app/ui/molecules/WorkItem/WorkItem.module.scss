@@ -43,10 +43,14 @@
 .details {
   grid-row: 2;
   grid-column: 1;
+  contain: size;
 }
 
 .images {
+  contain: size;
+
   @include media("md") {
+    aspect-ratio: 16/9;
     grid-row: 1 / -1;
     grid-column: 2/-1;
   }
@@ -94,11 +98,11 @@
 }
 
 .imageWrapper {
-  border: #{rem(8)} solid rgba(255, 255, 255, 0.25);
-  overflow: hidden;
   border-radius: #{rem(16)};
 
   img {
+    border: #{rem(8)} solid rgba(255, 255, 255, 0.25);
+    border-radius: #{rem(16)};
     width: 100%;
     height: auto;
   }
