@@ -46,6 +46,11 @@
   },
   "blog": {
     "section": {
+      "read-more": "Read the entry {{title}}",
+      "buttons": {
+        "read-more": "Read more",
+        "watch": "Watch"
+      },
       "pagination": {
         "newer": "Newer",
         "older": "Older"
@@ -91,7 +96,8 @@
   },
   "services": {
     "section": {
-      "title": "Services"
+      "title": "Services",
+      "read-more": "Read more about {{title}}"
     },
     "feature": {
       "title": "Services",

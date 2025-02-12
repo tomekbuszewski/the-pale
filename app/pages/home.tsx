@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { useLoaderData } from "react-router";
 import {
-  // AboutSection,
+  AboutSection,
   BlogSection,
   ClientsSection,
   HeroSection,
@@ -30,7 +30,7 @@ export default function Home() {
       <ServicesSection.component />
       <ClientsSection.component />
       {BlogSection.guard(blog) ? <BlogSection.component {...blog} /> : null}
-      {/*<AboutSection.component />*/}
+      <AboutSection.component />
     </Fragment>
   );
 }
