@@ -111,7 +111,7 @@ jobs:
             
             services:
               app:
-                container_name: the-pale:${{ steps.preview-tag.outputs.tag }}
+                container_name: the-pale-${{ steps.preview-tag.outputs.tag }}
                 image: ghcr.io/${{ github.repository_owner }}/the-pale:${{ steps.preview-tag.outputs.tag }}
                 labels:
                   - "traefik.enable=true"
@@ -128,7 +128,7 @@ jobs:
                 external: true
             EOL
             
-            docker rm -f the-pale:${{ steps.preview-tag.outputs.tag }} || true
+            docker rm -f the-pale-${{ steps.preview-tag.outputs.tag }} || true
             
             cd $PREVIEW_PATH
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
@@ -137,3 +137,17 @@ jobs:
             docker compose up -d
             
             echo "Preview deployed at: https://${{ steps.preview-tag.outputs.tag }}.beta.buszewski.studio"
+
+      - name: Discord notification
+        if: always()
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: |
+            ${{ job.status == 'success' && '✅' || '🚨' }} Preview deployment ${{ job.status }}!
+            Repository: ${{ github.repository }}
+            Branch: ${{ github.ref }}
+            PR Title: ${{ github.event.pull_request.title }}
+            Preview URL: https://${{ steps.preview-tag.outputs.tag }}.beta.buszewski.studio
+            Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
