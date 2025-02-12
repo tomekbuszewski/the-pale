@@ -1,6 +1,6 @@
 import type { Config } from "@react-router/dev/config";
 
-import loader from "./app/features/BlogSection/loader.server";
+import loader from "./app/features/BlogSection/loader";
 import { StaticRoutes } from "./app/nav";
 
 export default {
