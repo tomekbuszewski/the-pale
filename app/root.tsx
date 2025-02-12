@@ -10,6 +10,8 @@ import {
   Analytics as AnalyticsFeature,
   ErrorBoundary as ErrorBoundaryFeature,
 } from "@features";
+import brico from "@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-standard-normal.woff2?url";
+import geist from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url";
 
 import type { ReactNode } from "react";
 
@@ -43,6 +45,20 @@ export const links: Route.LinksFunction = () => [
   {
     rel: "manifest",
     href: "/site.webmanifest",
+  },
+  {
+    rel: "preload",
+    href: brico,
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "preload",
+    href: geist,
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
   { rel: "stylesheet", href: stylesheet },
 ];
