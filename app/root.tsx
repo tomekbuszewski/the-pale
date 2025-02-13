@@ -10,7 +10,7 @@ import {
   Analytics as AnalyticsFeature,
   ErrorBoundary as ErrorBoundaryFeature,
 } from "@features";
-import brico from "@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-standard-normal.woff2?url";
+import brico from "@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url";
 import geist from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url";
 
 import type { ReactNode } from "react";
