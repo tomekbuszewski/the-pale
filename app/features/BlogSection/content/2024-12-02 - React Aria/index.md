@@ -1,6 +1,7 @@
 ---
 slug: 2024-12-02-developing-accessible-react-forms-without-the-headache
 title: Developing accessible React forms without the headache
+short-title: accessible forms
 summary:
   Some time ago I’ve embarked on a journey to find a decent headless UI system
   that will lift the form problem of my back.

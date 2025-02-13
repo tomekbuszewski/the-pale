@@ -1,10 +1,12 @@
 import { Sections } from "@nav";
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
+import { translate } from "@utils/translate";
 import clsx from "clsx";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
 import type { BlogPost } from "@common-types/Blogpost";
+import type { Href } from "@common-types/Href";
 import type { HTMLProps } from "react";
 
 import { Pagination } from "./BlogSection.helpers";
@@ -26,11 +28,35 @@ function BlogSection({ className, items, pagination, title }: Props) {
       className={clsx(className, styles.parent)}
       columns={{ sm: 1, md: 3, lg: 3 }}
     >
-      {items.map((item) => (
-        <Box {...item} key={item.title} noBottomMargin>
-          <Text>{item.children}</Text>
-        </Box>
-      ))}
+      {items.map(({ link, ...item }) => {
+        const readLabel = item.shortTitle
+          ? translate("blog.section.buttons.read-more-about", item.shortTitle)
+          : translate("blog.section.buttons.read-more");
+        const watchLabel = item.shortTitle
+          ? translate("blog.section.buttons.watch-about", item.shortTitle)
+          : translate("blog.section.buttons.watch");
+
+        return (
+          <Box
+            {...item}
+            key={item.title}
+            noBottomMargin
+            link={
+              [
+                { ...link, label: readLabel },
+                {
+                  label: `${watchLabel} ↗`,
+                  variant: "tertiary",
+                  href: item.youtube,
+                  external: true,
+                },
+              ] as Href[]
+            }
+          >
+            <Text>{item.children}</Text>
+          </Box>
+        );
+      })}
 
       <Pagination {...pagination} />
     </SectionWrapper>

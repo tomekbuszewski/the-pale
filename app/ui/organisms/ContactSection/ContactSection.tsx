@@ -55,7 +55,7 @@ function ContactSection({ location, copy }: Props) {
       className={styles.parent}
     >
       {copy.map((item) => (
-        <Box link={item} title={item.label} key={item.title}>
+        <Box link={item.links} title={item.title} key={item.title}>
           {item.body.map((text, i) => (
             <Text key={i}>{text}</Text>
           ))}

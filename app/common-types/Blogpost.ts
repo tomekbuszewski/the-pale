@@ -4,8 +4,9 @@ import type { ReactNode } from "react";
 
 export interface BlogPost extends Meta {
   title: string;
+  shortTitle?: string;
   youtube: string;
-  link: Href;
+  link: Href | Href[];
   icon?: never;
   onClick?: never;
   children?: ReactNode;

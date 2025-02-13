@@ -6,4 +6,5 @@ export interface Href {
   external?: boolean;
   title?: string;
   variant?: ButtonProps["variant"];
+  onClick?: ButtonProps["onClick"];
 }

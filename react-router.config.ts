@@ -13,8 +13,16 @@ export default {
     const items: string[] = Object.values(StaticRoutes);
 
     if (posts.items) {
-      for (const item of posts.items) {
-        items.push(item.link.href);
+      for (const { link } of posts.items) {
+        if (Array.isArray(link)) {
+          for (const { href } of link) {
+            if (!href.includes("http")) {
+              items.push(href);
+            }
+          }
+        } else {
+          items.push(link.href);
+        }
       }
     }
 

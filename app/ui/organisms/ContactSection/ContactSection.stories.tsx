@@ -5,22 +5,34 @@ import ContactSection from "./ContactSection";
 
 const mockContactItems: ContactItem[] = [
   {
-    label: "Email",
     title: "Get in touch",
     body: ["hello@example.com", "business@example.com"],
-    href: "mailto:hello@example.com",
+    links: [
+      {
+        label: "Social",
+        href: "https://twitter.com/example",
+      },
+    ],
   },
   {
-    label: "Social",
     title: "Follow me",
     body: ["Twitter", "LinkedIn"],
-    href: "https://twitter.com/example",
+    links: [
+      {
+        label: "Social",
+        href: "https://twitter.com/example",
+      },
+    ],
   },
   {
-    label: "Address",
     title: "Location",
     body: ["123 Tech Street", "Digital City, DC 12345"],
-    href: "https://maps.google.com",
+    links: [
+      {
+        label: "Social",
+        href: "https://twitter.com/example",
+      },
+    ],
   },
 ];
 

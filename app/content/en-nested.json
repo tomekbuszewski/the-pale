@@ -17,11 +17,12 @@
         "read-more": "Book a call"
       },
       "email": {
-        "title": "Write me an email",
+        "title": "Write or call me",
         "body": [
-          "Write me an email to kick things off!"
+          "The quickest way to kick things off!"
         ],
-        "read-more": "Shoot an email"
+        "read-more-email": "Mail me",
+        "read-more-phone": "Call me"
       },
       "designed": "Designed and developed in"
     },
@@ -49,7 +50,9 @@
       "read-more": "Read the entry {{title}}",
       "buttons": {
         "read-more": "Read more",
-        "watch": "Watch"
+        "read-more-about": "More on {{title}}",
+        "watch": "Watch",
+        "watch-about": "Video on {{title}}"
       },
       "pagination": {
         "newer": "Newer",

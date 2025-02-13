@@ -16,9 +16,15 @@ export async function loader({ params }: Route.LoaderArgs) {
   const content = await blogLoader({ withContent: true });
 
   if (content?.items) {
-    const post = content.items.find(
-      (item) => item.link.href === Routes.post.replace(":slug", slug),
-    );
+    const post = content.items.find((item) => {
+      if (Array.isArray(item.link)) {
+        return item.link.some(
+          (link) => link.href === Routes.post.replace(":slug", slug),
+        );
+      }
+
+      return item.link.href === Routes.post.replace(":slug", slug);
+    });
 
     if (post) {
       return post;

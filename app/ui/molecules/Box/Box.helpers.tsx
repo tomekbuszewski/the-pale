@@ -1,6 +1,6 @@
 import { Button, Text } from "@ui/atoms";
-import { translate } from "@utils/translate";
 
+import type { Href } from "@common-types/Href";
 import type { ReactNode } from "react";
 
 import CalendarIcon from "./assets/calendar.svg?react";
@@ -27,59 +27,24 @@ export function Meta({ icon, date }: MetaProps) {
 }
 
 interface FooterProps {
+  links: Href[];
   onClick?: () => void;
-  youtube?: string;
-  link: string;
-  active?: boolean;
-  readMoreLabel?: string;
-  title: string;
 }
 
-export function Footer({
-  onClick,
-  youtube,
-  link,
-  active,
-  title,
-  readMoreLabel = "Read more",
-}: FooterProps) {
+export function Footer({ links }: FooterProps) {
   return (
     <footer className={styles.footer}>
-      {youtube ? (
-        <>
-          <Button
-            to={link}
-            variant="primary"
-            aria-label={translate("blog.section.read-more", title)}
-          >
-            {translate("blog.section.buttons.read-more")}
-          </Button>
-          <Button to={youtube} variant="tertiary" target="_blank">
-            {translate("blog.section.buttons.watch")} ↗
-          </Button>
-        </>
-      ) : (
+      {links.map((link) => (
         <Button
-          to={link}
-          variant="primary"
-          aria-label={translate("services.section.read-more", title)}
+          to={link.href}
+          variant={link.variant}
+          key={link.href}
+          aria-label={link.title}
+          target={link.external ? "_blank" : undefined}
         >
-          {readMoreLabel}
+          {link.label}
         </Button>
-      )}
-
-      {onClick ? (
-        <Button
-          onClick={(e) => {
-            e.preventDefault();
-            onClick();
-          }}
-          variant="tertiary"
-          to="#services"
-        >
-          {active ? "Collapse" : "Expand"}
-        </Button>
-      ) : null}
+      ))}
     </footer>
   );
 }

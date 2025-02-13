@@ -1,6 +1,7 @@
 ---
 slug: 2024-11-11-intro-to-remix
 title: Intro to Remix
+short-title: my Remix intro
 summary:
   The landscape of current React full-stack frameworks is pretty much dominated
   by Next.js. But I never quite liked it, and always felt it’s too complex for

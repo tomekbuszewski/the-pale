@@ -15,7 +15,7 @@ interface PlainBox {
   date?: never;
   tags?: never;
   youtube?: never;
-  link?: Href;
+  link?: Href | Href[];
   active?: boolean;
   children?: ReactNode;
   icon?: never;
@@ -32,10 +32,8 @@ function Box({
   title,
   date,
   tags,
-  youtube,
   link,
   icon,
-  onClick,
   hidden,
   className,
   children,
@@ -71,16 +69,7 @@ function Box({
 
       <Tags tags={tags} />
 
-      {link && (
-        <Footer
-          title={title ?? link.label}
-          readMoreLabel={link.label}
-          link={link.href}
-          youtube={youtube}
-          onClick={onClick}
-          active={active}
-        />
-      )}
+      {link && <Footer links={Array.isArray(link) ? link : [link]} />}
     </article>
   );
 }

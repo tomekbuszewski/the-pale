@@ -1,4 +1,4 @@
-import { CAL, EMAIL } from "@contact";
+import { CAL, EMAIL, PHONE } from "@contact";
 import { ContactSection as Main } from "@ui/organisms";
 import { translate } from "@utils/translate";
 
@@ -6,19 +6,32 @@ import type { ContactItem } from "@common-types/ContactItem";
 
 const COPY: ContactItem[] = [
   {
-    title: translate("contact.section.call.title"),
     body: translate("contact.section.call.body"),
-    href: CAL,
-    label: translate("contact.section.call.read-more"),
+    title: translate("contact.section.call.title"),
+    links: [
+      {
+        label: translate("contact.section.call.read-more"),
+        href: CAL,
+      },
+    ],
   },
   {
-    title: translate("contact.section.email.title"),
     body: [
       ...translate("contact.section.email.body"),
       translate("footer.feature.contact-disclaimer"),
-    ] as string[],
-    href: EMAIL,
-    label: translate("contact.section.email.read-more"),
+    ],
+    title: translate("contact.section.email.title"),
+    links: [
+      {
+        href: `mailto:${EMAIL}`,
+        label: translate("contact.section.email.read-more-email"),
+      },
+      {
+        href: `tel:${PHONE}`,
+        variant: "tertiary",
+        label: translate("contact.section.email.read-more-phone"),
+      },
+    ],
   },
 ];
 
