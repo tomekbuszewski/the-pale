@@ -8,7 +8,7 @@
   }
 
   @include media("lg") {
-    min-height: 90dvh;
+    min-height: max(90dvh, #{rem(800)});
     align-content: center;
     padding: 0;
   }
