@@ -14,7 +14,7 @@ services:
       - traefik-public
     labels:
       - traefik.enable=true
-      - traefik.http.routers.depeche.rule=Host(`beta.buszewski.studio`)
+      - traefik.http.routers.depeche.rule=Host(`beta.buszewski.studio`) || Host(`buszewski.studio`)
       - traefik.http.routers.depeche.entrypoints=websecure
       - traefik.http.routers.depeche.tls=true
       - traefik.http.routers.depeche.tls.certresolver=letsencrypt
