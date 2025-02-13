@@ -78,7 +78,6 @@ export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <AnalyticsFeature.component id={gaID} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
@@ -88,6 +87,7 @@ export function Layout({ children }: { children: ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <AnalyticsFeature.component id={gaID} />
       </body>
     </html>
   );
