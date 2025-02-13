@@ -1,6 +1,7 @@
 import { MemoryRouter } from "react-router";
 import { render as baseRender, screen } from "@testing-library/react";
 
+import type { Href } from "@common-types/Href";
 import type { ReactElement } from "react";
 
 import ContactCta from "./ContactCta";
@@ -12,7 +13,7 @@ describe("UI / Molecules / ContactCta", () => {
   const mockButtons = [
     { label: "Get Started", href: "/start", variant: "primary" },
     { label: "Learn More", href: "/learn", variant: "secondary" },
-  ];
+  ] as Href[];
   const mockText = "Ready to create your website?";
 
   it("renders the component with the correct text", () => {

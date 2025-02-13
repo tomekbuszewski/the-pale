@@ -25,18 +25,18 @@ const data = {
   contact: [
     {
       href: `mailto:${EMAIL}`,
-      text: EMAIL,
+      label: EMAIL,
       icon: <Mail />,
     },
     {
       href: CAL,
-      text: translate("footer.feature.call-button"),
+      label: translate("footer.feature.call-button"),
       icon: <Calendar />,
       external: true,
     },
     {
       href: `tel:${PHONE.replace(/\s/g, "")}`,
-      text: PHONE,
+      label: PHONE,
       icon: <Phone />,
     },
   ],
@@ -44,19 +44,19 @@ const data = {
   socials: [
     {
       href: YOUTUBE,
-      text: resolveHandle(YOUTUBE),
+      label: resolveHandle(YOUTUBE),
       external: true,
       icon: <YouTube />,
     },
     {
       href: LINKEDIN,
-      text: resolveHandle(LINKEDIN),
+      label: resolveHandle(LINKEDIN),
       external: true,
       icon: <LinkedIn />,
     },
     {
       href: GITHUB,
-      text: resolveHandle(GITHUB),
+      label: resolveHandle(GITHUB),
       external: true,
       icon: <Github />,
     },
@@ -66,11 +66,11 @@ const data = {
 const languages = [
   {
     label: "EN",
-    value: "en",
+    href: "en",
   },
   {
     label: "PL",
-    value: "pl",
+    href: "pl",
   },
 ];
 

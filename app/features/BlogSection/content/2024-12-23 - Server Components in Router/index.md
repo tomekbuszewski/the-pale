@@ -1,5 +1,6 @@
 ---
 title: React Router 7 has Server Components?
+short-title: React Router 7
 slug: 2024-12-23-react-router-7-has-server-components
 pubdate: 2024-12-23
 tags: react, react-router, remix

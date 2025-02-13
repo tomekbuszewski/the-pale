@@ -3,9 +3,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import PageHeader from "./PageHeader";
 
 const links = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Contact", href: "/contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const Primary: StoryObj<typeof PageHeader> = {

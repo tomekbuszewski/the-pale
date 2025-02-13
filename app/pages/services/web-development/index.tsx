@@ -40,31 +40,19 @@ import {
 export const COPY = {
   TITLE: translate("services.feature.website.title"),
   INTRO: translate("services.feature.website.full.intro"),
-  BODY: translate("services.feature.website.full.body") as string,
+  BODY: translate("services.feature.website.full.body"),
   PROCESS: [
     {
-      title: translate(
-        "services.feature.website.full.process.discovery.title",
-      ),
-      body: translate(
-        "services.feature.website.full.process.discovery.body",
-      ),
+      title: translate("services.feature.website.full.process.discovery.title"),
+      body: translate("services.feature.website.full.process.discovery.body"),
     },
     {
-      title: translate(
-        "services.feature.website.full.process.design.title",
-      ),
-      body: translate(
-        "services.feature.website.full.process.design.body",
-      ),
+      title: translate("services.feature.website.full.process.design.title"),
+      body: translate("services.feature.website.full.process.design.body"),
     },
     {
-      title: translate(
-        "services.feature.website.full.process.coding.title",
-      ),
-      body: translate(
-        "services.feature.website.full.process.coding.body",
-      ),
+      title: translate("services.feature.website.full.process.coding.title"),
+      body: translate("services.feature.website.full.process.coding.body"),
     },
   ],
   CARDS: [
@@ -83,16 +71,10 @@ export const COPY = {
         photo,
         notebook,
       ],
-      title: translate(
-        "services.feature.website.full.card.design.title",
-      ),
-      description: translate(
-        "services.feature.website.full.card.design.body",
-      ),
+      title: translate("services.feature.website.full.card.design.title"),
+      description: translate("services.feature.website.full.card.design.body"),
       more: {
-        label: translate(
-          "services.feature.website.full.card.design.cta",
-        ),
+        label: translate("services.feature.website.full.card.design.cta"),
         href: "/#" + Sections.works,
       },
     },
@@ -119,27 +101,17 @@ export const COPY = {
         react,
         puppeteer,
       ],
-      title: translate(
-        "services.feature.website.full.card.tech.title",
-      ),
-      description: translate(
-        "services.feature.website.full.card.tech.body",
-      ),
+      title: translate("services.feature.website.full.card.tech.title"),
+      description: translate("services.feature.website.full.card.tech.body"),
       more: {
-        label: translate(
-          "services.feature.website.full.card.tech.cta",
-        ),
+        label: translate("services.feature.website.full.card.tech.cta"),
         href: StaticRoutes.tech,
       },
     },
     {
       icons: [github, gitlab, cc, bitbucket, netlify, tower, vercel, tower],
-      title: translate(
-        "services.feature.website.full.card.repo.title",
-      ),
-      description: translate(
-        "services.feature.website.full.card.repo.body",
-      ),
+      title: translate("services.feature.website.full.card.repo.title"),
+      description: translate("services.feature.website.full.card.repo.body"),
     },
   ],
   CTA: translate("services.feature.website.full.cta"),

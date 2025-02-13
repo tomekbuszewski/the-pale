@@ -11,7 +11,10 @@ export const Blogpost: StoryObj<typeof Box> = {
     date: new Date(),
     tags: ["design", "code", "consultant", "website"],
     youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    link: "https://www.example.com",
+    link: {
+      href: "/blog/hello-from-storybook",
+      label: "Read more",
+    },
     children: (
       <>
         <Text>

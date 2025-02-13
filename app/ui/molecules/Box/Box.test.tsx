@@ -15,7 +15,10 @@ describe("UI / Molecules / Box", () => {
           title="Test Title"
           tags={["tag1", "tag2"]}
           youtube=""
-          link=""
+          link={{
+            href: "/test-link",
+            label: "Test Link",
+          }}
           date={new Date()}
         />
       </MemoryRouter>,
@@ -28,7 +31,17 @@ describe("UI / Molecules / Box", () => {
   it("renders with an icon and onClick handler", () => {
     render(
       <MemoryRouter>
-        <Box title="Service" icon={<span>Icon</span>} onClick={vi.fn()} />
+        <Box
+          title="Service"
+          icon={<span>Icon</span>}
+          onClick={vi.fn()}
+          link={{
+            href: "/test-link",
+            label: "Test Link",
+          }}
+        >
+          Hello
+        </Box>
       </MemoryRouter>,
     );
     expect(screen.getByText("Icon")).toBeInTheDocument();
@@ -42,6 +55,10 @@ describe("UI / Molecules / Box", () => {
           hidden
           icon={<CalendarIcon />}
           onClick={vi.fn()}
+          link={{
+            href: "/test-link",
+            label: "Test Link",
+          }}
         >
           Hello
         </Box>

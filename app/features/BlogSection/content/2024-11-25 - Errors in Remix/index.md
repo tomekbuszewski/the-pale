@@ -1,6 +1,7 @@
 ---
 slug: 2024-11-25-handling-errors-in-remix
 title: Handling errors in Remix
+short-title: errors in Remix
 summary:
   It took some time for me to realize that an error is the same information as a
   success. Not what I expect or want, but a valid, fully-fledged information

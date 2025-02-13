@@ -1,6 +1,7 @@
+import type { Href } from "@common-types/Href";
+
 export interface ContactItem {
-  TITLE: string;
-  BODY: string[];
-  LINK: string;
-  READ_MORE: string;
+  body: string[];
+  title: string;
+  links: Href[];
 }

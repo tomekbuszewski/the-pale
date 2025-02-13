@@ -7,10 +7,16 @@ import FrontendIcon from "./assets/frontend.svg?react";
 import WebsiteIcon from "./assets/website.svg?react";
 import ServicesSection from "./ServicesSection";
 
+const link = {
+  label: "Read more",
+  href: "#",
+};
+
 export const Primary: StoryObj<typeof ServicesSection> = {
   args: {
     items: [
       {
+        link,
         title: "Website<br />Design",
         icon: <WebsiteIcon />,
         onClick: () => null,
@@ -36,6 +42,7 @@ export const Primary: StoryObj<typeof ServicesSection> = {
         ],
       },
       {
+        link,
         title: "Front-end<br />Development",
         icon: <FrontendIcon />,
         onClick: () => null,
@@ -60,6 +67,7 @@ export const Primary: StoryObj<typeof ServicesSection> = {
         ],
       },
       {
+        link,
         title: "Project<br />Consulting",
         icon: <ConsultationsIcon />,
         onClick: () => null,

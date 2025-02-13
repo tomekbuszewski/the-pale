@@ -1,4 +1,5 @@
 import { Button, Text } from "@ui/atoms";
+import { translate } from "@utils/translate";
 
 import type { Meta as MetaProps } from "@common-types/Meta";
 import type { HTMLProps, MouseEvent } from "react";
@@ -14,7 +15,7 @@ function Meta({ date, tags }: MetaProps) {
   return (
     <aside className={styles.meta}>
       <Text variant="highlight" tag="p">
-        Posted on{" "}
+        {translate("article.header.meta.posted-on")}{" "}
         <time dateTime={date.toDateString()}>
           {date.toLocaleDateString("en-GB", {
             year: "numeric",
@@ -39,7 +40,7 @@ function ArticleHeader({ title, meta, ...props }: Props) {
   return (
     <header {...props} className={styles.wrapper}>
       <Button to="#" variant="tertiary" onClick={handleBack}>
-        Go back
+        {translate("article.header.meta.back")}
       </Button>
       <Text
         variant="hero"

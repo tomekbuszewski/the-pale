@@ -27,23 +27,14 @@ import {
 const COPY = {
   TITLE: translate("services.feature.frontend.title"),
   INTRO: translate("services.feature.frontend.intro"),
-  BODY: translate(
-    "services.feature.frontend.body",
-    EXP_YEARS.toString(),
-  ),
+  BODY: translate("services.feature.frontend.body", EXP_YEARS.toString()),
   PROCESS: [
     {
-      title: translate(
-        "services.feature.frontend.process.design.title",
-      ),
-      body: translate(
-        "services.feature.frontend.process.design.description",
-      ),
+      title: translate("services.feature.frontend.process.design.title"),
+      body: translate("services.feature.frontend.process.design.description"),
     },
     {
-      title: translate(
-        "services.feature.frontend.process.technical.title",
-      ),
+      title: translate("services.feature.frontend.process.technical.title"),
       body: translate(
         "services.feature.frontend.process.technical.description",
       ),
@@ -77,21 +68,17 @@ const COPY = {
       ],
       description: translate(
         "services.feature.frontend.card.design.description",
-      ) as string,
+      ),
     },
     {
-      title: translate(
-        "services.feature.frontend.card.technical.title",
-      ),
+      title: translate("services.feature.frontend.card.technical.title"),
       icons: [astro, css, html, js, ts, react, router, sass, tailwind, next],
       description: translate(
         "services.feature.frontend.card.technical.description",
-      ) as string,
+      ),
     },
     {
-      title: translate(
-        "services.feature.frontend.card.implementation.title",
-      ),
+      title: translate("services.feature.frontend.card.implementation.title"),
       icons: [
         astro,
         css,
@@ -110,7 +97,7 @@ const COPY = {
       ],
       description: translate(
         "services.feature.frontend.card.implementation.description",
-      ) as string,
+      ),
     },
   ],
 };

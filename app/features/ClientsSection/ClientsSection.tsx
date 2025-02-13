@@ -1,20 +1,21 @@
+import { lazy } from "react";
 import { ClientsSection as Main } from "@ui/organisms";
 
 import type { Client } from "@common-types/Client";
 
-import Finance from "./assets/4f.svg?react";
-import Batmaid from "./assets/batmaid.svg?react";
-import Beehype from "./assets/beehype.svg?react";
-import Chopin from "./assets/chopin.svg?react";
-import Incogni from "./assets/incogni.svg?react";
-import OLX from "./assets/olx.svg?react";
-import Optilyz from "./assets/optilyz.svg?react";
-import Parkiet from "./assets/parkiet.svg?react";
-import RadioZet from "./assets/radio-zet.svg?react";
-import Rp from "./assets/rp.svg?react";
-import Szg from "./assets/szg.svg?react";
-import Tvn from "./assets/tvn.svg?react";
-import Zety from "./assets/zety.svg?react";
+const Finance = lazy(() => import("./assets/4f.svg?react"));
+const Batmaid = lazy(() => import("./assets/batmaid.svg?react"));
+const Beehype = lazy(() => import("./assets/beehype.svg?react"));
+const Chopin = lazy(() => import("./assets/chopin.svg?react"));
+const Incogni = lazy(() => import("./assets/incogni.svg?react"));
+const OLX = lazy(() => import("./assets/olx.svg?react"));
+const Optilyz = lazy(() => import("./assets/optilyz.svg?react"));
+const Parkiet = lazy(() => import("./assets/parkiet.svg?react"));
+const RadioZet = lazy(() => import("./assets/radio-zet.svg?react"));
+const Rp = lazy(() => import("./assets/rp.svg?react"));
+const Szg = lazy(() => import("./assets/szg.svg?react"));
+const Tvn = lazy(() => import("./assets/tvn.svg?react"));
+const Zety = lazy(() => import("./assets/zety.svg?react"));
 
 const items: Client[] = [
   {

@@ -17,7 +17,10 @@ export const Primary: StoryObj<typeof BlogSection> = {
         tags: ["design", "code", "consultant", "website"],
         children: <p>Hello from Storybook</p>,
         youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        link: "https://www.google.com",
+        link: {
+          href: "https://www.google.com",
+          label: "Read more",
+        },
       },
       {
         title: "Hello from Storybook",
@@ -25,7 +28,10 @@ export const Primary: StoryObj<typeof BlogSection> = {
         tags: ["design", "code", "consultant", "website"],
         children: <p>Hello from Storybook</p>,
         youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        link: "https://www.google.com",
+        link: {
+          href: "https://www.google.com",
+          label: "Read more",
+        },
       },
       {
         title: "Hello from Storybook",
@@ -33,7 +39,10 @@ export const Primary: StoryObj<typeof BlogSection> = {
         tags: ["design", "code", "consultant", "website"],
         children: <p>Hello from Storybook</p>,
         youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        link: "https://www.google.com",
+        link: {
+          href: "https://www.google.com",
+          label: "Read more",
+        },
       },
     ],
   },

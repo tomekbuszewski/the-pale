@@ -1,6 +1,7 @@
 ---
 slug: 2024-11-04-basics-of-dependency-injection-in-typescript
 title: Basics of Dependency Injection in TypeScript
+short-title: the basics of DI
 summary:
   Object-oriented programming has a lot of rules. But these aren’t just to have
   something to talk about during code reviews or to flex on which book from 1994
@@ -372,7 +373,7 @@ interface IBankingApi {
   transfer(
     accountFrom: string,
     accountTo: string,
-    amount: number
+    amount: number,
   ): Promise<ITransactionResult>;
   withdraw(account: string, amount: number): Promise<ITransactionResult>;
 }
@@ -391,14 +392,14 @@ class BankingApi implements IBankingApi {
 
   async getBalanceFor(account: string) {
     await new Promise((resolve) =>
-      setTimeout(resolve, getRandomNumber(150, 200))
+      setTimeout(resolve, getRandomNumber(150, 200)),
     );
     return { name: account, balance: this.wallet };
   }
 
   async transfer(_accountFrom: string, _accountTo: string, amount: number) {
     await new Promise((resolve) =>
-      setTimeout(resolve, getRandomNumber(100, 300))
+      setTimeout(resolve, getRandomNumber(100, 300)),
     );
     const difference = this.getDiff(amount);
 
@@ -412,7 +413,7 @@ class BankingApi implements IBankingApi {
 
   async withdraw(_account: string, amount: number) {
     await new Promise((resolve) =>
-      setTimeout(resolve, getRandomNumber(100, 400))
+      setTimeout(resolve, getRandomNumber(100, 400)),
     );
     const difference = this.getDiff(amount);
 
@@ -445,7 +446,7 @@ export class Bank {
     }
 
     throw new Error(
-      `${amount} cannot be transferred, remaining balance: ${result.remaining}`
+      `${amount} cannot be transferred, remaining balance: ${result.remaining}`,
     );
   }
 
@@ -457,7 +458,7 @@ export class Bank {
     }
 
     throw new Error(
-      `${amount} cannot be withdrawn, remaining balance: ${result.remaining}`
+      `${amount} cannot be withdrawn, remaining balance: ${result.remaining}`,
     );
   }
 }

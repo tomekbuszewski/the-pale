@@ -14,7 +14,10 @@ describe("BlogSection", () => {
       date: new Date("2023-01-01"),
       tags: ["technology", "video"],
       youtube: "https://www.youtube.com/watch?v=first-post",
-      link: "https://example.com/first-post",
+      link: {
+        label: "Read",
+        href: "https://example.com/first-post",
+      },
       children: "This is the first post",
     },
     {
@@ -22,7 +25,10 @@ describe("BlogSection", () => {
       date: new Date("2023-02-01"),
       tags: ["update", "newsletter"],
       youtube: "https://www.youtube.com/watch?v=second-post",
-      link: "https://example.com/second-post",
+      link: {
+        label: "Read",
+        href: "https://example.com/second-post",
+      },
       children: "This is the second post",
     },
   ];

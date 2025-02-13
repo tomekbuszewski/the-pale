@@ -1,5 +1,10 @@
+import type { ButtonProps } from "@common-types/Button";
+
 export interface Href {
   href: string;
-  text: string;
+  label: string;
   external?: boolean;
+  title?: string;
+  variant?: ButtonProps["variant"];
+  onClick?: ButtonProps["onClick"];
 }
