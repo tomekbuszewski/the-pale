@@ -9,25 +9,25 @@ export const Primary: StoryObj<typeof PageFooter> = {
     quickLinks: [
       {
         href: "#",
-        text: "About",
+        label: "About",
       },
       {
         href: "#",
-        text: "Services",
+        label: "Services",
       },
       {
         href: "#",
-        text: "Blog",
+        label: "Blog",
       },
       {
         href: "#",
-        text: "Contact",
+        label: "Contact",
       },
     ],
     contact: [
       {
         href: "mailto:tomasz@buszewski.com",
-        text: "tomasz@buszewski.com",
+        label: "tomasz@buszewski.com",
         icon: <Mail />,
       },
     ],
@@ -36,7 +36,7 @@ export const Primary: StoryObj<typeof PageFooter> = {
     socials: [
       {
         href: "https://www.linkedin.com",
-        text: "tomek-buszewski",
+        label: "tomek-buszewski",
         icon: <Mail />,
       },
     ],

@@ -12,12 +12,14 @@ import {
   useScroll,
 } from "motion/react";
 
+import type { Href } from "@common-types/Href";
+
 import ContactIcon from "./assets/Phone.svg?react";
 
 import styles from "./PageHeader.module.scss";
 
 interface Props extends HTMLMotionProps<"header"> {
-  links: { text: string; href: string }[];
+  links: Href[];
 }
 
 function useHiddenHeader(threshold = 160) {

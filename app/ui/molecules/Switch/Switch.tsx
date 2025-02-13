@@ -7,12 +7,12 @@ import {
 } from "react";
 import clsx from "clsx";
 
-import type { LanguageOption } from "@common-types/LanguageOption";
+import type { Href } from "@common-types/Href";
 
 import styles from "./Switch.module.scss";
 
 interface Props extends Omit<HTMLProps<HTMLDivElement>, "onChange"> {
-  items: LanguageOption[];
+  items: Href[];
   onChange: (value: string) => void;
   defaultActiveIndex?: number;
 }
@@ -29,7 +29,7 @@ function Switch({
   const classNames = clsx(className, styles.wrapper);
 
   useEffect(() => {
-    onChange(items[active].value);
+    onChange(items[active].href);
   }, [active, items, onChange]);
 
   return (
@@ -42,7 +42,7 @@ function Switch({
     >
       {items.map((item, index) => (
         <button
-          key={item.value}
+          key={item.href}
           onClick={() => setActive(index)}
           className={clsx(styles.item, {
             [styles.active]: index === active,

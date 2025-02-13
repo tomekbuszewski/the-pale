@@ -1,17 +1,13 @@
 import { NavLink } from "react-router";
 import clsx from "clsx";
 
+import type { Href } from "@common-types/Href";
 import type { HTMLProps } from "react";
 
 import styles from "./PageNavigation.module.scss";
 
-interface Link {
-  text: string;
-  href: string;
-}
-
 interface Props extends HTMLProps<HTMLDivElement> {
-  links: Link[];
+  links: Href[];
   visible?: boolean;
   onLinkClick?: () => void;
 }
@@ -41,7 +37,7 @@ function PageNavigation({
               className={clsx(styles.link)}
               onClick={onLinkClick}
             >
-              {link.text}
+              {link.label}
             </NavLink>
           </li>
         ))}

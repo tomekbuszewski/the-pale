@@ -5,7 +5,6 @@ import { SectionHeader, Switch } from "@ui/molecules";
 import clsx from "clsx";
 
 import type { Href } from "@common-types/Href";
-import type { LanguageOption } from "@common-types/LanguageOption";
 import type { HTMLProps, ReactNode } from "react";
 
 import styles from "./PageFooter.module.scss";
@@ -23,7 +22,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
   copyright: string;
   cookies: string;
   onLanguageChange?: (lang: string) => void;
-  languages?: LanguageOption[];
+  languages?: Href[];
 }
 
 interface LinksProps extends HTMLProps<HTMLUListElement> {
@@ -54,7 +53,7 @@ function Links({ items, className, ...rest }: LinksProps) {
             })}
           >
             {withIcon ? item.icon : null}
-            <Link {...linkProps}>{item.text}</Link>
+            <Link {...linkProps}>{item.label}</Link>
           </Text>
         );
       })}

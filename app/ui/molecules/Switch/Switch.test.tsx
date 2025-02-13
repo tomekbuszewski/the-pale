@@ -4,9 +4,9 @@ import Switch from "./Switch";
 
 describe("UI / molecules / Switch", () => {
   const items = [
-    { label: "First", value: "1" },
-    { label: "Second", value: "2" },
-    { label: "Third", value: "3" },
+    { label: "First", href: "1" },
+    { label: "Second", href: "2" },
+    { label: "Third", href: "3" },
   ];
 
   it("renders all items as buttons", () => {
@@ -23,7 +23,7 @@ describe("UI / molecules / Switch", () => {
     const handleChange = vitest.fn();
     render(<Switch items={items} onChange={handleChange} />);
 
-    expect(handleChange).toHaveBeenCalledWith(items[0].value);
+    expect(handleChange).toHaveBeenCalledWith(items[0].href);
   });
 
   it("calls onChange when clicking different items", () => {
@@ -33,10 +33,10 @@ describe("UI / molecules / Switch", () => {
     );
 
     fireEvent.click(getByText(items[1].label));
-    expect(handleChange).toHaveBeenCalledWith(items[1].value);
+    expect(handleChange).toHaveBeenCalledWith(items[1].href);
 
     fireEvent.click(getByText(items[2].label));
-    expect(handleChange).toHaveBeenCalledWith(items[2].value);
+    expect(handleChange).toHaveBeenCalledWith(items[2].href);
   });
 
   it("passes through HTML props to container", () => {

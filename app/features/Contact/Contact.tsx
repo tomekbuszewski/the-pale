@@ -6,27 +6,22 @@ import type { ContactItem } from "@common-types/ContactItem";
 
 const COPY: ContactItem[] = [
   {
-    TITLE: translate("contact.section.call.title"),
-    BODY: translate("contact.section.call.body"),
-    LINK: CAL,
-    READ_MORE: translate("contact.section.call.read-more"),
+    title: translate("contact.section.call.title"),
+    body: translate("contact.section.call.body"),
+    href: CAL,
+    label: translate("contact.section.call.read-more"),
   },
   {
-    TITLE: translate("contact.section.email.title"),
-    BODY: [
+    title: translate("contact.section.email.title"),
+    body: [
       ...translate("contact.section.email.body"),
       translate("footer.feature.contact-disclaimer"),
     ] as string[],
-    LINK: EMAIL,
-    READ_MORE: translate("contact.section.email.read-more"),
+    href: EMAIL,
+    label: translate("contact.section.email.read-more"),
   },
 ];
 
 export default function Contact() {
-  return (
-    <Main
-      copy={COPY}
-      location={translate("contact.feature.location")}
-    />
-  );
+  return <Main copy={COPY} location={translate("contact.feature.location")} />;
 }

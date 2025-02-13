@@ -2,6 +2,7 @@ import { Text } from "@ui/atoms";
 import clsx from "clsx";
 
 import type { BlogPost } from "@common-types/Blogpost";
+import type { Href } from "@common-types/Href";
 import type { Service } from "@common-types/Service";
 import type { HTMLProps, ReactNode } from "react";
 
@@ -9,22 +10,21 @@ import { Footer, Meta, Tags } from "./Box.helpers";
 
 import styles from "./Box.module.scss";
 
-interface NoLink {
+interface PlainBox {
   hidden?: boolean;
   date?: never;
   tags?: never;
   youtube?: never;
-  link?: string;
+  link?: Href;
   active?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   icon?: never;
   title?: string;
   onClick?: () => void;
-  readMoreLabel?: string;
 }
 
 type Props = HTMLProps<HTMLDivElement> &
-  (BlogPost | Service | NoLink) & {
+  (BlogPost | Service | PlainBox) & {
     noBottomMargin?: boolean;
   };
 
@@ -41,7 +41,6 @@ function Box({
   children,
   active,
   noBottomMargin,
-  readMoreLabel,
 }: Props) {
   const classNames = [className, styles.wrapper];
 
@@ -74,9 +73,9 @@ function Box({
 
       {link && (
         <Footer
-          title={title ?? ""}
-          readMoreLabel={readMoreLabel}
-          link={link}
+          title={title ?? link.label}
+          readMoreLabel={link.label}
+          link={link.href}
           youtube={youtube}
           onClick={onClick}
           active={active}

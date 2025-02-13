@@ -1,17 +1,11 @@
 import { Link } from "react-router";
 import clsx from "clsx";
 
-import type { LinkProps } from "react-router";
+import type { ButtonProps } from "@common-types/Button";
 
 import styles from "./Button.module.scss";
 
-interface Props extends LinkProps {
-  variant?: "primary" | "secondary" | "tertiary";
-  disabled?: boolean;
-  small?: boolean;
-}
-
-function Button({ variant, className, small, disabled, ...rest }: Props) {
+function Button({ variant, className, small, disabled, ...rest }: ButtonProps) {
   const classNames = [
     className,
     styles.base,

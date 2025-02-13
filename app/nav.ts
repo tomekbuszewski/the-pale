@@ -12,21 +12,21 @@ export const Sections = {
 };
 
 export const HeaderNav = [
-  { text: translate("nav.works"), href: "/#" + Sections.works },
-  { text: translate("nav.services"), href: "/#" + Sections.services },
-  { text: translate("nav.videos"), href: "/#" + Sections.videos },
-  { text: translate("nav.about"), href: "/#" + Sections.about },
+  { label: translate("nav.works"), href: "/#" + Sections.works },
+  { label: translate("nav.services"), href: "/#" + Sections.services },
+  { label: translate("nav.videos"), href: "/#" + Sections.videos },
+  { label: translate("nav.about"), href: "/#" + Sections.about },
 ];
 
 export const Contact = {
-  text: translate("nav.contact"),
+  label: translate("nav.contact"),
   href: "#" + Sections.contact,
 };
 
 export const Pages = [
-  { text: translate("nav.home"), href: "/" },
-  { text: translate("nav.tech"), href: "/tech" },
-  { text: translate("nav.uses"), href: "/uses" },
+  { label: translate("nav.home"), href: "/" },
+  { label: translate("nav.tech"), href: "/tech" },
+  { label: translate("nav.uses"), href: "/uses" },
 ];
 
 const BASE_SERVICES = "/services";

@@ -1,3 +1,4 @@
+import type { Href } from "@common-types/Href";
 import type { ReactNode } from "react";
 
 export interface Service {
@@ -8,8 +9,7 @@ export interface Service {
   date?: never;
   tags?: never;
   youtube?: never;
-  link: string;
+  link: Href | Href[];
   active?: boolean;
   children: ReactNode;
-  readMoreLabel?: string;
 }

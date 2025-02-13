@@ -3,10 +3,16 @@ import { fireEvent, render, screen } from "@testing-library/react";
 
 import PageHeader from "./PageHeader";
 
+const links = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+
 const renderPageHeader = () => {
   return render(
     <MemoryRouter>
-      <PageHeader />
+      <PageHeader links={links} />
     </MemoryRouter>,
   );
 };
@@ -38,7 +44,7 @@ describe("UI / Organisms / PageHeader", () => {
     const customClass = "custom-header";
     render(
       <MemoryRouter>
-        <PageHeader className={customClass} />
+        <PageHeader className={customClass} links={links} />
       </MemoryRouter>,
     );
 

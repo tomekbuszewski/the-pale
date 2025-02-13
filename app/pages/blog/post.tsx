@@ -17,7 +17,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 
   if (content?.items) {
     const post = content.items.find(
-      (item) => item.link === Routes.post.replace(":slug", slug),
+      (item) => item.link.href === Routes.post.replace(":slug", slug),
     );
 
     if (post) {

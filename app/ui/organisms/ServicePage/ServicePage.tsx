@@ -14,6 +14,7 @@ import { translate } from "@utils/translate";
 import clsx from "clsx";
 
 import type { ContactCTA } from "@common-types/ContactCTA";
+import type { Href } from "@common-types/Href";
 import type { LargeCard as Card } from "@common-types/LargeCard";
 
 import styles from "./ServicePage.module.scss";
@@ -50,7 +51,7 @@ const defaultCTA = {
       label: translate("services.feature.website.full.btn.contact"),
       href: "#contact",
     },
-  ],
+  ] as Href[],
 };
 
 function ServicePage({

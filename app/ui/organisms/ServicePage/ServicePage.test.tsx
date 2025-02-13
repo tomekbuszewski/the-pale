@@ -1,6 +1,8 @@
 import { MemoryRouter } from "react-router";
 import { render, screen } from "@testing-library/react";
 
+import type { Href } from "@common-types/Href";
+
 import ServicePage from "./ServicePage";
 
 describe("UI / Organisms / ServicePage", () => {
@@ -60,7 +62,7 @@ describe("UI / Organisms / ServicePage", () => {
           label: "Custom Button",
           href: "#custom",
         },
-      ],
+      ] as Href[],
     };
 
     renderWithRouter(<ServicePage {...mockProps} cta={customCTA} />);

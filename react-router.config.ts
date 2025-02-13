@@ -14,7 +14,7 @@ export default {
 
     if (posts.items) {
       for (const item of posts.items) {
-        items.push(item.link);
+        items.push(item.link.href);
       }
     }
 

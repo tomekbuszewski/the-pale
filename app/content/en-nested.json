@@ -105,6 +105,7 @@
       "website": {
         "title": "Website&nbsp;Design &&nbsp;Development",
         "short-title": "Website<br />Design&Dev",
+        "link-title": "More on websites",
         "copy": [
           "Full-Cycle Web Solutions: Design, Development, Delivery.",
           "I provide a seamless experience from initial design concepts to the final product. Whether you’re launching a new business or revamping an existing site, I ensure everything works perfectly."
@@ -170,6 +171,7 @@
       },
       "frontend": {
         "title": "Frontend<br />Development",
+        "link-title": "More on frontend",
         "copy": [
           "Have a design? I'll make it a reality with clean, functional front-end code.",
           "Tech choices are tailored to your project to ensure scalability and smooth performance."
@@ -215,6 +217,7 @@
       "consultations": {
         "title": "Engineering &&nbsp;Project Management Consultations",
         "short-title": "Project<br />Consulting",
+        "link-title": "More on consulting",
         "copy": [
           "With experience as an engineering manager and tech lead, I understand both technical and human aspects of team dynamics.",
           "I offer consulting to help your team thrive and reach its goals."

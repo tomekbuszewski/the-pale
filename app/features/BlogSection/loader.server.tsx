@@ -79,7 +79,10 @@ export default async function loader({
           }
 
           const newPost: BlogPost = {
-            link: Routes.post.replace(":slug", data.slug),
+            link: {
+              href: Routes.post.replace(":slug", data.slug),
+              label: data.title as string,
+            },
             title: data.title as string,
             date: data.pubdate as Date,
             children: data.summary as string,

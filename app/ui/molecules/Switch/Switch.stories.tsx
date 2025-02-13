@@ -5,8 +5,8 @@ import Switch from "./Switch";
 export const Primary: StoryObj<typeof Switch> = {
   args: {
     items: [
-      { label: "PL", value: "pl" },
-      { label: "EN", value: "en" },
+      { label: "PL", href: "pl" },
+      { label: "EN", href: "en" },
     ],
     onChange: console.log,
   },
@@ -15,16 +15,16 @@ export const Primary: StoryObj<typeof Switch> = {
 export const WithManyChoices: StoryObj<typeof Switch> = {
   args: {
     items: [
-      { label: "PL", value: "pl" },
-      { label: "EN", value: "en" },
-      { label: "DE", value: "de" },
-      { label: "FR", value: "fr" },
-      { label: "ES", value: "es" },
-      { label: "IT", value: "it" },
-      { label: "NL", value: "nl" },
-      { label: "PT", value: "pt" },
-      { label: "RU", value: "ru" },
-      { label: "ZH", value: "zh" },
+      { label: "PL", href: "pl" },
+      { label: "EN", href: "en" },
+      { label: "DE", href: "de" },
+      { label: "FR", href: "fr" },
+      { label: "ES", href: "es" },
+      { label: "IT", href: "it" },
+      { label: "NL", href: "nl" },
+      { label: "PT", href: "pt" },
+      { label: "RU", href: "ru" },
+      { label: "ZH", href: "zh" },
     ],
     onChange: console.log,
   },

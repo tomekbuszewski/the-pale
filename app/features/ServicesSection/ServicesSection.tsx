@@ -16,13 +16,19 @@ const items = [
       <Text key={i}>{s}</Text>
     )),
     additional: translate("services.feature.website.additional"),
-    link: Routes.website,
+    link: {
+      href: Routes.website,
+      label: translate("services.feature.website.link-title"),
+    },
   },
   {
     title: translate("services.feature.frontend.title"),
     icon: <FrontendIcon />,
     onClick: () => null,
-    link: Routes.frontend,
+    link: {
+      href: Routes.frontend,
+      label: translate("services.feature.frontend.link-title"),
+    },
     children: translate("services.feature.frontend.copy").map((s, i) => (
       <Text key={i}>{s}</Text>
     )),
@@ -31,7 +37,10 @@ const items = [
   {
     title: translate("services.feature.consultations.short-title"),
     icon: <ConsultationsIcon />,
-    link: Routes.consulting,
+    link: {
+      href: Routes.consulting,
+      label: translate("services.feature.consultations.link-title"),
+    },
     onClick: () => null,
     children: translate("services.feature.consultations.copy").map((s, i) => (
       <Text key={i}>{s}</Text>
