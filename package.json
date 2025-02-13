@@ -19,6 +19,7 @@
     "@react-router/serve": "^7.1.5",
     "@shikijs/rehype": "^2.3.2",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "clsx": "^2.1.1",
     "isbot": "^5.1.22",
     "motion": "^12.4.2",

@@ -13,6 +13,7 @@ import {
 import brico from "@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url";
 import geist from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import type { ReactNode } from "react";
 
@@ -90,6 +91,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <Scripts />
         <AnalyticsFeature.component id={gaID} />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
