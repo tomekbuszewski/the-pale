@@ -100,7 +100,8 @@
   "services": {
     "section": {
       "title": "Services",
-      "read-more": "Read more about {{title}}"
+      "read-more-open": "Expand",
+      "read-more-close": "Collapse"
     },
     "feature": {
       "title": "Services",

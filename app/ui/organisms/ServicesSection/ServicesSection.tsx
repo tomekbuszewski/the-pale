@@ -3,8 +3,10 @@ import { useIsMobile } from "@hooks";
 import { Sections } from "@nav";
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
+import { translate } from "@utils/translate";
 import clsx from "clsx";
 
+import type { Href } from "@common-types/Href";
 import type { Service } from "@common-types/Service";
 
 import Check from "./assets/check.svg?react";
@@ -13,6 +15,7 @@ import styles from "./ServicesSection.module.scss";
 
 interface ExpandedService extends Service {
   additional: string[];
+  link: Href[];
 }
 
 interface Props extends HTMLProps<HTMLDivElement> {
@@ -70,7 +73,7 @@ function ServicesSection({ items, title }: Props) {
           [styles.active]: isSectionActive,
         })}
       >
-        {items.map((item, i) => {
+        {items.map(({ link, ...item }, i) => {
           const shouldHide = typeof active !== "undefined" && i !== active;
           const isActive = i === active;
 
@@ -91,6 +94,12 @@ function ServicesSection({ items, title }: Props) {
             }, 500);
           }
 
+          const readMoreLabel = translate(
+            isActive
+              ? "services.section.read-more-close"
+              : "services.section.read-more-open",
+          );
+
           return (
             <div
               ref={(el) => {
@@ -104,15 +113,25 @@ function ServicesSection({ items, title }: Props) {
             >
               <Box
                 {...item}
+                link={[
+                  ...link,
+                  {
+                    label: readMoreLabel,
+                    href: "",
+                    variant: "tertiary",
+                    onClick: (e) => {
+                      e.preventDefault();
+
+                      if (isSectionActive) {
+                        setActive(undefined);
+                      } else {
+                        handleClick(i);
+                      }
+                    },
+                  },
+                ]}
                 active={isActive}
                 hidden={shouldHide}
-                onClick={() => {
-                  if (isSectionActive) {
-                    setActive(undefined);
-                  } else {
-                    handleClick(i);
-                  }
-                }}
               />
 
               <Additional

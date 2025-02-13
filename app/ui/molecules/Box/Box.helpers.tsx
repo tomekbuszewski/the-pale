@@ -41,6 +41,7 @@ export function Footer({ links }: FooterProps) {
           key={link.href}
           aria-label={link.title}
           target={link.external ? "_blank" : undefined}
+          onClick={link.onClick}
         >
           {link.label}
         </Button>
