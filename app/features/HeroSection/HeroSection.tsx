@@ -11,6 +11,7 @@ const COPY = {
 };
 
 export default function HeroSection() {
+  return null;
   return (
     <Main title={COPY.TITLE} copy={COPY.BODY}>
       <>
