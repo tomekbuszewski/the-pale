@@ -4,7 +4,7 @@
   min-height: 90dvh;
 
   @include media("md") {
-    min-height: #{rem(920)} !important;
+    min-height: #{rem(920)};
   }
 
   @include media("lg") {
