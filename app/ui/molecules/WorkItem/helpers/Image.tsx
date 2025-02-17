@@ -5,16 +5,16 @@ export function Image({
   image: string | OutputMetadata;
   title: string;
 }) {
-  if (typeof image === "string") {
-    return <img src={image} alt={title} />;
-  }
+  const imgIsString = typeof image === "string";
 
   return (
     <img
-      src={image.src}
+      loading="lazy"
+      src={imgIsString ? image : image.src}
       alt={title}
-      width={image.width}
-      height={image.height}
+      title={title}
+      width={imgIsString ? undefined : image.width}
+      height={imgIsString ? undefined : image.height}
     />
   );
 }
