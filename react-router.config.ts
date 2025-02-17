@@ -2,37 +2,10 @@ import { vercelPreset } from "@vercel/react-router/vite";
 
 import type { Config } from "@react-router/dev/config";
 
-import loader from "./app/features/BlogSection/loader.server";
-import { StaticRoutes } from "./app/nav";
+import getPages from "./app/utils/getAllPages";
 
 export default {
   presets: [vercelPreset()],
   ssr: true,
-  prerender: async () => {
-    const posts = await loader({ withContent: false });
-    const pagination = await loader({ withContent: false, limit: 6 });
-    const items: string[] = Object.values(StaticRoutes);
-
-    if (posts.items) {
-      for (const { link } of posts.items) {
-        if (Array.isArray(link)) {
-          for (const { href } of link) {
-            if (!href.includes("http")) {
-              items.push(href);
-            }
-          }
-        } else {
-          items.push(link.href);
-        }
-      }
-    }
-
-    if (pagination.pagination?.pages) {
-      for (const page of pagination.pagination.pages) {
-        items.push(`/writings/page/${page}`);
-      }
-    }
-
-    return ["/", ...items];
-  },
+  prerender: getPages,
 } satisfies Config;

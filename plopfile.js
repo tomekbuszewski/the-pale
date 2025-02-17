@@ -1,4 +1,4 @@
-import "./utils/create-ui.js";
+import "./scripts/create-ui.js";
 import slugify from "slugify";
 
 function getCurrentDate() {
