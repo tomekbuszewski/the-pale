@@ -53,7 +53,20 @@ function ContactSection({ location, copy }: Props) {
       contentClassName={styles.wrapper}
       columns={{ sm: 1, md: 3, lg: 3 }}
       className={styles.parent}
+      itemScope
+      itemType="https://schema.org/ContactPoint"
     >
+      <meta itemProp="contactType" content="customer service" />
+      <meta
+        itemProp="email"
+        content={copy[1].links[0].href.replace("mailto:", "")}
+      />
+      <meta
+        itemProp="telephone"
+        content={copy[1].links[1].href.replace("tel:", "")}
+      />
+      <meta itemProp="areaServed" content={location} />
+
       {copy.map((item) => (
         <Box link={item.links} title={item.title} key={item.title}>
           {item.body.map((text, i) => (

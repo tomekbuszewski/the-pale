@@ -12,7 +12,12 @@ const COPY = {
 
 export default function HeroSection() {
   return (
-    <Main title={COPY.TITLE} copy={COPY.BODY}>
+    <Main
+      title={COPY.TITLE}
+      copy={COPY.BODY}
+      itemScope
+      itemType="https://schema.org/WebPageElement"
+    >
       <>
         {COPY.FIRST_LINE}
         <TextRotate staggerFrom="last" texts={COPY.KEYWORDS} />

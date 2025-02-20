@@ -13,6 +13,7 @@ export const Primary: StoryObj<typeof WorkItem> = {
     tags: ["Design", "Development"],
     mobileImage: MockImage,
     desktopImage: MockImageDesk,
+    index: 0,
   },
 };
 
@@ -26,6 +27,7 @@ export const ToLeft: StoryObj<typeof WorkItem> = {
     tags: ["Design", "Development"],
     mobileImage: MockImage,
     desktopImage: MockImageDesk,
+    index: 0,
   },
 };
 

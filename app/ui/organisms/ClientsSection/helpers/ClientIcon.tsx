@@ -28,7 +28,11 @@ export function ClientIcon({
       exit="exit"
       transition={{ duration: 0.4, delay: 0.1 * count }}
       variants={itemVariants}
+      itemProp="member"
+      itemScope
+      itemType="https://schema.org/Organization"
     >
+      <meta itemProp="name" content={name} />
       <Component />
       <figcaption className={clsx(styles.itemName, "sr-only")}>
         Logotype of my client {name}

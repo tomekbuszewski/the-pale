@@ -30,7 +30,17 @@ function HeroSection({ children, copy, title }: Props) {
   });
 
   return (
-    <SectionWrapper title={title} id={Sections.hero} className={styles.wrapper}>
+    <SectionWrapper
+      title={title}
+      id={Sections.hero}
+      className={styles.wrapper}
+      itemScope
+      itemType="https://schema.org/WebPageElement"
+    >
+      <meta itemProp="role" content="heading" />
+      <meta itemProp="name" content={title} />
+      <meta itemProp="description" content={copy} />
+
       <LayoutGroup>
         <Text variant="hero" className={styles.heading}>
           {children}

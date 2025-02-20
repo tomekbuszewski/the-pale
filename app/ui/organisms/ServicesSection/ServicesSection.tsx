@@ -72,6 +72,9 @@ function ServicesSection({ items, title }: Props) {
         className={clsx(styles.wrapper, {
           [styles.active]: isSectionActive,
         })}
+        itemScope
+        itemType="https://schema.org/OfferCatalog"
+        itemProp="hasOfferCatalog"
       >
         {items.map(({ link, ...item }, i) => {
           const shouldHide = typeof active !== "undefined" && i !== active;
@@ -113,6 +116,9 @@ function ServicesSection({ items, title }: Props) {
             >
               <Box
                 {...item}
+                itemScope
+                itemType="https://schema.org/Service"
+                itemProp="itemOffered"
                 link={[
                   ...link,
                   {
@@ -132,7 +138,11 @@ function ServicesSection({ items, title }: Props) {
                 ]}
                 active={isActive}
                 hidden={shouldHide}
-              />
+              >
+                <meta itemProp="name" content={item.title} />
+                <meta itemProp="url" content={link[0].href} />
+                <meta itemProp="position" content={String(i + 1)} />
+              </Box>
 
               <Additional
                 items={item.additional}

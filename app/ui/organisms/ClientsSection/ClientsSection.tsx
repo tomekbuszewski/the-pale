@@ -58,6 +58,7 @@ function ClientsSection({ items }: Props) {
         initial="initial"
         animate="animate"
         exit="exit"
+        itemType="https://schema.org/Organization"
       >
         <AnimatePresence mode="sync">
           {visibleItems.map((item, i) => (

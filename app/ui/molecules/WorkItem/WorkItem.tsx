@@ -11,7 +11,9 @@ import { Tags } from "./helpers/Tags";
 
 import styles from "./WorkItem.module.scss";
 
-interface Props extends HTMLProps<HTMLDivElement>, Omit<Work, "title"> {}
+interface Props extends HTMLProps<HTMLDivElement>, Omit<Work, "title"> {
+  index: number;
+}
 
 function WorkItem({
   className,
@@ -24,6 +26,8 @@ function WorkItem({
   link,
   background,
   align = "right",
+  date,
+  index,
 }: Props) {
   const classNames = [className, styles.parent];
   const sectionRef = useRef(null);
@@ -52,8 +56,15 @@ function WorkItem({
       animate={false}
       style={style}
       dark
+      itemScope
+      itemType="https://schema.org/CreativeWork"
+      itemProp="hasPart"
     >
       <section className={styles.details}>
+        <meta itemProp="name" content={title} />
+        <meta itemProp="dateCreated" content={date.toISOString()} />
+        <meta itemProp="position" content={String(index + 1)} />
+
         <motion.div {...createMotionConfig(0)}>
           <Text variant="title" className={styles.title}>
             {title}

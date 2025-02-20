@@ -27,8 +27,11 @@ function BlogSection({ className, items, pagination, title }: Props) {
       contentClassName={styles.wrapper}
       className={clsx(className, styles.parent)}
       columns={{ sm: 1, md: 3, lg: 3 }}
+      itemScope
+      itemType="https://schema.org/Blog"
+      itemProp="blogPosts"
     >
-      {items.map(({ link, ...item }) => {
+      {items.map(({ link, ...item }, index) => {
         const readLabel = item.shortTitle
           ? translate("blog.section.buttons.read-more-about", item.shortTitle)
           : translate("blog.section.buttons.read-more");
@@ -39,6 +42,12 @@ function BlogSection({ className, items, pagination, title }: Props) {
         return (
           <Box
             {...item}
+            itemProp="itemListElement"
+            itemType={
+              item.youtube
+                ? "https://schema.org/VideoObject"
+                : "https://schema.org/Article"
+            }
             key={item.title}
             noBottomMargin
             link={
@@ -53,7 +62,14 @@ function BlogSection({ className, items, pagination, title }: Props) {
               ] as Href[]
             }
           >
-            <Text>{item.children}</Text>
+            <meta itemProp="name" content={title} />
+            <meta itemProp="position" content={String(index + 1)} />
+            <meta itemProp="name" content={item.title} />
+            <meta itemProp="url" content={(link as Href).href} />
+            {item.youtube && (
+              <meta itemProp="embedUrl" content={item.youtube} />
+            )}
+            <Text itemProp="description">{item.children}</Text>
           </Box>
         );
       })}

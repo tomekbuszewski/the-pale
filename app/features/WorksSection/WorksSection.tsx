@@ -11,10 +11,18 @@ const data = [Gameshelf, Backlog, Hay24].sort(
 
 export default function WorksSection() {
   return (
-    <section id={Sections.works}>
+    <section
+      id={Sections.works}
+      itemScope
+      itemType="https://schema.org/CreativeWorkSeries"
+    >
+      <meta itemProp="name" content="Portfolio Works" />
+      <meta itemProp="numberOfItems" content={String(data.length)} />
+
       {data.map((item, i) => (
         <WorkItem
           {...item}
+          index={i}
           key={item.title}
           align={i % 2 === 0 ? "right" : "left"}
         />

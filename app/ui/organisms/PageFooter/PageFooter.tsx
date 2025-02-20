@@ -79,7 +79,12 @@ function PageFooter({
       contentClassName={styles.wrapper}
       columns={{ sm: 12, md: 4, lg: 4 }}
       className={styles.parent}
+      itemScope
+      itemType="https://schema.org/Organization"
     >
+      <meta itemProp="name" content={copy.split(" ")[0]} />
+      <meta itemProp="contactPoint" content="#contact" />
+
       <Logo wrapperClassName={styles.logo} />
       <Logo wrapperClassName={styles.logoBg} />
 
