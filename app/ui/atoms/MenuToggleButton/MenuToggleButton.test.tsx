@@ -53,7 +53,6 @@ describe("UI / Atoms / MenuToggleButton", () => {
   });
 
   it("should be hidden on screens larger than 1200px", () => {
-    // Set viewport width to 1201px
     Object.defineProperty(window, "matchMedia", {
       writable: true,
       value: vi.fn().mockImplementation((query: string) => {
@@ -66,6 +65,6 @@ describe("UI / Atoms / MenuToggleButton", () => {
     render(<MenuToggleButton />);
     const button = screen.queryByRole("button");
 
-    expect(button).not.toBeInTheDocument();
+    expect(button).toHaveAttribute("inert");
   });
 });

@@ -43,7 +43,11 @@ describe("BlogSection", () => {
   it("renders the section title", () => {
     render(
       <MemoryRouter>
-        <BlogSection items={mockItems} pagination={mockPagination} />
+        <BlogSection
+          items={mockItems}
+          pagination={mockPagination}
+          title="Videos & Writings"
+        />
       </MemoryRouter>,
     );
     expect(screen.getByText("Videos & Writings")).toBeInTheDocument();
