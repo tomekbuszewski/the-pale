@@ -8,6 +8,7 @@ import type { Href } from "@common-types/Href";
 import type { HTMLProps, ReactNode } from "react";
 
 import styles from "./PageFooter.module.scss";
+import { translate } from "@utils/translate";
 
 interface HrefWithIcon extends Href {
   icon: ReactNode;
@@ -100,12 +101,18 @@ function PageFooter({
       </aside>
 
       <nav className={styles.navWrapper}>
-        <SectionHeader title="Quick links" margin="none" />
+        <SectionHeader
+          title={translate("footer.section.boxes.quick-links")}
+          margin="none"
+        />
         <Links items={quickLinks} />
       </nav>
 
       <nav className={styles.navWrapper}>
-        <SectionHeader title="Contact" margin="none" />
+        <SectionHeader
+          title={translate("footer.section.boxes.contact")}
+          margin="none"
+        />
         <Links items={contact} />
 
         {contactDisclaimer && (
@@ -114,7 +121,10 @@ function PageFooter({
       </nav>
 
       <nav className={styles.navWrapper}>
-        <SectionHeader title="Socials" margin="none" />
+        <SectionHeader
+          title={translate("footer.section.boxes.socials")}
+          margin="none"
+        />
         <Links items={socials} />
       </nav>
 

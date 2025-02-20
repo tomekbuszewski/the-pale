@@ -79,7 +79,12 @@
   "footer": {
     "section": {
       "copyright": "© {{start}} - {{current}}<br />All rights reserved.",
-      "cookies": "This site collects cookies for analytics and testing purposes."
+      "cookies": "This site collects cookies for analytics and testing purposes.",
+      "boxes": {
+        "quick-links": "Quick links",
+        "contact": "Contact",
+        "socials": "Socials"
+      }
     },
     "feature": {
       "copy": "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",

@@ -5,6 +5,7 @@ import { LayoutGroup, useScroll, useTransform } from "motion/react";
 import type { HTMLProps } from "react";
 
 import styles from "./HeroSection.module.scss";
+import { translate } from "@utils/translate";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   copy: string;
@@ -51,10 +52,10 @@ function HeroSection({ children, copy, title }: Props) {
 
       <div className={styles.buttonWrapper}>
         <Button to="#contact" variant="primary">
-          Contact
+          {translate("hero.section.contact")}
         </Button>
         <Button to="#works" variant="tertiary">
-          Explore
+          {translate("hero.section.explore")}
         </Button>
       </div>
 

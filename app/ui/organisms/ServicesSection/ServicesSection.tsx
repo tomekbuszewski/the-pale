@@ -139,6 +139,7 @@ function ServicesSection({ items, title }: Props) {
                 active={isActive}
                 hidden={shouldHide}
               >
+                {item.children}
                 <meta itemProp="name" content={item.title} />
                 <meta itemProp="url" content={link[0].href} />
                 <meta itemProp="position" content={String(i + 1)} />
