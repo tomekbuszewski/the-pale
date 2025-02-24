@@ -1,9 +1,8 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router";
-import { useIsMobile } from "@hooks";
+import { useIsMobile, useTranslate } from "@hooks";
 import { ContactButton, Logo, MenuToggleButton } from "@ui/atoms";
 import { PageNavigation } from "@ui/organisms";
-import { translate } from "@utils/translate";
 import clsx from "clsx";
 import {
   type HTMLMotionProps,
@@ -41,6 +40,7 @@ function useHiddenHeader(threshold = 160) {
 }
 
 function PageHeader({ className, links, ...rest }: Props) {
+  const translate = useTranslate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const [isVisible, isOnTop] = useHiddenHeader(0);

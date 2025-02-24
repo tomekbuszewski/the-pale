@@ -1,6 +1,5 @@
 import { Text } from "@ui/atoms";
 import { createMotionConfig } from "@utils/fadeIn";
-import { translate } from "@utils/translate";
 import { motion } from "motion/react";
 
 import CodeIcon from "../assets/code.svg?react";
@@ -15,11 +14,11 @@ interface TagsProps {
 
 function resolveIcon(tag: string) {
   switch (tag) {
-    case translate("work.item.tag.design"):
+    case "work.item.tag.design":
       return <DesignIcon />;
-    case translate("work.item.tag.development"):
+    case "work.item.tag.development":
       return <CodeIcon />;
-    case translate("work.item.tag.consultations"):
+    case "work.item.tag.consultations":
       return <ConsultationIcon />;
 
     default:

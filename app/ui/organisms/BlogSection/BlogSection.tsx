@@ -1,7 +1,6 @@
 import { Sections } from "@nav";
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
-import { translate } from "@utils/translate";
 import clsx from "clsx";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
@@ -12,6 +11,7 @@ import type { HTMLProps } from "react";
 import { Pagination } from "./BlogSection.helpers";
 
 import styles from "./BlogSection.module.scss";
+import { useTranslate } from "@hooks";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   items: BlogPost[];
@@ -20,6 +20,8 @@ interface Props extends HTMLProps<HTMLDivElement> {
 }
 
 function BlogSection({ className, items, pagination, title }: Props) {
+  const translate = useTranslate();
+
   return (
     <SectionWrapper
       id={Sections.videos}
