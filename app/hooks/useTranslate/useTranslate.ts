@@ -26,6 +26,8 @@ type TranslateFunction = {
     path: P,
     ...args: string[]
   ): TranslationValue<typeof en, P>;
+  (path: string): string;
+  (path: string, ...args: string[]): string;
 };
 
 export default function useTranslate() {

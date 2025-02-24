@@ -10,6 +10,7 @@ import {
 import * as nav from "@nav";
 import { PageFooter as Main } from "@ui/organisms";
 import { resolveHandle } from "@utils/resolveHandle";
+import { useTranslate } from "@hooks";
 
 import Calendar from "./assets/calendar.svg?react";
 import Github from "./assets/gh.svg?react";
@@ -17,7 +18,8 @@ import LinkedIn from "./assets/in.svg?react";
 import Mail from "./assets/mail.svg?react";
 import Phone from "./assets/phone.svg?react";
 import YouTube from "./assets/yt.svg?react";
-import { useTranslate } from "@hooks";
+import { LanguageContext } from "@context/Language";
+import { useContext } from "react";
 
 const languages = [
   {
@@ -32,10 +34,14 @@ const languages = [
 
 export default function Footer() {
   const translate = useTranslate();
+  const language = useContext(LanguageContext);
 
   const data = {
     copy: translate("footer.feature.copy"),
-    quickLinks: [...nav.Pages, ...nav.HeaderNav],
+    quickLinks: [...nav.Pages, ...nav.HeaderNav].map(({ label, href }) => ({
+      href,
+      label: translate(label),
+    })),
     contact: [
       {
         href: `mailto:${EMAIL}`,
@@ -77,9 +83,27 @@ export default function Footer() {
     ],
   };
 
+  function onLanguageChange(lang: string) {
+    const currentPath = window.location.pathname;
+
+    const langMatch = currentPath.match(/^\/(en|pl)\//);
+
+    if (lang !== language) {
+      const baseUrl = window.location.origin;
+      const newPath = langMatch
+        ? currentPath.replace(/^\/(en|pl)\//, lang === "en" ? "/" : `/${lang}/`)
+        : lang === "en"
+          ? currentPath
+          : `/${lang}${currentPath}`;
+
+      window.location.href = baseUrl + newPath;
+    }
+  }
+
   return (
     <Main
       {...data}
+      onLanguageChange={onLanguageChange}
       languages={languages}
       cookies={translate("footer.section.cookies")}
       copyright={translate(
