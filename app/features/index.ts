@@ -11,7 +11,6 @@ import * as HeroSectionFeature from "./HeroSection";
 import * as ServicesSectionFeature from "./ServicesSection";
 import * as WorksSectionFeature from "./WorksSection";
 import * as ContentFeature from "./Content";
-import { LanguageContext } from "./Content";
 
 export const AboutSection = {
   component: AboutSectionFeature.AboutSection,
@@ -71,6 +70,7 @@ export const Analytics = {
 };
 
 export const Content = {
+  components: { Link: ContentFeature.Link, NavLink: ContentFeature.NavLink },
   context: ContentFeature.LanguageContext,
   hooks: { useTranslate: ContentFeature.useTranslate },
   functions: {

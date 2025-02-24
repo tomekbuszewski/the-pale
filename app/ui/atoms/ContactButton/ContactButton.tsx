@@ -1,5 +1,4 @@
 import { useLayoutEffect, useState } from "react";
-import { Link } from "react-router";
 import { Contact } from "@nav";
 import clsx from "clsx";
 
@@ -7,8 +6,10 @@ import tomek from "./assets/tomek.jpg";
 
 import buttonStyles from "../Button/Button.module.scss";
 import styles from "./ContactButton.module.scss";
+import { Content } from "@features";
 
 function ContactButton() {
+  const { Link } = Content.components;
   const [loaded, setLoaded] = useState(false);
 
   useLayoutEffect(() => {
