@@ -1,4 +1,4 @@
-import { type HTMLProps, useRef } from "react";
+import { Fragment, type HTMLProps, useRef } from "react";
 import { Button, SectionWrapper, Text } from "@ui/atoms";
 import { createMotionConfig } from "@utils/fadeIn";
 import clsx from "clsx";
@@ -10,6 +10,7 @@ import { Image } from "./helpers/Image";
 import { Tags } from "./helpers/Tags";
 
 import styles from "./WorkItem.module.scss";
+import { useTranslate } from "@hooks";
 
 interface Props extends HTMLProps<HTMLDivElement>, Omit<Work, "title"> {
   index: number;
@@ -29,6 +30,7 @@ function WorkItem({
   date,
   index,
 }: Props) {
+  const translate = useTranslate();
   const classNames = [className, styles.parent];
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
@@ -71,9 +73,17 @@ function WorkItem({
           </Text>
         </motion.div>
 
-        {description.length > 0 && (
+        {description && (
           <motion.div {...createMotionConfig(1)}>
-            <Text className={styles.description}>{description[0]}</Text>
+            <Text className={styles.description}>
+              {Array.isArray(description) ? (
+                description.map((text, i) => (
+                  <Fragment key={i}>{translate(text)}</Fragment>
+                ))
+              ) : (
+                <Fragment>{translate(description)}</Fragment>
+              )}
+            </Text>
           </motion.div>
         )}
 
