@@ -1,7 +1,7 @@
 import { DEFAULT_TITLE, KEYWORDS, PAGE_URL, TWITTER } from "@contact";
 
 import sharing from "./assets/sharing.jpg";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 const baseDescription = "head.feature.description";
 
@@ -68,7 +68,7 @@ export default function (
   description?: string,
   customImage?: string,
 ) {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
   const titleTag = `${title ?? baseDescription} · ${DEFAULT_TITLE}`;
   const meta: [string, string][] = [
     ...defaultMeta,

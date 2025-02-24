@@ -17,7 +17,7 @@ import type { Href } from "@common-types/Href";
 import type { LargeCard as Card } from "@common-types/LargeCard";
 
 import styles from "./ServicePage.module.scss";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 interface Process {
   title: string;
@@ -50,7 +50,7 @@ function ServicePage({
   cta,
 }: Props) {
   const [activeCard, setActiveCard] = useState<number | null>(null);
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   const defaultCTA = {
     text: translate("services.feature.website.full.cta"),

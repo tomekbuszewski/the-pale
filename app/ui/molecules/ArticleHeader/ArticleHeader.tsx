@@ -4,7 +4,7 @@ import type { Meta as MetaProps } from "@common-types/Meta";
 import type { HTMLProps, MouseEvent } from "react";
 
 import styles from "./ArticleHeader.module.scss";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   title: string;
@@ -12,7 +12,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
 }
 
 function Meta({ date, tags }: MetaProps) {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   return (
     <aside className={styles.meta}>
@@ -34,7 +34,7 @@ function Meta({ date, tags }: MetaProps) {
 }
 
 function ArticleHeader({ title, meta, ...props }: Props) {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   function handleBack(e: MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();

@@ -2,10 +2,10 @@ import { CAL, EMAIL, PHONE } from "@contact";
 import { ContactSection as Main } from "@ui/organisms";
 
 import type { ContactItem } from "@common-types/ContactItem";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 export default function Contact() {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   const COPY: ContactItem[] = [
     {
