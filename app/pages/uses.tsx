@@ -3,10 +3,10 @@ import { ArticleHeader, List } from "@ui/molecules";
 import clsx from "clsx";
 
 import globals from "./pages.module.scss";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 export default function Consulting() {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
   const COPY = {
     INTRO: translate("uses.copy"),
 

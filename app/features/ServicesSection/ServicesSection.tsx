@@ -5,10 +5,10 @@ import { ServicesSection as Main } from "@ui/organisms";
 import ConsultationsIcon from "./assets/consultations.svg?react";
 import FrontendIcon from "./assets/frontend.svg?react";
 import WebsiteIcon from "./assets/website.svg?react";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 export default function ServicesSection() {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   const items = [
     {

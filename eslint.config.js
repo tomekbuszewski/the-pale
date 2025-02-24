@@ -10,7 +10,7 @@ export default tseslint.config(
   { ignores: ["dist", ".react-router", ".storybook"] },
   {
     settings: {
-      react: { version: "18.3" },
+      react: { version: "19.0" },
       "import/resolver": {
         typescript: {},
         node: {
@@ -40,15 +40,11 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      "import/no-unresolved": [
-        "error",
-        { ignore: [".css", "@react-router/dev"] },
-      ],
+      "import/no-unresolved": ["error"],
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/only-throw-error": [
         "error",
         {
-          allow: ["Redirect", "Response"],
           allowThrowingAny: false,
           allowThrowingUnknown: false,
         },
@@ -57,14 +53,10 @@ export default tseslint.config(
         "error",
         {
           groups: [
-            ["^react", "^@?\\w"],
-            ["^@?\\w.*\\u0000$"],
-            ["^[^.].*\\u0000$", "^\\..*\\u0000$"],
-            ["^\\u0000"],
-            ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-            ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+            ["^react", "^(?!@ui)@?\\w"],
+            ["^@ui"],
+            ["^\\./", "^\\.\\./"],
             ["^.+\\.s?css$"],
-            ["^(@)(/.*|$)"],
           ],
         },
       ],
@@ -73,5 +65,5 @@ export default tseslint.config(
       ...react.configs["jsx-runtime"].rules,
       "react/prop-types": "off",
     },
-  }
+  },
 );

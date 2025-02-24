@@ -16,10 +16,10 @@ import {
   zapier,
   zoom,
 } from "../icons";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 export default function Consulting() {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   const COPY = {
     TITLE: translate("services.feature.consultations.title"),
