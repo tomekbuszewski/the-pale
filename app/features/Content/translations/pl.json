@@ -88,7 +88,7 @@
     },
     "feature": {
       "copy": "Buszewski.com to agencja założona przez Tomasza Buszewskiego, dawniej managera i inżyniera oprogramowania.",
-      "call-button": "30-minutowa rozmowa bez zobowiązań",
+      "call-button": "30-min. spotkanie",
       "contact-disclaimer": "Odpowiadam najpóźniej do 24h (Pon-Pt)."
     }
   },
@@ -307,11 +307,11 @@
   },
   "nav": {
     "home": "Główna",
-    "tech": "Technologia",
-    "uses": "Sprzęt i oprogramowanie",
+    "tech": "Technologie",
+    "uses": "Wyposażenie",
     "works": "Realizacje",
     "services": "Usługi",
-    "videos": "Videos",
+    "videos": "",
     "about": "O mnie",
     "contact": "Kontakt",
     "buttons": {

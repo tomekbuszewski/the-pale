@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { Sections } from "@nav";
 import { Logo, SectionWrapper, Text } from "@ui/atoms";
 import { SectionHeader, Switch } from "@ui/molecules";
@@ -35,6 +34,8 @@ function isLinkHrefWithIcon(item: Href | HrefWithIcon): item is HrefWithIcon {
 }
 
 function Links({ items, className, ...rest }: LinksProps) {
+  const { Link } = Content.components;
+
   return (
     <ul className={clsx(className, styles.list)} {...rest}>
       {items.map((item) => {

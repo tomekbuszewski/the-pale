@@ -37,10 +37,12 @@ export default function Footer() {
 
   const data = {
     copy: translate("footer.feature.copy"),
-    quickLinks: [...nav.Pages, ...nav.HeaderNav].map(({ label, href }) => ({
-      href,
-      label: translate(label),
-    })),
+    quickLinks: [...nav.Pages, ...nav.HeaderNav]
+      .map(({ label, href }) => ({
+        href,
+        label: translate(label),
+      }))
+      .filter(({ label }) => label !== ""),
     contact: [
       {
         href: `mailto:${EMAIL}`,
