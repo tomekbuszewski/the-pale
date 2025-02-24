@@ -23,6 +23,7 @@ import "@fontsource-variable/geist-mono";
 import "@fontsource-variable/bricolage-grotesque";
 
 import stylesheet from "./app.scss?url";
+import { LanguageContext } from "@context/Language";
 
 export const links: Route.LinksFunction = () => [
   {
@@ -65,35 +66,39 @@ export const links: Route.LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-export function loader() {
-  const gaID = (import.meta.env.VITE_GA as string) ?? process.env.VITE_GA;
-  if (!gaID) {
-    return;
+export function loader({ request }: Route.LoaderArgs) {
+  const ga = (import.meta.env.VITE_GA as string) ?? process.env.VITE_GA;
+  let language = new URL(request.url).pathname.split("/")[1];
+
+  if (language !== "pl" && language !== "en") {
+    language = "en";
   }
 
-  return gaID;
+  return { ga, language };
 }
 
 export function Layout({ children }: { children: ReactNode }) {
-  const gaID = useLoaderData<typeof loader>();
+  const { ga, language } = useLoaderData<typeof loader>();
 
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-        <AnalyticsFeature.component id={gaID} />
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+    <LanguageContext.Provider value={language}>
+      <html lang={language}>
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <Meta />
+          <Links />
+        </head>
+        <body>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+          <AnalyticsFeature.component id={ga} />
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </LanguageContext.Provider>
   );
 }
 

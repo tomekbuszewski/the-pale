@@ -8,7 +8,7 @@ import type { Href } from "@common-types/Href";
 import type { HTMLProps, ReactNode } from "react";
 
 import styles from "./PageFooter.module.scss";
-import { translate } from "@utils/translate";
+import { useTranslate } from "@hooks";
 
 interface HrefWithIcon extends Href {
   icon: ReactNode;
@@ -73,6 +73,8 @@ function PageFooter({
   languages,
   onLanguageChange,
 }: Props) {
+  const translate = useTranslate();
+
   return (
     <SectionWrapper
       tag="footer"

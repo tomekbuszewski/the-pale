@@ -1,0 +1,172 @@
+{
+  "buildManifest": {
+    "serverBundles": {
+      "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+        "config": {
+          "runtime": "nodejs"
+        }
+      }
+    },
+    "routeIdToServerBundleId": {
+      "root": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/home": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/services/web-development/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/services/front-end/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/services/consulting/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/uses": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/tech": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/blog/post": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/blog/pagination": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
+    },
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "app/root.tsx",
+        "config": {
+          "runtime": "nodejs"
+        }
+      },
+      "layouts/Main": {
+        "id": "layouts/Main",
+        "parentId": "root",
+        "file": "app/layouts/Main.tsx",
+        "config": {}
+      },
+      "pages/home": {
+        "id": "pages/home",
+        "parentId": "layouts/Main",
+        "file": "app/pages/home.tsx",
+        "index": true,
+        "config": {}
+      },
+      "pages/services/web-development/index": {
+        "id": "pages/services/web-development/index",
+        "parentId": "layouts/Main",
+        "file": "app/pages/services/web-development/index.tsx",
+        "path": "/services/website",
+        "config": {}
+      },
+      "pages/services/front-end/index": {
+        "id": "pages/services/front-end/index",
+        "parentId": "layouts/Main",
+        "file": "app/pages/services/front-end/index.tsx",
+        "path": "/services/frontend",
+        "config": {}
+      },
+      "pages/services/consulting/index": {
+        "id": "pages/services/consulting/index",
+        "parentId": "layouts/Main",
+        "file": "app/pages/services/consulting/index.tsx",
+        "path": "/services/consulting",
+        "config": {}
+      },
+      "pages/uses": {
+        "id": "pages/uses",
+        "parentId": "layouts/Main",
+        "file": "app/pages/uses.tsx",
+        "path": "/uses",
+        "config": {}
+      },
+      "pages/tech": {
+        "id": "pages/tech",
+        "parentId": "layouts/Main",
+        "file": "app/pages/tech.tsx",
+        "path": "/tech",
+        "config": {}
+      },
+      "pages/blog/post": {
+        "id": "pages/blog/post",
+        "parentId": "layouts/Main",
+        "file": "app/pages/blog/post.tsx",
+        "path": "/writings/:slug",
+        "config": {}
+      },
+      "pages/blog/pagination": {
+        "id": "pages/blog/pagination",
+        "parentId": "layouts/Main",
+        "file": "app/pages/blog/pagination.tsx",
+        "path": "/writings/page/:page",
+        "config": {}
+      }
+    }
+  },
+  "reactRouterConfig": {
+    "appDirectory": "/Users/tomaszbuszewski/Code/the-pale/app",
+    "basename": "/",
+    "buildDirectory": "/Users/tomaszbuszewski/Code/the-pale/build",
+    "future": {
+      "unstable_optimizeDeps": false
+    },
+    "routes": {
+      "root": {
+        "path": "",
+        "id": "root",
+        "file": "root.tsx"
+      },
+      "layouts/Main": {
+        "id": "layouts/Main",
+        "parentId": "root",
+        "file": "./layouts/Main.tsx"
+      },
+      "pages/home": {
+        "id": "pages/home",
+        "parentId": "layouts/Main",
+        "file": "pages/home.tsx",
+        "index": true
+      },
+      "pages/services/web-development/index": {
+        "id": "pages/services/web-development/index",
+        "parentId": "layouts/Main",
+        "file": "pages/services/web-development/index.tsx",
+        "path": "/services/website"
+      },
+      "pages/services/front-end/index": {
+        "id": "pages/services/front-end/index",
+        "parentId": "layouts/Main",
+        "file": "pages/services/front-end/index.tsx",
+        "path": "/services/frontend"
+      },
+      "pages/services/consulting/index": {
+        "id": "pages/services/consulting/index",
+        "parentId": "layouts/Main",
+        "file": "pages/services/consulting/index.tsx",
+        "path": "/services/consulting"
+      },
+      "pages/uses": {
+        "id": "pages/uses",
+        "parentId": "layouts/Main",
+        "file": "pages/uses.tsx",
+        "path": "/uses"
+      },
+      "pages/tech": {
+        "id": "pages/tech",
+        "parentId": "layouts/Main",
+        "file": "pages/tech.tsx",
+        "path": "/tech"
+      },
+      "pages/blog/post": {
+        "id": "pages/blog/post",
+        "parentId": "layouts/Main",
+        "file": "pages/blog/post.tsx",
+        "path": "/writings/:slug"
+      },
+      "pages/blog/pagination": {
+        "id": "pages/blog/pagination",
+        "parentId": "layouts/Main",
+        "file": "pages/blog/pagination.tsx",
+        "path": "/writings/page/:page"
+      }
+    },
+    "serverBuildFile": "index.js",
+    "serverModuleFormat": "esm",
+    "ssr": true
+  },
+  "viteConfig": {
+    "build": {
+      "assetsDir": "assets"
+    }
+  }
+}
