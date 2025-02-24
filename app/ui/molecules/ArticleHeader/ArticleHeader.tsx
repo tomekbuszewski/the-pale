@@ -1,10 +1,10 @@
 import { Button, Text } from "@ui/atoms";
-import { translate } from "@utils/translate";
 
 import type { Meta as MetaProps } from "@common-types/Meta";
 import type { HTMLProps, MouseEvent } from "react";
 
 import styles from "./ArticleHeader.module.scss";
+import { useTranslate } from "@hooks";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   title: string;
@@ -12,6 +12,8 @@ interface Props extends HTMLProps<HTMLDivElement> {
 }
 
 function Meta({ date, tags }: MetaProps) {
+  const translate = useTranslate();
+
   return (
     <aside className={styles.meta}>
       <Text variant="highlight" tag="p">
@@ -32,6 +34,8 @@ function Meta({ date, tags }: MetaProps) {
 }
 
 function ArticleHeader({ title, meta, ...props }: Props) {
+  const translate = useTranslate();
+
   function handleBack(e: MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
     window.history.back();

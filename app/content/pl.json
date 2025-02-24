@@ -1,47 +1,47 @@
 {
   "contact": {
     "button": {
-      "label": "Contact me"
+      "label": "Skontaktuj się"
     },
     "cta": {
-      "title": "Ready to create your website?"
+      "title": "Gotów stworzyć swoją nową stronę?"
     },
     "section": {
-      "title": "Contact",
+      "title": "Kontakt",
       "call": {
-        "title": "Book a 30-min Call",
+        "title": "30-minutowa rozmowa",
         "body": [
-          "Book a free 30-minute call for a no-obligation quote and consultation.",
-          "Meeting takes place on Google Meet and is scheduled using Cal.com."
+          "Zarezerwuj 30-minutową rozmowę bez zobowiązań, aby omówić szczegóły Twojego projektu.",
+          "Spotkanie odbywa się na Google Meets i jest rejestrowane przez Cal.com."
         ],
-        "read-more": "Book a call"
+        "read-more": "Zarezerwuj spotkanie"
       },
       "email": {
-        "title": "Write or call me",
+        "title": "Napisz lub zadzwoń",
         "body": [
-          "The quickest way to kick things off!"
+          "Najszybsza droga by rozpocząć współpracę!"
         ],
-        "read-more-email": "Mail me",
-        "read-more-phone": "Call me"
+        "read-more-email": "Napisz",
+        "read-more-phone": "Zadzwoń"
       },
-      "designed": "Designed and developed in"
+      "designed": "Zaprojektowanie i zrealizowane w:"
     },
     "feature": {
-      "title": "Contact",
-      "location": "Warsaw, Poland"
+      "title": "Kontakt",
+      "location": "Warszawa, Polska"
     }
   },
   "menu": {
     "toggle": {
-      "open": "Open menu",
-      "close": "Close menu"
+      "open": "Otwórz menu",
+      "close": "Zamknij menu"
     }
   },
   "article": {
     "header": {
       "meta": {
-        "posted-on": "Posted on",
-        "back": "Go back"
+        "posted-on": "Napisane",
+        "back": "Wstecz"
       }
     }
   },
@@ -65,84 +65,84 @@
   },
   "hero": {
     "section": {
-      "contact": "Contact",
-      "explore": "Explore"
+      "contact": "Kontakt",
+      "explore": "Realizacje"
     },
     "feature": {
-      "title": "Hello",
-      "copy": "Say goodbye to website headaches. Enjoy seamless, worry-free solutions so you can focus on growing your product and business.",
-      "keywords": ["website", "design", "code", "consultant"],
-      "first-line": "Need a ",
-      "second-line": "for your business?"
+      "title": "Cześć",
+      "copy": "Zapomnij o problemach ze stroną. Zajmij się tym, co naprawdę ważne dla Twojej firmy.",
+      "keywords": ["strony", "projektu", "kodu", "konsultanta"],
+      "first-line": "Szukasz ",
+      "second-line": "dwa swojej firmy?"
     }
   },
   "footer": {
     "section": {
-      "copyright": "© {{start}} - {{current}}<br />All rights reserved.",
-      "cookies": "This site collects cookies for analytics and testing purposes.",
+      "copyright": "© {{start}} - {{current}}<br />Wszystkie prawa zastrzeżone.",
+      "cookies": "Ta strona zbiera cookies do analityki i testów.",
       "boxes": {
-        "quick-links": "Quick links",
-        "contact": "Contact",
-        "socials": "Socials"
+        "quick-links": "Szybkie",
+        "contact": "Kontakt",
+        "socials": "Social media"
       }
     },
     "feature": {
-      "copy": "Buszewski.com is a solo-agency ran by Tomasz Buszewski, former tech lead and manager.",
-      "call-button": "30-minute intro call",
-      "contact-disclaimer": "I'll get back to you within 24 hours, but usually much sooner (Mon-Fri)."
+      "copy": "Buszewski.com to agencja założona przez Tomasza Buszewskiego, dawniej managera i inżyniera oprogramowania.",
+      "call-button": "30-minutowa rozmowa bez zobowiązań",
+      "contact-disclaimer": "Odpowiadam najpóźniej do 24h (Pon-Pt)."
     }
   },
   "about": {
     "feature": {
-      "data": "With {{years}} years of experience in web, I partner with clients across industries to bring their ideas to life. <br/> I combine technical expertise with experience to create innovative websites that drive results."
+      "data": "Mam {{years}} lat doświadczenia w branży IT. Łączę wiedzę techniczną z praktyką, tworząc innowacyjne strony internetowe, które przynoszą realne efekty.\n\n\n\n\n\n\n\n"
     }
   },
   "head": {
     "feature": {
-      "description": "Expertly-crafted websites for your business."
+      "description": "Profesjonalnie wykonane strony internetowe dla Twojego biznesu."
     }
   },
   "services": {
     "section": {
-      "title": "Services",
-      "read-more-open": "Expand",
-      "read-more-close": "Collapse"
+      "title": "Usługi",
+      "read-more-open": "Rozwiń",
+      "read-more-close": "Schowaj"
     },
     "feature": {
-      "title": "Services",
-      "process": "The process",
+      "title": "Usługi",
+      "process": "Proces",
       "website": {
-        "title": "Website&nbsp;Design &&nbsp;Development",
-        "short-title": "Website<br />Design&Dev",
-        "link-title": "More on websites",
+        "title": "Projekt&nbsp;i wdrożenie strony internetowej",
+        "short-title": "Projekt<br />i wdrożenie",
+        "link-title": "Więcej o stronach",
         "copy": [
-          "Full-Cycle Web Solutions: Design, Development, Delivery.",
-          "I provide a seamless experience from initial design concepts to the final product. Whether you’re launching a new business or revamping an existing site, I ensure everything works perfectly."
+          "Kompleksowe rozwiązania webowe: projektowanie, development, wdrożenie.",
+          "Zapewniam płynny proces od wstępnej koncepcji po gotowy produkt. Niezależnie od tego, czy tworzysz nowy biznes, czy odświeżasz istniejącą stronę, dbam o to, aby wszystko działało perfekcyjnie."
         ],
         "additional": [
-          "Unique, tailor-made designs that reflect your brand and vision",
-          "Clean, efficient code for optimal performance and scalability",
-          "Code stored in a private repository with full access and the option to take ownership",
-          "Preview available for every change, ensuring everything looks perfect at all times",
-          "Thorough testing for performance, compatibility, and usability",
-          "Hosting, domains and deployments taken care of, with the option to transfer ownership free of charge"
+          "Unikalne, dopasowane projekty, które odzwierciedlają Twoją markę i wizję",
+          "Czysty, wydajny kod zapewniający optymalną wydajność i skalowalność",
+          "Kod przechowywany w prywatnym repozytorium z pełnym dostępem i możliwością przejęcia",
+          "Podgląd dostępny przy każdej zmianie, aby wszystko zawsze wyglądało perfekcyjnie",
+          "Dokładne testy wydajności, kompatybilności i użyteczności",
+          "Hosting, domeny i wdrożenia w pełni obsłużone, z możliwością bezpłatnego przeniesienia do Ciebie"
         ],
         "full": {
-          "intro": "Beautiful, user-friendly websites tailored to your brand and goals.",
-          "what-do-you-get": "What you get",
-          "body": ["I believe design is about more than just aesthetics — it's about creating an experience. Whether you're a startup or a growing small business, I create custom websites that look great and perform even better", "Your website should be as unique as your brand, and that's why we build everything from scratch, no templates, no shortcuts."],
+          "intro": "Piękne, intuicyjne strony internetowe dopasowane do Twojej marki i celów..",
+          "what-do-you-get": "Co dostajesz",
+          "body": ["Wierzę, że design to coś więcej niż estetyka — to tworzenie doświadczenia. Niezależnie od tego, czy prowadzisz startup, czy rozwijającą się firmę, tworzę spersonalizowane strony, które nie tylko świetnie wyglądają, ale także doskonale działają.", "Twoja strona powinna być tak unikalna jak Twoja marka, dlatego buduję wszystko od podstaw – bez szablonów, bez skrótów."],
           "process": {
             "discovery": {
-              "title": "Discovery & Strategy",
-              "body": "Every project is unique. First, we talk about what makes yours special and how we can make it shine online."
+              "title": "Analiza i strategia",
+              "body": "Każdy projekt jest wyjątkowy. Najpierw omawiamy, co wyróżnia Twój i jak najlepiej zaprezentować go w sieci.."
             },
             "design": {
-              "title": "Design &&nbsp;Review",
-              "body": "Next, I create custom wireframes and design mockups for your approval before building the site."
+              "title": "Przegląd projektu",
+              "body": "Następnie tworzę spersonalizowane szkice i makiety projektów do zatwierdzenia, zanim przystąpię do budowy strony."
             },
             "coding": {
-              "title": "Coding &&nbsp;Launch",
-              "body": "Once you approve the designs, I bring them to life with robust development, ensuring everything is responsive, secure, and fast."
+              "title": "Wdrożenie i uruchomienie",
+              "body": "Po zatwierdzeniu projektów przekształcam je w rzeczywistość dzięki solidnemu rozwojowi, zapewniając, że wszystko będzie responsywne, bezpieczne i szybkie."
             }
           },
           "card": {
@@ -306,16 +306,16 @@
     ]
   },
   "nav": {
-    "home": "Home",
-    "tech": "Technology I use",
-    "uses": "Hardware & Software",
-    "works": "Works",
-    "services": "Services",
+    "home": "Główna",
+    "tech": "Technologia",
+    "uses": "Sprzęt i oprogramowanie",
+    "works": "Realizacje",
+    "services": "Usługi",
     "videos": "Videos",
-    "about": "About",
-    "contact": "Contact",
+    "about": "O mnie",
+    "contact": "Kontakt",
     "buttons": {
-      "phone": "Contact me"
+      "phone": "Skontaktuj się"
     }
   },
   "tech": {

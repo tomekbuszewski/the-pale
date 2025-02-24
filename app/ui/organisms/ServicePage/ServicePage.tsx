@@ -10,7 +10,6 @@ import {
   SmallCard,
 } from "@ui/molecules";
 import { createMotionConfig } from "@utils/fadeIn";
-import { translate } from "@utils/translate";
 import clsx from "clsx";
 
 import type { ContactCTA } from "@common-types/ContactCTA";
@@ -18,6 +17,7 @@ import type { Href } from "@common-types/Href";
 import type { LargeCard as Card } from "@common-types/LargeCard";
 
 import styles from "./ServicePage.module.scss";
+import { useTranslate } from "@hooks";
 
 interface Process {
   title: string;
@@ -39,22 +39,6 @@ interface Props extends HTMLProps<HTMLDivElement> {
   whatYouGet?: string;
 }
 
-const defaultCTA = {
-  text: translate("services.feature.website.full.cta"),
-  buttons: [
-    {
-      variant: "primary",
-      label: translate("services.feature.website.full.btn.schedule"),
-      href: CAL,
-    },
-    {
-      variant: "secondary",
-      label: translate("services.feature.website.full.btn.contact"),
-      href: "#contact",
-    },
-  ] as Href[],
-};
-
 function ServicePage({
   title,
   intro,
@@ -63,9 +47,28 @@ function ServicePage({
   processItems,
   cards,
   whatYouGet,
-  cta = defaultCTA,
+  cta,
 }: Props) {
   const [activeCard, setActiveCard] = useState<number | null>(null);
+  const translate = useTranslate();
+
+  const defaultCTA = {
+    text: translate("services.feature.website.full.cta"),
+    buttons: [
+      {
+        variant: "primary",
+        label: translate("services.feature.website.full.btn.schedule"),
+        href: CAL,
+      },
+      {
+        variant: "secondary",
+        label: translate("services.feature.website.full.btn.contact"),
+        href: "#contact",
+      },
+    ] as Href[],
+  };
+
+  const ctaContent = cta ?? defaultCTA;
 
   return (
     <SectionWrapper tag="article" contentClassName="largeText">
@@ -92,7 +95,6 @@ function ServicePage({
           />
         )}
       </section>
-
       {processItems && process ? (
         <section
           className={clsx(styles.mainSection, styles.process, styles.full)}
@@ -109,7 +111,6 @@ function ServicePage({
           ))}
         </section>
       ) : null}
-
       {cards ? (
         <Fragment>
           {whatYouGet ? (
@@ -148,9 +149,8 @@ function ServicePage({
           </section>
         </Fragment>
       ) : null}
-
       <section className={clsx(styles.full, styles.mainSection)}>
-        <ContactCta {...cta} />
+        <ContactCta {...ctaContent} />
       </section>
     </SectionWrapper>
   );
