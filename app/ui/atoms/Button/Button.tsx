@@ -1,11 +1,13 @@
-import { Link } from "react-router";
 import clsx from "clsx";
 
 import type { ButtonProps } from "@common-types/Button";
 
 import styles from "./Button.module.scss";
+import { Content } from "@features";
 
 function Button({ variant, className, small, disabled, ...rest }: ButtonProps) {
+  const { Link } = Content.components;
+
   const classNames = [
     className,
     styles.base,

@@ -6,10 +6,12 @@ export default function Header() {
   const translate = Content.hooks.useTranslate();
   return (
     <Main
-      links={[...nav.HeaderNav, nav.Contact].map((item) => ({
-        ...item,
-        label: translate(item.label),
-      }))}
+      links={[...nav.HeaderNav, nav.Contact]
+        .map((item) => ({
+          ...item,
+          label: translate(item.label),
+        }))
+        .filter(({ label }) => label !== "")}
     />
   );
 }
