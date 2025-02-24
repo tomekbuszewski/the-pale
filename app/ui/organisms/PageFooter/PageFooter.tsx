@@ -2,14 +2,13 @@ import { Link } from "react-router";
 import { Sections } from "@nav";
 import { Logo, SectionWrapper, Text } from "@ui/atoms";
 import { SectionHeader, Switch } from "@ui/molecules";
+import { Content } from "@features";
 import clsx from "clsx";
 
 import type { Href } from "@common-types/Href";
 import { type HTMLProps, type ReactNode, useContext } from "react";
 
 import styles from "./PageFooter.module.scss";
-import { useTranslate } from "@hooks";
-import { LanguageContext } from "@context/Language";
 
 interface HrefWithIcon extends Href {
   icon: ReactNode;
@@ -74,8 +73,8 @@ function PageFooter({
   languages,
   onLanguageChange,
 }: Props) {
-  const translate = useTranslate();
-  const language = useContext(LanguageContext);
+  const translate = Content.hooks.useTranslate();
+  const language = useContext(Content.context);
 
   return (
     <SectionWrapper

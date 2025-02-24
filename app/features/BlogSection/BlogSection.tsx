@@ -2,7 +2,7 @@ import { BlogSection as Main } from "@ui/organisms";
 
 import type { PaginationProps } from "@common-types/BlogPagination";
 import type { BlogPost } from "@common-types/Blogpost";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 export default function BlogSection({
   items,
@@ -11,7 +11,7 @@ export default function BlogSection({
   items: BlogPost[];
   pagination: PaginationProps;
 }) {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   return (
     <Main

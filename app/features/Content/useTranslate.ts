@@ -1,7 +1,9 @@
-import en from "../../content/en.json";
-import pl from "../../content/pl.json";
 import { useContext } from "react";
-import { LanguageContext } from "@context/Language";
+
+import en from "./translations/en.json";
+import pl from "./translations/pl.json";
+
+import LanguageContext from "./context";
 
 const languages = { en, pl } as const;
 type Languages = keyof typeof languages;

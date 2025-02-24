@@ -35,10 +35,10 @@ import {
   vite,
   vitest,
 } from "../icons";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 export default function WebDevelopment() {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   const COPY = {
     TITLE: translate("services.feature.website.title"),

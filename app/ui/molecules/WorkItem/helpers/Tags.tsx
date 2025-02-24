@@ -7,7 +7,7 @@ import ConsultationIcon from "../assets/consultations.svg?react";
 import DesignIcon from "../assets/design.svg?react";
 
 import styles from "../WorkItem.module.scss";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 interface TagsProps {
   tags: string[];
@@ -28,7 +28,7 @@ function resolveIcon(tag: string) {
 }
 
 export function Tags(props: TagsProps) {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
   return (
     <motion.ul className={styles.tags} {...createMotionConfig(3)}>
       {props.tags.map((tag) => (

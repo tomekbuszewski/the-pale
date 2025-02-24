@@ -5,7 +5,7 @@ import { LayoutGroup, useScroll, useTransform } from "motion/react";
 import type { HTMLProps } from "react";
 
 import styles from "./HeroSection.module.scss";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   copy: string;
@@ -13,7 +13,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
 }
 
 function HeroSection({ children, copy, title }: Props) {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
   const { scrollY } = useScroll();
   const halfWindowHeight =
     typeof window !== "undefined" ? window.innerHeight / 2 : 1;

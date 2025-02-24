@@ -1,5 +1,5 @@
 import { type CSSProperties, type HTMLProps, useRef, useState } from "react";
-import { useIsMobile, useTranslate } from "@hooks";
+import { useIsMobile } from "@hooks";
 import { Sections } from "@nav";
 import { SectionWrapper, Text } from "@ui/atoms";
 import { Box } from "@ui/molecules";
@@ -11,6 +11,7 @@ import type { Service } from "@common-types/Service";
 import Check from "./assets/check.svg?react";
 
 import styles from "./ServicesSection.module.scss";
+import { Content } from "@features";
 
 interface ExpandedService extends Service {
   additional: string[];
@@ -59,7 +60,7 @@ function ServicesSection({ items, title }: Props) {
   const activeKey = "--active" as keyof CSSProperties;
   const isSectionActive = typeof active === "number";
   const itemRefs = useRef<HTMLDivElement[]>([]);
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   return (
     <SectionWrapper

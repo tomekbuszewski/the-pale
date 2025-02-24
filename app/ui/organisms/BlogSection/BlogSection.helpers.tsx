@@ -4,7 +4,7 @@ import { Button } from "@ui/atoms";
 import type { PaginationProps } from "@common-types/BlogPagination";
 
 import styles from "./BlogSection.module.scss";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 function link(page: number) {
   return Routes.pagination.replace(":page", page.toString());
@@ -17,7 +17,7 @@ export function Pagination({
   currentPage,
 }: PaginationProps) {
   const totalPages = pages.length;
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
 
   const displayPages = pages.reduce<number[]>((acc, page) => {
     if (

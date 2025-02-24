@@ -10,7 +10,7 @@ import { Image } from "./helpers/Image";
 import { Tags } from "./helpers/Tags";
 
 import styles from "./WorkItem.module.scss";
-import { useTranslate } from "@hooks";
+import { Content } from "@features";
 
 interface Props extends HTMLProps<HTMLDivElement>, Omit<Work, "title"> {
   index: number;
@@ -30,7 +30,7 @@ function WorkItem({
   date,
   index,
 }: Props) {
-  const translate = useTranslate();
+  const translate = Content.hooks.useTranslate();
   const classNames = [className, styles.parent];
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {

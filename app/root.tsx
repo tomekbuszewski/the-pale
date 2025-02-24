@@ -9,6 +9,7 @@ import {
 import {
   Analytics as AnalyticsFeature,
   ErrorBoundary as ErrorBoundaryFeature,
+  Content,
 } from "@features";
 import brico from "@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url";
 import geist from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url";
@@ -23,7 +24,6 @@ import "@fontsource-variable/geist-mono";
 import "@fontsource-variable/bricolage-grotesque";
 
 import stylesheet from "./app.scss?url";
-import { LanguageContext } from "@context/Language";
 
 export const links: Route.LinksFunction = () => [
   {
@@ -68,11 +68,7 @@ export const links: Route.LinksFunction = () => [
 
 export function loader({ request }: Route.LoaderArgs) {
   const ga = (import.meta.env.VITE_GA as string) ?? process.env.VITE_GA;
-  let language = new URL(request.url).pathname.split("/")[1];
-
-  if (language !== "pl" && language !== "en") {
-    language = "en";
-  }
+  const language = Content.functions.detectLanguageFromUrl(request);
 
   return { ga, language };
 }
@@ -81,7 +77,7 @@ export function Layout({ children }: { children: ReactNode }) {
   const { ga, language } = useLoaderData<typeof loader>();
 
   return (
-    <LanguageContext.Provider value={language}>
+    <Content.context.Provider value={language}>
       <html lang={language}>
         <head>
           <meta charSet="utf-8" />
@@ -98,7 +94,7 @@ export function Layout({ children }: { children: ReactNode }) {
           <SpeedInsights />
         </body>
       </html>
-    </LanguageContext.Provider>
+    </Content.context.Provider>
   );
 }
 
