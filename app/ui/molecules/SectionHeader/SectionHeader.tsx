@@ -11,6 +11,7 @@ interface Props extends HTMLMotionProps<"header"> {
   dark?: boolean;
   level?: 2 | 3 | 4 | 5 | 6;
   margin?: "none" | "auto" | "small";
+  noRow?: boolean;
 }
 
 function SectionHeader({
@@ -21,6 +22,7 @@ function SectionHeader({
   children,
   level,
   margin,
+  noRow,
   ...rest
 }: Props) {
   if (animate) {
@@ -37,6 +39,7 @@ function SectionHeader({
         {
           [styles.dark]: dark,
           [styles.withLevel]: Boolean(level),
+          [styles.noRow]: noRow,
         },
       )}
       {...rest}

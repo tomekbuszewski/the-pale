@@ -11,8 +11,8 @@
   border-radius: #{rem(8)};
   color: var(--color-minor-body);
 
-  @media (min-width: 1024px) and (max-height: 1280px) {
-    position: sticky;
+  @media (min-width: 1024px) and (min-height: 820px) {
+    position: sticky !important;
     top: var(--spacing-lg);
     outline: var(--spacing-small) solid var(--color-main-background);
   }

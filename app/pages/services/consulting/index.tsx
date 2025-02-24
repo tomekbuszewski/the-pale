@@ -20,35 +20,39 @@ import {
 
 const COPY = {
   TITLE: translate("services.feature.consultations.title"),
-  INTRO: translate("services.feature.consultations.intro"),
-  BODY: translate("services.feature.consultations.body"),
+  INTRO: translate("services.feature.consultations.full.intro"),
+  BODY: translate("services.feature.consultations.full.body"),
   PROCESS: [
     {
-      title: translate("services.feature.consultations.process.talk.title"),
-      body: translate(
-        "services.feature.consultations.process.talk.description",
+      title: translate(
+        "services.feature.consultations.full.process.talk.title",
       ),
-    },
-    {
-      title: translate("services.feature.consultations.process.timeline.title"),
       body: translate(
-        "services.feature.consultations.process.timeline.description",
+        "services.feature.consultations.full.process.talk.description",
       ),
     },
     {
       title: translate(
-        "services.feature.consultations.process.implementation.title",
+        "services.feature.consultations.full.process.timeline.title",
       ),
       body: translate(
-        "services.feature.consultations.process.implementation.description",
+        "services.feature.consultations.full.process.timeline.description",
+      ),
+    },
+    {
+      title: translate(
+        "services.feature.consultations.full.process.implementation.title",
+      ),
+      body: translate(
+        "services.feature.consultations.full.process.implementation.description",
       ),
     },
   ],
   CARDS: [
     {
-      title: translate("services.feature.consultations.card.mgmt.title"),
+      title: translate("services.feature.consultations.full.card.mgmt.title"),
       description: translate(
-        "services.feature.consultations.card.mgmt.description",
+        "services.feature.consultations.full.card.mgmt.description",
       ),
       icons: [
         miro,
@@ -64,9 +68,9 @@ const COPY = {
       ],
     },
     {
-      title: translate("services.feature.consultations.card.hiring.title"),
+      title: translate("services.feature.consultations.full.card.hiring.title"),
       description: translate(
-        "services.feature.consultations.card.hiring.description",
+        "services.feature.consultations.full.card.hiring.description",
       ),
       icons: [
         meet,
@@ -84,9 +88,11 @@ const COPY = {
       ],
     },
     {
-      title: translate("services.feature.consultations.card.sparring.title"),
+      title: translate(
+        "services.feature.consultations.full.card.sparring.title",
+      ),
       description: translate(
-        "services.feature.consultations.card.sparring.description",
+        "services.feature.consultations.full.card.sparring.description",
       ),
       icons: [
         meet,
@@ -104,6 +110,9 @@ const COPY = {
       ],
     },
   ],
+  WHAT_YOU_GET: translate(
+    "services.feature.consultations.full.what-do-you-get",
+  ),
 };
 
 export default function Consulting() {
@@ -115,6 +124,7 @@ export default function Consulting() {
       process={translate("services.feature.process")}
       processItems={COPY.PROCESS}
       cards={COPY.CARDS}
+      whatYouGet={COPY.WHAT_YOU_GET}
     />
   );
 }

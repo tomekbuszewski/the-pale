@@ -76,3 +76,11 @@ $paddingLg: 128;
     }
   }
 }
+
+.whatYouGet {
+  margin-top: var(--spacing-lg);
+
+  @include media("lg") {
+    margin-top: var(--spacing-2xl);
+  }
+}
