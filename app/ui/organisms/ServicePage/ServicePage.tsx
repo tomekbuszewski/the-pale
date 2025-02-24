@@ -1,4 +1,4 @@
-import { type HTMLProps, type ReactNode, useState } from "react";
+import { Fragment, type HTMLProps, type ReactNode, useState } from "react";
 import { CAL } from "@contact";
 import { SectionWrapper, Separator, Text } from "@ui/atoms";
 import {
@@ -36,6 +36,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
   processItems?: Process[];
   cards?: CardWithIcons[];
   cta?: ContactCTA;
+  whatYouGet?: string;
 }
 
 const defaultCTA = {
@@ -61,6 +62,7 @@ function ServicePage({
   process,
   processItems,
   cards,
+  whatYouGet,
   cta = defaultCTA,
 }: Props) {
   const [activeCard, setActiveCard] = useState<number | null>(null);
@@ -109,33 +111,42 @@ function ServicePage({
       ) : null}
 
       {cards ? (
-        <section className={clsx(styles.full, styles.mainSection)}>
-          {cards.map((card, index) => (
-            <LargeCard
-              {...createMotionConfig(index)}
-              align={index % 2 === 0 ? "left" : "right"}
-              onMouseEnter={() => setActiveCard(index)}
-              onMouseLeave={() => setActiveCard(null)}
-              title={card.title}
-              more={card.more}
-              key={card.title}
-              description={card.description}
-              body={
-                Array.isArray(card.icons) ? (
-                  <Carousel
-                    active={activeCard === index}
-                    columns={2}
-                    width="12rem"
-                    icon="6rem"
-                    icons={card.icons}
-                  />
-                ) : (
-                  card.icons
-                )
-              }
+        <Fragment>
+          {whatYouGet ? (
+            <SectionHeader
+              className={styles.whatYouGet}
+              noRow
+              title={whatYouGet}
             />
-          ))}
-        </section>
+          ) : null}
+          <section className={clsx(styles.full, styles.mainSection)}>
+            {cards.map((card, index) => (
+              <LargeCard
+                {...createMotionConfig(index)}
+                align={index % 2 === 0 ? "left" : "right"}
+                onMouseEnter={() => setActiveCard(index)}
+                onMouseLeave={() => setActiveCard(null)}
+                title={card.title}
+                more={card.more}
+                key={card.title}
+                description={card.description}
+                body={
+                  Array.isArray(card.icons) ? (
+                    <Carousel
+                      active={activeCard === index}
+                      columns={2}
+                      width="12rem"
+                      icon="6rem"
+                      icons={card.icons}
+                    />
+                  ) : (
+                    card.icons
+                  )
+                }
+              />
+            ))}
+          </section>
+        </Fragment>
       ) : null}
 
       <section className={clsx(styles.full, styles.mainSection)}>

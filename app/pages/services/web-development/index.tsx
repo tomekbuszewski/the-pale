@@ -115,6 +115,7 @@ export const COPY = {
     },
   ],
   CTA: translate("services.feature.website.full.cta"),
+  WHAT_YOU_GET: translate("services.feature.website.full.what-do-you-get"),
 };
 
 export default function WebDevelopment() {
@@ -126,6 +127,7 @@ export default function WebDevelopment() {
       processItems={COPY.PROCESS}
       cards={COPY.CARDS}
       process={translate("services.feature.process")}
+      whatYouGet={COPY.WHAT_YOU_GET}
     />
   );
 }

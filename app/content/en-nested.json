@@ -129,6 +129,7 @@
         ],
         "full": {
           "intro": "Beautiful, user-friendly websites tailored to your brand and goals.",
+          "what-do-you-get": "What you get",
           "body": ["I believe design is about more than just aesthetics — it's about creating an experience. Whether you're a startup or a growing small business, I create custom websites that look great and perform even better", "Your website should be as unique as your brand, and that's why we build everything from scratch, no templates, no shortcuts."],
           "process": {
             "discovery": {
@@ -192,34 +193,37 @@
           "Preview available for live changes before they go live",
           "Automated end-to-end tests to ensure everything works flawlessly after changes"
         ],
-        "intro": "You already have a design (or a designer) and want to get your site coded? Say no more — I can get it up and running with tech adjusted for your needs.",
-        "body": ["With over {{years}} of experience, I've worked with tons of different front-end stacks and challenges. I am happy to offer advice you on your project and help you find the best solution for your needs.", "I am strongly against “one size fits all” solutions."],
-        "process": {
-          "design": {
-            "title": "Design Overview",
-            "description": "We discuss your design and what will be the best way to implement it."
+        "full": {
+          "what-do-you-get": "What you get",
+          "intro": "You already have a design (or a designer) and want to get your site coded? Say no more — I can get it up and running with tech adjusted for your needs.",
+          "body": ["With over {{years}} of experience, I've worked with tons of different front-end stacks and challenges. I am happy to offer advice you on your project and help you find the best solution for your needs.", "I am strongly against “one size fits all” solutions."],
+          "process": {
+            "design": {
+              "title": "Design Overview",
+              "description": "We discuss your design and what will be the best way to implement it."
+            },
+            "technical": {
+              "title": "Technical Summary",
+              "description": "Based on what we've discussed, I prepare a technical summary of the project with explanation of every step."
+            },
+            "implementation": {
+              "title": "Code &<br />Handover",
+              "description": "Once we're settled on the tech, I get to work and code it for you. Once I am done, you're getting everything in a neat repo."
+            }
           },
-          "technical": {
-            "title": "Technical Summary",
-            "description": "Based on what we've discussed, I prepare a technical summary of the project with explanation of every step."
-          },
-          "implementation": {
-            "title": "Code &<br />Handover",
-            "description": "Once we're settled on the tech, I get to work and code it for you. Once I am done, you're getting everything in a neat repo."
-          }
-        },
-        "card": {
-          "design": {
-            "title": "Design Overview",
-            "description": ["A well-thought-out design is more than just visuals—it needs to function seamlessly across different devices and user scenarios.", "I conduct a thorough review of the design, pinpointing potential bottlenecks, usability concerns, and technical constraints that could impact development. By addressing these early, the final product remains intuitive, accessible, and optimized for performance.", "My goal is to ensure that what looks great on paper translates flawlessly into a fully functional digital experience."]
-          },
-          "technical": {
-            "title": "Technical Outline",
-            "description": ["Selecting the right technology is crucial for building a scalable, maintainable, and high-performing product.", "I create a comprehensive technical document that outlines the best tools, frameworks, and architecture for your specific needs—always prioritizing what serves the project best. This ensures a clear roadmap for development, minimizing future technical debt and optimizing for both efficiency and flexibility.", "Whether it’s framework, library or architecture, every decision is made with long-term success in mind."]
-          },
-          "implementation": {
-            "title": "Implementation",
-            "description": ["With a solid plan in place, I bring the design to life, coding the project using the best-suited technologies defined in the technical summary.", "Every component is built with attention to detail, ensuring maintainability, scalability, and performance from the ground up. Once development is complete, the entire codebase is handed over in a structured and well-documented manner, allowing your team to take over seamlessly.", "Whether you need ongoing support or a smooth transition, I ensure the final product is ready for real-world use without unnecessary complexity."]
+          "card": {
+            "design": {
+              "title": "Design Overview",
+              "description": ["A well-thought-out design is more than just visuals—it needs to function seamlessly across different devices and user scenarios.", "I conduct a thorough review of the design, pinpointing potential bottlenecks, usability concerns, and technical constraints that could impact development. By addressing these early, the final product remains intuitive, accessible, and optimized for performance.", "My goal is to ensure that what looks great on paper translates flawlessly into a fully functional digital experience."]
+            },
+            "technical": {
+              "title": "Technical Outline",
+              "description": ["Selecting the right technology is crucial for building a scalable, maintainable, and high-performing product.", "I create a comprehensive technical document that outlines the best tools, frameworks, and architecture for your specific needs—always prioritizing what serves the project best. This ensures a clear roadmap for development, minimizing future technical debt and optimizing for both efficiency and flexibility.", "Whether it’s framework, library or architecture, every decision is made with long-term success in mind."]
+            },
+            "implementation": {
+              "title": "Implementation",
+              "description": ["With a solid plan in place, I bring the design to life, coding the project using the best-suited technologies defined in the technical summary.", "Every component is built with attention to detail, ensuring maintainability, scalability, and performance from the ground up. Once development is complete, the entire codebase is handed over in a structured and well-documented manner, allowing your team to take over seamlessly.", "Whether you need ongoing support or a smooth transition, I ensure the final product is ready for real-world use without unnecessary complexity."]
+            }
           }
         }
       },
@@ -237,36 +241,39 @@
           "Code reviews to ensure clean, efficient, and maintainable codebase",
           "Discuss ideas and solve technical challenges as your sparring partner"
         ],
-        "intro": "If you or your team needs suggestions, is stuck or simply want to bounce off ideas, I am here.",
-        "body": [
-          "As a seasoned lead, manager and developer working for both the big and small, I am certain I will be able to assist you in your pickle."
-        ],
-        "process": {
-          "talk": {
-            "title": "Initial Meeting",
-            "description": "We discuss your needs and I give you an estimate of what I can do for you."
+        "full": {
+          "what-do-you-get": "What you get",
+          "intro": "If you or your team needs suggestions, is stuck or simply want to bounce off ideas, I am here.",
+          "body": [
+            "As a seasoned lead, manager and developer working for both the big and small, I am certain I will be able to assist you in your pickle."
+          ],
+          "process": {
+            "talk": {
+              "title": "Initial Meeting",
+              "description": "We discuss your needs and I give you an estimate of what I can do for you."
+            },
+            "timeline": {
+              "title": "Agreement<br />&&nbsp;Scope",
+              "description": "We agree on a timeline and I prepare what I can on my own."
+            },
+            "implementation": {
+              "title": "The Work",
+              "description": "We're working together (via whatever suits you) on the ongoing process."
+            }
           },
-          "timeline": {
-            "title": "Agreement<br />&&nbsp;Scope",
-            "description": "We agree on a timeline and I prepare what I can on my own."
-          },
-          "implementation": {
-            "title": "The Work",
-            "description": "We're working together (via whatever suits you) on the ongoing process."
-          }
-        },
-        "card": {
-          "mgmt": {
-            "title": "Project management consulting",
-            "description": ["A well-managed project stays on track, avoids unnecessary complexity, and delivers results efficiently.", "With experience leading both small and large teams, I help refine project scope, prevent feature creep, and ensure that technical and business goals align from the start."]
-          },
-          "hiring": {
-            "title": "Help with recruiting the best developers",
-            "description": ["Building a strong development team is crucial, especially for new companies.", "I assist in identifying top talent, evaluating both technical expertise and essential soft skills to ensure a great fit. Whether you're hiring your first developers or expanding your team, I provide the insight needed to make the right choices."]
-          },
-          "sparring": {
-            "title": "Sparring partner",
-            "description": ["Great ideas become stronger through challenge.", "As a sparring partner, I offer a critical, strategic perspective — asking the right questions, exploring alternatives, and helping refine concepts before they move into development."]
+          "card": {
+            "mgmt": {
+              "title": "Project management consulting",
+              "description": ["A well-managed project stays on track, avoids unnecessary complexity, and delivers results efficiently.", "With experience leading both small and large teams, I help refine project scope, prevent feature creep, and ensure that technical and business goals align from the start."]
+            },
+            "hiring": {
+              "title": "Help with recruiting the best developers",
+              "description": ["Building a strong development team is crucial, especially for new companies.", "I assist in identifying top talent, evaluating both technical expertise and essential soft skills to ensure a great fit. Whether you're hiring your first developers or expanding your team, I provide the insight needed to make the right choices."]
+            },
+            "sparring": {
+              "title": "Sparring partner",
+              "description": ["Great ideas become stronger through challenge.", "As a sparring partner, I offer a critical, strategic perspective — asking the right questions, exploring alternatives, and helping refine concepts before they move into development."]
+            }
           }
         }
       }
