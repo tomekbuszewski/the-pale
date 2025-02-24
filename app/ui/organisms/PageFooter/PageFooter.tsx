@@ -5,10 +5,11 @@ import { SectionHeader, Switch } from "@ui/molecules";
 import clsx from "clsx";
 
 import type { Href } from "@common-types/Href";
-import type { HTMLProps, ReactNode } from "react";
+import { type HTMLProps, type ReactNode, useContext } from "react";
 
 import styles from "./PageFooter.module.scss";
 import { useTranslate } from "@hooks";
+import { LanguageContext } from "@context/Language";
 
 interface HrefWithIcon extends Href {
   icon: ReactNode;
@@ -74,6 +75,7 @@ function PageFooter({
   onLanguageChange,
 }: Props) {
   const translate = useTranslate();
+  const language = useContext(LanguageContext);
 
   return (
     <SectionWrapper
@@ -95,6 +97,9 @@ function PageFooter({
         <Text variant="regular">{copy}</Text>
         {onLanguageChange && languages ? (
           <Switch
+            defaultActiveIndex={languages.findIndex(
+              (lang) => lang.href === language,
+            )}
             items={languages}
             onChange={onLanguageChange}
             className={styles.switch}
