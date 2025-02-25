@@ -70,7 +70,11 @@ export const Analytics = {
 };
 
 export const Content = {
-  components: { Link: ContentFeature.Link, NavLink: ContentFeature.NavLink },
+  components: {
+    Link: ContentFeature.Link,
+    NavLink: ContentFeature.NavLink,
+    LanguageDetect: ContentFeature.LanguageDetect,
+  },
   context: ContentFeature.LanguageContext,
   hooks: { useTranslate: ContentFeature.useTranslate },
   functions: {
