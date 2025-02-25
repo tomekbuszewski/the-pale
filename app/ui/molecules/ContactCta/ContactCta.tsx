@@ -13,7 +13,7 @@ function ContactCta({ className, buttons, text, fixed, ...props }: Props) {
         [styles.fixed]: fixed,
       })}
       {...props}
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: fixed ? -24 : 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}

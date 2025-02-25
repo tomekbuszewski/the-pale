@@ -86,6 +86,7 @@ export function Layout({ children }: { children: ReactNode }) {
           <Links />
         </head>
         <body>
+          <Content.components.LanguageDetect />
           {children}
           <ScrollRestoration />
           <Scripts />

@@ -389,5 +389,14 @@
         ]
       }
     }
+  },
+  "content": {
+    "feature": {
+      "text": "Hej, wygląda na to, że jesteś z Polski! Chcesz zmienić język?",
+      "buttons": {
+        "yes": "Tak!",
+        "no": "Discard"
+      }
+    }
   }
 }
