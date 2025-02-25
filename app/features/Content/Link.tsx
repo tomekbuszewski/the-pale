@@ -26,7 +26,7 @@ function handleLink(link: To, language: string = "en") {
 
   return {
     ...link,
-    pathname: `${lang}${link.pathname}`,
+    pathname: `${lang}${link?.pathname}`,
   };
 }
 
