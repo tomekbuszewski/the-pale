@@ -2,7 +2,7 @@ import { SectionWrapper, Separator, Text } from "@ui/atoms";
 import { ArticleHeader, List } from "@ui/molecules";
 import clsx from "clsx";
 
-import globals from "./pages.module.scss";
+import globals from "../pages.module.scss";
 import { Content } from "@features";
 
 export default function Consulting() {

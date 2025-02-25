@@ -280,6 +280,7 @@
     }
   },
   "work": {
+    "title": "Works",
     "item": {
       "study": {
         "na": "Study n/a",
@@ -398,5 +399,8 @@
         "no": "Discard"
       }
     }
+  },
+  "clients": {
+    "title": "Clients"
   }
 }

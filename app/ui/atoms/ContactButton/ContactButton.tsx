@@ -10,6 +10,7 @@ import { Content } from "@features";
 
 function ContactButton() {
   const { Link } = Content.components;
+  const translate = Content.hooks.useTranslate();
   const [loaded, setLoaded] = useState(false);
 
   useLayoutEffect(() => {
@@ -31,7 +32,7 @@ function ContactButton() {
       <div className={styles.imgWrapper}>
         <img src={loaded ? tomek : undefined} alt="Book a call!" />
       </div>
-      Contact me
+      {translate("nav.buttons.phone")}
     </Link>
   );
 }
