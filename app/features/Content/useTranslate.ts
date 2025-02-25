@@ -1,5 +1,5 @@
 import { useContext } from "react";
-
+//
 import en from "./translations/en.json";
 import pl from "./translations/pl.json";
 
@@ -32,6 +32,29 @@ type TranslateFunction = {
   (path: string, ...args: string[]): string;
 };
 
+const singleLetterWords = [
+  "i",
+  "a",
+  "o",
+  "w",
+  "z",
+  "u",
+  "in",
+  "and",
+  "of",
+  "&",
+];
+
+// Function to prevent widows by replacing spaces after single-letter words
+function preventWidows(text: string): string {
+  // Replace any single letter word followed by a space with the same word followed by a non-breaking space
+  return singleLetterWords.reduce((current, word) => {
+    // Using word boundaries (\b) before and after to ensure we only match standalone single letters
+    const regex = new RegExp(`(^|\\s)${word}(\\s)`, "g");
+    return current.replace(regex, `$1${word}\u00A0`);
+  }, text);
+}
+
 export default function useTranslate() {
   const language = useContext(LanguageContext);
 
@@ -53,19 +76,25 @@ export default function useTranslate() {
     }
 
     if (Array.isArray(translation)) {
-      return translation.map((item: string) =>
-        args.reduce((acc: string, arg: string) => {
+      return translation.map((item: string) => {
+        let processed = args.reduce((acc: string, arg: string) => {
           const pattern = new RegExp(`{{[^}]*}}`);
           return acc.replace(pattern, arg);
-        }, item),
-      );
+        }, item);
+
+        // Apply widow prevention to each array item
+        return preventWidows(processed);
+      });
     }
 
     if (typeof translation === "string") {
-      return args.reduce((acc, arg) => {
+      let processed = args.reduce((acc, arg) => {
         const pattern = new RegExp(`{{[^}]*}}`);
         return acc.replace(pattern, arg);
       }, translation);
+
+      // Apply widow prevention to the string
+      return preventWidows(processed);
     }
 
     return path;
