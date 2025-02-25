@@ -51,4 +51,14 @@ describe("UI / Molecules / ContactCta", () => {
       );
     });
   });
+
+  it("applies the fixed class when fixed prop is true", () => {
+    const { container } = render(
+      <ContactCta buttons={mockButtons} text={mockText} fixed={true} />,
+    );
+
+    expect((container.firstChild as HTMLElement).className).toMatch(
+      /_fixed_[a-zA-Z0-9]+/,
+    );
+  });
 });

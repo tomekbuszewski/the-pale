@@ -6,10 +6,12 @@ import type { ContactCTA as Props } from "@common-types/ContactCTA";
 
 import styles from "./ContactCta.module.scss";
 
-function ContactCta({ className, buttons, text, ...props }: Props) {
+function ContactCta({ className, buttons, text, fixed, ...props }: Props) {
   return (
-    <motion.footer
-      className={clsx(styles.wrapper, className)}
+    <motion.aside
+      className={clsx(styles.wrapper, className, {
+        [styles.fixed]: fixed,
+      })}
       {...props}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -22,14 +24,20 @@ function ContactCta({ className, buttons, text, ...props }: Props) {
         {buttons.map((button) => (
           <Button
             key={button.label}
-            to={button.href}
+            to={button.onClick ? "" : button.href}
             variant={button.variant as "primary" | "secondary" | "tertiary"}
+            onClick={(e) => {
+              if (button.onClick) {
+                e.preventDefault();
+                button.onClick(e);
+              }
+            }}
           >
             {button.label}
           </Button>
         ))}
       </div>
-    </motion.footer>
+    </motion.aside>
   );
 }
 
