@@ -11,14 +11,20 @@
     },
     "routeIdToServerBundleId": {
       "root": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/home": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/services/web-development/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/services/front-end/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/services/consulting/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/uses": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/tech": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/home": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/services/web-development/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/services/front-end/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/services/consulting/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/uses": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/tech": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
       "pages/blog/post": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/blog/pagination": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
+      "pages/blog/pagination": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/home": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/services/web-development/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/services/front-end/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/services/consulting/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/uses": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/tech": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
     },
     "routes": {
       "root": {
@@ -35,45 +41,45 @@
         "file": "app/layouts/Main.tsx",
         "config": {}
       },
-      "pages/home": {
-        "id": "pages/home",
+      "pages/en/home": {
+        "id": "pages/en/home",
         "parentId": "layouts/Main",
-        "file": "app/pages/home.tsx",
+        "file": "app/pages/en/home.tsx",
         "index": true,
         "config": {}
       },
-      "pages/services/web-development/index": {
-        "id": "pages/services/web-development/index",
+      "pages/en/services/web-development/index": {
+        "id": "pages/en/services/web-development/index",
         "parentId": "layouts/Main",
-        "file": "app/pages/services/web-development/index.tsx",
+        "file": "app/pages/en/services/web-development/index.tsx",
         "path": "/services/website",
         "config": {}
       },
-      "pages/services/front-end/index": {
-        "id": "pages/services/front-end/index",
+      "pages/en/services/front-end/index": {
+        "id": "pages/en/services/front-end/index",
         "parentId": "layouts/Main",
-        "file": "app/pages/services/front-end/index.tsx",
+        "file": "app/pages/en/services/front-end/index.tsx",
         "path": "/services/frontend",
         "config": {}
       },
-      "pages/services/consulting/index": {
-        "id": "pages/services/consulting/index",
+      "pages/en/services/consulting/index": {
+        "id": "pages/en/services/consulting/index",
         "parentId": "layouts/Main",
-        "file": "app/pages/services/consulting/index.tsx",
+        "file": "app/pages/en/services/consulting/index.tsx",
         "path": "/services/consulting",
         "config": {}
       },
-      "pages/uses": {
-        "id": "pages/uses",
+      "pages/en/uses": {
+        "id": "pages/en/uses",
         "parentId": "layouts/Main",
-        "file": "app/pages/uses.tsx",
+        "file": "app/pages/en/uses.tsx",
         "path": "/uses",
         "config": {}
       },
-      "pages/tech": {
-        "id": "pages/tech",
+      "pages/en/tech": {
+        "id": "pages/en/tech",
         "parentId": "layouts/Main",
-        "file": "app/pages/tech.tsx",
+        "file": "app/pages/en/tech.tsx",
         "path": "/tech",
         "config": {}
       },
@@ -89,6 +95,49 @@
         "parentId": "layouts/Main",
         "file": "app/pages/blog/pagination.tsx",
         "path": "/writings/page/:page",
+        "config": {}
+      },
+      "pages/pl/home": {
+        "id": "pages/pl/home",
+        "parentId": "layouts/Main",
+        "file": "app/pages/pl/home.tsx",
+        "path": "/pl",
+        "index": true,
+        "config": {}
+      },
+      "pages/pl/services/web-development/index": {
+        "id": "pages/pl/services/web-development/index",
+        "parentId": "layouts/Main",
+        "file": "app/pages/pl/services/web-development/index.tsx",
+        "path": "/pl/services/website",
+        "config": {}
+      },
+      "pages/pl/services/front-end/index": {
+        "id": "pages/pl/services/front-end/index",
+        "parentId": "layouts/Main",
+        "file": "app/pages/pl/services/front-end/index.tsx",
+        "path": "/pl/services/frontend",
+        "config": {}
+      },
+      "pages/pl/services/consulting/index": {
+        "id": "pages/pl/services/consulting/index",
+        "parentId": "layouts/Main",
+        "file": "app/pages/pl/services/consulting/index.tsx",
+        "path": "/pl/services/consulting",
+        "config": {}
+      },
+      "pages/pl/uses": {
+        "id": "pages/pl/uses",
+        "parentId": "layouts/Main",
+        "file": "app/pages/pl/uses.tsx",
+        "path": "/pl/uses",
+        "config": {}
+      },
+      "pages/pl/tech": {
+        "id": "pages/pl/tech",
+        "parentId": "layouts/Main",
+        "file": "app/pages/pl/tech.tsx",
+        "path": "/pl/tech",
         "config": {}
       }
     }
@@ -111,40 +160,40 @@
         "parentId": "root",
         "file": "./layouts/Main.tsx"
       },
-      "pages/home": {
-        "id": "pages/home",
+      "pages/en/home": {
+        "id": "pages/en/home",
         "parentId": "layouts/Main",
-        "file": "pages/home.tsx",
+        "file": "pages/en/home.tsx",
         "index": true
       },
-      "pages/services/web-development/index": {
-        "id": "pages/services/web-development/index",
+      "pages/en/services/web-development/index": {
+        "id": "pages/en/services/web-development/index",
         "parentId": "layouts/Main",
-        "file": "pages/services/web-development/index.tsx",
+        "file": "pages/en/services/web-development/index.tsx",
         "path": "/services/website"
       },
-      "pages/services/front-end/index": {
-        "id": "pages/services/front-end/index",
+      "pages/en/services/front-end/index": {
+        "id": "pages/en/services/front-end/index",
         "parentId": "layouts/Main",
-        "file": "pages/services/front-end/index.tsx",
+        "file": "pages/en/services/front-end/index.tsx",
         "path": "/services/frontend"
       },
-      "pages/services/consulting/index": {
-        "id": "pages/services/consulting/index",
+      "pages/en/services/consulting/index": {
+        "id": "pages/en/services/consulting/index",
         "parentId": "layouts/Main",
-        "file": "pages/services/consulting/index.tsx",
+        "file": "pages/en/services/consulting/index.tsx",
         "path": "/services/consulting"
       },
-      "pages/uses": {
-        "id": "pages/uses",
+      "pages/en/uses": {
+        "id": "pages/en/uses",
         "parentId": "layouts/Main",
-        "file": "pages/uses.tsx",
+        "file": "pages/en/uses.tsx",
         "path": "/uses"
       },
-      "pages/tech": {
-        "id": "pages/tech",
+      "pages/en/tech": {
+        "id": "pages/en/tech",
         "parentId": "layouts/Main",
-        "file": "pages/tech.tsx",
+        "file": "pages/en/tech.tsx",
         "path": "/tech"
       },
       "pages/blog/post": {
@@ -158,6 +207,43 @@
         "parentId": "layouts/Main",
         "file": "pages/blog/pagination.tsx",
         "path": "/writings/page/:page"
+      },
+      "pages/pl/home": {
+        "id": "pages/pl/home",
+        "parentId": "layouts/Main",
+        "file": "pages/pl/home.tsx",
+        "path": "/pl",
+        "index": true
+      },
+      "pages/pl/services/web-development/index": {
+        "id": "pages/pl/services/web-development/index",
+        "parentId": "layouts/Main",
+        "file": "pages/pl/services/web-development/index.tsx",
+        "path": "/pl/services/website"
+      },
+      "pages/pl/services/front-end/index": {
+        "id": "pages/pl/services/front-end/index",
+        "parentId": "layouts/Main",
+        "file": "pages/pl/services/front-end/index.tsx",
+        "path": "/pl/services/frontend"
+      },
+      "pages/pl/services/consulting/index": {
+        "id": "pages/pl/services/consulting/index",
+        "parentId": "layouts/Main",
+        "file": "pages/pl/services/consulting/index.tsx",
+        "path": "/pl/services/consulting"
+      },
+      "pages/pl/uses": {
+        "id": "pages/pl/uses",
+        "parentId": "layouts/Main",
+        "file": "pages/pl/uses.tsx",
+        "path": "/pl/uses"
+      },
+      "pages/pl/tech": {
+        "id": "pages/pl/tech",
+        "parentId": "layouts/Main",
+        "file": "pages/pl/tech.tsx",
+        "path": "/pl/tech"
       }
     },
     "serverBuildFile": "index.js",

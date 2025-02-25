@@ -1,4 +1,4 @@
-import * as home from "../base/home";
+import { loader as L, default as D } from "../base/home";
 
-export const loader = home.loader;
-export default home.default;
+export const loader = L;
+export default D;
