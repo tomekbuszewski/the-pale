@@ -94,7 +94,7 @@
   },
   "about": {
     "feature": {
-      "data": "Od {{years}} lat pomagam małym i dużym firmom ożywić ich pomysły.<br />Łączę techniczne umiejętności z doświadczeniem biznesowym, zapewniając efektowne i efektywne rozwiązania."
+      "data": "Od {{years}} lat pomagam małym i&nbsp;dużym firmom ożywić ich pomysły. <br/> Łączę techniczne umiejętności z&nbsp;doświadczeniem biznesowym, zapewniając efektowne i&nbsp;efektywne rozwiązania."
     }
   },
   "head": {
@@ -112,7 +112,7 @@
       "title": "Usługi",
       "process": "Proces",
       "website": {
-        "title": "Projekt&nbsp;i wdrożenie strony internetowej",
+        "title": "Projekt i&nbsp;wdrożenie strony internetowej",
         "short-title": "Projekt<br />i wdrożenie",
         "link-title": "Więcej o stronach",
         "copy": [
@@ -133,7 +133,7 @@
           "body": ["Wierzę, że design to coś więcej niż estetyka — to tworzenie doświadczenia. Niezależnie od tego, czy prowadzisz młody startup, czy rozwiniętą firmę, stworzę dla Ciebie spersonalizowana strone, które nie tylko świetnie wygląda, ale także doskonale działa.", "Twoja strona powinna być tak unikalna jak Twoja marka, dlatego buduję wszystko od podstaw – bez szablonów, bez skrótów."],
           "process": {
             "discovery": {
-              "title": "Analiza i strategia",
+              "title": "Analiza i&nbsp;strategia",
               "body": "Każdy projekt jest wyjątkowy. Najpierw omawiamy, co wyróżnia Twój i jak najlepiej zaprezentować go w sieci."
             },
             "design": {
@@ -141,7 +141,7 @@
               "body": "Kolejny krok to stworzenie propozycji projektu, który następnie omawiamy i udoskonalamy."
             },
             "coding": {
-              "title": "Wdrożenie i uruchomienie",
+              "title": "Wdrożenie i start",
               "body": "Po zatwierdzeniu projektów przekształcam je w działającą stronę internetową, dobierając technologię od Twoich potrzeb i funduszy."
             }
           },
@@ -280,6 +280,7 @@
     }
   },
   "work": {
+    "title": "Realizacje",
     "item": {
       "study": {
         "na": "Study n/a",
@@ -315,7 +316,7 @@
     "about": "O mnie",
     "contact": "Kontakt",
     "buttons": {
-      "phone": "Skontaktuj się"
+      "phone": "Kontakt"
     }
   },
   "tech": {
@@ -398,5 +399,8 @@
         "no": "Zamknij"
       }
     }
+  },
+  "clients": {
+    "title": "Klienci"
   }
 }

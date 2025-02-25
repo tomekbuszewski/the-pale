@@ -38,5 +38,11 @@ export default function Contact() {
     },
   ];
 
-  return <Main copy={COPY} location={translate("contact.feature.location")} />;
+  return (
+    <Main
+      copy={COPY}
+      location={translate("contact.feature.location")}
+      title={translate("contact.section.title")}
+    />
+  );
 }

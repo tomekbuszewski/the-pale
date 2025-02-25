@@ -49,7 +49,7 @@ function WorkItem({
     <SectionWrapper
       ref={sectionRef}
       className={clsx(classNames)}
-      title="Works"
+      title={translate("work.title")}
       breakout={align}
       contentClassName={clsx(styles.work, {
         [styles.left]: align === "left",

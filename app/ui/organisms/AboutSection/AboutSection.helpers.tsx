@@ -1,4 +1,4 @@
-import { Children, Fragment, useRef } from "react";
+import { Children, useRef } from "react";
 import clsx from "clsx";
 import { motion, useTransform } from "motion/react";
 
@@ -40,27 +40,21 @@ export function Span({
           item.current?.classList.add(BLUR_CLS);
         }
       }}
-    >
-      {children}
-    </motion.span>
+      dangerouslySetInnerHTML={{ __html: children as string }}
+    />
   );
 }
 
-export const makeTextIntoSpans = (children: ReactNode) => {
+export const makeTextIntoSpans = (children: string) => {
   return Children.map(children, (child) => {
     return (child as string) /* I know what I am putting here */
       .split(/(\s+)/)
-      .map((part, index) => {
-        if (part === "<br/>") {
-          return (
-            <Fragment key={index}>
-              <br />
-              <br />
-            </Fragment>
-          );
+      .map((part) => {
+        if (part === "<br/>" || part === "<br />") {
+          return "<br /><br />";
         }
 
-        return <Fragment key={index}>{part}</Fragment>;
+        return part as string;
       });
   });
 };
