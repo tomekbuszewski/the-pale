@@ -94,7 +94,7 @@
   },
   "about": {
     "feature": {
-      "data": "Mam {{years}} lat doświadczenia w branży IT. Łączę wiedzę techniczną z praktyką, tworząc innowacyjne strony internetowe, które przynoszą realne efekty.\n\n\n\n\n\n\n\n"
+      "data": "Od {{years}} lat pomagam małym i dużym firmom ożywić ich pomysły.<br />Łączę techniczne umiejętności z doświadczeniem biznesowym, zapewniając efektowne i efektywne rozwiązania."
     }
   },
   "head": {
@@ -128,151 +128,151 @@
           "Hosting, domeny i wdrożenia w pełni obsłużone, z możliwością bezpłatnego przeniesienia do Ciebie"
         ],
         "full": {
-          "intro": "Piękne, intuicyjne strony internetowe dopasowane do Twojej marki i celów..",
+          "intro": "Piękne, intuicyjne strony internetowe dopasowane do Twojej marki i&nbsp;celów.",
           "what-do-you-get": "Co dostajesz",
-          "body": ["Wierzę, że design to coś więcej niż estetyka — to tworzenie doświadczenia. Niezależnie od tego, czy prowadzisz startup, czy rozwijającą się firmę, tworzę spersonalizowane strony, które nie tylko świetnie wyglądają, ale także doskonale działają.", "Twoja strona powinna być tak unikalna jak Twoja marka, dlatego buduję wszystko od podstaw – bez szablonów, bez skrótów."],
+          "body": ["Wierzę, że design to coś więcej niż estetyka — to tworzenie doświadczenia. Niezależnie od tego, czy prowadzisz młody startup, czy rozwiniętą firmę, stworzę dla Ciebie spersonalizowana strone, które nie tylko świetnie wygląda, ale także doskonale działa.", "Twoja strona powinna być tak unikalna jak Twoja marka, dlatego buduję wszystko od podstaw – bez szablonów, bez skrótów."],
           "process": {
             "discovery": {
               "title": "Analiza i strategia",
-              "body": "Każdy projekt jest wyjątkowy. Najpierw omawiamy, co wyróżnia Twój i jak najlepiej zaprezentować go w sieci.."
+              "body": "Każdy projekt jest wyjątkowy. Najpierw omawiamy, co wyróżnia Twój i jak najlepiej zaprezentować go w sieci."
             },
             "design": {
-              "title": "Przegląd projektu",
-              "body": "Następnie tworzę spersonalizowane szkice i makiety projektów do zatwierdzenia, zanim przystąpię do budowy strony."
+              "title": "Ocena projektu",
+              "body": "Kolejny krok to stworzenie propozycji projektu, który następnie omawiamy i udoskonalamy."
             },
             "coding": {
               "title": "Wdrożenie i uruchomienie",
-              "body": "Po zatwierdzeniu projektów przekształcam je w rzeczywistość dzięki solidnemu rozwojowi, zapewniając, że wszystko będzie responsywne, bezpieczne i szybkie."
+              "body": "Po zatwierdzeniu projektów przekształcam je w działającą stronę internetową, dobierając technologię od Twoich potrzeb i funduszy."
             }
           },
           "card": {
             "design": {
-              "title": "Design tailored to you",
+              "title": "Projekt skrojony pod Twoje potrzeby",
               "body": [
-                "I will design a website that fits your brand and your business. Designs are always revised and polished until you are satisfied.",
-                "Once we're done, I hand over the Sketch files, so you or your team can carry on with it if needed."
+                "Zaprojektuję stronę, która będzie pasować do Twojej marki i celów. Każdy design jest dostosowywany i dokręcany zgodnie z Twoimi uwagami i potrzebami.",
+                "Kiedy projekt jest gotowy, przekazuję Ci pliki Sketch, więc Twój zespół może przejąć pracę."
               ],
-              "cta": "See my works"
+              "cta": "Moje realizacje"
             },
             "tech": {
-              "title": "Technology picked for you",
+              "title": "Technologia wybrana dla Ciebie",
               "body": [
-                "I don't have one-size-fits-all solutions. For every client, I analyze and pick what is the most suitable. Sometimes it will be a simple site generator, sometimes a headless CMS with server-rendered frontend as a separate service. And sometimes something in between.",
-                "One thing you can be sure is, I will never propose you something “just because”. You'll always know why certain technology is used.",
-                "All my projects came with E2E tests and preview environments. This guarantees all changes to be fully tested and verified before your visitors see them."
+                "Nie ma jednego rozwiązania pasującego do wszystkich. Dla każdego klienta indywidualnie analizuję potrzeby i wybieram najlepszą technologię. Raz będzie to prosty generator statycznych stron, innym razem \"headless\" CMS z front-endem renderowanym dynamicznie jako oddzielna usługa. A jeszcze kiedy indziej, coś zupełnie innego.",
+                "To, czego możesz być pewna(y), to fakt, że nigdy nie zaproponuję rozwiązania \"bo tak\". Zawsze otrzymasz pełny opis uzasadniający każdy wybór.",
+                "Wszystkie moje wdrożenia mają testy E2E i środowiska poglądowe. To gwarantuje, że wszystkie zmiany są testowane i weryfikowane, zanim zobaczą je Twoi klienci."
               ],
-              "cta": "More about tech"
+              "cta": "Więcej o technologii"
             },
             "repo": {
-              "title": "Code in the repository",
+              "title": "Kod w prywatnym repozytorium",
               "body": [
-                "I use Github to keep all my code. My commits follow Conventional Commits patterns, and I use pull requests to introduce changes. After my work is done, I transfer the repo ownership to you (if you want).",
-                "If this is just a tech mumbo-jumbo, don't fret. All I am saying is that I keep the work in a private space which will be given to you once my work is done.",
-                "I also offer hosting with monitoring and maintenance with a monthly fee."
+                "Cały kod trzymam w serwisie GitHub. Wszystkie commity opisuję w konwencji \"conventional commit\", a zmiany wstawiam jako pull requesty. Kiedy kończę pracę, mogę bezpłatnie przekazać repozytorium Twojej organizacji.",
+                "Jeżeli to dla Ciebie tylko techniczny bełkot – spokojnie. Chodzi o to, że trzymam wszystko w prywatnym miejscu, do którego dostęp jest na zaproszenie i które mogę Ci przekazać po skończonej pracy.",
+                "Oferuję też hosting i utrzymanie Twojej strony, więc nie musisz się o to martwić."
               ]
             }
           },
           "btn": {
-            "schedule": "Schedule a call",
-            "contact": "Contact me"
+            "schedule": "Umów się na rozmowę",
+            "contact": "Kontakt"
           },
-          "cta": "Ready to take your business to the next level?"
+          "cta": "Chcesz przenieść swój biznes na wyższy poziom?"
         }
       },
       "frontend": {
         "title": "Frontend<br />Development",
-        "link-title": "More on frontend",
+        "link-title": "Więcej o frontendzie",
         "copy": [
-          "Have a design? I'll make it a reality with clean, functional front-end code.",
-          "Tech choices are tailored to your project to ensure scalability and smooth performance."
+          "Masz gotowy projekt? Mogę go zamienić w czysty i funkcjonalny kod.",
+          "Wybór technologii zawsze ma na celu wysoką wydajność i skalowalność."
         ],
         "additional": [
-          "Design consultations and suggest improvements for smoother implementation",
-          "Front-end developed specifically to meet your unique needs",
-          "Code stored in a repository with full access for future ownership",
-          "Preview available for live changes before they go live",
-          "Automated end-to-end tests to ensure everything works flawlessly after changes"
+          "Konsultacje i sugestie dotyczące projektu graficznego",
+          "Frontend napisany od zera specjalnie dla Twojego projektu",
+          "Kod w prywatnym repozytorium z pełnym dostępem i możliwością przejęcia",
+          "Podgląd dostępny przy każdej zmianie, aby wszystko zawsze wyglądało perfekcyjnie",
+          "Automatyczne testy E2E, żeby być pewnym że wszystko działa jak powinno"
         ],
         "full": {
-          "what-do-you-get": "What you get",
-          "intro": "You already have a design (or a designer) and want to get your site coded? Say no more — I can get it up and running with tech adjusted for your needs.",
-          "body": ["With over {{years}} of experience, I've worked with tons of different front-end stacks and challenges. I am happy to offer advice you on your project and help you find the best solution for your needs.", "I am strongly against “one size fits all” solutions."],
+          "what-do-you-get": "Co dostajesz",
+          "intro": "Masz już projekt (lub projektanta) i chcesz to zakodować? Nie mów nic więcej — mogę to zrobić od A-Z z technologią dobraną do Twoich potrzeb.",
+          "body": ["Mając ponad {{years}} lat doświadczenia, pracowałem z masą róznych technologii frontendowych. Chętnie doradzę i zaproponuję takie rozwiązania, które spełnią Twoje potrzeby zarówno funkcjonalne jak i finansowe.", "Nie stosuję żadnych gotowych szablonów."],
           "process": {
             "design": {
-              "title": "Design Overview",
-              "description": "We discuss your design and what will be the best way to implement it."
+              "title": "Przegląd projektu",
+              "description": "Omawiamy Twój projekt i to, jak najlepiej go zaimplementować."
             },
             "technical": {
-              "title": "Technical Summary",
-              "description": "Based on what we've discussed, I prepare a technical summary of the project with explanation of every step."
+              "title": "Zarys technologiczny",
+              "description": "Bazując na naszych ustaleniach, przygotowuję dokładnie opisany zarys technologii, jakiej będzie używać Twoja strona."
             },
             "implementation": {
-              "title": "Code &<br />Handover",
-              "description": "Once we're settled on the tech, I get to work and code it for you. Once I am done, you're getting everything in a neat repo."
+              "title": "Kod i<br />przekazanie",
+              "description": "Po ustaleniu wszystkich detali, biorę się do roboty. Kiedy wszystko jest gotowe, dostajesz wszystko w prywatnym repozytorium."
             }
           },
           "card": {
             "design": {
-              "title": "Design Overview",
-              "description": ["A well-thought-out design is more than just visuals—it needs to function seamlessly across different devices and user scenarios.", "I conduct a thorough review of the design, pinpointing potential bottlenecks, usability concerns, and technical constraints that could impact development. By addressing these early, the final product remains intuitive, accessible, and optimized for performance.", "My goal is to ensure that what looks great on paper translates flawlessly into a fully functional digital experience."]
+              "title": "Przegląd i ocena projektu",
+              "description": ["Dobrze pomyślany projekt nie tylko wygląda, ale przede wszystkim działa dobrze i spójnie.", "Przeprowadzam dokładny audyt projektu, zaznaczam potencjalne problemy (natury użytkowej, technologicznej czy implementacyjnej). Dzięki temu, zanim jeszcze zacznę kodować, możesz nanieść moje sugestie.", "Mój cel to stworzenie prawdziwego doświadczenia na bazie Twojego projektu."]
             },
             "technical": {
-              "title": "Technical Outline",
-              "description": ["Selecting the right technology is crucial for building a scalable, maintainable, and high-performing product.", "I create a comprehensive technical document that outlines the best tools, frameworks, and architecture for your specific needs—always prioritizing what serves the project best. This ensures a clear roadmap for development, minimizing future technical debt and optimizing for both efficiency and flexibility.", "Whether it’s framework, library or architecture, every decision is made with long-term success in mind."]
+              "title": "Zarys technologiczny",
+              "description": ["Wybór odpowiedniej technologii jest kluczowy, jeżeli budujemy skalowalne i utrzymywalne rozwiązanie.", "Tworzę szczegółowy opis technologiczny frameworków, bibliotek i wzorców architektonicznych, jakich chciałbym użyć. To zapewnia nam przejrzystą mapę implementacji, minimalizując tym samym dług technologiczny.", "Czy to duży framework, czy mała biblioteka, każdy wybór poparty jest doświadczeniem i ukierunkowaniem na długofalowe działanie."]
             },
             "implementation": {
-              "title": "Implementation",
-              "description": ["With a solid plan in place, I bring the design to life, coding the project using the best-suited technologies defined in the technical summary.", "Every component is built with attention to detail, ensuring maintainability, scalability, and performance from the ground up. Once development is complete, the entire codebase is handed over in a structured and well-documented manner, allowing your team to take over seamlessly.", "Whether you need ongoing support or a smooth transition, I ensure the final product is ready for real-world use without unnecessary complexity."]
+              "title": "Implementacja",
+              "description": ["Kiedy plan mamy już gotowy, biorę się do pracy i dostarczam projekt zgodnie z ustaleniami.", "Każdy starannie stworzony komponent jest skalowalny i łatwy w utrzymaniu. Kiedy kończę, przekazuję Ci kod w repozytorium, więc Twój zespół może bez problemu przejąć utrzymanie.", "Niezależnie, czy potrzebujesz wsparcia czy zmian, moje projekty dostarczam tak, by były gotowe do produkcji bez zbędnych komplikacji."]
             }
           }
         }
       },
       "consultations": {
-        "title": "Engineering &&nbsp;Project Management Consultations",
-        "short-title": "Project<br />Consulting",
-        "link-title": "More on consulting",
+        "title": "Konsultacje managerskie i&nbsp;techniczne",
+        "short-title": "Konsultacje",
+        "link-title": "Więcej o konsultacjach",
         "copy": [
-          "With experience as an engineering manager and tech lead, I understand both technical and human aspects of team dynamics.",
-          "I offer consulting to help your team thrive and reach its goals."
+          "Jako doświadczony menadżer i lider technologiczny, doskonale odnajduję się zarówno w technicznych, jak i miękkich wyzwaniach.",
+          "Oferuję konsultacje i pomoc Tobie i Twojemu zespołowi w osiągnięciu celów biznesowych."
         ],
         "additional": [
-          "Guidance on tech and team management",
-          "Support with recruitment and candidate assessments",
-          "Code reviews to ensure clean, efficient, and maintainable codebase",
-          "Discuss ideas and solve technical challenges as your sparring partner"
+          "Wsparcie w sprawach technologicznych i biznesowych",
+          "Pomoc w rekrutacji i ocenie kandydatów",
+          "Code review (oceny kodu), żeby Twój produkt był napisany w jak najlepszy sposób",
+          "Omawianie Twoich pomysłów i wyzwań jako Twój sparring partner"
         ],
         "full": {
-          "what-do-you-get": "What you get",
-          "intro": "If you or your team needs suggestions, is stuck or simply want to bounce off ideas, I am here.",
+          "what-do-you-get": "Co dostajesz",
+          "intro": "Jeżeli Ty lub Twój zespół utknęliście, lub po prostu potrzebujecie rady i spojrzenia z zewnątrez, zapraszam.",
           "body": [
-            "As a seasoned lead, manager and developer working for both the big and small, I am certain I will be able to assist you in your pickle."
+            "Jako dośwwiadczony menadżer i lider technologiczny, jestem pewnien że będę mógł Wam pomoć w rozwiązaniu problemów."
           ],
           "process": {
             "talk": {
-              "title": "Initial Meeting",
-              "description": "We discuss your needs and I give you an estimate of what I can do for you."
+              "title": "Wstępne spotkanie",
+              "description": "Omawiamy Twoje potrzeby i estymujemy, co i kiedy mogę zrobić."
             },
             "timeline": {
-              "title": "Agreement<br />&&nbsp;Scope",
-              "description": "We agree on a timeline and I prepare what I can on my own."
+              "title": "Ustalenia<br />&&nbsp;zakresu",
+              "description": "Umawiamy się na harmonogram i zakres pracy."
             },
             "implementation": {
-              "title": "The Work",
-              "description": "We're working together (via whatever suits you) on the ongoing process."
+              "title": "Faktyczna robota",
+              "description": "Współpracujemy (w sposób, jaki Tobie odpowiada), rozwiązując Twoje problemy na bieżąco."
             }
           },
           "card": {
             "mgmt": {
-              "title": "Project management consulting",
-              "description": ["A well-managed project stays on track, avoids unnecessary complexity, and delivers results efficiently.", "With experience leading both small and large teams, I help refine project scope, prevent feature creep, and ensure that technical and business goals align from the start."]
+              "title": "Konsultacje zarządzania projektem",
+              "description": ["Dobrze prowadzony projekt trzyma się harmonogramu, jest nieskomplikowany i efektywny.", "Z doświadczeniem w prowadzeniu małych i dużych zespołów, chętnie pomogę dostosować zakres pracy, nadmiernego rozbudowywania (<i>feature creep</i>) i zapewnić dopasowanie na linii technologia–biznes."]
             },
             "hiring": {
-              "title": "Help with recruiting the best developers",
-              "description": ["Building a strong development team is crucial, especially for new companies.", "I assist in identifying top talent, evaluating both technical expertise and essential soft skills to ensure a great fit. Whether you're hiring your first developers or expanding your team, I provide the insight needed to make the right choices."]
+              "title": "Pomoc w zatrudnieniu najlepszych kandydatów",
+              "description": ["Budowanie mocnego zespołu jest krytyczne, zwłaszcza dla młodych firm.", "Pomagam wyłonić najlepszych kandydatów, oceniając zarówno techniczne jak i miękkie umiejętności. Dzięki temu wiesz, że osoba ta pasuje do Twojego zespołu. Niezależnie od tego, czy zatrudniasz pierwszą czy setną osobę, upewniam się, że podejmujesz dobry wybór."]
             },
             "sparring": {
               "title": "Sparring partner",
-              "description": ["Great ideas become stronger through challenge.", "As a sparring partner, I offer a critical, strategic perspective — asking the right questions, exploring alternatives, and helping refine concepts before they move into development."]
+              "description": ["Najlepsze pomysły rodzą się z wyzwań.", "Jako sparring partner, oferuję krytyczną perspektywę poprzez zadawanie pytań, kwestionowanie i szukanie alternatyw. Następnie pomagam przygotować i \"wygładzić\" Twój pomysł tak, by był gotowy do przedstawienia."]
             }
           }
         }
@@ -287,22 +287,22 @@
       },
       "online": {
         "na": "Online n/a",
-        "ok": "View online"
+        "ok": "Na żywo"
       },
       "tag": {
-        "design": "Design",
-        "development": "Development",
-        "consultations": "Consultations"
+        "design": "Projekt",
+        "development": "Programowanie",
+        "consultations": "Konsultacja"
       }
     },
     "gameshelf": [
-      "Gameshelf aims to deliver latest new, world-class columns, interviews and insides for all the gamers around the world."
+      "Gameshelf dostarcza najlepszej jakości artykuły, wywiady i wiadomości ze świata gier wideo."
     ],
     "hay": [
-      "Hundred a Year is a personal project for creating and curating end-of-the-year music lists."
+      "Hundred a Year to prywatny projekt do tworzenia i zarządzania listami albumów muzycznych."
     ],
     "backlog": [
-      "The Backlog aims to provide microblogging experience enhanced with gaming features, like ratings, statuses and title tagging."
+      "The Backlog proponuje rozwiązanie mikroblogowe dostosowane dla graczy. Oferuje m.in. tagowanie czy ocenianie gier i określanie ich poziomu ukończenia."
     ]
   },
   "nav": {
@@ -319,73 +319,73 @@
     }
   },
   "tech": {
-    "title": "Technology I Use",
-    "intro": "Throughout the years I've worked with tons and tons of different tech.",
+    "title": "Technologie, których używam",
+    "intro": "Przez lata pracowałem z masą różnych technologii.",
     "body": [
-      "I feel comfortable with almost any (roughly modern) stack. I've worked with tons of variations, including PHP, Node, JavaScript and TypeScript, Python, Java and Go.",
-      "If you're looking for a (more or less) comprehensive list, here it is:"
+      "Czuję się dobrze w praktycznie każdym (w miarę aktualnym) stosie technologicznym. Pracowałem komercyjnie m.in. z PHP, Node, JavaScriptem i TypeScriptem, Pythonem, Javą i Go.",
+      "Jeżeli szukasz (w miarę) pełnej listy, oto ona:"
     ],
     "languages": {
-      "title": "Languages",
-      "desc": "These are the languages I have commercial experience with. Besides these, I've dabbled with Ruby, Rust and tons of others."
+      "title": "Języki programowania",
+      "desc": "Oto języki, z którymi mam doświadczenie komercyjne. Poza nimi, prywatnie uczyłem się m.in. Ruby, Rusta i innych."
     },
     "libs": {
-      "title": "Frameworks & Important Libraries",
-      "desc": "A list of frameworks and libraries I have the most experience with. By no means exhaustive."
+      "title": "Frameworki i biblioteki",
+      "desc": "Lista frameworków i bibliotek, z którymi mam największe doświadczenie. Lista w żadym wypadku nie jest kompletna."
     },
     "testing": {
-      "title": "Testing",
-      "desc": "These are the testing tools I have built at least one commercial app with."
+      "title": "Testowanie",
+      "desc": "Oto narzędzia do testowania, z którymi zbudowałem przynajmniej jedną produkcyjną aplikację."
     }
   },
   "uses": {
     "title": "Uses",
-    "copy": "This page, inspired by <a href=\"https://wesbos.com/uses\">Wes Bos' /uses</a>, details the hardware and software I use on a daily basis.",
+    "copy": "Ta strona, zainspirowana <a href=\"https://wesbos.com/uses\">Wesem Bosem</a>, wyszczególnia sprzęt i oprogramowanie, z którego korzystam na codzień.",
     "section": {
       "hardware": {
-        "title": "Hardware",
-        "desc": "I am a Mac guy for years. My first iMac with i5 is still around (although shut down), as well as my second iMac 5K with i9 and whopping 128GB of RAM (also shut down). I try not to replace my hardware too often, simply because I don't need cutting edge performance, and yearly bumps aren't worth the money.",
+        "title": "Sprzęt",
+        "desc": "Od lat używam Maca. Moim pierwszym był iMac z procesorem i5, który nadal działą (chociaż teraz leży wyłączony), kolejnym już wersja z i9 i 128GB pamięci RAM. Staram się nie zmieniać sprzętu często, bo minimalne skoki wydajności nie są warte swojej ceny.",
         "items": [
-          "<b>MacBook Pro M1 Max 16</b> bought in 2022 is my main work station. Previously, I had  a 27“ iMac with i9 processor. Switch to M1 was kind of terrifying, because at first I thought my apps don't build. Only after googling “node doesn't build on m1”, I realized that build times went down to under a second.",
-          "<b>Apple Studio Display 27“</b> with nano-texture glass. I was always a big display guy, so getting this on a good deal was a no-brainer. While not the best display ever (this award goes to my glossy iMac 5K), I do appreciate its sharpness and near-perfect sunlight handling. I have large windows in my office, and that's the only screen that is fully readable at all times.",
-          "<b>LG 28MQ780-B</b> is my second monitor. Previously I had a BenQ one, but it has terrible ghosting. Initially I wanted a 4K one, but this LG bad boy is basically two displays put on top of each other, so, yeah. I use it only for coding (terminal, tests, documentation), so it's perfect.",
-          "<b>iPhone 14 Pro</b> is my iPhone X replacement. I bought it purely for the island thingy, but apart from that, kinda meh. I mean, it's an iPhone. Great camera that can double as a webcam works wonders for recording my videos though.",
-          "<b>ZSA Moonlander MK1</b> is my latest keyboard. I went into computers to type, so when few years ago I realized I am still using this boring Apple Keyboard, I wanted something more exciting. I went through Keychrons (which breaks easily, for some reason), had a Nuphy Air, some Epomaker and even a Logitech POP. Then a colleague suggested the Moonlander, which is a split keyboard. And I fell in love. It's a tough relationship, given the price tag and 20 years of muscle memory, but worth it.",
-          "<b>Logitech MX Master 3</b> is the mouse I thought I'll never use. Apple Magic Mouse had all these touch miracles that I fell head over heels for, but eventually its poor ergonomics took its toll on my hand and wrist. MX3 is extremely comfortable, has tons of configuration options (down to the physical wheel behavior) and its battery (after 4 years) still keeps up."
+          "<b>MacBook Pro M1 Max 16</b> kupiony w 2022 to moja główna maszyna do pracy. Wcześniej pracowałem na 27“ iMacu i9. Zmiana na procesor serii M był trochę przerażający, bo myślałem że moje aplikacje się nie budują. Dopiero po chwili zauważyłem, że to po prostu czas wykonywania spadł dużo poniżej sekundy.",
+          "<b>Apple Studio Display 27“</b> ze szkłem nanostrukturalnym. Zawsze uwielbiałem monitory, więc wzięcie tego w niezłej cenie było prostą decyzją. Mimo że nie jest to najlepszy monitor jaki miałem (ten zaszczyt przypada iMakowi 5k), bardzo doceniam jego ostry obraz i świetną kontrolę jasności względem otoczenia. W moim gabinecie mam duże okna i tylko ten monitor jest czytelny cały dzień.",
+          "<b>LG 28MQ780-B</b> to mój drugi monitor. Wcześniej miałem model od BenQ, ale strasznie zmużył. Na początku chciałem ekran 4K, ale gdy zobaczyłem tego olbrzyma (praktycznie jak dwa monitory jeden na drugim), decyzja zapadła. Używam go do terminala, testów i dokumentacji, więc sprawdza się idealnie.",
+          "<b>iPhone 14 Pro</b> to mój następca iPhone'a X. Kupiłem go głównie dla technologii wyspy, ale poza tym, nic specjalnego. Po prostu iPhone. Ma świetny aparat, który sprawdza się jako kamera gdy nagrywam filmy.",
+          "<b>ZSA Moonlander MK1</b> to moja klawiatura. Komputery zainteresowały mnie głównie przez klawiatury, a kilka lat temu uświadomiłem sobie, że wciąż piszę na nudnej Apple Keyboard. Przeszedłem przez dwa Keychrony (które się z jakiegoś powodu psują), Nuphy Air, miałem nawet Logitech Pop. Potem koleżanka poleciła mi Moonlandera, podzieloną klawiaturę. Mam z nią dość trudną relację, zważywszy na ponad 20 lat pamięci mięśniowej i cenę, ale nie wróciłbym do innych.",
+          "<b>Logitech MX Master 3</b> to mysz, której myślałem, że nigdy nie użyję. Apple Magic Mouse ma te wszystkie gesty, w których się zakochałem, ale kiepska ergonomia w końcu odbiła się na moim nadgarstku. MX3 jest bardzo wygodna, ma tonę opcji konfiguracji (można nawet dostosować fizyczne zachowanie rolki) i mocną baterię (nawet po czterech latach)."
         ]
       },
       "software": {
-        "title": "Software",
-        "desc": "I try to keep my software minimalistic. That means, one application for one thing, but I don't do that much apart from work and music here.",
+        "title": "Oprogramowanie",
+        "desc": "Staram się nie używać dużej ilości programów. Jedna aplikacja do jednej rzeczy. Ale nie robię tu nic poza pracą i słuchaniem muzyki.",
         "items": [
-          "IntelliJ IDEA is my IDE of choice. It has everything I need, including great introspection, intellisense, comfortable jumping between files, classes, interfaces, whatever. And a great window manager that allows you to split a pane and put it somewhere else on your desktop. You name it, IDEA has it.",
-          "Neovim (Lazyvim variant) for quick edits. While I am by no means fluent in Vim, handling everything by keyboard is strangely comfortable. I still am not fully convinced to use Vim Mode in IntelliJ, but I am getting there.",
-          "Vivaldi is my recent browser of choice. I've left Chrome after using it for over 15 years, simply due to lack of features like workspaces and decent theming. As for the other popular browsers, Arc didn't click due to navigation, Firefox due to poor JS tools (although I still use it for debugging grids) and rendering, Safari due to, well, being Safari.",
-          "oh-my-zsh for my terminal configuration. It has nice themes, but I use it like once every few days, because 99% of my terminal things are happening inside IntelliJ.",
-          "Alacritty for the terminal emulator. I honestly don't know why I am using it instead of a regular terminal shipped with the system, as I only do one thing there: type 'zellij' and press '[return]'. (Yes, technically these are two things.)",
-          "Obsidian for writing. I've used iA Writer, but Obsidian has more customizations and themes. I store the vault on iCloud, so there's the same sync mechanism I had previously.",
-          "Sketch for all the UI design. I've really wanted to like Figma and even used it for sometime, did some projects and was happy, but eventually I just decided to go back to Sketch. It's what I am familiar and productive with the most. And it's a native app, which also comes in handy, especially when I work with a lot of external assets.",
-          "Affinity Designer and Photo for more detailed designs. I still am learning these tools, but Adobe's rates and licence handling just doesn't sit right with me."
+          "<b>IntelliJ IDEA</b> to moje środowisko programistyczne. Ma dosłownie wszystko: świetny przegląd kodu projektu, autouzupełnianie, bezproblemowe chodzenie po plikach, klasach czy funkcjach, wbudowany klient do gita i testów. Do tego pozwala na podzielenie obszaru na kilka okien, więc mogę mieć kod na jednym monitorze, a terminal i procesy na innym. Ten program ma praktycznie wszystko, czego potrzebuję.",
+          "<b>Neovim</b> (wariant Lazyvim) do szybkich zmian. Chociaż nie potrafię płynnie poruszać się w Vimie, nawigacja jedynie przy pomocy klawiatury jest bardzo wygodna. Co prawda jeszcze nie włączyłem trybu Vim w IntelliJ, ale jestem coraz bliżej.",
+          "<b>Vivaldi</b> to moja przeglądarka. Po 15 latach porzuciłem Chrome'a ze względu na brak funkcjonalności (przestrzenie robocze, dostosowywanie wyglądu). Jeżeli o inne popularne przeglądarki chodzi, Arc nie podoba mi się przez nawigację, Firefox ma dość toporne narzędzia do JS (ale świetne do CSS), Safari... coż, to po prostu Safari.",
+          "<b>oh-my-zsh</b> jako konfigurator terminala. Ma fajne motywy, ale używam do raz na kilka dni, bo 99% rzeczy terminalowych załatwiam w IntelliJ.",
+          "<b>Alacritty</b> to emulator terminala. Szczerze, to nie wiem, po co mi on, bo jedyne co w nim robię to wpisanie \"zellij\" i wciśnięcie [return].",
+          "<b>Obsidian</b> do pisania. Dawniej używałem iA Writer, ale Obsidian ma dużo więcej możliwości i dostosowywania. Pliki i tak trzymam w iCloud, więc synchronizacja to nie problem.",
+          "<b>Sketch</b> do projektowania interfejsów. Naprawdę bardzo chciałem polubić Figmę i nawet jakiś czas byłem z niej zadowolony, ale w końcu postanowiłem się nie męczyć i wrócić do tego, co znam i lubię. No i to natywny program, więc zachowuje się po prostu lepiej.",
+          "<b>Affinity Designer</b> i <b>Photo</b> do bardziej wymagających graficznie rzeczy. Nadal uczę się tych narzędzi, ale Adobe ze swoimi praktykami po prostu mi nie pasuje."
         ]
       },
       "music": {
-        "title": "Music",
-        "desc": "I spend a lot of time listening to music, and in high school I fell into the headphones rabbit hole. Luckily, I was able to catch that rabbit! Oh, and check <a href=\"https://rateyourmusic.com/~_tomek\" target=\"_blank\">my RateYourMusic profile </a> for the albums I like.",
+        "title": "Muzyka",
+        "desc": "Słucham bardzo dużo muzyki. W liceum wpadłem po uszy w słuchawki, na szczęście udało mi się znaleźć takie, jakie mi odpowiadają. Zapraszam na mój <a href=\"https://rateyourmusic.com/~_tomek\" target=\"_blank\">profil RateYourMusic</a> jak chcesz sprawdzić, jakiej muzyki słucham.",
         "items": [
-          "Focal Stellia headphones are basically the pinnacle of music listening. Perfect in every detail, from form (I can wear them even during the Summer for hours without discomfort) to factor. I would like to also have Focal Utopias, but given the noise outside my apartment, open-back headphones sadly aren't an option.",
-          "Cayin iHA-6 paired with Cayin iDAC6-MK2 are my headphones amplifier and digital-analogue converter. I've switched from JDS Atom and Topping D10 and it's night and day.",
-          "Apple Music offers lossless, vast library. Simple as that. I've used Qobuz earlier, which had this hand-curated feel, but too much music was missing. I mean, Apple Music even has obscure Australian industrial from the 80s (warning: early industrial is a hole you might emerge after ten years) or an early Young Guv EP. Come on!"
+          "<b>Focal Stellia</b> to najlepsze słuchawki jakie kiedykolwiek miałem. Idealne w każdym calu, wygodne i brzmią idealnie. Chciałbym do kompletu jeszcze Focal Utopię, ale hałas z ulicy skutecznie blokuje mnie przed otwartymi słuchawkami.",
+          "<b>Cayin iHA-6</b> i <b>Cayin iDAC6-MK2</b> to mój wzmaczniacz i konwerter cyfrowo-analogowy. Przełączyłem się z JDS Atoma z Toppingiem D10 i zmiana jest ogromna.",
+          "<b>Apple Music</b> daje mi wielką, bezstratną bibliotekę muzyczną. Dawniej używałem Qobuza, który miał ten klimat bycia zarządzanym przez ludzi, ale brakowało tam zbyt wiele muzyki. Apple Music ma nawet stary, australijski industrial czy EPkę Young Guv. Czego chcieć więcej."
         ]
       },
       "gaming": {
-        "title": "Gaming",
-        "desc": "I recently realized that I play games for almost 30 years.",
+        "title": "Granie",
+        "desc": "Niedawno zdałem sobie sprawę, że gram w gry od ponad 30 lat.",
         "items": [
-          "PS5 is a must-have. I am a PlayStation fan ever since the first one (which I got in second grade).",
-          "Xbox Series X is something I got due to sheer \"I collect these\" feeling. After 360 I feel that Microsoft really lost the ball. Buying studios and whipping mediocre games (looking at you, latest Forza) doesn't really help here.",
-          "Nintendo Switch is a special thing. Its hardware is basically Wii U, which was too little even then it launched, but the games. Oh, the games. Mario Kart 8 is enough to recommend the entire thing, with Metroid Dread, the two Zeldas and other Mario titles to boot.",
-          "PC with RTX 3080Ti and Ryzen 7 is my main gaming platform as of recent. I was against gaming on PC for years, mostly due to \"I work with computers, so I don't want them on my free time\", but the games not available on consoles are just too much to ignore. From indies, to oldies (I actually bought the rig to play classic Fallout games), to titles better adjusted for mouse (shooters, RPGs, aRPGs). Fun fact: the first game I launched on my new computer was Quake II, which I wanted to play for over 15 years.",
-          "Beelink SER5 is a tiny computer I use as an emulation and media station. My old LG OLED TV doesn't work well with streaming apps, some (like Canal+) don't have dedicated apps at all, so using this is a perfect solution. Plus, since I don't have my PS1 with me, I can still play the games (and some PS2 titles as well, but not as many)."
+          "<b>PS5</b> to taki must-have. Jestem fanem tej marki od pierwszej konsoli, którą dostałem w drugiej klasie.",
+          "<b>Xbox Series X</b> kupiłem tylko dlatego, że zbieram konsole. Po 360-tce Microsoft kompletnie pogubił się na rynku, a kupowanie studiów i wypuszczanie średniej jakości gier (patrzę na Ciebie, <i>Forza</i>) raczej nie pomaga.",
+          "<b>Nintendo Switch</b> to wyjątkowa rzecz. Sprzętowo, słabsza od Wii U, ale co za gry! Sam <i>Mario Kart 8</i> uzasadnia zakup, do tego jeszcze <i>Metroid Dread</i>, wszystkie <i>Zeldy</i> i inne tytuły z Mario.",
+          "<b>PC</b> with <b>RTX 3080Ti</b> and <b>Ryzen 7</b> to moja najcześciej używana platforma. Latami byłem przeciwny graniu na komputerze, wychodząc z założenia, że skoro przy nich pracuję, to relaksować powinienem się bez nich. Ale ilość świetnych tytułów na wyłączność (głównie niezależnych, ale też starych) i takich, które są lepsze z myszką (FPP, RPG, RTS) zmusiła mnie do zmiany zdania. Ciekawostka: pierwszą grą, jaką uruchomiłem na tym komputerze był <i>Quake II</i>, w którego chciałem zagrać 15 lat.",
+          "<b>Beelink SER5</b> to malutki komputer służący głównie do emulacji staroci i odtwarzania multimediów. Mój stary telewizor LG OLED nienajlepiej radzi sobie z nowymi aplikacjami, niektóre (takie jak Canal+) nie mają ich wcale, więc sprawdza się znakomicie. No i nie mam przy sobie PS1, więc tutaj też świetnie działa."
         ]
       }
     }
