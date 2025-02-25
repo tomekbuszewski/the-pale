@@ -27,6 +27,7 @@ function Switch({
   const [active, setActive] = useState<number>(defaultActiveIndex ?? 0);
   const onChange = useCallback(onChangeRaw, [onChangeRaw]);
   const classNames = clsx(className, styles.wrapper);
+  const isToggle = items.length === 2;
 
   useEffect(() => {
     onChange(items[active].href);
@@ -39,11 +40,17 @@ function Switch({
       style={{
         ["--active" as keyof CSSProperties]: active,
       }}
+      onClick={(e) => {
+        if (isToggle) {
+          e.stopPropagation();
+          setActive((prev) => (prev === 0 ? 1 : 0));
+        }
+      }}
     >
       {items.map((item, index) => (
         <button
           key={item.href}
-          onClick={() => setActive(index)}
+          onClick={() => (isToggle ? null : setActive(index))}
           className={clsx(styles.item, {
             [styles.active]: index === active,
           })}

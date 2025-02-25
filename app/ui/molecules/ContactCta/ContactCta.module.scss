@@ -23,6 +23,22 @@
   @include media("lg") {
     padding: var(--spacing-2xl) var(--spacing-xl);
   }
+
+  &.fixed {
+    position: fixed;
+    top: var(--spacing-lg);
+    left: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: var(--z-banner);
+
+    @include media("md") {
+      padding: var(--spacing-mid);
+    }
+
+    @include media("lg") {
+      padding: var(--spacing-mid);
+    }
+  }
 }
 
 .buttons {

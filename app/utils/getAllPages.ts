@@ -1,4 +1,4 @@
-import loader from "../features/BlogSection/loader.server";
+import loader from "../features/BlogSection/loader";
 import { StaticRoutes } from "../nav";
 
 export default async function getAllPages() {

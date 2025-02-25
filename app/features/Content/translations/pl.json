@@ -1,0 +1,406 @@
+{
+  "contact": {
+    "button": {
+      "label": "Skontaktuj się"
+    },
+    "cta": {
+      "title": "Gotów stworzyć swoją nową stronę?"
+    },
+    "section": {
+      "title": "Kontakt",
+      "call": {
+        "title": "30-minutowa rozmowa",
+        "body": [
+          "Zarezerwuj 30-minutową rozmowę bez zobowiązań, aby omówić szczegóły Twojego projektu.",
+          "Spotkanie odbywa się na Google Meets i jest rejestrowane przez Cal.com."
+        ],
+        "read-more": "Zarezerwuj spotkanie"
+      },
+      "email": {
+        "title": "Napisz lub zadzwoń",
+        "body": [
+          "Najszybsza droga by rozpocząć współpracę!"
+        ],
+        "read-more-email": "Napisz",
+        "read-more-phone": "Zadzwoń"
+      },
+      "designed": "Zaprojektowanie i zrealizowane w:"
+    },
+    "feature": {
+      "title": "Kontakt",
+      "location": "Warszawa, Polska"
+    }
+  },
+  "menu": {
+    "toggle": {
+      "open": "Otwórz menu",
+      "close": "Zamknij menu"
+    }
+  },
+  "article": {
+    "header": {
+      "meta": {
+        "posted-on": "Napisane",
+        "back": "Wstecz"
+      }
+    }
+  },
+  "blog": {
+    "section": {
+      "read-more": "Read the entry {{title}}",
+      "buttons": {
+        "read-more": "Read more",
+        "read-more-about": "More on {{title}}",
+        "watch": "Watch",
+        "watch-about": "Video on {{title}}"
+      },
+      "pagination": {
+        "newer": "Newer",
+        "older": "Older"
+      }
+    },
+    "feature": {
+      "title": "Videos & Writings"
+    }
+  },
+  "hero": {
+    "section": {
+      "contact": "Kontakt",
+      "explore": "Realizacje"
+    },
+    "feature": {
+      "title": "Cześć",
+      "copy": "Zapomnij o problemach ze stroną. Zajmij się tym, co naprawdę ważne dla Twojej firmy.",
+      "keywords": ["strony", "projektu", "kodu", "konsultanta"],
+      "first-line": "Szukasz ",
+      "second-line": "dla swojej firmy?"
+    }
+  },
+  "footer": {
+    "section": {
+      "copyright": "© {{start}} - {{current}}<br />Wszystkie prawa zastrzeżone.",
+      "cookies": "Ta strona zbiera cookies do analityki i testów.",
+      "boxes": {
+        "quick-links": "Szybkie",
+        "contact": "Kontakt",
+        "socials": "Social media"
+      }
+    },
+    "feature": {
+      "copy": "Buszewski.com to agencja założona przez Tomasza Buszewskiego, dawniej managera i inżyniera oprogramowania.",
+      "call-button": "30-min. spotkanie",
+      "contact-disclaimer": "Odpowiadam najpóźniej do 24h (Pon-Pt)."
+    }
+  },
+  "about": {
+    "feature": {
+      "data": "Od {{years}} lat pomagam małym i&nbsp;dużym firmom ożywić ich pomysły. <br/> Łączę techniczne umiejętności z&nbsp;doświadczeniem biznesowym, zapewniając efektowne i&nbsp;efektywne rozwiązania."
+    }
+  },
+  "head": {
+    "feature": {
+      "description": "Profesjonalnie wykonane strony internetowe dla Twojego biznesu."
+    }
+  },
+  "services": {
+    "section": {
+      "title": "Usługi",
+      "read-more-open": "Rozwiń",
+      "read-more-close": "Schowaj"
+    },
+    "feature": {
+      "title": "Usługi",
+      "process": "Proces",
+      "website": {
+        "title": "Projekt i&nbsp;wdrożenie strony internetowej",
+        "short-title": "Projekt<br />i wdrożenie",
+        "link-title": "Więcej o stronach",
+        "copy": [
+          "Kompleksowe rozwiązania webowe: projektowanie, development, wdrożenie.",
+          "Zapewniam płynny proces od wstępnej koncepcji po gotowy produkt. Niezależnie od tego, czy tworzysz nowy biznes, czy odświeżasz istniejącą stronę, dbam o to, aby wszystko działało perfekcyjnie."
+        ],
+        "additional": [
+          "Unikalne, dopasowane projekty, które odzwierciedlają Twoją markę i wizję",
+          "Czysty, wydajny kod zapewniający optymalną wydajność i skalowalność",
+          "Kod przechowywany w prywatnym repozytorium z pełnym dostępem i możliwością przejęcia",
+          "Podgląd dostępny przy każdej zmianie, aby wszystko zawsze wyglądało perfekcyjnie",
+          "Dokładne testy wydajności, kompatybilności i użyteczności",
+          "Hosting, domeny i wdrożenia w pełni obsłużone, z możliwością bezpłatnego przeniesienia do Ciebie"
+        ],
+        "full": {
+          "intro": "Piękne, intuicyjne strony internetowe dopasowane do Twojej marki i&nbsp;celów.",
+          "what-do-you-get": "Co dostajesz",
+          "body": ["Wierzę, że design to coś więcej niż estetyka — to tworzenie doświadczenia. Niezależnie od tego, czy prowadzisz młody startup, czy rozwiniętą firmę, stworzę dla Ciebie spersonalizowana strone, które nie tylko świetnie wygląda, ale także doskonale działa.", "Twoja strona powinna być tak unikalna jak Twoja marka, dlatego buduję wszystko od podstaw – bez szablonów, bez skrótów."],
+          "process": {
+            "discovery": {
+              "title": "Analiza i&nbsp;strategia",
+              "body": "Każdy projekt jest wyjątkowy. Najpierw omawiamy, co wyróżnia Twój i jak najlepiej zaprezentować go w sieci."
+            },
+            "design": {
+              "title": "Ocena projektu",
+              "body": "Kolejny krok to stworzenie propozycji projektu, który następnie omawiamy i udoskonalamy."
+            },
+            "coding": {
+              "title": "Wdrożenie i start",
+              "body": "Po zatwierdzeniu projektów przekształcam je w działającą stronę internetową, dobierając technologię od Twoich potrzeb i funduszy."
+            }
+          },
+          "card": {
+            "design": {
+              "title": "Projekt skrojony pod Twoje potrzeby",
+              "body": [
+                "Zaprojektuję stronę, która będzie pasować do Twojej marki i celów. Każdy design jest dostosowywany i dokręcany zgodnie z Twoimi uwagami i potrzebami.",
+                "Kiedy projekt jest gotowy, przekazuję Ci pliki Sketch, więc Twój zespół może przejąć pracę."
+              ],
+              "cta": "Moje realizacje"
+            },
+            "tech": {
+              "title": "Technologia wybrana dla Ciebie",
+              "body": [
+                "Nie ma jednego rozwiązania pasującego do wszystkich. Dla każdego klienta indywidualnie analizuję potrzeby i wybieram najlepszą technologię. Raz będzie to prosty generator statycznych stron, innym razem \"headless\" CMS z front-endem renderowanym dynamicznie jako oddzielna usługa. A jeszcze kiedy indziej, coś zupełnie innego.",
+                "To, czego możesz być pewna(y), to fakt, że nigdy nie zaproponuję rozwiązania \"bo tak\". Zawsze otrzymasz pełny opis uzasadniający każdy wybór.",
+                "Wszystkie moje wdrożenia mają testy E2E i środowiska poglądowe. To gwarantuje, że wszystkie zmiany są testowane i weryfikowane, zanim zobaczą je Twoi klienci."
+              ],
+              "cta": "Więcej o technologii"
+            },
+            "repo": {
+              "title": "Kod w prywatnym repozytorium",
+              "body": [
+                "Cały kod trzymam w serwisie GitHub. Wszystkie commity opisuję w konwencji \"conventional commit\", a zmiany wstawiam jako pull requesty. Kiedy kończę pracę, mogę bezpłatnie przekazać repozytorium Twojej organizacji.",
+                "Jeżeli to dla Ciebie tylko techniczny bełkot – spokojnie. Chodzi o to, że trzymam wszystko w prywatnym miejscu, do którego dostęp jest na zaproszenie i które mogę Ci przekazać po skończonej pracy.",
+                "Oferuję też hosting i utrzymanie Twojej strony, więc nie musisz się o to martwić."
+              ]
+            }
+          },
+          "btn": {
+            "schedule": "Umów się na rozmowę",
+            "contact": "Kontakt"
+          },
+          "cta": "Chcesz przenieść swój biznes na wyższy poziom?"
+        }
+      },
+      "frontend": {
+        "title": "Frontend<br />Development",
+        "link-title": "Więcej o frontendzie",
+        "copy": [
+          "Masz gotowy projekt? Mogę go zamienić w czysty i funkcjonalny kod.",
+          "Wybór technologii zawsze ma na celu wysoką wydajność i skalowalność."
+        ],
+        "additional": [
+          "Konsultacje i sugestie dotyczące projektu graficznego",
+          "Frontend napisany od zera specjalnie dla Twojego projektu",
+          "Kod w prywatnym repozytorium z pełnym dostępem i możliwością przejęcia",
+          "Podgląd dostępny przy każdej zmianie, aby wszystko zawsze wyglądało perfekcyjnie",
+          "Automatyczne testy E2E, żeby być pewnym że wszystko działa jak powinno"
+        ],
+        "full": {
+          "what-do-you-get": "Co dostajesz",
+          "intro": "Masz już projekt (lub projektanta) i chcesz to zakodować? Nie mów nic więcej — mogę to zrobić od A-Z z technologią dobraną do Twoich potrzeb.",
+          "body": ["Mając ponad {{years}} lat doświadczenia, pracowałem z masą róznych technologii frontendowych. Chętnie doradzę i zaproponuję takie rozwiązania, które spełnią Twoje potrzeby zarówno funkcjonalne jak i finansowe.", "Nie stosuję żadnych gotowych szablonów."],
+          "process": {
+            "design": {
+              "title": "Przegląd projektu",
+              "description": "Omawiamy Twój projekt i to, jak najlepiej go zaimplementować."
+            },
+            "technical": {
+              "title": "Zarys technologiczny",
+              "description": "Bazując na naszych ustaleniach, przygotowuję dokładnie opisany zarys technologii, jakiej będzie używać Twoja strona."
+            },
+            "implementation": {
+              "title": "Kod i<br />przekazanie",
+              "description": "Po ustaleniu wszystkich detali, biorę się do roboty. Kiedy wszystko jest gotowe, dostajesz wszystko w prywatnym repozytorium."
+            }
+          },
+          "card": {
+            "design": {
+              "title": "Przegląd i ocena projektu",
+              "description": ["Dobrze pomyślany projekt nie tylko wygląda, ale przede wszystkim działa dobrze i spójnie.", "Przeprowadzam dokładny audyt projektu, zaznaczam potencjalne problemy (natury użytkowej, technologicznej czy implementacyjnej). Dzięki temu, zanim jeszcze zacznę kodować, możesz nanieść moje sugestie.", "Mój cel to stworzenie prawdziwego doświadczenia na bazie Twojego projektu."]
+            },
+            "technical": {
+              "title": "Zarys technologiczny",
+              "description": ["Wybór odpowiedniej technologii jest kluczowy, jeżeli budujemy skalowalne i utrzymywalne rozwiązanie.", "Tworzę szczegółowy opis technologiczny frameworków, bibliotek i wzorców architektonicznych, jakich chciałbym użyć. To zapewnia nam przejrzystą mapę implementacji, minimalizując tym samym dług technologiczny.", "Czy to duży framework, czy mała biblioteka, każdy wybór poparty jest doświadczeniem i ukierunkowaniem na długofalowe działanie."]
+            },
+            "implementation": {
+              "title": "Implementacja",
+              "description": ["Kiedy plan mamy już gotowy, biorę się do pracy i dostarczam projekt zgodnie z ustaleniami.", "Każdy starannie stworzony komponent jest skalowalny i łatwy w utrzymaniu. Kiedy kończę, przekazuję Ci kod w repozytorium, więc Twój zespół może bez problemu przejąć utrzymanie.", "Niezależnie, czy potrzebujesz wsparcia czy zmian, moje projekty dostarczam tak, by były gotowe do produkcji bez zbędnych komplikacji."]
+            }
+          }
+        }
+      },
+      "consultations": {
+        "title": "Konsultacje managerskie i&nbsp;techniczne",
+        "short-title": "Konsultacje",
+        "link-title": "Więcej o konsultacjach",
+        "copy": [
+          "Jako doświadczony menadżer i lider technologiczny, doskonale odnajduję się zarówno w technicznych, jak i miękkich wyzwaniach.",
+          "Oferuję konsultacje i pomoc Tobie i Twojemu zespołowi w osiągnięciu celów biznesowych."
+        ],
+        "additional": [
+          "Wsparcie w sprawach technologicznych i biznesowych",
+          "Pomoc w rekrutacji i ocenie kandydatów",
+          "Code review (oceny kodu), żeby Twój produkt był napisany w jak najlepszy sposób",
+          "Omawianie Twoich pomysłów i wyzwań jako Twój sparring partner"
+        ],
+        "full": {
+          "what-do-you-get": "Co dostajesz",
+          "intro": "Jeżeli Ty lub Twój zespół utknęliście, lub po prostu potrzebujecie rady i spojrzenia z zewnątrez, zapraszam.",
+          "body": [
+            "Jako dośwwiadczony menadżer i lider technologiczny, jestem pewnien że będę mógł Wam pomoć w rozwiązaniu problemów."
+          ],
+          "process": {
+            "talk": {
+              "title": "Wstępne spotkanie",
+              "description": "Omawiamy Twoje potrzeby i estymujemy, co i kiedy mogę zrobić."
+            },
+            "timeline": {
+              "title": "Ustalenia<br />&&nbsp;zakresu",
+              "description": "Umawiamy się na harmonogram i zakres pracy."
+            },
+            "implementation": {
+              "title": "Faktyczna robota",
+              "description": "Współpracujemy (w sposób, jaki Tobie odpowiada), rozwiązując Twoje problemy na bieżąco."
+            }
+          },
+          "card": {
+            "mgmt": {
+              "title": "Konsultacje zarządzania projektem",
+              "description": ["Dobrze prowadzony projekt trzyma się harmonogramu, jest nieskomplikowany i efektywny.", "Z doświadczeniem w prowadzeniu małych i dużych zespołów, chętnie pomogę dostosować zakres pracy, nadmiernego rozbudowywania (<i>feature creep</i>) i zapewnić dopasowanie na linii technologia–biznes."]
+            },
+            "hiring": {
+              "title": "Pomoc w zatrudnieniu najlepszych kandydatów",
+              "description": ["Budowanie mocnego zespołu jest krytyczne, zwłaszcza dla młodych firm.", "Pomagam wyłonić najlepszych kandydatów, oceniając zarówno techniczne jak i miękkie umiejętności. Dzięki temu wiesz, że osoba ta pasuje do Twojego zespołu. Niezależnie od tego, czy zatrudniasz pierwszą czy setną osobę, upewniam się, że podejmujesz dobry wybór."]
+            },
+            "sparring": {
+              "title": "Sparring partner",
+              "description": ["Najlepsze pomysły rodzą się z wyzwań.", "Jako sparring partner, oferuję krytyczną perspektywę poprzez zadawanie pytań, kwestionowanie i szukanie alternatyw. Następnie pomagam przygotować i \"wygładzić\" Twój pomysł tak, by był gotowy do przedstawienia."]
+            }
+          }
+        }
+      }
+    }
+  },
+  "work": {
+    "title": "Realizacje",
+    "item": {
+      "study": {
+        "na": "Study n/a",
+        "ok": "Case study"
+      },
+      "online": {
+        "na": "Online n/a",
+        "ok": "Na żywo"
+      },
+      "tag": {
+        "design": "Projekt",
+        "development": "Programowanie",
+        "consultations": "Konsultacja"
+      }
+    },
+    "gameshelf": [
+      "Gameshelf dostarcza najlepszej jakości artykuły, wywiady i wiadomości ze świata gier wideo."
+    ],
+    "hay": [
+      "Hundred a Year to prywatny projekt do tworzenia i zarządzania listami albumów muzycznych."
+    ],
+    "backlog": [
+      "The Backlog proponuje rozwiązanie mikroblogowe dostosowane dla graczy. Oferuje m.in. tagowanie czy ocenianie gier i określanie ich poziomu ukończenia."
+    ]
+  },
+  "nav": {
+    "home": "Główna",
+    "tech": "Technologie",
+    "uses": "Wyposażenie",
+    "works": "Realizacje",
+    "services": "Usługi",
+    "videos": "",
+    "about": "O mnie",
+    "contact": "Kontakt",
+    "buttons": {
+      "phone": "Kontakt"
+    }
+  },
+  "tech": {
+    "title": "Technologie, których używam",
+    "intro": "Przez lata pracowałem z masą różnych technologii.",
+    "body": [
+      "Czuję się dobrze w praktycznie każdym (w miarę aktualnym) stosie technologicznym. Pracowałem komercyjnie m.in. z PHP, Node, JavaScriptem i TypeScriptem, Pythonem, Javą i Go.",
+      "Jeżeli szukasz (w miarę) pełnej listy, oto ona:"
+    ],
+    "languages": {
+      "title": "Języki programowania",
+      "desc": "Oto języki, z którymi mam doświadczenie komercyjne. Poza nimi, prywatnie uczyłem się m.in. Ruby, Rusta i innych."
+    },
+    "libs": {
+      "title": "Frameworki i biblioteki",
+      "desc": "Lista frameworków i bibliotek, z którymi mam największe doświadczenie. Lista w żadym wypadku nie jest kompletna."
+    },
+    "testing": {
+      "title": "Testowanie",
+      "desc": "Oto narzędzia do testowania, z którymi zbudowałem przynajmniej jedną produkcyjną aplikację."
+    }
+  },
+  "uses": {
+    "title": "Uses",
+    "copy": "Ta strona, zainspirowana <a href=\"https://wesbos.com/uses\">Wesem Bosem</a>, wyszczególnia sprzęt i oprogramowanie, z którego korzystam na codzień.",
+    "section": {
+      "hardware": {
+        "title": "Sprzęt",
+        "desc": "Od lat używam Maca. Moim pierwszym był iMac z procesorem i5, który nadal działą (chociaż teraz leży wyłączony), kolejnym już wersja z i9 i 128GB pamięci RAM. Staram się nie zmieniać sprzętu często, bo minimalne skoki wydajności nie są warte swojej ceny.",
+        "items": [
+          "<b>MacBook Pro M1 Max 16</b> kupiony w 2022 to moja główna maszyna do pracy. Wcześniej pracowałem na 27“ iMacu i9. Zmiana na procesor serii M był trochę przerażający, bo myślałem że moje aplikacje się nie budują. Dopiero po chwili zauważyłem, że to po prostu czas wykonywania spadł dużo poniżej sekundy.",
+          "<b>Apple Studio Display 27“</b> ze szkłem nanostrukturalnym. Zawsze uwielbiałem monitory, więc wzięcie tego w niezłej cenie było prostą decyzją. Mimo że nie jest to najlepszy monitor jaki miałem (ten zaszczyt przypada iMakowi 5k), bardzo doceniam jego ostry obraz i świetną kontrolę jasności względem otoczenia. W moim gabinecie mam duże okna i tylko ten monitor jest czytelny cały dzień.",
+          "<b>LG 28MQ780-B</b> to mój drugi monitor. Wcześniej miałem model od BenQ, ale strasznie zmużył. Na początku chciałem ekran 4K, ale gdy zobaczyłem tego olbrzyma (praktycznie jak dwa monitory jeden na drugim), decyzja zapadła. Używam go do terminala, testów i dokumentacji, więc sprawdza się idealnie.",
+          "<b>iPhone 14 Pro</b> to mój następca iPhone'a X. Kupiłem go głównie dla technologii wyspy, ale poza tym, nic specjalnego. Po prostu iPhone. Ma świetny aparat, który sprawdza się jako kamera gdy nagrywam filmy.",
+          "<b>ZSA Moonlander MK1</b> to moja klawiatura. Komputery zainteresowały mnie głównie przez klawiatury, a kilka lat temu uświadomiłem sobie, że wciąż piszę na nudnej Apple Keyboard. Przeszedłem przez dwa Keychrony (które się z jakiegoś powodu psują), Nuphy Air, miałem nawet Logitech Pop. Potem koleżanka poleciła mi Moonlandera, podzieloną klawiaturę. Mam z nią dość trudną relację, zważywszy na ponad 20 lat pamięci mięśniowej i cenę, ale nie wróciłbym do innych.",
+          "<b>Logitech MX Master 3</b> to mysz, której myślałem, że nigdy nie użyję. Apple Magic Mouse ma te wszystkie gesty, w których się zakochałem, ale kiepska ergonomia w końcu odbiła się na moim nadgarstku. MX3 jest bardzo wygodna, ma tonę opcji konfiguracji (można nawet dostosować fizyczne zachowanie rolki) i mocną baterię (nawet po czterech latach)."
+        ]
+      },
+      "software": {
+        "title": "Oprogramowanie",
+        "desc": "Staram się nie używać dużej ilości programów. Jedna aplikacja do jednej rzeczy. Ale nie robię tu nic poza pracą i słuchaniem muzyki.",
+        "items": [
+          "<b>IntelliJ IDEA</b> to moje środowisko programistyczne. Ma dosłownie wszystko: świetny przegląd kodu projektu, autouzupełnianie, bezproblemowe chodzenie po plikach, klasach czy funkcjach, wbudowany klient do gita i testów. Do tego pozwala na podzielenie obszaru na kilka okien, więc mogę mieć kod na jednym monitorze, a terminal i procesy na innym. Ten program ma praktycznie wszystko, czego potrzebuję.",
+          "<b>Neovim</b> (wariant Lazyvim) do szybkich zmian. Chociaż nie potrafię płynnie poruszać się w Vimie, nawigacja jedynie przy pomocy klawiatury jest bardzo wygodna. Co prawda jeszcze nie włączyłem trybu Vim w IntelliJ, ale jestem coraz bliżej.",
+          "<b>Vivaldi</b> to moja przeglądarka. Po 15 latach porzuciłem Chrome'a ze względu na brak funkcjonalności (przestrzenie robocze, dostosowywanie wyglądu). Jeżeli o inne popularne przeglądarki chodzi, Arc nie podoba mi się przez nawigację, Firefox ma dość toporne narzędzia do JS (ale świetne do CSS), Safari... coż, to po prostu Safari.",
+          "<b>oh-my-zsh</b> jako konfigurator terminala. Ma fajne motywy, ale używam do raz na kilka dni, bo 99% rzeczy terminalowych załatwiam w IntelliJ.",
+          "<b>Alacritty</b> to emulator terminala. Szczerze, to nie wiem, po co mi on, bo jedyne co w nim robię to wpisanie \"zellij\" i wciśnięcie [return].",
+          "<b>Obsidian</b> do pisania. Dawniej używałem iA Writer, ale Obsidian ma dużo więcej możliwości i dostosowywania. Pliki i tak trzymam w iCloud, więc synchronizacja to nie problem.",
+          "<b>Sketch</b> do projektowania interfejsów. Naprawdę bardzo chciałem polubić Figmę i nawet jakiś czas byłem z niej zadowolony, ale w końcu postanowiłem się nie męczyć i wrócić do tego, co znam i lubię. No i to natywny program, więc zachowuje się po prostu lepiej.",
+          "<b>Affinity Designer</b> i <b>Photo</b> do bardziej wymagających graficznie rzeczy. Nadal uczę się tych narzędzi, ale Adobe ze swoimi praktykami po prostu mi nie pasuje."
+        ]
+      },
+      "music": {
+        "title": "Muzyka",
+        "desc": "Słucham bardzo dużo muzyki. W liceum wpadłem po uszy w słuchawki, na szczęście udało mi się znaleźć takie, jakie mi odpowiadają. Zapraszam na mój <a href=\"https://rateyourmusic.com/~_tomek\" target=\"_blank\">profil RateYourMusic</a> jak chcesz sprawdzić, jakiej muzyki słucham.",
+        "items": [
+          "<b>Focal Stellia</b> to najlepsze słuchawki jakie kiedykolwiek miałem. Idealne w każdym calu, wygodne i brzmią idealnie. Chciałbym do kompletu jeszcze Focal Utopię, ale hałas z ulicy skutecznie blokuje mnie przed otwartymi słuchawkami.",
+          "<b>Cayin iHA-6</b> i <b>Cayin iDAC6-MK2</b> to mój wzmaczniacz i konwerter cyfrowo-analogowy. Przełączyłem się z JDS Atoma z Toppingiem D10 i zmiana jest ogromna.",
+          "<b>Apple Music</b> daje mi wielką, bezstratną bibliotekę muzyczną. Dawniej używałem Qobuza, który miał ten klimat bycia zarządzanym przez ludzi, ale brakowało tam zbyt wiele muzyki. Apple Music ma nawet stary, australijski industrial czy EPkę Young Guv. Czego chcieć więcej."
+        ]
+      },
+      "gaming": {
+        "title": "Granie",
+        "desc": "Niedawno zdałem sobie sprawę, że gram w gry od ponad 30 lat.",
+        "items": [
+          "<b>PS5</b> to taki must-have. Jestem fanem tej marki od pierwszej konsoli, którą dostałem w drugiej klasie.",
+          "<b>Xbox Series X</b> kupiłem tylko dlatego, że zbieram konsole. Po 360-tce Microsoft kompletnie pogubił się na rynku, a kupowanie studiów i wypuszczanie średniej jakości gier (patrzę na Ciebie, <i>Forza</i>) raczej nie pomaga.",
+          "<b>Nintendo Switch</b> to wyjątkowa rzecz. Sprzętowo, słabsza od Wii U, ale co za gry! Sam <i>Mario Kart 8</i> uzasadnia zakup, do tego jeszcze <i>Metroid Dread</i>, wszystkie <i>Zeldy</i> i inne tytuły z Mario.",
+          "<b>PC</b> with <b>RTX 3080Ti</b> and <b>Ryzen 7</b> to moja najcześciej używana platforma. Latami byłem przeciwny graniu na komputerze, wychodząc z założenia, że skoro przy nich pracuję, to relaksować powinienem się bez nich. Ale ilość świetnych tytułów na wyłączność (głównie niezależnych, ale też starych) i takich, które są lepsze z myszką (FPP, RPG, RTS) zmusiła mnie do zmiany zdania. Ciekawostka: pierwszą grą, jaką uruchomiłem na tym komputerze był <i>Quake II</i>, w którego chciałem zagrać 15 lat.",
+          "<b>Beelink SER5</b> to malutki komputer służący głównie do emulacji staroci i odtwarzania multimediów. Mój stary telewizor LG OLED nienajlepiej radzi sobie z nowymi aplikacjami, niektóre (takie jak Canal+) nie mają ich wcale, więc sprawdza się znakomicie. No i nie mam przy sobie PS1, więc tutaj też świetnie działa."
+        ]
+      }
+    }
+  },
+  "content": {
+    "feature": {
+      "text": "Hey, maybe you'd like to switch to an English version?",
+      "buttons": {
+        "yes": "Yes!",
+        "no": "Zamknij"
+      }
+    }
+  },
+  "clients": {
+    "title": "Klienci"
+  }
+}

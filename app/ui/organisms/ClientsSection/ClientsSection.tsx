@@ -9,6 +9,7 @@ import { ClientIcon } from "./helpers/ClientIcon";
 import { pickRandomItems } from "./helpers/random";
 
 import styles from "./ClientsSection.module.scss";
+import { Content } from "@features";
 
 interface Props {
   items: Client[];
@@ -18,6 +19,7 @@ function ClientsSection({ items }: Props) {
   const [visibleItems, setVisibleItems] = useState<Client[]>([]);
   const intervalId = useRef<NodeJS.Timeout | null>(null);
   const isFirstRender = useRef(true);
+  const translate = Content.hooks.useTranslate();
 
   function triggerIntervalRaw() {
     if (isFirstRender.current) {
@@ -50,7 +52,7 @@ function ClientsSection({ items }: Props) {
   }, [triggerInterval]);
 
   return (
-    <SectionWrapper title="Clients" id={Sections.clients}>
+    <SectionWrapper title={translate("clients.title")} id={Sections.clients}>
       <motion.div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

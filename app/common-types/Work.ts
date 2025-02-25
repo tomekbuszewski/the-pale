@@ -1,7 +1,10 @@
-type Tag = "Design" | "Development" | "Consultation";
+type Tag =
+  | "work.item.tag.design"
+  | "work.item.tag.development"
+  | "work.item.tag.consultation";
 
 export interface Work {
-  description: string[];
+  description: string | string[];
   mobileImage: string | OutputMetadata;
   desktopImage: string | OutputMetadata;
   background?: string;

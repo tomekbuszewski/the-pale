@@ -1,5 +1,3 @@
-import { translate } from "./utils/translate";
-
 export const Sections = {
   hero: "hero",
   about: "about",
@@ -12,21 +10,21 @@ export const Sections = {
 };
 
 export const HeaderNav = [
-  { label: translate("nav.works"), href: "/#" + Sections.works },
-  { label: translate("nav.services"), href: "/#" + Sections.services },
-  { label: translate("nav.videos"), href: "/#" + Sections.videos },
-  { label: translate("nav.about"), href: "/#" + Sections.about },
+  { label: "nav.works", href: "/#" + Sections.works },
+  { label: "nav.services", href: "/#" + Sections.services },
+  { label: "nav.videos", href: "/#" + Sections.videos },
+  { label: "nav.about", href: "/#" + Sections.about },
 ];
 
 export const Contact = {
-  label: translate("nav.contact"),
+  label: "nav.contact",
   href: "#" + Sections.contact,
 };
 
 export const Pages = [
-  { label: translate("nav.home"), href: "/" },
-  { label: translate("nav.tech"), href: "/tech" },
-  { label: translate("nav.uses"), href: "/uses" },
+  { label: "nav.home", href: "/" },
+  { label: "nav.tech", href: "/tech" },
+  { label: "nav.uses", href: "/uses" },
 ];
 
 const BASE_SERVICES = "/services";

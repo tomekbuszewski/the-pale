@@ -1,10 +1,10 @@
-import { NavLink } from "react-router";
 import clsx from "clsx";
 
 import type { Href } from "@common-types/Href";
 import type { HTMLProps } from "react";
 
 import styles from "./PageNavigation.module.scss";
+import { Content } from "@features";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   links: Href[];
@@ -19,6 +19,7 @@ function PageNavigation({
   onLinkClick,
   ...rest
 }: Props) {
+  const { NavLink } = Content.components;
   const classNames = [className, styles.navigation];
 
   return (

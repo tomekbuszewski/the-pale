@@ -1,14 +1,13 @@
-import { Link } from "react-router";
 import { Sections } from "@nav";
 import { Logo, SectionWrapper, Text } from "@ui/atoms";
 import { SectionHeader, Switch } from "@ui/molecules";
+import { Content } from "@features";
 import clsx from "clsx";
 
 import type { Href } from "@common-types/Href";
-import type { HTMLProps, ReactNode } from "react";
+import { type HTMLProps, type ReactNode, useContext } from "react";
 
 import styles from "./PageFooter.module.scss";
-import { translate } from "@utils/translate";
 
 interface HrefWithIcon extends Href {
   icon: ReactNode;
@@ -35,6 +34,8 @@ function isLinkHrefWithIcon(item: Href | HrefWithIcon): item is HrefWithIcon {
 }
 
 function Links({ items, className, ...rest }: LinksProps) {
+  const { Link } = Content.components;
+
   return (
     <ul className={clsx(className, styles.list)} {...rest}>
       {items.map((item) => {
@@ -73,6 +74,9 @@ function PageFooter({
   languages,
   onLanguageChange,
 }: Props) {
+  const translate = Content.hooks.useTranslate();
+  const language = useContext(Content.context);
+
   return (
     <SectionWrapper
       tag="footer"
@@ -93,6 +97,9 @@ function PageFooter({
         <Text variant="regular">{copy}</Text>
         {onLanguageChange && languages ? (
           <Switch
+            defaultActiveIndex={languages.findIndex(
+              (lang) => lang.href === language,
+            )}
             items={languages}
             onChange={onLanguageChange}
             className={styles.switch}

@@ -1,7 +1,6 @@
 import { renderToPipeableStream } from "react-dom/server";
 import { ServerRouter } from "react-router";
 import { createReadableStreamFromReadable } from "@react-router/node";
-import { setDefaultLanguage } from "@utils/translate";
 import { isbot } from "isbot";
 import { PassThrough } from "node:stream";
 
@@ -16,8 +15,6 @@ export default function handleRequest(
   responseHeaders: Headers,
   routerContext: EntryContext,
 ) {
-  setDefaultLanguage(request, responseHeaders);
-
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const userAgent = request.headers.get("user-agent");

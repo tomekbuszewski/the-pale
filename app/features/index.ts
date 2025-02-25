@@ -10,6 +10,7 @@ import * as HeaderFeature from "./Header";
 import * as HeroSectionFeature from "./HeroSection";
 import * as ServicesSectionFeature from "./ServicesSection";
 import * as WorksSectionFeature from "./WorksSection";
+import * as ContentFeature from "./Content";
 
 export const AboutSection = {
   component: AboutSectionFeature.AboutSection,
@@ -66,4 +67,18 @@ export const ErrorBoundary = {
 
 export const Analytics = {
   component: AnalyticsFeature.Analytics,
+};
+
+export const Content = {
+  components: {
+    Link: ContentFeature.Link,
+    NavLink: ContentFeature.NavLink,
+    LanguageDetect: ContentFeature.LanguageDetect,
+  },
+  context: ContentFeature.LanguageContext,
+  hooks: { useTranslate: ContentFeature.useTranslate },
+  functions: {
+    handleLanguageChange: ContentFeature.handleLanguageChange,
+    detectLanguageFromUrl: ContentFeature.detectLanguageFromUrl,
+  },
 };

@@ -1,9 +1,9 @@
 import { DEFAULT_TITLE, KEYWORDS, PAGE_URL, TWITTER } from "@contact";
-import { translate } from "@utils/translate";
 
 import sharing from "./assets/sharing.jpg";
+import { Content } from "@features";
 
-const baseDescription = translate("head.feature.description");
+const baseDescription = "head.feature.description";
 
 const defaultMeta = [
   ["description", "Tomasz Buszewski"],
@@ -68,12 +68,14 @@ export default function (
   description?: string,
   customImage?: string,
 ) {
+  const translate = Content.hooks.useTranslate();
   const titleTag = `${title ?? baseDescription} · ${DEFAULT_TITLE}`;
   const meta: [string, string][] = [
     ...defaultMeta,
     ["title", titleTag],
     ["description", description ?? baseDescription],
-  ];
+    // @ts-ignore
+  ].map(([name, content]) => [name, translate(content) as string]);
 
   return metaArrayToNameContent(meta, customImage);
 }

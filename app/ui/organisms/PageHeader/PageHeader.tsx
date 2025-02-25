@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import { useIsMobile } from "@hooks";
 import { ContactButton, Logo, MenuToggleButton } from "@ui/atoms";
 import { PageNavigation } from "@ui/organisms";
-import { translate } from "@utils/translate";
 import clsx from "clsx";
 import {
   type HTMLMotionProps,
@@ -17,6 +16,7 @@ import type { Href } from "@common-types/Href";
 import ContactIcon from "./assets/Phone.svg?react";
 
 import styles from "./PageHeader.module.scss";
+import { Content } from "@features";
 
 interface Props extends HTMLMotionProps<"header"> {
   links: Href[];
@@ -41,6 +41,7 @@ function useHiddenHeader(threshold = 160) {
 }
 
 function PageHeader({ className, links, ...rest }: Props) {
+  const translate = Content.hooks.useTranslate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const [isVisible, isOnTop] = useHiddenHeader(0);
