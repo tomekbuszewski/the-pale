@@ -389,5 +389,14 @@
         ]
       }
     }
+  },
+  "content": {
+    "feature": {
+      "text": "Hey, maybe you'd like to switch to an English version?",
+      "buttons": {
+        "yes": "Yes!",
+        "no": "Zamknij"
+      }
+    }
   }
 }

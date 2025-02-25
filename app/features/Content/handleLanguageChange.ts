@@ -9,7 +9,7 @@ export default function handleLanguageChange(language: string = "en") {
       const newPath = langMatch
         ? currentPath.replace(/^\/(en|pl)\//, lang === "en" ? "/" : `/${lang}/`)
         : lang === "en"
-          ? currentPath
+          ? currentPath.replace("/pl", "")
           : `/${lang}${currentPath}`;
 
       window.location.href = baseUrl + newPath;
