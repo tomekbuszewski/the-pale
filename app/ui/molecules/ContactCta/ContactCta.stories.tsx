@@ -65,3 +65,19 @@ export const MultipleButtons: Story = {
     ],
   },
 };
+
+export const Fixed: Story = {
+  args: {
+    fixed: true,
+    text: "Hej, wygląda na to, że jesteś z Polski! Chcesz zmienić język?",
+    buttons: [
+      { label: "Tak!", href: "/pl", variant: "primary" },
+      {
+        label: "Discard",
+        href: "/",
+        variant: "secondary",
+        onClick: () => alert("Discarded!"),
+      },
+    ],
+  },
+};
