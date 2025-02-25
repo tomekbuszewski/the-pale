@@ -5,24 +5,26 @@ import { Content } from "@features";
 
 const baseDescription = "head.feature.description";
 
+const SEPARATOR = " · ";
+
 const defaultMeta = [
   ["description", "Tomasz Buszewski"],
   ["keywords", KEYWORDS.join(", ")],
   ["og:description", baseDescription],
-  ["og:title", baseDescription + DEFAULT_TITLE],
+  ["og:title", baseDescription + SEPARATOR + DEFAULT_TITLE],
   ["og:type", "website"],
   ["og:url", PAGE_URL],
   ["og:image:width", "1920"],
   ["og:image:height", "1080"],
   ["og:image", PAGE_URL + sharing],
-  ["og:site_name", baseDescription + DEFAULT_TITLE],
+  ["og:site_name", baseDescription + SEPARATOR + DEFAULT_TITLE],
   ["twitter:card", PAGE_URL + sharing],
   ["twitter:site", TWITTER],
   ["twitter:creator", TWITTER],
-  ["twitter:title", baseDescription + DEFAULT_TITLE],
+  ["twitter:title", baseDescription + SEPARATOR + DEFAULT_TITLE],
   ["twitter:image", PAGE_URL + sharing],
   ["twitter:description", "Tomasz Buszewski"],
-  ["twitter:image:alt", baseDescription + DEFAULT_TITLE],
+  ["twitter:image:alt", baseDescription + SEPARATOR + DEFAULT_TITLE],
   ["twitter:url", PAGE_URL],
   ["twitter:data2", new Date().toLocaleDateString("en-US")],
   ["article:published_time", new Date().toLocaleDateString("en-US")],
@@ -33,7 +35,7 @@ const defaultMeta = [
   ["theme-color", "#ea516a"],
   ["apple-mobile-web-app-title", DEFAULT_TITLE],
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-].filter(([_, value]) => value !== null) as [string, string][];
+];
 
 type MetaEntry = { name: string; content: string } | { title: string };
 
@@ -69,13 +71,20 @@ export default function (
   customImage?: string,
 ) {
   const translate = Content.hooks.useTranslate();
-  const titleTag = `${title ?? baseDescription} · ${DEFAULT_TITLE}`;
+  const titleTag = `${title ?? translate(baseDescription)} · ${DEFAULT_TITLE}`;
   const meta: [string, string][] = [
     ...defaultMeta,
     ["title", titleTag],
-    ["description", description ?? baseDescription],
-    // @ts-ignore
-  ].map(([name, content]) => [name, translate(content) as string]);
+    ["description", description ?? translate(baseDescription)],
+  ]
+    .filter(([_, value]) => value !== null)
+    .map(([name, content]) => {
+      const body = content
+        ?.split(SEPARATOR)
+        .map((item) => translate(item))
+        .join(SEPARATOR);
+      return [name, body];
+    }) as [string, string][];
 
   return metaArrayToNameContent(meta, customImage);
 }
