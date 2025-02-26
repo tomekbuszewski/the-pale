@@ -203,11 +203,11 @@
               "description": "Omawiamy Twój projekt i to, jak najlepiej go zaimplementować."
             },
             "technical": {
-              "title": "Zarys technologiczny",
+              "title": "Zarys tech.",
               "description": "Bazując na naszych ustaleniach, przygotowuję dokładnie opisany zarys technologii, jakiej będzie używać Twoja strona."
             },
             "implementation": {
-              "title": "Kod i<br />przekazanie",
+              "title": "Gotowy kod",
               "description": "Po ustaleniu wszystkich detali, biorę się do roboty. Kiedy wszystko jest gotowe, dostajesz wszystko w prywatnym repozytorium."
             }
           },
@@ -253,7 +253,7 @@
               "description": "Omawiamy Twoje potrzeby i estymujemy, co i kiedy mogę zrobić."
             },
             "timeline": {
-              "title": "Ustalenia<br />&&nbsp;zakresu",
+              "title": "Ustalenia zakresu",
               "description": "Umawiamy się na harmonogram i zakres pracy."
             },
             "implementation": {

@@ -22,10 +22,11 @@
 }
 
 .desc {
-  position: sticky;
-  top: var(--spacing-xl);
+  margin-bottom: var(--spacing-mid);
 
   @include media("md") {
+    margin-bottom: 0;
+    position: sticky;
     top: var(--spacing-lg);
   }
 

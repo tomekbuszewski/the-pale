@@ -4,9 +4,9 @@
   font-size: var(--font-size-hero);
   font-weight: 900;
   line-height: var(--leading-tight);
+  letter-spacing: -0.025em;
 
   @include media("md") {
-    letter-spacing: -0.025em;
     font-size: var(--font-size-hero-md);
   }
 
