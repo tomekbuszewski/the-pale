@@ -8,19 +8,24 @@ import {
 import { Content } from "@features";
 import { useContext } from "react";
 
+function checkForPrefix(path?: string) {
+  const prefixes = ["http", "mailto", "tel"];
+  return prefixes.some((prefix) => path?.startsWith(prefix));
+}
+
 function handleLink(link: To, language: string = "en") {
   const lang = language === "en" ? "" : `/${language}`;
   const isString = typeof link === "string";
 
   if (isString) {
-    if (link.startsWith("http")) {
+    if (checkForPrefix(link)) {
       return link;
     }
 
     return `${lang}${link}`;
   }
 
-  if (link?.pathname?.startsWith("http")) {
+  if (checkForPrefix(link.pathname)) {
     return link;
   }
 
