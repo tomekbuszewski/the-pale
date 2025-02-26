@@ -1,5 +1,5 @@
 ---
-slug: 2024-08-13-design-systems-in-react-scaffolding-and-setup-(part-0)
+slug: 2024-08-13-design-systems-in-react-scaffolding-and-setup-part-0
 title: Design Systems in React – Scaffolding and Setup (Part 0)
 summary:
   Creating and maintaining UI library or an entire design system is complex.
@@ -141,7 +141,7 @@ import "./style.css";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );
 ```
 
