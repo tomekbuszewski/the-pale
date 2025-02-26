@@ -12,7 +12,6 @@ export default function handleLanguageChange(language: string = "en") {
           ? currentPath.replace("/pl", "")
           : `/${lang}${currentPath}`;
 
-      document.startViewTransition();
       window.location.href = baseUrl + newPath;
     }
   };
