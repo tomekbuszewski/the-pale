@@ -11,7 +11,10 @@ function getCurrentDate() {
 
 export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
   plop.setHelper("slugify", (text) =>
-    slugify(`${getCurrentDate()}-${text}`, { lower: true }),
+    slugify(`${getCurrentDate()}-${text}`, {
+      lower: true,
+      remove: /[*+~.()'"!:@]/g,
+    }),
   );
 
   plop.setHelper("currentDate", getCurrentDate);
