@@ -25,7 +25,7 @@ function handleLink(link: To, language: string = "en") {
     return `${lang}${link}`;
   }
 
-  if (checkForPrefix(link.pathname)) {
+  if (checkForPrefix(link?.pathname)) {
     return link;
   }
 
