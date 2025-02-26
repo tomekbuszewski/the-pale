@@ -113,7 +113,7 @@
       "process": "Proces",
       "website": {
         "title": "Projekt i&nbsp;wdrożenie strony internetowej",
-        "short-title": "Projekt<br />i wdrożenie",
+        "short-title": "Strona internetowa",
         "link-title": "Więcej o stronach",
         "copy": [
           "Kompleksowe rozwiązania webowe: projektowanie, development, wdrożenie.",
@@ -180,10 +180,10 @@
         }
       },
       "frontend": {
-        "title": "Frontend<br />Development",
+        "title": "Frontend<br />development",
         "link-title": "Więcej o frontendzie",
         "copy": [
-          "Masz gotowy projekt? Mogę go zamienić w czysty i funkcjonalny kod.",
+          "Masz gotowy projekt? Mogę go zamienić w czysty i funkcjonalny frontend.",
           "Wybór technologii zawsze ma na celu wysoką wydajność i skalowalność."
         ],
         "additional": [
@@ -229,11 +229,11 @@
       },
       "consultations": {
         "title": "Konsultacje managerskie i&nbsp;techniczne",
-        "short-title": "Konsultacje",
+        "short-title": "Konsultacje i sparringi",
         "link-title": "Więcej o konsultacjach",
         "copy": [
           "Jako doświadczony menadżer i lider technologiczny, doskonale odnajduję się zarówno w technicznych, jak i miękkich wyzwaniach.",
-          "Oferuję konsultacje i pomoc Tobie i Twojemu zespołowi w osiągnięciu celów biznesowych."
+          "Ponadto oferuję wsparcie jako sparring partner dla Ciebie lub Twojego zespołu."
         ],
         "additional": [
           "Wsparcie w sprawach technologicznych i biznesowych",
