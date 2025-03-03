@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@fontsource-variable/bricolage-grotesque':
         specifier: ^5.1.1
-        version: 5.1.1
+        version: 5.2.5
       '@fontsource-variable/geist-mono':
         specifier: ^5.0.1
-        version: 5.0.1
+        version: 5.2.5
       '@fontsource/tinos':
         specifier: ^5.1.1
-        version: 5.1.1
+        version: 5.2.5
       '@react-router/cloudflare':
         specifier: 7.1.5
         version: 7.1.5(@cloudflare/workers-types@4.20250204.0)(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(tsup@8.3.6(jiti@1.21.7)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))(typescript@5.8.2)
@@ -902,14 +902,14 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@fontsource-variable/bricolage-grotesque@5.1.1':
-    resolution: {integrity: sha512-w/eMvrrj+bEw3SwKYvto47r9Jr8Y0sc2GqbBVv4oqErAp88+qO3jeIbRrlBfzKDaVrXad8wCJpxJuHB+dFRKRQ==}
+  '@fontsource-variable/bricolage-grotesque@5.2.5':
+    resolution: {integrity: sha512-NpjTLxCJViGu/7HnWwphGGYlUSVrAQzVVH1LDs3qruTxSDjgnOU+jwQbvHX+UjqY5Eby7QJFFkF9sLExxzPuxg==}
 
-  '@fontsource-variable/geist-mono@5.0.1':
-    resolution: {integrity: sha512-HwNLiQ3fJnqHitA6QFSfeY3A9s/5MvSX/9uNC4TBqwS8NQiRoqATEXZtn1Sbgt5/Tx7iT4IYOYKQleIs5nz7sw==}
+  '@fontsource-variable/geist-mono@5.2.5':
+    resolution: {integrity: sha512-zyuyDtO00SbmqU4Bo5XWzX2hE5RUxL+h2bv3P8SrmxqfqW66FU/xw5DW3xRQPqQgyEpb/Fh5FEFCpOna78dvCA==}
 
-  '@fontsource/tinos@5.1.1':
-    resolution: {integrity: sha512-yIYdYNxD4RIE+PyiZxqiBAD2yr/B/Z2BT5H6Y+p8aYonskcbsD9CsosmnGjgNdXBdV7o0hoIg0vLreTEOTSKEw==}
+  '@fontsource/tinos@5.2.5':
+    resolution: {integrity: sha512-xMQJ+hCBacyXxiDqYgw06yx+BBAfbRcHDocFqiPclo+2bJuVzkqBeSqD4/Dgydh3SkR5MNnRTisZ/L6SQokzFg==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -5842,11 +5842,11 @@ snapshots:
   '@fastify/busboy@2.1.1':
     optional: true
 
-  '@fontsource-variable/bricolage-grotesque@5.1.1': {}
+  '@fontsource-variable/bricolage-grotesque@5.2.5': {}
 
-  '@fontsource-variable/geist-mono@5.0.1': {}
+  '@fontsource-variable/geist-mono@5.2.5': {}
 
-  '@fontsource/tinos@5.1.1': {}
+  '@fontsource/tinos@5.2.5': {}
 
   '@humanfs/core@0.19.1': {}
 
