@@ -143,7 +143,7 @@ importers:
         version: 4.0.3
       happy-dom:
         specifier: ^17.1.0
-        version: 17.1.9
+        version: 17.2.2
       plop:
         specifier: ^4.0.1
         version: 4.0.1
@@ -185,7 +185,7 @@ importers:
         version: 5.1.4(typescript@5.8.2)(vite@6.2.0(@types/node@22.13.9)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0))
       vitest:
         specifier: ^3.0.5
-        version: 3.0.7(@types/debug@4.1.12)(@types/node@22.13.9)(happy-dom@17.1.9)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0)
+        version: 3.0.7(@types/debug@4.1.12)(@types/node@22.13.9)(happy-dom@17.2.2)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0)
 
 packages:
 
@@ -2932,8 +2932,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@17.1.9:
-    resolution: {integrity: sha512-HL26ajjMVe/wr3xlzjF0sCPCiAKaZJcIRFZHmG4yKHRJp4YAkHPG5X6GfWxCeDTpOmuHhNiOyNKUoZjjnm0tjw==}
+  happy-dom@17.2.2:
+    resolution: {integrity: sha512-3I1/CrNi780sdOhuhUnFtgTWhloSc3quSZwsylI41jycx8o97M6Y4aQAu0phSexGusT7+59BxATh4L4xiY0HcA==}
     engines: {node: '>=18.0.0'}
 
   has-bigints@1.1.0:
@@ -3799,8 +3799,8 @@ packages:
     resolution: {integrity: sha512-gXah6aZrcUxjWg2zR2MwouP2eHlCBzdV4pygudehaKXSGW4v2AsRQUK+lwwXhii6KFZcunEnmSUoYp5CXibxtA==}
     engines: {node: '>= 0.4'}
 
-  ohash@1.1.5:
-    resolution: {integrity: sha512-AtXrG/lMFjPBWj3uhWYFwYVZQqutPYRsv6nnPLTipnC+gJuMFc+WFzf/jx+94Ebray1vxfQfEFDtpIpppOe4xQ==}
+  ohash@1.1.6:
+    resolution: {integrity: sha512-TBu7PtV8YkAZn0tSxobKY2n2aAQva936lhRrj6957aDaCf9IEtqsKbgMzXE/F/sjqYOwmrukeORHNLe5glk7Cg==}
 
   on-finished@2.3.0:
     resolution: {integrity: sha512-ikqdkGAAyf/X/gPhXGvfgAytDZtDbr+bkNUJ0N9h5MI/dmdgCs3l6hoHrcUv41sRKew3jIwrp4qQDXiK99Utww==}
@@ -8270,7 +8270,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@17.1.9:
+  happy-dom@17.2.2:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
@@ -9343,7 +9343,7 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  ohash@1.1.5:
+  ohash@1.1.6:
     optional: true
 
   on-finished@2.3.0:
@@ -10610,7 +10610,7 @@ snapshots:
     dependencies:
       defu: 6.1.4
       mlly: 1.7.4
-      ohash: 1.1.5
+      ohash: 1.1.6
       pathe: 1.1.2
       ufo: 1.5.4
     optional: true
@@ -10805,7 +10805,7 @@ snapshots:
       tsx: 4.19.3
       yaml: 2.7.0
 
-  vitest@3.0.7(@types/debug@4.1.12)(@types/node@22.13.9)(happy-dom@17.1.9)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0):
+  vitest@3.0.7(@types/debug@4.1.12)(@types/node@22.13.9)(happy-dom@17.2.2)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0):
     dependencies:
       '@vitest/expect': 3.0.7
       '@vitest/mocker': 3.0.7(vite@6.2.0(@types/node@22.13.9)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0))
@@ -10830,7 +10830,7 @@ snapshots:
     optionalDependencies:
       '@types/debug': 4.1.12
       '@types/node': 22.13.9
-      happy-dom: 17.1.9
+      happy-dom: 17.2.2
     transitivePeerDependencies:
       - jiti
       - less
