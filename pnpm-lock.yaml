@@ -143,7 +143,7 @@ importers:
         version: 4.0.3
       happy-dom:
         specifier: ^17.1.0
-        version: 17.4.1
+        version: 17.4.2
       plop:
         specifier: ^4.0.1
         version: 4.0.1
@@ -185,7 +185,7 @@ importers:
         version: 5.1.4(typescript@5.8.2)(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0))
       vitest:
         specifier: ^3.0.5
-        version: 3.0.8(@types/debug@4.1.12)(@types/node@22.13.10)(happy-dom@17.4.1)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0)
+        version: 3.0.8(@types/debug@4.1.12)(@types/node@22.13.10)(happy-dom@17.4.2)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0)
 
 packages:
 
@@ -2949,8 +2949,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@17.4.1:
-    resolution: {integrity: sha512-W4WzlDOXdEj1zRmBuq/pveIZnD0bBDsTl1DjIben76aOG/6nzdQAdpV5nR3QjOEFRJLlqJltBV0cb4NzbkB8zw==}
+  happy-dom@17.4.2:
+    resolution: {integrity: sha512-3SA9ZdmDXTvJ5OrHfc7TdqfrKEOM15Gc3dMAvKivlaewUsOJQrNnPTQnAb3n/NR0fRVDniFxk9i82D+HhHWZcA==}
     engines: {node: '>=18.0.0'}
 
   has-bigints@1.1.0:
@@ -8316,7 +8316,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@17.4.1:
+  happy-dom@17.4.2:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
@@ -10851,7 +10851,7 @@ snapshots:
       tsx: 4.19.3
       yaml: 2.7.0
 
-  vitest@3.0.8(@types/debug@4.1.12)(@types/node@22.13.10)(happy-dom@17.4.1)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0):
+  vitest@3.0.8(@types/debug@4.1.12)(@types/node@22.13.10)(happy-dom@17.4.2)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0):
     dependencies:
       '@vitest/expect': 3.0.8
       '@vitest/mocker': 3.0.8(vite@6.2.1(@types/node@22.13.10)(jiti@1.21.7)(sass-embedded@1.85.1)(tsx@4.19.3)(yaml@2.7.0))
@@ -10876,7 +10876,7 @@ snapshots:
     optionalDependencies:
       '@types/debug': 4.1.12
       '@types/node': 22.13.10
-      happy-dom: 17.4.1
+      happy-dom: 17.4.2
     transitivePeerDependencies:
       - jiti
       - less
