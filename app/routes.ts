@@ -4,29 +4,37 @@ import {
   prefix,
   route,
   type RouteConfig,
+  type RouteConfigEntry,
 } from "@react-router/dev/routes";
 
 import { Routes } from "./nav";
 
+const baseRoutes = [
+  index("pages/%prefix%/home.tsx"),
+  route(Routes.website, "pages/%prefix%/services/web-development/index.tsx"),
+  route(Routes.frontend, "pages/%prefix%/services/front-end/index.tsx"),
+  route(Routes.consulting, "pages/%prefix%/services/consulting/index.tsx"),
+  route(Routes.uses, "pages/%prefix%/uses.tsx"),
+  route(Routes.tech, "pages/%prefix%/tech.tsx"),
+
+  route(Routes.works, "pages/%prefix%/works/index.tsx"),
+];
+
+function generatePrefixedRoutes(routes: RouteConfigEntry[], prefix: string) {
+  return routes.map((route) => ({
+    ...route,
+    file: route.file.replace("%prefix%", prefix),
+  }));
+}
+
 export default [
   layout("./layouts/Main.tsx", [
-    index("pages/en/home.tsx"),
-    route(Routes.website, "pages/en/services/web-development/index.tsx"),
-    route(Routes.frontend, "pages/en/services/front-end/index.tsx"),
-    route(Routes.consulting, "pages/en/services/consulting/index.tsx"),
-    route(Routes.uses, "pages/en/uses.tsx"),
-    route(Routes.tech, "pages/en/tech.tsx"),
-
+    /* English routes */
+    ...generatePrefixedRoutes(baseRoutes, "en"),
     route(Routes.post, "pages/blog/post.tsx"),
     route(Routes.pagination, "pages/blog/pagination.tsx"),
 
-    ...prefix("/pl", [
-      index("pages/pl/home.tsx"),
-      route(Routes.website, "pages/pl/services/web-development/index.tsx"),
-      route(Routes.frontend, "pages/pl/services/front-end/index.tsx"),
-      route(Routes.consulting, "pages/pl/services/consulting/index.tsx"),
-      route(Routes.uses, "pages/pl/uses.tsx"),
-      route(Routes.tech, "pages/pl/tech.tsx"),
-    ]),
+    /* Polish routes */
+    ...prefix("/pl", [...generatePrefixedRoutes(baseRoutes, "pl")]),
   ]),
 ] satisfies RouteConfig;

@@ -1,10 +1,10 @@
+import type { HTMLProps, MouseEvent } from "react";
+import type { Meta as MetaProps } from "@common-types/Meta";
+import { Content } from "@features";
+
 import { Button, Text } from "@ui/atoms";
 
-import type { Meta as MetaProps } from "@common-types/Meta";
-import type { HTMLProps, MouseEvent } from "react";
-
 import styles from "./ArticleHeader.module.scss";
-import { Content } from "@features";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   title: string;
@@ -46,6 +46,7 @@ function ArticleHeader({ title, meta, ...props }: Props) {
       <Button to="#" variant="tertiary" onClick={handleBack}>
         {translate("article.header.meta.back")}
       </Button>
+
       <Text
         variant="hero"
         bold

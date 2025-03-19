@@ -1,30 +1,32 @@
 {
   "buildManifest": {
     "serverBundles": {
-      "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0": {
-        "id": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-        "file": "build/server/nodejs-eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
+      "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0": {
+        "id": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+        "file": "build/server/nodejs_eyJydW50aW1lIjoibm9kZWpzIn0/index.js",
         "config": {
           "runtime": "nodejs"
         }
       }
     },
     "routeIdToServerBundleId": {
-      "root": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/en/home": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/en/services/web-development/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/en/services/front-end/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/en/services/consulting/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/en/uses": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/en/tech": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/blog/post": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/blog/pagination": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/pl/home": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/pl/services/web-development/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/pl/services/front-end/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/pl/services/consulting/index": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/pl/uses": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/pl/tech": "nodejs-eyJydW50aW1lIjoibm9kZWpzIn0"
+      "root": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/services/web-development/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/services/front-end/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/services/consulting/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/uses": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/tech": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/works/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/blog/post": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/blog/pagination": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/services/web-development/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/services/front-end/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/services/consulting/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/uses": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/tech": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/pl/works/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
     },
     "routes": {
       "root": {
@@ -83,6 +85,13 @@
         "path": "/tech",
         "config": {}
       },
+      "pages/en/works/index": {
+        "id": "pages/en/works/index",
+        "parentId": "layouts/Main",
+        "file": "app/pages/en/works/index.tsx",
+        "path": "/works/:slug",
+        "config": {}
+      },
       "pages/blog/post": {
         "id": "pages/blog/post",
         "parentId": "layouts/Main",
@@ -138,6 +147,13 @@
         "parentId": "layouts/Main",
         "file": "app/pages/pl/tech.tsx",
         "path": "/pl/tech",
+        "config": {}
+      },
+      "pages/pl/works/index": {
+        "id": "pages/pl/works/index",
+        "parentId": "layouts/Main",
+        "file": "app/pages/pl/works/index.tsx",
+        "path": "/pl/works/:slug",
         "config": {}
       }
     }
@@ -196,6 +212,12 @@
         "file": "pages/en/tech.tsx",
         "path": "/tech"
       },
+      "pages/en/works/index": {
+        "id": "pages/en/works/index",
+        "parentId": "layouts/Main",
+        "file": "pages/en/works/index.tsx",
+        "path": "/works/:slug"
+      },
       "pages/blog/post": {
         "id": "pages/blog/post",
         "parentId": "layouts/Main",
@@ -244,6 +266,12 @@
         "parentId": "layouts/Main",
         "file": "pages/pl/tech.tsx",
         "path": "/pl/tech"
+      },
+      "pages/pl/works/index": {
+        "id": "pages/pl/works/index",
+        "parentId": "layouts/Main",
+        "file": "pages/pl/works/index.tsx",
+        "path": "/pl/works/:slug"
       }
     },
     "serverBuildFile": "index.js",
