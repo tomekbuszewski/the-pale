@@ -2,343 +2,343 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://buszewski.com/</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://buszewski.com/services/website</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/services/frontend</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/services/consulting</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/uses</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/tech</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-12-23-react-router-7-has-server-components</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-12-02-developing-accessible-react-forms-without-the-headache</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-11-25-handling-errors-in-remix</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-11-18-my-remix-starter</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-11-11-intro-to-remix</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-11-04-basics-of-dependency-injection-in-typescript</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-10-28-abstract-classes-interfaces-and-types-in-typescript</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-10-21-design-sytems-in-react-feature-based-development-with-atomic-design</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-10-14-form-validation-in-the-browser</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-10-07-is-zustand-the-best-state-manager-for-react</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-09-30-javascript-testing-crash-course-part-1</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-09-23-design-systems-in-react-atomic-design-part-1</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-09-04-how-to-generate-a-client-from-openapi-schema</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-08-30-are-these-it-myths-valid-in-2024</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-08-28-test-driven-development-in-react</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-08-23-how-to-solve-coding-homework</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-08-21-introducing-my-react-starter</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-08-16-how-to-conduct-1-on-1</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-08-13-design-systems-in-react-scaffolding-and-setup-part-0</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-08-08-how-to-run-technical-interviews</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-08-05-how-to-add-openapi-to-your-express-app</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2024-07-28-5-things-to-do-first-as-a-team-leader</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2020-03-27-welcome-new-member-*sigh*</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2020-03-18-checkboxes-and-radios-proper-form-design</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2020-03-13-lessons-learnt-from-new-buszewski.com</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2020-02-27-a-note-on-naming-colors</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2020-02-10-don't-forget-to-forget-your-code</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2020-01-14-what-is-redux-really-part-3</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2019-12-01-what-is-redux-really-part-2</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2019-11-20-the-three-states-of-data-driven-ui</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2019-11-18-what-is-redux-really-part-1</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2019-10-24-immutable-records-as-object-factories</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2019-03-02-real-cost-of-your-new-library</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2019-02-26-module-pattern-in-javascript</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2019-02-17-high-level-view-and-logic-separation-in-react</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2019-01-20-relational-(and-immutable)-models-as-persistence-layer</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2019-01-09-test-driven-development-in-javascript</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2018-12-31-default-styles-in-storybook-with-styled-components</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2018-12-30-method-overloading-in-typescript</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2018-12-23-facade-pattern-in-javascript</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2018-12-15-it-job-interviews-technical</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2018-12-10-it-job-interviews-human-resources</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/2018-12-05-singleton-in-javascript</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/page/1</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/page/2</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/page/3</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/page/4</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/page/5</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/page/6</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/page/7</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buszewski.com/writings/page/8</loc>
-    <lastmod>2025-02-26T17:08:18.842Z</lastmod>
+    <lastmod>2025-03-19T09:55:54.225Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

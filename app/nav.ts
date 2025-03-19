@@ -43,4 +43,5 @@ export const Routes = {
   writings: "/writings",
   post: "/writings/:slug",
   pagination: "/writings/page/:page",
+  works: "/works/:slug",
 };
