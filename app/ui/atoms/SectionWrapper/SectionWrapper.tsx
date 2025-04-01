@@ -23,6 +23,7 @@ interface Props<T extends ElementType = "section"> extends HTMLProps<T> {
   dark?: boolean;
   columns?: ColumnConfig;
   small?: boolean;
+  collapse?: boolean;
 }
 
 function SectionWrapper<T extends ElementType = "section">({
@@ -37,6 +38,7 @@ function SectionWrapper<T extends ElementType = "section">({
   dark = false,
   small,
   columns,
+  collapse = false,
   ...rest
 }: Props<T>) {
   const classNames = [
@@ -63,7 +65,13 @@ function SectionWrapper<T extends ElementType = "section">({
   }
 
   return (
-    <Tag {...rest} className={clsx(classNames, { [styles.dark]: dark })}>
+    <Tag
+      {...rest}
+      className={clsx(classNames, {
+        [styles.dark]: dark,
+        [styles.collapse]: collapse,
+      })}
+    >
       {title && (
         <SectionHeader
           dark={dark}

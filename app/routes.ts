@@ -9,17 +9,6 @@ import {
 
 import { Routes } from "./nav";
 
-const works = ["ewa-cool"];
-
-function generateWorksRoutes(
-  items: string[],
-  prefix: string,
-): RouteConfigEntry[] {
-  return items.map((work) => route(work, `pages/${prefix}/works/${work}.tsx`));
-}
-
-console.log(generateWorksRoutes(works, "en"));
-
 const baseRoutes = [
   index("pages/%prefix%/home.tsx"),
   route(Routes.website, "pages/%prefix%/services/web-development/index.tsx"),
@@ -27,6 +16,7 @@ const baseRoutes = [
   route(Routes.consulting, "pages/%prefix%/services/consulting/index.tsx"),
   route(Routes.uses, "pages/%prefix%/uses.tsx"),
   route(Routes.tech, "pages/%prefix%/tech.tsx"),
+  route(Routes.works, "pages/%prefix%/works.tsx"),
 ];
 
 function generatePrefixedRoutes(routes: RouteConfigEntry[], prefix: string) {
@@ -45,9 +35,9 @@ export default [
     route(Routes.post, "pages/blog/post.tsx"),
     route(Routes.pagination, "pages/blog/pagination.tsx"),
 
-    route(Routes.works.replace(":slug", ""), "pages/base/works/index.tsx", [
-      ...generateWorksRoutes(works, "en"),
-    ]),
+    // route(Routes.works.replace(":slug", ""), "pages/base/works/index.tsx", [
+    //   ...generateWorksRoutes(works, "en"),
+    // ]),
 
     /* Polish routes */
     ...prefix("/pl", [...generatePrefixedRoutes(baseRoutes, "pl")]),

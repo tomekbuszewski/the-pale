@@ -48,7 +48,7 @@ surprises.
 ### Architecture
 
 I’ve decided to go with scalable solutions. Every space in here has its own
-directory, which exposes a single `index.ts` file.
+directory, which exposes a single `index.tsx` file.
 
 For **UI**, there’s Tailwind and Atomic Design, so atoms, molecules, organisms
 and views. Coding the entire view as a prop-augmented solution might be a chore,
@@ -84,7 +84,7 @@ sometimes you need to export a feature as a route config, and declare it as
 ```
 
 All your pages can be exported either as static imports, or as lazy ones. If you
-want to do the former, simply export it from `pages/index.ts`. If you’d like to
+want to do the former, simply export it from `pages/index.tsx`. If you’d like to
 have them lazy-loaded (which I recommend if the page is larger than a few
 words), use `pages/lazy.tsx`. In there you can import what you need using the
 React’s `lazy`:

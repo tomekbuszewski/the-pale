@@ -53,7 +53,7 @@ export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
       },
       {
         type: "append",
-        path: "./app/ui/{{type}}s/index.ts",
+        path: "./app/ui/{{type}}s/index.tsx",
         template:
           'export { default as {{pascalCase name}} } from "./{{pascalCase name}}/{{pascalCase name}}";',
       },
@@ -84,13 +84,13 @@ export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
       },
       {
         type: "add",
-        path: "./app/features/{{pascalCase name}}/index.ts",
+        path: "./app/features/{{pascalCase name}}/index.tsx",
         template:
           'export { default as {{pascalCase name}} } from "./{{pascalCase name}}";',
       },
       {
         type: "append",
-        path: "./app/features/index.ts",
+        path: "./app/features/index.tsx",
         template:
           'import * as {{pascalCase name}}Feature from "./{{pascalCase name}}";',
       },
@@ -120,7 +120,7 @@ export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
       },
       {
         type: "append",
-        path: "./app/hooks/index.ts",
+        path: "./app/hooks/index.tsx",
         template:
           'export { default as {{camelCase name}} } from "./{{camelCase name}}/{{camelCase name}}";\n',
       },

@@ -11,6 +11,10 @@
   border-radius: #{rem(8)};
   color: var(--color-minor-body);
 
+  &.centered {
+    height: auto;
+  }
+
   @media (min-width: 1024px) and (min-height: 820px) {
     position: sticky !important;
     top: var(--spacing-lg);
@@ -79,6 +83,10 @@
   display: flex;
   flex-flow: column nowrap;
 
+  &.centered {
+    height: auto;
+  }
+
   @include media("md") {
     height: calc(var(--card-height-md) - (2 * var(--spacing-lg)));
   }
@@ -90,9 +98,22 @@
 
 .body {
   display: none;
+  width: 100%;
+
+  img {
+    width: auto;
+    height: auto;
+    max-height: 50%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  &.centered {
+    margin: inherit;
+  }
 
   @include media("md") {
-    display: block;
+    display: flex;
     margin: calc(var(--spacing-lg) * -1);
     margin-left: 0;
   }

@@ -186,7 +186,7 @@ I will create a simple `sleep` function that will simulate the waiting period,
 and a function that, after “sleeping”, will return a JSON payload:
 
 ```ts
-// ./src/api/index.ts
+// ./src/api/index.tsx
 
 async function sleep(ms = 100) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -361,7 +361,7 @@ for all the features.
 Let’s start by defining the feature that only has a component:
 
 ```ts
-// ./src/features/index.ts
+// ./src/features/index.tsx
 import { ComponentType } from "react";
 
 interface FeatureWithComponent<Type = unknown> {
@@ -372,7 +372,7 @@ interface FeatureWithComponent<Type = unknown> {
 And now we can assign this to our feature:
 
 ```ts
-// ./src/features/index.ts
+// ./src/features/index.tsx
 
 export const Newsletter: FeatureWithComponent = {
   component: NewsletterFeature,
@@ -612,10 +612,10 @@ export default [
 ] as RouteObject[];
 ```
 
-And with this, let’s go to `./features/index.ts` to add the exports:
+And with this, let’s go to `./features/index.tsx` to add the exports:
 
 ```tsx
-// ./src/features/index.ts
+// ./src/features/index.tsx
 
 import { ComponentType } from "react";
 

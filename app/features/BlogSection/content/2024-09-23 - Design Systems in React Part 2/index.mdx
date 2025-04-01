@@ -137,7 +137,7 @@ export default function plop(/** @type {import("plop").NodePlopAPI} */ plop) {
       },
       {
         type: "append",
-        path: "./src/ui/{{type}}s/index.ts",
+        path: "./src/ui/{{type}}s/index.tsx",
         template:
           'export { default as {{pascalCase name}} } from "./{{pascalCase name}}/{{pascalCase name}}";',
       },

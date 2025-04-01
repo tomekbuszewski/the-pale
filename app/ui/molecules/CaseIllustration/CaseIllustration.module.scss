@@ -14,11 +14,11 @@
 
 .mainContent {
   position: relative;
-  min-height: 90dvh;
+  height: 90dvh;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  align-content: flex-start;
+  align-content: flex-start !important;
 
   @include media("lg") {
     padding-top: var(--spacing-3xl);

@@ -9,6 +9,7 @@ import styles from "./ArticleHeader.module.scss";
 interface Props extends HTMLProps<HTMLDivElement> {
   title: string;
   meta?: MetaProps;
+  backButton?: boolean;
 }
 
 function Meta({ date, tags }: MetaProps) {
@@ -33,7 +34,7 @@ function Meta({ date, tags }: MetaProps) {
   );
 }
 
-function ArticleHeader({ title, meta, ...props }: Props) {
+function ArticleHeader({ title, meta, backButton = true, ...props }: Props) {
   const translate = Content.hooks.useTranslate();
 
   function handleBack(e: MouseEvent<HTMLAnchorElement>) {
@@ -43,9 +44,11 @@ function ArticleHeader({ title, meta, ...props }: Props) {
 
   return (
     <header {...props} className={styles.wrapper}>
-      <Button to="#" variant="tertiary" onClick={handleBack}>
-        {translate("article.header.meta.back")}
-      </Button>
+      {backButton ? (
+        <Button to="#" variant="tertiary" onClick={handleBack}>
+          {translate("article.header.meta.back")}
+        </Button>
+      ) : null}
 
       <Text
         variant="hero"
