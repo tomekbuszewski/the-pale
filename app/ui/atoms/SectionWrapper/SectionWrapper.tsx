@@ -1,9 +1,9 @@
-import { SectionHeader } from "@ui/molecules";
+import type { CSSProperties, ElementType, HTMLProps } from "react";
 import { createMotionConfig } from "@utils/fadeIn";
 import clsx from "clsx";
 import { motion } from "motion/react";
 
-import type { CSSProperties, ElementType, HTMLProps } from "react";
+import { SectionHeader } from "@ui/molecules";
 
 import styles from "./SectionWrapper.module.scss";
 
@@ -22,6 +22,7 @@ interface Props<T extends ElementType = "section"> extends HTMLProps<T> {
   animateOnlyHeader?: boolean;
   dark?: boolean;
   columns?: ColumnConfig;
+  small?: boolean;
 }
 
 function SectionWrapper<T extends ElementType = "section">({
@@ -34,10 +35,15 @@ function SectionWrapper<T extends ElementType = "section">({
   animate = true,
   animateOnlyHeader = false,
   dark = false,
+  small,
   columns,
   ...rest
 }: Props<T>) {
-  const classNames = [styles.wrapper, className];
+  const classNames = [
+    styles.wrapper,
+    className,
+    small ? styles.small : styles.large,
+  ];
   const contentClassNames = [styles.content, contentClassName];
   const motionConfig =
     animate && !animateOnlyHeader ? createMotionConfig(3) : {};

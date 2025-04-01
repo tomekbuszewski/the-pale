@@ -1,9 +1,10 @@
-import { SectionWrapper, Separator, Text } from "@ui/atoms";
-import { ArticleHeader, List } from "@ui/molecules";
+import { Content } from "@features";
 import clsx from "clsx";
 
+import { SectionWrapper, Separator, Text } from "@ui/atoms";
+import { ArticleHeader, List } from "@ui/molecules";
+
 import globals from "../pages.module.scss";
-import { Content } from "@features";
 
 export default function Consulting() {
   const translate = Content.hooks.useTranslate();

@@ -1,6 +1,6 @@
-import { Text } from "@ui/atoms";
-
 import type { Meta, StoryObj } from "@storybook/react";
+
+import { Text } from "@ui/atoms";
 
 import CalendarIcon from "./assets/calendar.svg?react";
 import Box from "./Box";

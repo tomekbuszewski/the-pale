@@ -1,6 +1,5 @@
-import clsx from "clsx";
-
 import type { ElementType, HTMLProps } from "react";
+import clsx from "clsx";
 
 import styles from "./Text.module.scss";
 
@@ -25,6 +24,7 @@ interface Props<T extends ElementType> extends HTMLProps<T> {
     | "highlight"
     | "section-heading"
     | "title"
+    | "title-small"
     | "button"
     | "list"
     | "about"

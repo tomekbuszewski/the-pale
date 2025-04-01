@@ -1,5 +1,4 @@
-import { SectionWrapper } from "@ui/atoms";
-import { ArticleHeader } from "@ui/molecules";
+import { useOutlet } from "react-router";
 
 export function loader() {
   console.log("loader");
@@ -7,9 +6,5 @@ export function loader() {
 }
 
 export default function Works() {
-  return (
-    <SectionWrapper tag="article" contentClassName="largeText">
-      <ArticleHeader title="Hello" />
-    </SectionWrapper>
-  );
+  return useOutlet();
 }

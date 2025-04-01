@@ -1,6 +1,6 @@
 import * as works from "../../base/works";
 
-export async function loader() {
+export function loader() {
   return works.loader();
 }
 

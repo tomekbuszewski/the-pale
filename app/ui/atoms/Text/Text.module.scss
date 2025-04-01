@@ -78,6 +78,13 @@
   letter-spacing: -0.025em;
 }
 
+.title-small {
+  font-size: var(--font-size-title-small);
+  line-height: var(--leading-tight);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
 .button {
   font-size: var(--font-size-button);
   line-height: var(--leading-tight);

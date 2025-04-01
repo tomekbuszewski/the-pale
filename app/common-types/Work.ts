@@ -10,7 +10,7 @@ export interface Work {
   background?: string;
   link?: string;
   study?: string;
-  tags: Tag[];
+  tags: Tag[] | string[];
   date: Date;
   align?: "left" | "right";
   title: string;
