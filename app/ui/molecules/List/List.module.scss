@@ -42,7 +42,6 @@
 
   @include media("lg") {
     columns: var(--columns);
-    margin-top: #{rem(38)};
   }
 
   li + li {
