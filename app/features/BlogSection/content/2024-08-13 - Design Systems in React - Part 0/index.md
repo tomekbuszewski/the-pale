@@ -219,7 +219,7 @@ defined in `tsconfig.json`. Something like
 
 ```
 @path/* -> ./src/path/*
-@path -> ./src/path/index.ts
+@path -> ./src/path/index.tsx
 ```
 
 I won’t dive into Atomic Design today to save time, so let’s just create a basic
@@ -270,7 +270,7 @@ We could (and will, soon) add more to the directory, like styles and tests. But
 for now, just this file. And let’s export it.
 
 ```ts
-// ./ui/index.ts
+// ./ui/index.tsx
 export { default as Info } from "./Info/Info";
 ```
 
@@ -279,7 +279,7 @@ And let’s add the TypeScript paths.
 ```json
 "compilerOptions": {
   "paths": {
-    "@ui": ["./src/ui/index.ts"],
+    "@ui": ["./src/ui/index.tsx"],
   }
 }
 ```
@@ -405,7 +405,7 @@ actions: [
   },
   {
     type: "append",
-    path: "./src/ui/index.ts",
+    path: "./src/ui/index.tsx",
     template: 'export { default as {{pascalCase name}} } from "./{{pascalCase name}}/{{pascalCase name}}";',
   },
 ],
@@ -417,7 +417,7 @@ there’s `name` property that is reflected in here. It also uses a template tha
 we are yet to write.
 
 Second action is the same, it just has the story. And the third one is
-_appending_ the export to the main `index.ts` file.
+_appending_ the export to the main `index.tsx` file.
 
 Right, so let’s create the templates! It’s written in Handlebars and, frankly,
 it’s quite straightforward.

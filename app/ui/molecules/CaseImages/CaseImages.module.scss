@@ -1,7 +1,8 @@
 @use "../../styles/_fns.scss" as *;
 
 .wrapper {
-  padding: 0;
+  padding: 0 !important;
+  contain: paint;
 
   @include media("md") {
     align-content: flex-start;
@@ -11,7 +12,7 @@
 .columns {
   padding: var(--spacing-mid);
   overflow: hidden;
-  height: 100dvh;
+  height: 80dvh;
 
   @include media("md") {
     padding: var(--spacing-xl) 0 0;

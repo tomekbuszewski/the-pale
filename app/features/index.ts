@@ -1,8 +1,10 @@
 import * as AboutSectionFeature from "./AboutSection";
 import * as AnalyticsFeature from "./Analytics";
 import * as BlogSectionFeature from "./BlogSection";
+import * as CaseStudiesFeature from "./CaseStudies";
 import * as ClientsSectionFeature from "./ClientsSection";
 import * as ContactFeature from "./Contact";
+import * as ContentFeature from "./Content";
 import * as ErrorBoundaryFeature from "./ErrorBoundary";
 import * as FooterFeature from "./Footer";
 import * as HeadFeature from "./Head";
@@ -10,7 +12,6 @@ import * as HeaderFeature from "./Header";
 import * as HeroSectionFeature from "./HeroSection";
 import * as ServicesSectionFeature from "./ServicesSection";
 import * as WorksSectionFeature from "./WorksSection";
-import * as ContentFeature from "./Content";
 
 export const AboutSection = {
   component: AboutSectionFeature.AboutSection,
@@ -81,4 +82,8 @@ export const Content = {
     handleLanguageChange: ContentFeature.handleLanguageChange,
     detectLanguageFromUrl: ContentFeature.detectLanguageFromUrl,
   },
+};
+
+export const CaseStudies = {
+  component: CaseStudiesFeature.CaseStudies,
 };

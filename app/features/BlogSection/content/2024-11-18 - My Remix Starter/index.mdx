@@ -127,7 +127,7 @@ Generating hooks is very similar to generating UI, as it is also conducted by
 Plop. It will create a new directory in `app/hooks` with your hook name
 (formatting it properly, so if you name it `use something something`, it will
 turn it into `useSomethingSomething`) and will export it using barrel imports in
-`app/hooks/index.ts`.
+`app/hooks/index.tsx`.
 
 ### Feature generation
 
@@ -227,7 +227,7 @@ else. Important thing is, you put here only things you use _within this
 feature_. If you see that something else needs this, you should move it to `ui`
 space.
 
-### `./features/index.ts` export
+### `./features/index.tsx` export
 
 This is the main file, you shouldn’t ever use anything deeper when importing
 features. It exports all you might need, so an action, a loader and a component.

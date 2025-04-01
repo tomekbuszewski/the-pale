@@ -47,6 +47,18 @@
   background-color: var(--color-main-background);
 }
 
+.wrapper.collapse {
+  & + & {
+    @include media("md") {
+      margin-top: -10rem;
+    }
+
+    @include media("lg") {
+      margin-top: -20rem;
+    }
+  }
+}
+
 .content {
   width: 100%;
   max-width: var(--container);

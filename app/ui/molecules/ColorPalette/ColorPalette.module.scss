@@ -1,6 +1,7 @@
 @use "../../styles/_fns.scss" as *;
 
 .wrapper {
+  width: 100%;
   display: grid;
   gap: var(--spacing-mid);
   grid-template-columns: repeat(2, 1fr);

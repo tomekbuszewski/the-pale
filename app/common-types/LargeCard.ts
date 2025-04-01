@@ -1,6 +1,6 @@
+import type { ReactNode } from "react";
 import type { Href } from "@common-types/Href";
 import type { HTMLMotionProps } from "motion/react";
-import type { ReactNode } from "react";
 
 export interface LargeCard extends HTMLMotionProps<"section"> {
   title: string;
@@ -8,4 +8,5 @@ export interface LargeCard extends HTMLMotionProps<"section"> {
   description: ReactNode | string[];
   more?: Href;
   body: ReactNode;
+  contentCentered?: boolean;
 }

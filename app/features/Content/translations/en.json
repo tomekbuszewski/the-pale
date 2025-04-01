@@ -404,6 +404,11 @@
     "title": "Clients"
   },
   "cases": {
+    "contact-card": {
+      "text": "Fancy a site like this?",
+      "button-main": "Schedule a call for a free quote",
+      "button-minor": "Talk to me"
+    },
     "ewa-cool": {
       "title": "Ewa&nbsp;Buszewska\newa.cool",
       "desc": "Stylish one-pager for a Polish-speaking SEO copywriter.",

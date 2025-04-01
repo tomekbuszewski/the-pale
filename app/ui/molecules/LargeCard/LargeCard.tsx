@@ -1,9 +1,9 @@
-import { Button, Text } from "@ui/atoms";
-import { SectionHeader } from "@ui/molecules";
+import type { LargeCard as Props } from "@common-types/LargeCard";
 import clsx from "clsx";
 import { motion } from "motion/react";
 
-import type { LargeCard as Props } from "@common-types/LargeCard";
+import { Button, Text } from "@ui/atoms";
+import { SectionHeader } from "@ui/molecules";
 
 import styles from "./LargeCard.module.scss";
 
@@ -14,14 +14,21 @@ function LargeCard({
   body,
   className,
   align = "left",
+  contentCentered = false,
   ...props
 }: Props) {
   return (
     <motion.section
       {...props}
-      className={clsx(styles.wrapper, className, "cardWrapper", styles[align])}
+      className={clsx(styles.wrapper, className, "cardWrapper", styles[align], {
+        [styles.centered]: contentCentered,
+      })}
     >
-      <div className={styles.desc}>
+      <div
+        className={clsx(styles.desc, {
+          [styles.centered]: contentCentered,
+        })}
+      >
         <SectionHeader
           title={title}
           animate={false}
@@ -41,7 +48,13 @@ function LargeCard({
           </footer>
         )}
       </div>
-      <div className={styles.body}>{body}</div>
+      <div
+        className={clsx(styles.body, {
+          [styles.centered]: contentCentered,
+        })}
+      >
+        {body}
+      </div>
     </motion.section>
   );
 }

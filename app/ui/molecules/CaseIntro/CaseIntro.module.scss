@@ -1,0 +1,21 @@
+@use "../../styles/_fns.scss" as *;
+
+.intro {
+  grid-column: 1/-1;
+
+  & + & {
+    margin-top: var(--spacing-3xl);
+
+    @include media("md") {
+      margin-top: var(--spacing-huge);
+    }
+  }
+
+  @include media("md") {
+    grid-column: 1 / 9;
+  }
+
+  @include media("lg") {
+    grid-column: 1 / 7;
+  }
+}

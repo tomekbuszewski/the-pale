@@ -25,7 +25,6 @@ export function ParallaxColumn({
   const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start", "end center"],
   });
 
   const threshold = 512;
