@@ -1,0 +1,15 @@
+@use "../../styles/_fns.scss" as *;
+
+.content {
+  margin-bottom: var(--spacing-xl);
+
+  @include media("md") {
+    margin-bottom: var(--spacing-2xl);
+    columns: 2;
+    column-gap: var(--gutter);
+  }
+}
+
+.card, .content {
+  grid-column: 1/-1;
+}
