@@ -1,0 +1,46 @@
+@use "../../styles/_fns.scss" as *;
+
+.wrapper {
+  margin-top: var(--spacing-lg);
+
+  @include media("md") {
+    margin-top: var(--spacing-2xl);
+  }
+
+  @include media("lg") {
+    margin-top: var(--spacing-3xl);
+  }
+}
+
+.mainContent {
+  position: relative;
+  min-height: 90dvh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  align-content: flex-start;
+
+  @include media("lg") {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+  }
+}
+
+.innerContent {
+  @include media("md") {
+    position: sticky;
+    top: var(--spacing-3xl);
+  }
+}
+
+.card {
+  background: var(--color-minor-background);
+  margin: 0;
+
+  @include media("md") {
+    grid-column: 7/13;
+  }
+  @include media("lg") {
+    grid-column: 8/12;
+  }
+}

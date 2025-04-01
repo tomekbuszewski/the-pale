@@ -402,5 +402,60 @@
   },
   "clients": {
     "title": "Clients"
+  },
+  "cases": {
+    "ewa-cool": {
+      "title": "Ewa&nbsp;Buszewska\newa.cool",
+      "desc": "Stylish one-pager for a Polish-speaking SEO copywriter.",
+      "body": [
+        "I've been asked to create a simple one-page portfolio for a SEO copywriter based in Warsaw.",
+        "The main challenge was, client didn’t want to use any external systems other than Google Docs, where she would normally write."
+      ],
+      "sections": {
+        "sketches": {
+          "title": "initial sketches",
+          "card": {
+            "title": "I always start with pen and paper",
+            "desc": ["As always, my first step was to create a rough sketch using just my trusty notepad and a pen. This allowed me to experiment quickly without even looking at a display."]
+          }
+        },
+        "tech": {
+          "title": "Technical challenges",
+          "desc": [
+            "For the front-end, I went with my favorite React Router, used as framework. It allows for server rendering and pre-rendering, giving the page great speed.",
+            "This is a smaller project, so architecture was simple and I did it without neither feature-driven nor atomic design methodologies.",
+            "The most interesting part was using Google Docs as a content management system. For this, I’ve created a separate application to consume the Google API and save the content. This also solved the issue of having to re-authenticate, as it happens in the background in a loop."
+          ],
+          "card": {
+            "title": "Stack",
+            "desc": ["React Router", "TypeScript", "SCSS", "Google Docs", "NodeJS", "Github + Vercel"]
+          }
+        },
+        "mobile": {
+          "card": {
+            "title": "Smartphone version",
+            "desc": ["After designing components, I’ve assembled them for viewports. For mobile it was rather straightforward, as I knew that content is the most important. For this, I’ve decided to go with the simple, yet popular and battle-tested one-column layout."]
+          }
+        },
+        "colors": {
+          "card": {
+            "title": "Colors",
+            "desc": ["One of the first things I’ve done was to pick a color palette. I believe it can dictate the whole design.", "The main keyword was “green” and “orange”. I wanted a cool yet comforting green palette broken by a vivid, yet not aggressive orange for accents."]
+          }
+        },
+        "typography": {
+          "card": {
+            "title": "Typography",
+            "desc": ["I knew there will be a lot of content to read on the page. That’s why I’ve decided to go with a serif font from the start. ", "To contrast this, all the titles and headings are written using a bold sans-serif font."]
+          }
+        },
+        "desktop": {
+          "card": {
+            "title": "Desktop version",
+            "desc": ["Large version is a natural evolution of smaller screens. More horizontal screen space allowed me to put images in more interesting pattern, as well as make other sections better adjusted for landscape mode."]
+          }
+        }
+      }
+    }
   }
 }

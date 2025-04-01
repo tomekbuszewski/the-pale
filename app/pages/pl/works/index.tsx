@@ -1,3 +1,3 @@
-import * as uses from "../../base/uses";
+import * as works from "../../base/works";
 
-export default uses.default;
+export default works.default;

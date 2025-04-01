@@ -76,3 +76,60 @@ $paddingLg: 128;
     }
   }
 }
+
+.caseSection {
+  position: relative;
+  min-height: 90dvh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  align-content: flex-start;
+
+  @include media("lg") {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+  }
+}
+
+.caseSectionContent {
+  @include media("lg") {
+    position: sticky;
+    top: var(--spacing-3xl);
+  }
+}
+
+.card {
+  background: var(--color-minor-background);
+  margin: 0;
+
+  &.right {
+    @include media("lg") {
+      grid-column: 8/12;
+    }
+  }
+
+  &.left {
+    @include media("lg") {
+      grid-column: 1/5;
+    }
+  }
+}
+
+.sectionTitle {
+  margin-top: var(--spacing-lg);
+
+  @include media("md") {
+    margin-top: var(--spacing-2xl);
+  }
+
+  @include media("lg") {
+    margin-top: var(--spacing-3xl);
+  }
+}
+
+.columnText {
+  @include media("md") {
+    columns: 2;
+    column-gap: var(--gutter);
+  }
+}

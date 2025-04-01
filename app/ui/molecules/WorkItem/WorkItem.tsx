@@ -1,16 +1,16 @@
 import { Fragment, type HTMLProps, useRef } from "react";
-import { Button, SectionWrapper, Text } from "@ui/atoms";
+import type { Work } from "@common-types/Work";
+import { Content } from "@features";
 import { createMotionConfig } from "@utils/fadeIn";
 import clsx from "clsx";
 import { motion, useInView } from "motion/react";
 
-import type { Work } from "@common-types/Work";
+import { Button, SectionWrapper, Text } from "@ui/atoms";
 
 import { Image } from "./helpers/Image";
 import { Tags } from "./helpers/Tags";
 
 import styles from "./WorkItem.module.scss";
-import { Content } from "@features";
 
 interface Props extends HTMLProps<HTMLDivElement>, Omit<Work, "title"> {
   index: number;

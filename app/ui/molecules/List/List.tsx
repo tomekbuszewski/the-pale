@@ -1,6 +1,5 @@
-import clsx from "clsx";
-
 import type { CSSProperties, HTMLProps, ReactNode } from "react";
+import clsx from "clsx";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   title: string;

@@ -1,10 +1,10 @@
-import { Text } from "@ui/atoms";
-import clsx from "clsx";
-
+import type { HTMLProps, ReactNode } from "react";
 import type { BlogPost } from "@common-types/Blogpost";
 import type { Href } from "@common-types/Href";
 import type { Service } from "@common-types/Service";
-import type { HTMLProps, ReactNode } from "react";
+import clsx from "clsx";
+
+import { Text } from "@ui/atoms";
 
 import { Footer, Meta, Tags } from "./Box.helpers";
 
@@ -26,6 +26,7 @@ interface PlainBox {
 type Props = HTMLProps<HTMLDivElement> &
   (BlogPost | Service | PlainBox) & {
     noBottomMargin?: boolean;
+    small?: boolean;
   };
 
 function Box({
@@ -39,6 +40,7 @@ function Box({
   children,
   active,
   noBottomMargin,
+  small,
 }: Props) {
   const classNames = [className, styles.wrapper];
 
@@ -54,9 +56,9 @@ function Box({
       <Meta date={date} icon={icon} />
 
       <Text
-        variant="title"
+        variant={small ? "title-small" : "title"}
         dangerouslySetInnerHTML={{ __html: title ?? "" }}
-        className={styles.title}
+        className={clsx(styles.title)}
       />
 
       <section

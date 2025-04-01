@@ -5,7 +5,7 @@ import GameShelfDesktop from "./gameshelf-main.jpg?as=metadata&imagetools-galler
 import GameShelfMobile from "./gameshelf-mobile.jpg?as=metadata&imagetools-gallery";
 
 export default {
-  tags: ["work.item.tag.design", "work.item.tag.development"],
+  tags: ["work.item.tag.design", "work.item.tag.development"] as const,
   description: "work.gameshelf",
   date: new Date("2024-03-01"),
   mobileImage: GameShelfMobile,
