@@ -3,6 +3,7 @@ export { default as Box } from "./Box/Box";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as CaseDescription } from "./CaseDescription/CaseDescription";
 export { default as CaseIllustration } from "./CaseIllustration/CaseIllustration";
+export { default as CaseImages } from "./CaseImages/CaseImages";
 export { default as ColorPalette } from "./ColorPalette/ColorPalette";
 export { default as ContactCta } from "./ContactCta/ContactCta";
 export { default as LargeCard } from "./LargeCard/LargeCard";
