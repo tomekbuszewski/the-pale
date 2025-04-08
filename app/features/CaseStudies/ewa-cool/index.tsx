@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import type { Work } from "@common-types/Work";
 import { CAL } from "@contact";
 import { Content } from "@features";
 
@@ -13,8 +14,11 @@ import {
   LargeCard,
 } from "@ui/molecules";
 
+import Background from "./background.webp?url";
+import DesktopImagePreview from "./mainpage-1-desktop.webp?as=metadata&imagetools-gallery";
 import DesktopImage1 from "./mainpage-1-desktop.webp?url";
 import DesktopImage5 from "./mainpage-1-desktop-dark.webp?url";
+import MobileImagePreview from "./mainpage-1-mobile.webp?as=metadata&imagetools-gallery";
 import MobileImage1 from "./mainpage-1-mobile.webp?url";
 import MobileImage5 from "./mainpage-1-mobile-dark.webp?url";
 import DesktopImage2 from "./mainpage-2-desktop.webp?url";
@@ -182,3 +186,19 @@ export default function EwaCool() {
     </Fragment>
   );
 }
+
+export const description = {
+  tags: [
+    "work.item.tag.design",
+    "work.item.tag.development",
+    "work.item.tag.maintenance",
+  ] as const,
+  description: "work.ewa-cool",
+  date: new Date("2025-03-01"),
+  mobileImage: MobileImagePreview,
+  desktopImage: DesktopImagePreview,
+  title: "Ewa.cool",
+  background: Background,
+  link: "https://www.ewa.cool",
+  study: "/works/ewa-cool",
+} as unknown as Work;

@@ -1,3 +1,4 @@
+import { description as EwaCool } from "@features/CaseStudies/ewa-cool";
 import { Sections } from "@nav";
 
 import { WorkItem } from "@ui/molecules";
@@ -6,7 +7,7 @@ import Gameshelf from "./items/gameshelf";
 import Hay24 from "./items/hay24";
 import Backlog from "./items/thebacklog";
 
-const data = [Gameshelf, Backlog, Hay24].sort(
+const data = [Gameshelf, Backlog, Hay24, EwaCool].sort(
   (a, b) => b.date.getTime() - a.date.getTime(),
 );
 

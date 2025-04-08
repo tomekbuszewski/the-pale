@@ -1,7 +1,8 @@
 type Tag =
   | "work.item.tag.design"
   | "work.item.tag.development"
-  | "work.item.tag.consultation";
+  | "work.item.tag.consultation"
+  | "work.item.tag.maintenance";
 
 export interface Work {
   description: string | string[];
