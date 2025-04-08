@@ -103,13 +103,17 @@ function WorkItem({
         <motion.footer className={styles.footer} {...createMotionConfig(4)}>
           {study ? (
             <Button variant="primary" to={study ?? ""} disabled={!study}>
-              {study ? "Case study" : "Study n/a"}
+              {study
+                ? translate("work.item.study.ok")
+                : translate("work.item.study.na")}
             </Button>
           ) : null}
 
           {link ? (
             <Button to={link ?? ""} variant="secondary" disabled={!link}>
-              {link ? "View online" : "Online n/a"}
+              {link
+                ? translate("work.item.online.ok")
+                : translate("work.item.online.na")}
             </Button>
           ) : null}
         </motion.footer>
