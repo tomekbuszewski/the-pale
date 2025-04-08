@@ -293,9 +293,13 @@
       "tag": {
         "design": "Projekt",
         "development": "Programowanie",
-        "consultations": "Konsultacja"
+        "consultations": "Konsultacja",
+        "maintenance": "Hosting i utrzymanie"
       }
     },
+    "ewa-cool": [
+      "Strona docelowa dla polskojęzycznej copywriterki."
+    ],
     "gameshelf": [
       "Gameshelf dostarcza najlepszej jakości artykuły, wywiady i wiadomości ze świata gier wideo."
     ],
@@ -402,5 +406,66 @@
   },
   "clients": {
     "title": "Klienci"
+  },
+  "cases": {
+    "contact-card": {
+      "text": "Chcesz taką stronę?",
+      "button-main": "Darmowa konsultacja",
+      "button-minor": "Pogadajmy!"
+    },
+    "ewa-cool": {
+      "title": "Ewa&nbsp;Buszewska\newa.cool",
+      "desc": "Strona docelowa dla polskojęzycznej copywriterki.",
+      "body": [
+        "Zostałem zaangażowany w stworzenie prostego, jednostronicowego portfolio dla warszawskiej SEO copywriterki.",
+        "Głównym wyzwaniem było oparcie treści o Google Docs, czyli miejsce pracy klientki."
+      ],
+      "sections": {
+        "sketches": {
+          "title": "ręczne szkice",
+          "card": {
+            "title": "Zawsze zaczynam od szkiców ręcznych.",
+            "desc": ["Jak zwykle, pracę rozpocząłem od szkiców ręcznych. Dzięki temu mogłem ekperymentować z układami bez konieczności patrzenia w ekran."]
+          }
+        },
+        "tech": {
+          "title": "Wyzwania technologiczne",
+          "desc": [
+            "Front-end jest oparty o React Router (w formie frameworku). To szybkie i niezawodne rozwiązanie pozwalające na renderowanie serwerowe i pre-renderowanie.",
+            "To mniejszy projekt, dlatego architektura jest prosta. Nie korzystałem ani atomic design, ani z trzymania logiki biznesowej na oddzielnej warstwie.",
+            "Najciekawszym wyzwaniem było połączenie się z Google Docs i użycie go jako systemu zarządzania treścią (CMS). Do tego stworzyłem oddzielną warstwę, która odpowiada za łączenie się z Google Drive API i pobieranie treści."
+          ],
+          "card": {
+            "title": "Stos technologiczny",
+            "desc": ["React Router", "TypeScript", "Motion", "SCSS", "Google Docs", "NodeJS", "Github + Vercel"]
+          }
+        },
+        "mobile": {
+          "card": {
+            "title": "Wersja mobilna",
+            "desc": ["Po zaprojektowaniu komponentów, zabrałem się za układanie widoku mobilnego. Tutaj treść gra pierwsze skrzypce, więc oparłem całość na czytelnym i przejrzystym układzie jednokolumnowym."]
+          }
+        },
+        "colors": {
+          "card": {
+            "title": "Kolorystyka",
+            "desc": ["Jedną z pierwszych rzeczy było wybranie palety, ponieważ to ona w dużej mierze dyktuje całość.", "Słowa kluczowe do palety to “zieleń” oraz “pomarańcz”. Wybrałem spokojne, pastelowe zielenie przełamane żywym pomarańczem."]
+          }
+        },
+        "typography": {
+          "card": {
+            "title": "Typografia",
+            "desc": ["Wiedziałem, że strona będzie mieć dużo tekstu. Dlatego wybrałem szeryfowy font do dłuższych form.", "Dla kontrastu, wszystkie nagłówki są w bezszeryfowym foncie.."]
+          }
+        },
+        "desktop": {
+          "card": {
+            "title": "Wersja na komputery",
+            "desc": ["Duży widok jest bezpośrednią ewolucją wersji mobilnej. Więcej przestrzeni poziomej pozwoliło na dwu- i trzykolumnowy układ tekstów i bardziej różnorodne rozłożenie obrazów."]
+          }
+        }
+      }
+    }
   }
 }
+

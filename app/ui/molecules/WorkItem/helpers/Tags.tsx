@@ -1,13 +1,15 @@
-import { Text } from "@ui/atoms";
+import { Content } from "@features";
 import { createMotionConfig } from "@utils/fadeIn";
 import { motion } from "motion/react";
+
+import { Text } from "@ui/atoms";
 
 import CodeIcon from "../assets/code.svg?react";
 import ConsultationIcon from "../assets/consultations.svg?react";
 import DesignIcon from "../assets/design.svg?react";
+import MaintenanceIcon from "../assets/maintenance.svg?react";
 
 import styles from "../WorkItem.module.scss";
-import { Content } from "@features";
 
 interface TagsProps {
   tags: string[];
@@ -21,6 +23,8 @@ function resolveIcon(tag: string) {
       return <CodeIcon />;
     case "work.item.tag.consultations":
       return <ConsultationIcon />;
+    case "work.item.tag.maintenance":
+      return <MaintenanceIcon />;
 
     default:
       throw new Error("Unknown tag");

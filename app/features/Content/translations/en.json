@@ -293,9 +293,13 @@
       "tag": {
         "design": "Design",
         "development": "Development",
-        "consultations": "Consultations"
+        "consultations": "Consultations",
+        "maintenance": "Hosting & Maintenance"
       }
     },
+    "ewa-cool": [
+      "Stylish one-pager for a Polish-speaking SEO copywriter."
+    ],
     "gameshelf": [
       "Gameshelf aims to deliver latest new, world-class columns, interviews and insides for all the gamers around the world."
     ],
@@ -433,7 +437,7 @@
           ],
           "card": {
             "title": "Stack",
-            "desc": ["React Router", "TypeScript", "SCSS", "Google Docs", "NodeJS", "Github + Vercel"]
+            "desc": ["React Router", "TypeScript", "Motion","SCSS", "Google Docs", "NodeJS", "Github + Vercel"]
           }
         },
         "mobile": {

@@ -1,9 +1,5 @@
 import { default as EwaCool } from "./ewa-cool";
 
-interface Props {
-  name: string;
-}
-
 const works = [
   {
     url: "ewa-cool",
