@@ -433,7 +433,7 @@
           "desc": [
             "Front-end jest oparty o React Router (w formie frameworku). To szybkie i niezawodne rozwiązanie pozwalające na renderowanie serwerowe i pre-renderowanie.",
             "To mniejszy projekt, dlatego architektura jest prosta. Nie korzystałem ani atomic design, ani z trzymania logiki biznesowej na oddzielnej warstwie.",
-            "Najciekawszym wyzwaniem było połączenie się z Google Docs i użycie go jako systemu zarządzania treścią (CMS). Do tego stworzyłem oddzielną warstwę, łączy się z Google Drive API i pobiera treści."
+            "Najciekawszym wyzwaniem było połączenie się z Google Docs i użycie go jako systemu zarządzania treścią (CMS). Do tego stworzyłem oddzielną warstwę, która odpowiada za łączenie się z Google Drive API i pobieranie treści. Te następnie są zachowywane w aplikacji, by zminimalizować ruch."
           ],
           "card": {
             "title": "Stos technologiczny",
