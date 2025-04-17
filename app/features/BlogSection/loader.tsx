@@ -7,12 +7,10 @@ import fs from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
 
+import { cache } from "./cache";
 import type { PaginationProps } from "../../common-types/BlogPagination";
 import type { BlogPost } from "../../common-types/Blogpost";
-
 import { Routes } from "../../nav";
-
-import { cache } from "./cache";
 
 interface LoaderConfig {
   withContent?: boolean;
@@ -95,17 +93,17 @@ export default async function loader({
             const { default: Content } = await evaluate(content, {
               ...runtime,
               baseUrl: import.meta.url,
-              rehypePlugins: [
-                [
-                  shiki,
-                  {
-                    themes: {
-                      light: "material-theme-lighter",
-                      dark: "catppuccin-mocha",
-                    },
-                  },
-                ],
-              ],
+              // rehypePlugins: [
+              //   [
+              //     shiki({ langs: ["typescript", "javascript"] }),
+              //     {
+              //       themes: {
+              //         light: "material-theme-lighter",
+              //         dark: "catppuccin-mocha",
+              //       },
+              //     },
+              //   ],
+              // ],
             });
 
             const { components } = await import("./components");

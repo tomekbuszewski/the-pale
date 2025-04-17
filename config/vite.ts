@@ -1,6 +1,7 @@
 import mdx from "@mdx-js/rollup";
 import { reactRouter } from "@react-router/dev/vite";
 import autoprefixer from "autoprefixer";
+import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig } from "vite";
 import { imagetools } from "vite-imagetools";
 import svgr from "vite-plugin-svgr";
@@ -23,6 +24,7 @@ export const baseConfig = defineConfig({
 
   plugins: [
     { enforce: "pre", ...mdx() },
+    visualizer({ open: true }),
     tsconfigPaths(),
     svgr(),
     imagetools({

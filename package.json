@@ -67,6 +67,7 @@
     "plop": "^4.0.1",
     "postcss": "^8.5.2",
     "prettier": "^3.5.0",
+    "rollup-plugin-visualizer": "^5.14.0",
     "sass-embedded": "^1.83.4",
     "slugify": "^1.6.6",
     "storybook": "^8.5.4",
