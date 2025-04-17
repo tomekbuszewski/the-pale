@@ -1,5 +1,6 @@
 import { isRouteErrorResponse } from "react-router";
 import { BaseLayout } from "@layouts/Main";
+
 import { ErrorPage } from "@ui/organisms";
 
 import type { Route } from "../../../.react-router/types/app/+types/root";

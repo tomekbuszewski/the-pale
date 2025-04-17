@@ -45,6 +45,7 @@ export const FooterSection = {
 
 export const WorksSection = {
   component: WorksSectionFeature.WorksSection,
+  links: WorksSectionFeature.preloadItems,
   loader: null,
 };
 

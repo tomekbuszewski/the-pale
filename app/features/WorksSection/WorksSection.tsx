@@ -11,6 +11,11 @@ const data = [Gameshelf, Backlog, Hay24, EwaCool].sort(
   (a, b) => b.date.getTime() - a.date.getTime(),
 );
 
+export const preloadItems = data.map((item) => [
+  item.mobileImage,
+  item.desktopImage,
+]);
+
 export default function WorksSection() {
   return (
     <section

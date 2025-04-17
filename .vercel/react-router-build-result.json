@@ -17,7 +17,7 @@
       "pages/en/services/consulting/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "pages/en/uses": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "pages/en/tech": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/en/works/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
+      "pages/en/works": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "pages/blog/post": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "pages/blog/pagination": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "pages/pl/home": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
@@ -26,7 +26,7 @@
       "pages/pl/services/consulting/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "pages/pl/uses": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
       "pages/pl/tech": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0",
-      "pages/pl/works/index": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
+      "pages/pl/works": "nodejs_eyJydW50aW1lIjoibm9kZWpzIn0"
     },
     "routes": {
       "root": {
@@ -85,10 +85,10 @@
         "path": "/tech",
         "config": {}
       },
-      "pages/en/works/index": {
-        "id": "pages/en/works/index",
+      "pages/en/works": {
+        "id": "pages/en/works",
         "parentId": "layouts/Main",
-        "file": "app/pages/en/works/index.tsx",
+        "file": "app/pages/en/works.tsx",
         "path": "/works/:slug",
         "config": {}
       },
@@ -149,10 +149,10 @@
         "path": "/pl/tech",
         "config": {}
       },
-      "pages/pl/works/index": {
-        "id": "pages/pl/works/index",
+      "pages/pl/works": {
+        "id": "pages/pl/works",
         "parentId": "layouts/Main",
-        "file": "app/pages/pl/works/index.tsx",
+        "file": "app/pages/pl/works.tsx",
         "path": "/pl/works/:slug",
         "config": {}
       }
@@ -212,10 +212,10 @@
         "file": "pages/en/tech.tsx",
         "path": "/tech"
       },
-      "pages/en/works/index": {
-        "id": "pages/en/works/index",
+      "pages/en/works": {
+        "id": "pages/en/works",
         "parentId": "layouts/Main",
-        "file": "pages/en/works/index.tsx",
+        "file": "pages/en/works.tsx",
         "path": "/works/:slug"
       },
       "pages/blog/post": {
@@ -267,10 +267,10 @@
         "file": "pages/pl/tech.tsx",
         "path": "/pl/tech"
       },
-      "pages/pl/works/index": {
-        "id": "pages/pl/works/index",
+      "pages/pl/works": {
+        "id": "pages/pl/works",
         "parentId": "layouts/Main",
-        "file": "pages/pl/works/index.tsx",
+        "file": "pages/pl/works.tsx",
         "path": "/pl/works/:slug"
       }
     },

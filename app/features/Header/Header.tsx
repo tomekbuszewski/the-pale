@@ -1,6 +1,7 @@
-import * as nav from "@nav";
-import { PageHeader as Main } from "@ui/organisms";
 import { Content } from "@features";
+import * as nav from "@nav";
+
+import { PageHeader as Main } from "@ui/organisms";
 
 export default function Header() {
   const translate = Content.hooks.useTranslate();

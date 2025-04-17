@@ -10,6 +10,32 @@ import {
 } from "@features";
 import blogLoader from "@features/BlogSection/loader";
 
+export function links() {
+  const result: Record<string, string>[] = [];
+
+  WorksSection.links.forEach(([mobile, desktop]) => {
+    if (typeof mobile === "string" || typeof desktop === "string") {
+      return;
+    }
+
+    result.push({
+      rel: "preload",
+      as: "image",
+      type: "image/webp",
+      href: mobile.src,
+    });
+
+    result.push({
+      rel: "preload",
+      as: "image",
+      type: "image/webp",
+      href: desktop.src,
+    });
+  });
+
+  return result;
+}
+
 export async function loader() {
   const blog = await blogLoader({
     withContent: false,
