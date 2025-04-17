@@ -52,6 +52,8 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "autoprefixer": "^10.4.20",
+    "browserlist": "^1.0.1",
+    "critical": "^7.2.1",
     "eslint": "^8.38.0",
     "eslint-import-resolver-typescript": "^4.0.0",
     "eslint-plugin-import": "^2.31.0",
@@ -61,6 +63,7 @@
     "globals": "^16.0.0",
     "gray-matter": "^4.0.3",
     "happy-dom": "^17.1.0",
+    "lightningcss": "^1.29.3",
     "plop": "^4.0.1",
     "postcss": "^8.5.2",
     "prettier": "^3.5.0",
@@ -75,5 +78,13 @@
     "vite-plugin-svgr": "^4.3.0",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.5"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "puppeteer"
+    ],
+    "onlyBuiltDependencies": [
+      "puppeteer"
+    ]
   }
 }

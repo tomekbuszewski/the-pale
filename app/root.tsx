@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import {
   Links,
   Meta,
@@ -8,22 +9,20 @@ import {
 } from "react-router";
 import {
   Analytics as AnalyticsFeature,
-  ErrorBoundary as ErrorBoundaryFeature,
   Content,
+  ErrorBoundary as ErrorBoundaryFeature,
 } from "@features";
 import brico from "@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url";
 import geist from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
-import type { ReactNode } from "react";
-
 import type { Route } from "./+types/root";
+import stylesheet from "./app.scss?url";
+import critical from "./critical.css?inline";
 
 import "@fontsource-variable/geist-mono";
 import "@fontsource-variable/bricolage-grotesque";
-
-import stylesheet from "./app.scss?url";
 
 export const links: Route.LinksFunction = () => [
   {
@@ -80,6 +79,7 @@ export function Layout({ children }: { children: ReactNode }) {
     <Content.context.Provider value={language}>
       <html lang={language}>
         <head>
+          <style>{critical}</style>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <Meta />

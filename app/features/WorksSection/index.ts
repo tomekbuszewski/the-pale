@@ -1,1 +1,1 @@
-export { default as WorksSection } from "./WorksSection";
+export { preloadItems, default as WorksSection } from "./WorksSection";

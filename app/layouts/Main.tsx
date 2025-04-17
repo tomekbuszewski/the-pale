@@ -1,6 +1,7 @@
 import { Fragment, type HTMLProps } from "react";
 import { Outlet } from "react-router";
 import { Contact, FooterSection, Head, HeaderSection } from "@features";
+
 import { MainWrapper } from "@ui/atoms";
 
 import "../ui/styles/utils.scss";

@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router";
+import type { Href } from "@common-types/Href";
+import { Content } from "@features";
 import { useIsMobile } from "@hooks";
-import { ContactButton, Logo, MenuToggleButton } from "@ui/atoms";
-import { PageNavigation } from "@ui/organisms";
 import clsx from "clsx";
 import {
   type HTMLMotionProps,
@@ -11,12 +11,12 @@ import {
   useScroll,
 } from "motion/react";
 
-import type { Href } from "@common-types/Href";
+import { ContactButton, Logo, MenuToggleButton } from "@ui/atoms";
+import { PageNavigation } from "@ui/organisms";
 
 import ContactIcon from "./assets/Phone.svg?react";
 
 import styles from "./PageHeader.module.scss";
-import { Content } from "@features";
 
 interface Props extends HTMLMotionProps<"header"> {
   links: Href[];

@@ -16,6 +16,11 @@ export const baseConfig = defineConfig({
       plugins: [autoprefixer],
     },
   },
+
+  build: {
+    cssMinify: "lightningcss",
+  },
+
   plugins: [
     { enforce: "pre", ...mdx() },
     tsconfigPaths(),
