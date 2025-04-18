@@ -1,13 +1,20 @@
-import { Fragment } from "react";
+import { Fragment, lazy } from "react";
 import { useLoaderData } from "react-router";
 import {
-  AboutSection,
-  BlogSection,
-  ClientsSection,
+  BlogSection as BlogSectionFeature,
   HeroSection,
-  ServicesSection,
   WorksSection,
 } from "@features";
+
+const AboutSection = lazy(() => import("@features/AboutSection/AboutSection"));
+const BlogSection = lazy(() => import("@features/BlogSection/BlogSection"));
+const ClientsSection = lazy(
+  () => import("@features/ClientsSection/ClientsSection"),
+);
+const ServicesSection = lazy(
+  () => import("@features/ServicesSection/ServicesSection"),
+);
+
 import blogLoader from "@features/BlogSection/loader";
 
 export function links() {
@@ -53,10 +60,10 @@ export default function Home() {
     <Fragment>
       <HeroSection.component />
       <WorksSection.component />
-      <ServicesSection.component />
-      <ClientsSection.component />
-      {BlogSection.guard(blog) ? <BlogSection.component {...blog} /> : null}
-      <AboutSection.component />
+      <ServicesSection />
+      <ClientsSection />
+      {BlogSectionFeature.guard(blog) ? <BlogSection {...blog} /> : null}
+      <AboutSection />
     </Fragment>
   );
 }
