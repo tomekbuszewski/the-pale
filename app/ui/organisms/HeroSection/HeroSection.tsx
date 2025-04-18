@@ -1,11 +1,11 @@
+import type { HTMLProps } from "react";
+import { Content } from "@features";
 import { Sections } from "@nav";
-import { BouncingArrow, Button, SectionWrapper, Text } from "@ui/atoms";
 import { LayoutGroup, useScroll, useTransform } from "motion/react";
 
-import type { HTMLProps } from "react";
+import { BouncingArrow, Button, SectionWrapper, Text } from "@ui/atoms";
 
 import styles from "./HeroSection.module.scss";
-import { Content } from "@features";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   copy: string;

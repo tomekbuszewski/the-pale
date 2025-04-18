@@ -1,6 +1,7 @@
+import { Content } from "@features";
+
 import { TextRotate } from "@ui/atoms";
 import { HeroSection as Main } from "@ui/organisms";
-import { Content } from "@features";
 
 export default function HeroSection() {
   const translate = Content.hooks.useTranslate();

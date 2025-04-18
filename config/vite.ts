@@ -1,7 +1,6 @@
 import mdx from "@mdx-js/rollup";
 import { reactRouter } from "@react-router/dev/vite";
 import autoprefixer from "autoprefixer";
-import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig } from "vite";
 import { imagetools } from "vite-imagetools";
 import compression from "vite-plugin-compression";
@@ -30,10 +29,25 @@ export const baseConfig = defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
-          router: ["react-router"],
-          others: ["shiki", "motion"],
+        format: "esm",
+        manualChunks: (id: string) => {
+          if (id.includes(".json")) {
+            return "content";
+          }
+
+          if (id.includes("shiki")) {
+            return "shiki";
+          }
+
+          if (id.includes("motion")) {
+            return "motion";
+          }
+
+          if (id.includes("legacy")) {
+            return "legacy";
+          }
+
+          return null;
         },
       },
     },
@@ -44,7 +58,6 @@ export const baseConfig = defineConfig({
 
   plugins: [
     { enforce: "pre", ...mdx() },
-    visualizer({ open: true }),
     tsconfigPaths(),
     svgr(),
     imagetools({
