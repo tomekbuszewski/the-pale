@@ -4,6 +4,7 @@ import autoprefixer from "autoprefixer";
 import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig } from "vite";
 import { imagetools } from "vite-imagetools";
+import compression from "vite-plugin-compression";
 import svgr from "vite-plugin-svgr";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { configDefaults } from "vitest/config";
@@ -20,6 +21,25 @@ export const baseConfig = defineConfig({
 
   build: {
     cssMinify: "lightningcss",
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          router: ["react-router"],
+          others: ["shiki", "motion"],
+        },
+      },
+    },
+    target: "es2015",
+    sourcemap: false,
+    chunkSizeWarningLimit: 600,
   },
 
   plugins: [
@@ -30,6 +50,8 @@ export const baseConfig = defineConfig({
     imagetools({
       defaultDirectives: new URLSearchParams({ quality: "90", format: "webp" }),
     }),
+    compression({ algorithm: "brotliCompress", ext: ".br" }),
+    compression({ algorithm: "gzip", ext: ".gz" }),
   ],
 
   test: {
