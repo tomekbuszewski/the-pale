@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@fontsource-variable/bricolage-grotesque':
         specifier: ^5.1.1
-        version: 5.2.6
+        version: 5.2.7
       '@fontsource-variable/geist-mono':
         specifier: ^5.0.1
-        version: 5.2.5
+        version: 5.2.6
       '@fontsource/tinos':
         specifier: ^5.1.1
         version: 5.2.5
@@ -935,11 +935,11 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@fontsource-variable/bricolage-grotesque@5.2.6':
-    resolution: {integrity: sha512-sgG6g8zXjIqIEixStq268EFWdlrMOdfdv2Dm04ljFdke7Fa93yU9JR0II70P7+1b+d/2a5HnzHh/N4049s3n0w==}
+  '@fontsource-variable/bricolage-grotesque@5.2.7':
+    resolution: {integrity: sha512-9HZ2SulWCN2ORb0gNkOtSq6o/XG0t9Bq0OAm2gWd+RlVtwe+Lxy/WL1QQ8O890ZsP9768s41HJZsLRowhoj6uA==}
 
-  '@fontsource-variable/geist-mono@5.2.5':
-    resolution: {integrity: sha512-zyuyDtO00SbmqU4Bo5XWzX2hE5RUxL+h2bv3P8SrmxqfqW66FU/xw5DW3xRQPqQgyEpb/Fh5FEFCpOna78dvCA==}
+  '@fontsource-variable/geist-mono@5.2.6':
+    resolution: {integrity: sha512-vw6T9JGTrYJ980bn7W8iTPhe2jVK5ifunVs7xh9dfTVArjDSkJs03JjeZrH5LKEpGABLXSlSlNU57HRm4tmFMg==}
 
   '@fontsource/tinos@5.2.5':
     resolution: {integrity: sha512-xMQJ+hCBacyXxiDqYgw06yx+BBAfbRcHDocFqiPclo+2bJuVzkqBeSqD4/Dgydh3SkR5MNnRTisZ/L6SQokzFg==}
@@ -6122,9 +6122,9 @@ snapshots:
   '@fastify/busboy@2.1.1':
     optional: true
 
-  '@fontsource-variable/bricolage-grotesque@5.2.6': {}
+  '@fontsource-variable/bricolage-grotesque@5.2.7': {}
 
-  '@fontsource-variable/geist-mono@5.2.5': {}
+  '@fontsource-variable/geist-mono@5.2.6': {}
 
   '@fontsource/tinos@5.2.5': {}
 
