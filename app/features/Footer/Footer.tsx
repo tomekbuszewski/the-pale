@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   CAL,
   EMAIL,
@@ -7,18 +8,21 @@ import {
   START_YEAR,
   YOUTUBE,
 } from "@contact";
-import * as nav from "@nav";
-import { PageFooter as Main } from "@ui/organisms";
-import { resolveHandle } from "@utils/resolveHandle";
 import { Content } from "@features";
+import * as nav from "@nav";
+import { resolveHandle } from "@utils/resolveHandle";
+
+import { PageFooter as Main } from "@ui/organisms";
 
 import Calendar from "./assets/calendar.svg?react";
+import DesignRush from "./assets/designrush.webp";
 import Github from "./assets/gh.svg?react";
 import LinkedIn from "./assets/in.svg?react";
 import Mail from "./assets/mail.svg?react";
 import Phone from "./assets/phone.svg?react";
 import YouTube from "./assets/yt.svg?react";
-import { useContext } from "react";
+
+console.log(DesignRush);
 
 const languages = [
   {
@@ -87,6 +91,7 @@ export default function Footer() {
   return (
     <Main
       {...data}
+      promoImage={[DesignRush, "Design Rush"]}
       onLanguageChange={Content.functions.handleLanguageChange(language)}
       languages={languages}
       cookies={translate("footer.section.cookies")}

@@ -1,11 +1,11 @@
-import { Sections } from "@nav";
-import { Logo, SectionWrapper, Text } from "@ui/atoms";
-import { SectionHeader, Switch } from "@ui/molecules";
+import { type HTMLProps, type ReactNode, useContext } from "react";
+import type { Href } from "@common-types/Href";
 import { Content } from "@features";
+import { Sections } from "@nav";
 import clsx from "clsx";
 
-import type { Href } from "@common-types/Href";
-import { type HTMLProps, type ReactNode, useContext } from "react";
+import { Logo, SectionWrapper, Text } from "@ui/atoms";
+import { SectionHeader, Switch } from "@ui/molecules";
 
 import styles from "./PageFooter.module.scss";
 
@@ -23,6 +23,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
   cookies: string;
   onLanguageChange?: (lang: string) => void;
   languages?: Href[];
+  promoImage?: string[];
 }
 
 interface LinksProps extends HTMLProps<HTMLUListElement> {
@@ -73,6 +74,7 @@ function PageFooter({
   cookies,
   languages,
   onLanguageChange,
+  promoImage,
 }: Props) {
   const translate = Content.hooks.useTranslate();
   const language = useContext(Content.context);
@@ -135,14 +137,27 @@ function PageFooter({
         <Links items={socials} />
       </nav>
 
-      <section className={styles.copyright}>
-        <Text align="right" dangerouslySetInnerHTML={{ __html: copyright }} />
+      <section
+        className={clsx(styles.copyright, promoImage && styles.withPromo)}
+      >
+        {promoImage ? (
+          <img
+            className={styles.promoImage}
+            width={150}
+            src={promoImage[0]}
+            alt={promoImage[1]}
+          />
+        ) : null}
 
-        <Text
-          tag="p"
-          variant="highlight"
-          dangerouslySetInnerHTML={{ __html: cookies }}
-        />
+        <div>
+          <Text align="right" dangerouslySetInnerHTML={{ __html: copyright }} />
+
+          <Text
+            tag="p"
+            variant="highlight"
+            dangerouslySetInnerHTML={{ __html: cookies }}
+          />
+        </div>
       </section>
     </SectionWrapper>
   );
