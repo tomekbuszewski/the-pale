@@ -48,6 +48,11 @@
   margin-top: var(--spacing-xl);
 }
 
+.promoImage {
+  display: block;
+  margin-top: var(--spacing-mid);
+}
+
 .navWrapper {
   color: var(--color-minor-body);
   opacity: 0.64;
@@ -125,5 +130,13 @@
 
   p + p {
     margin-top: var(--spacing-small);
+  }
+}
+
+.withPromo {
+  @include media("md") {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
 }
