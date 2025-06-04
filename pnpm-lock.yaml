@@ -146,7 +146,7 @@ importers:
         version: 4.0.3
       happy-dom:
         specifier: ^17.1.0
-        version: 17.6.1
+        version: 17.6.3
       plop:
         specifier: ^4.0.1
         version: 4.0.1
@@ -188,7 +188,7 @@ importers:
         version: 5.1.4(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.29)(jiti@1.21.7)(sass-embedded@1.89.1)(tsx@4.19.4)(yaml@2.7.0))
       vitest:
         specifier: ^3.0.5
-        version: 3.2.1(@types/debug@4.1.12)(@types/node@22.15.29)(happy-dom@17.6.1)(jiti@1.21.7)(sass-embedded@1.89.1)(tsx@4.19.4)(yaml@2.7.0)
+        version: 3.2.1(@types/debug@4.1.12)(@types/node@22.15.29)(happy-dom@17.6.3)(jiti@1.21.7)(sass-embedded@1.89.1)(tsx@4.19.4)(yaml@2.7.0)
 
 packages:
 
@@ -3407,9 +3407,9 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@17.6.1:
-    resolution: {integrity: sha512-x2Iie2VWObB283X/KXwJ7g5f+4acfm8Pmf9KWUn6gujFUvFlSWytZYTv74bdFH40fPDedbI6/V6U3dYYMtW4SQ==}
-    engines: {node: '>=18.0.0'}
+  happy-dom@17.6.3:
+    resolution: {integrity: sha512-UVIHeVhxmxedbWPCfgS55Jg2rDfwf2BCKeylcPSqazLz5w3Kri7Q4xdBJubsr/+VUzFLh0VjIvh13RaDA2/Xug==}
+    engines: {node: '>=20.0.0'}
 
   has-bigints@1.1.0:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
@@ -9078,7 +9078,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@17.6.1:
+  happy-dom@17.6.3:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
@@ -11614,7 +11614,7 @@ snapshots:
       tsx: 4.19.4
       yaml: 2.7.0
 
-  vitest@3.2.1(@types/debug@4.1.12)(@types/node@22.15.29)(happy-dom@17.6.1)(jiti@1.21.7)(sass-embedded@1.89.1)(tsx@4.19.4)(yaml@2.7.0):
+  vitest@3.2.1(@types/debug@4.1.12)(@types/node@22.15.29)(happy-dom@17.6.3)(jiti@1.21.7)(sass-embedded@1.89.1)(tsx@4.19.4)(yaml@2.7.0):
     dependencies:
       '@types/chai': 5.2.2
       '@vitest/expect': 3.2.1
@@ -11642,7 +11642,7 @@ snapshots:
     optionalDependencies:
       '@types/debug': 4.1.12
       '@types/node': 22.15.29
-      happy-dom: 17.6.1
+      happy-dom: 17.6.3
     transitivePeerDependencies:
       - jiti
       - less
