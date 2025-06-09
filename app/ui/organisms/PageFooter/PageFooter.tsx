@@ -141,12 +141,14 @@ function PageFooter({
         className={clsx(styles.copyright, promoImage && styles.withPromo)}
       >
         {promoImage ? (
-          <img
-            className={styles.promoImage}
-            width={150}
-            src={promoImage[0]}
-            alt={promoImage[1]}
-          />
+          <a href={promoImage[2]} target="_blank" rel="noopener noreferrer">
+            <img
+              className={styles.promoImage}
+              width={150}
+              src={promoImage[0]}
+              alt={promoImage[1]}
+            />
+          </a>
         ) : null}
 
         <div>

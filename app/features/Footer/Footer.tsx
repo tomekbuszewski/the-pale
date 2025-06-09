@@ -91,7 +91,11 @@ export default function Footer() {
   return (
     <Main
       {...data}
-      promoImage={[DesignRush, "Design Rush"]}
+      promoImage={[
+        DesignRush,
+        "web development agency",
+        "https://www.designrush.com/agency/profile/buszewski-com",
+      ]}
       onLanguageChange={Content.functions.handleLanguageChange(language)}
       languages={languages}
       cookies={translate("footer.section.cookies")}
