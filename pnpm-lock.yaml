@@ -34,7 +34,7 @@ importers:
         version: 1.5.0(@remix-run/react@2.15.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.3))(react@19.1.0)
       '@vercel/react-router':
         specifier: ^1.0.2
-        version: 1.1.2(@react-router/dev@7.6.1(@react-router/serve@7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3))(@types/node@22.18.12)(jiti@1.21.7)(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(typescript@5.9.3)(vite@6.4.1(@types/node@22.18.12)(jiti@1.21.7)(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(yaml@2.7.0))(wrangler@3.108.1(@cloudflare/workers-types@4.20250204.0))(yaml@2.7.0))(@react-router/node@7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3))(isbot@5.1.28)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 1.1.2(@react-router/dev@7.6.1(@react-router/serve@7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3))(@types/node@22.18.12)(jiti@1.21.7)(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(typescript@5.9.3)(vite@6.4.1(@types/node@22.18.12)(jiti@1.21.7)(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(yaml@2.7.0))(wrangler@3.108.1(@cloudflare/workers-types@4.20250204.0))(yaml@2.7.0))(@react-router/node@7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3))(isbot@5.1.31)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@vercel/speed-insights':
         specifier: ^1.2.0
         version: 1.2.0(react@19.1.0)
@@ -43,7 +43,7 @@ importers:
         version: 2.1.1
       isbot:
         specifier: ^5.1.22
-        version: 5.1.28
+        version: 5.1.31
       motion:
         specifier: ^12.4.2
         version: 12.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -3805,8 +3805,8 @@ packages:
     resolution: {integrity: sha512-I+NmIfBHUl+r2wcDd6JwE9yWje/PIVY/R5/CmV8dXLZd5K+L9X2klAOwfAHNnondLXkbHyTAleQAWonpTJBTtw==}
     engines: {node: '>= 18.0.0'}
 
-  isbot@5.1.28:
-    resolution: {integrity: sha512-qrOp4g3xj8YNse4biorv6O5ZShwsJM0trsoda4y7j/Su7ZtTTfVXFzbKkpgcSoDrHS8FcTuUwcU04YimZlZOxw==}
+  isbot@5.1.31:
+    resolution: {integrity: sha512-DPgQshehErHAqSCKDb3rNW03pa2wS/v5evvUqtxt6TTnHRqAG8FdzcSSJs9656pK6Y+NT7K9R4acEYXLHYfpUQ==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -7701,12 +7701,12 @@ snapshots:
       '@remix-run/react': 2.15.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.9.3)
       react: 19.1.0
 
-  '@vercel/react-router@1.1.2(@react-router/dev@7.6.1(@react-router/serve@7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3))(@types/node@22.18.12)(jiti@1.21.7)(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(typescript@5.9.3)(vite@6.4.1(@types/node@22.18.12)(jiti@1.21.7)(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(yaml@2.7.0))(wrangler@3.108.1(@cloudflare/workers-types@4.20250204.0))(yaml@2.7.0))(@react-router/node@7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3))(isbot@5.1.28)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@vercel/react-router@1.1.2(@react-router/dev@7.6.1(@react-router/serve@7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3))(@types/node@22.18.12)(jiti@1.21.7)(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(typescript@5.9.3)(vite@6.4.1(@types/node@22.18.12)(jiti@1.21.7)(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(yaml@2.7.0))(wrangler@3.108.1(@cloudflare/workers-types@4.20250204.0))(yaml@2.7.0))(@react-router/node@7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3))(isbot@5.1.31)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@react-router/dev': 7.6.1(@react-router/serve@7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3))(@types/node@22.18.12)(jiti@1.21.7)(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(typescript@5.9.3)(vite@6.4.1(@types/node@22.18.12)(jiti@1.21.7)(sass-embedded@1.93.2)(sass@1.93.2)(tsx@4.20.6)(yaml@2.7.0))(wrangler@3.108.1(@cloudflare/workers-types@4.20250204.0))(yaml@2.7.0)
       '@react-router/node': 7.5.1(react-router@7.6.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3)
       '@vercel/static-config': 3.1.1
-      isbot: 5.1.28
+      isbot: 5.1.31
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       ts-morph: 12.0.0
@@ -9543,7 +9543,7 @@ snapshots:
 
   isbinaryfile@5.0.6: {}
 
-  isbot@5.1.28: {}
+  isbot@5.1.31: {}
 
   isexe@2.0.0: {}
 
