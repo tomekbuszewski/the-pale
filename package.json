@@ -17,7 +17,7 @@
     "@fontsource-variable/geist-mono": "^5.0.1",
     "@fontsource/tinos": "^5.1.1",
     "@react-router/cloudflare": "7.5.1",
-    "@react-router/node": "7.5.1",
+    "@react-router/node": "7.9.4",
     "@react-router/serve": "7.5.1",
     "@shikijs/rehype": "^3.0.0",
     "@vercel/analytics": "^1.5.0",
